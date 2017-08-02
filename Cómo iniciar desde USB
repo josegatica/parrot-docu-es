@@ -36,7 +36,7 @@ Algunos computadores le premiten iniciar el sistema desde dispositivos USB pero 
 === Secure Boot (Inicio seguro) ===
 
 
-In case you have a new computer with Secure Boot enabled, you will have to open the BIOS settings, disenable the secure boot and set a legacy boot. If your computer doesn't provide a booting menu, follow the instructions displayed on this page in the section above ("option is not available").
+En caso de tener un nuevo computador con Secure Boot activado, usted tendrá que abrir la configuración de la BIOS, desactivar 'Secure Boot' y cambiarlo por 'Legacy Boot'. Si su computador no provee un menú de arranque, siga las instrucciones mostradas en esta página en la sección de más arriba ("opción no está disponible").
 
 
 
@@ -47,7 +47,7 @@ In case you have a new computer with Secure Boot enabled, you will have to open 
 ==== DVD ====
 
 
-Booting a system from a DVD is much easier and compatible with most machines.
+Arrancar el sistema desde un DVD es ,ucho más fácil y compatible con muchas máquinas.
 
 
 ==== MAC ====
@@ -55,10 +55,10 @@ Booting a system from a DVD is much easier and compatible with most machines.
 === Método Standard ===
 
 
-Prende tu computador, insert the DVD straghtaway and press the C key as soon as you hear the beep signalling the computer has been turned on. Suelta el botón después de un par de segundos, tan pronto como escuches que el DVD ha comenzado a trabajar.
+Prenda su computador, inserte el DVD inmediatamente y presione la tecla C tan pronto como oiga el pitido señalando que el computador está encendido. Suelte el botón después de un par de segundos, tan pronto como escuche que el DVD ha comenzado a trabajar.
 
 
 === Método Alternativo ===
 
 
-Inserta el DVD durante el paso de incio y presiona la tecla ALT: manténla presionada hasta que sea lanzado el menú de dispositivos de inicio.
+Inserte el DVD durante el paso de incio y presione la tecla ALT: manténgala presionada hasta que sea lanzado el menú de dispositivos de inicio.
