@@ -1,0 +1,64 @@
+ ==== Arranque de sistema ====
+
+
+Descargue su sistema operativo y cree un dispositivo de arranque: ahora usted está listo para arrancar Parrot en su computador. Para esto, simplemente inserte su dispositivo de arranque en el computador y reinicie. Durante el inicio, cuando se le pida seleccionar un disco de arranque, elija el dispositivo con Parrot.
+
+
+----
+
+==== Dispositivo USB ====
+
+=== computadores obsoletos ===
+
+
+Si usted está usando un computador muy antiguo podría no poder arrancar su sistema desde un dispositivo USB: en este caso usted debe usar un DVD u otro dispositivo que su equipo reconozca como arranque.
+
+----
+=== computadores nuevos ===
+
+
+La mayoría de los notebooks permiten acceder al menú de arranque presionando f12; para la mayoría de los coputadores de escritorio presione f8; para otro tipo de dispositivos intente presionando Esc, f12, f11 o f10.
+
+
+----
+=== opción desactivada ===
+
+
+En muchos computadores, incluso en algunos recientes, el menú de arranque puede estar desactivaso por defecto: usted tendrá que acceder a la configuración de la BIOS y activar dicha opción, reinicie el computador y presione la tecla correcta para acceder al menú de arranque.
+
+----
+=== opción no está disponible ===
+
+
+Algunos computadores le premiten iniciar el sistema desde dispositivos USB pero no mostrar un menú para seleccionar el dispositivo de arranque. Si este es su caso, necesita acceder a la configuración de la BIOS, ir al panel de arranque/inicio y cambiar el orden de arranque de los dispositivos, desplazando el dispositivo USB al inicio de la lista. Luego simplemente reinicie el computador y la BIOS elegirá el dispositivo USB como dispositivo de arranque.
+
+----
+=== Secure Boot (Inicio seguro) ===
+
+
+In case you have a new computer with Secure Boot enabled, you will have to open the BIOS settings, disenable the secure boot and set a legacy boot. If your computer doesn't provide a booting menu, follow the instructions displayed on this page in the section above ("option is not available").
+
+
+
+
+
+
+----
+==== DVD ====
+
+
+Booting a system from a DVD is much easier and compatible with most machines.
+
+
+==== MAC ====
+
+=== Método Standard ===
+
+
+Prende tu computador, insert the DVD straghtaway and press the C key as soon as you hear the beep signalling the computer has been turned on. Suelta el botón después de un par de segundos, tan pronto como escuches que el DVD ha comenzado a trabajar.
+
+
+=== Método Alternativo ===
+
+
+Inserta el DVD durante el paso de incio y presiona la tecla ALT: manténla presionada hasta que sea lanzado el menú de dispositivos de inicio.
