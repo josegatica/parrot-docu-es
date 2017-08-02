@@ -8,4 +8,5 @@ Si quieres unirte a nosotros y colaborar con este proyecto y otros proyectos, te
 Además puedes escribir por correo a josegatica@parrotsec.org si tienes alguna consulta que hacer en privado.
 
 ¿Por qué PARROT (Loro)?
+
 "No concebimos que un pirata que zurca los siete mares, peleando batallas y haciendo juerga con sus filibusteros, no tenga un loro en su hombro"
