@@ -36,10 +36,6 @@ Al ejecutar el instalador nos encontraremos con una ventana en las que nos invit
 La instalacion nos preguntara sobre el usuario que inicialmente conectara al hipervisor. Nos aseguramos  que nuestro usuario se encuentre seleccionado y le damos a siguiente.
 
 
-
-
-
-
 6.	Ubicacion de Maquinas Virtuales.
 
 El instalador nos preguntara a donde queremos guardar nuestras maquinas virtuales una vez creadas. Teniendo en cuenta nuestro esquema de particionamiento elegido durante la instalacion de Parrot, y el espacio libre disponible en cada una de las particiones, seleccionamos la mejor opcion y  le damos siguiente.
@@ -59,8 +55,6 @@ Como especificamos al comienzo, la version Workstation Pro, es paga. Vmware prov
 De lo contrario si poseemos una licencia valida, podemos ingresarla en:
 
 
-
-
 7.	Finalizacion de la instalacion.
 
 
@@ -71,21 +65,6 @@ Luego de la instalacion exitosa, se creara un acceso directo a la herramienta en
 Aplicaciones > Herramientas del sistema > Vmware Workstation. 
 
 Al iniciar por primera vez, si no se selecciono licencia, se permite la activacion de la evaluacion por 30 dias. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
