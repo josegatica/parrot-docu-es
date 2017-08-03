@@ -1,0 +1,23 @@
+==== En curso ====
+=== ¿Qué es Metasploit Framework? ===
+
+Metasploit framework es una potente herramienta de código abierto que permite a los administradores detectar fallos de seguridad en sus redes.
+
+Un exploit es un programa (código) que se aprovecha de un fallo de seguridad (vulnerabilidad) implementando su propio código.
+
+Un ataque exitoso sobre un buffer overflow requiere de mucho trabajo. El desarrollador tiene que experimentar con direcciones de salto, encontrar espacio para la carga útil que contiene el código a codificar y, a continuación, inyectarlo en la memoria del sistema que se desea atacar.
+
+Pero incluso con pequeños cambios en el, el código que funcionaba a la larga puede dejar de funcionar. Por ejemplo, resulta raro que un desarrollador encuentre una dirección de almacenamiento "universal" que sirva para diferentes versiones de Windows, donde puede colocar su shell y ejecutarla a través del vuffer overflow. Como resultado tenemos que cada plataforma en la que se produce un fallo de seguridad es empezada desde el principio.
+
+[ https://docs.parrotsec.org/lib/exe/fetch.php/metasploit-logo1.png?w=200&tok=c9469b ]
+
+----
+
+=== Arquitectura del framework ===
+La imagen inferior muestra en forma de esquema la arquitectura del framework. El diseño modular facilita la expansión y adaptación del framework de acuerdo a sus respectivos requerimientos, esto es debido a que las funcionalidades ya existentes pueden ser fácilmente reutilizadas. Los componentes individuales se explican brevemente a continuación.
+
+[ https://docs.parrotsec.org/lib/exe/fetch.php/metasploit-for-beginners-6-638.jpg?w=600&tok=0f3485 ]
+
+----
+
+== Ruby Extension Library (REX) ==
