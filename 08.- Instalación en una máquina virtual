@@ -1,0 +1,586 @@
+﻿====== Instalando Parrot Security Sobre VirtualBox ======
+
+
+
+=== En esta guía, se tratarán los siguientes temas: ===
+
+
+
+  * Crear una nueva Máquina Virtual
+
+
+
+  * Crear un nuevo disco Virtual (VDI, expansión dinámica etc.)
+
+
+
+  * Modificar algunas opciones de VirtualBox (Reserva de memoria física y de Video, Selección de tipo de SO, Aceleración CPU etc.)
+
+
+
+  * Carga de la ISO de Parrot Security 
+
+
+
+  * Arranque de la ISO de Parrot Security (información inicial, localización, huso horario etc.)
+
+
+
+  * Particionado de disco en Parrot Security disk (Ud. debería intentar diferentes formas de particionado a las mostradas aquí, para tener más experiencia)
+
+
+
+  * Finalizando la instalación y arranque de Parrot Security sobre VirtualBox.
+
+
+
+
+
+=== Para seguir esta guía usted tiene dos opciones: ===
+
+
+
+  - Ud. puede, simplemente, utilizar las imágenes de esta página y simplemente seguirlas...
+
+
+
+  - Ud. puede leer esta guía informativa y obtener un mejor entendimiento de qué es lo que debe hacer
+
+
+
+====== Cosas Que Necesita Para Instalar ======
+
+
+
+La instalación de hará OS X. Aquí tiene ud. el link de descarga del instalador para OS X [[https://www.virtualbox.org/wiki/Downloads]] \\
+
+Ud. puede descargar la versión del instalador para Windows o Linux, y seguir EXACTAMENTE los mismos pasos para instalar y ejecutar VirtualBox en su sistema.
+
+
+
+===== Paso 1: Crear una nueva Máquina Virtual =====
+
+Ya he dado las instrucciones y los links para obtener VirtualBox anteriormente. Si se lo ha perdido, vuelva e instale VirtualBox.
+
+
+
+Una vez instalado VirtualBox:
+
+
+
+  - Ábralo.
+
+  - Pulse sobre Nueva para crear una Nueva Máquina Virtual.
+
+
+
+==== Paso 1.a: Nombre y Sistema Operativo ====
+
+
+
+Seleccione un nombre para su Máquina Virtual. En mi caso elegí Parrot Security. Puede seleccionar el nombre que Ud. deseé. 
+En la opción Tipo seleccione Linux, y en Versión seleccione Other Linux (64-bit) o si Ud. está usando (32-bit) elija la opción correspondiente.
+Pulse Siguiente.
+
+
+
+\\ {{:vbox_images/Step_1.png|}} \\
+
+
+
+==== Paso 1.b: Tamaño de Memoria/RAM ====
+
+
+
+La memoria por defecto y la recomendada asignada será 512, aunque para Parrot Security se sugiere: mínimo 256Mb - 2048Mb para la versión (64-bit). \\ \\
+
+Mientras que la versión de instalación de 32-bits puede ejecutarse con 256mb.
+
+
+Elegí 2048 porque dispongo de 4 gb de RAM en mi sistema. \\ \\ Ud. elija el mejor valor para su sistema y pulse Siguiente.
+
+
+
+\\ {{:vbox_images/Step_2.png|}} \\
+
+
+
+===== Paso 2: Crear un Disco Duro Virtual =====
+
+En esta pantalla seleccione ‘’“Crear un disco duro virtual ahora” – Opción 2'' y pulse Crear.
+
+
+
+\\ {{:vbox_images/Step_3.png|}} \\
+
+
+
+==== Paso 2.a: Seleccione el tipo de fichero de Unidad Virtual ====
+
+
+
+En la siguiente pantalla seleccione ''“VDI” – VirtualBox Disk Image'' como tipo de fichero de su Disco Duro.'\\ Pulse Siguiente.
+
+
+
+\\ {{:vbox_images/Step_4.png|}} \\
+
+
+
+==== Paso 2.b: Seleccione el tipo de reserva para el Disco Duro ====
+
+
+
+Seleccione ‘’Reservado dinámicamente’’ y pulse Siguiente en la pantalla de Almacenamiento en unidad de Disco Duro física.
+
+
+
+\\ {{:vbox_images/Step_5.png|}} \\
+
+
+
+==== Paso 2.c: Reserva de tamaño de disco ====
+
+
+
+En la pantalla ‘’“Ubicación del archivo y tamaño”’’ , aparecerá el valor por defecto de 8.00 GB como tamaño y Parrot Security (el cual configuramos en el Paso 1.a).\\ 
+
+Elija el valor adecuado para Ud. y pulse Crear.
+
+N. del T.: La instalación completa de la versión Parrot Security 3.6 Full Edition de 64 bits ocupa algo más de 10Gb. En mi caso seleccioné como tamaño de disco 20 GB.   
+
+
+
+\\ {{:vbox_images/capture_6.png|}} \\
+
+
+
+===== Paso 3: Modificar los parámetros de la Máquina Virtual =====
+
+Hasta este punto, hemos realizado los siguientes pasos:
+
+
+
+  * Crear una nueva Máquina Virtual
+
+  * Crear un disco Virtual
+
+  * Rellenar las propiedades, tipo y tamaño del disco.
+
+ 
+
+En este punto, Ud. debe estar en la pantalla que viene a continuación.
+
+ 
+
+\\ {{:vbox_images/capture_7.png|}} \\
+
+  
+
+==== Paso 3.a: Seleccionar el tipo de SO ====
+
+
+Pulse sobre General.
+
+Dependiendo de que ISO haya descargado debería seleccionar la Versión correcta aquí.
+
+
+
+Como Parrot Security es una distribución derivada de Debian, he seleccionado Other Linux (64-bit) en ''General > Básico > Versión.'' \\ 
+
+Si Ud. está utilizando una ISO de 32-bit, seleccione Other Linux (32-bit) como versión.
+
+
+\\ {{:vbox_images/capture_7a.png|}} \\
+
+
+
+==== Paso 3.b: Habilitar Portapapeles compartido y la función Arrastrar y soltar ====
+
+
+
+Seleccione ‘’General > PESTAÑA Avanzado'' y cambie “Compartir portapapeles” y “Arrastrar y soltar” a Bidireccional. Esto le permitirá copiar y pegar archivos desde su sistema HOST (Anfitrión) al vuelo.
+
+
+
+\\ {{:vbox_images/capture_8.png|}} \\
+
+
+
+==== Paso 3.c: Actualizar opciones de la Placa Base Virtual ====
+
+
+
+Seleccione ''Sistema > Placa base’’, deshabilite la opción Disquete (Aun dispone de una disquetera?) y active la casilla “Habilitar I/O APIC”. \\
+
+Nótese que Ud. puede cambiar los valores de asignación de memoria en la misma pantalla. Previamente pusimos este valor a 2048MB. Mi PC dispone de 4.00GB RAM. Si Ud. dispone de más memoria puede asignarla para hacer que Parrot Security responda más rápido en su Máquina Virtual.\\
+
+Si siente que su Parrot Security Virtualizado es lento, debería incrementar la asignación de esta memoria base.
+
+
+
+=== Los cálculos son los siguientes: ===
+
+
+
+  * 1.00 GB = 1024MB
+
+  * 2.00 GB = 2048MB
+
+  * 3.00 GB = 3072MB
+
+
+
+Esta es la idea, simplemente multiplique 1024 por la cantidad de Memoria / RAM que desee y escriba el valor aquí.
+
+
+
+\\ {{:vbox_images/capture_9.png|}} \\
+
+
+
+==== Paso 3.d: Seleccione el número de Procesadores y habilite PAE/NX ====
+
+
+
+Yo he cambiado el número de procesadores a 2 (Dispongo de 4 CPU’s en mi máquina, esta pantalla le mostrará cuantos dispone Ud.). Intente adjudicar valores pares aquí.
+
+
+
+Active la casilla ''“Enable PAE/NX”''.
+
+
+
+==== Paso 3.e: Asignación de memoria de video y aceleración 3D ====
+
+
+
+Seleccione ‘’Pantalla > Pantalla y asigne 128 MB a la Memoria de Vídeo''. Esto le permitirá obtener una buena repuesta en su entorno de escritorio.
+
+
+
+También seleccione la casilla ‘’“Habilitar aceleración 3D”’’.
+
+
+
+Si tiene más de 1 Monitor, aquí puede cambiar también su valor.
+
+
+
+\\ {{:vbox_images/capture_10.png|}} \\
+
+
+
+===== Paso 4: Cargando la ISO de Parrot Security =====
+
+
+
+Seleccione ‘’Almacenamiento > Controlador: IDE'' y pulse el ICONO de CD Vacío. Ahora a su derecha, puede utilizar el pequeño ICONO de CD (Debe ser la unidad óptica: IDE secundario maestro, si no se ha modificado) y seleccione la ISO descargada. \\
+
+Una vez haya seleccionado su ISO (en mi caso, es la iso Parrot Security 3.6) compruebe que  la información cambian correctamente.
+
+
+
+Nota Importante: El tamaño… Si el tamaño de su disco es incorrecto, puede que tenga un disco corrupto. Acuda a la página de Parrot Security y a su página de descargas ISO para encontrar la información relativa al tamaño de la imagen. Ud. también puede comprobar SHA1 para asegurarse de que su disco no está corrupto.
+
+
+
+\\ {{:vbox_images/capture_11.png|}} \\
+
+
+
+==== Paso 4.a: Seleccione el tipo de conexión de Red ====
+
+
+
+Si su ordenador está conectado a Internet , seleccione NAT en ‘’Red > Adaptador 1''. Ud. puede habilitar más adaptadores de red si necesita hacerlo. 
+
+
+
+\\ {{:vbox_images/capture_12.png|}} \\
+
+
+
+==== Paso 4.b: Habilite Controladores USB 2.0 ====
+
+
+
+Desde la pestaña ‘’Puertos > PESTAÑA USB'', active la casilla ‘’Habilitar controlador USB > Controlador USB 2.0 (EHCI)''. Nótese que aparece un error “Configuración inválida detectada” en la parte inferior de la pantalla.\\
+
+Instale el pack de extensión de VirtualBox para eliminar este error. \\
+
+
+
+Necesita presionar ''OK'' y guardar su Configuración primeramente.
+
+
+
+Cierre VirtualBox y a continuación instale Oracle VM VirtualBox Extension Pack para Todas las plataformas soportadas.
+
+
+
+Esto habilitará el soporte de dispositivos USB 2.0 (EHCI) y USB 3.0 (xHCI), el soporte para el Protocolo VirtualBox Remote Desktop (VRDP) , soporte para Host webcam passthrough.
+
+
+
+Vuelva a abrir VirtualBox y seleccione ‘’General > Puertos > USB'' de nuevo para confirmar que no aparece el error. Guarde su configuración presionando OK.
+
+
+
+\\ {{:vbox_images/capture_13.png|}} \\
+
+
+
+==== Paso 4.c: Compare sus opciones con las mías ====
+
+
+
+En este punto su pantalla debería ser similar a la mía. He mencionado las partes importantes, si hay algo que no concuerda puede volver hacia atrás y habilitar o  deshabilitar esas opciones.
+
+Note que, para usuarios de 32-bit, será algo diferente.
+
+
+
+===== Paso 5: Arrancando la ISO Parrot Security =====
+
+
+
+Desde la pantalla principal de VirtualBox, pulse Iniciar y arranque Parrot Security.
+
+
+
+\\ {{:vbox_images/capture_14.png|}} \\
+
+
+
+==== Paso 5.a: Seleccione Install ====
+
+
+
+Desde la pantalla principal, arrancará  Parrot Security, pulse en la Máquina Virtual y coloque el cursor en ''"Install"'' pulse enter.
+
+
+
+\\ {{:vbox_images/capture_15.png|}} \\
+
+
+
+==== Paso 5.b: Seleccione el instalador Standard ====
+
+
+
+\\ {{:vbox_images/capture_16.png|}} \\
+
+
+
+==== Paso 5.c: Seleccione el idioma del instalador ====
+
+
+
+En mi caso seleccioné Inglés. Pulse Enter.
+
+
+
+\\ {{:vbox_images/capture_17.png|}} \\
+
+
+
+==== Paso 5.d: Seleccione localización ====
+
+
+
+En mi caso seleccioné ‘’ other > Europe > Spain '',. Pulse Enter.
+
+
+
+\\ {{:vbox_images/capture_18.png|}} \\
+
+
+
+==== Paso 5.e: Seleccione Locales ====
+
+
+En mi caso seleccioné United States. Pulse Enter.
+
+
+\\ {{:vbox_images/capture_19.png|}} \\
+
+
+
+==== Paso 5.f: Seleccione el mapa de su teclado ====
+
+
+
+Yo he seleccionado Español. Pulse Enter.
+
+
+
+\\ {{:vbox_images/capture_20.png|}} \\
+
+
+
+
+==== Paso 5.g: Introduzca la contraseña de Root (Cualquier cosa que elija) ====
+
+En la siguiente pantalla se le volverá a solicitar la contraseña de Root.
+
+\\ {{:vbox_images/capture_21.png|}} \\
+
+
+
+==== Paso 5.h: ==== 
+
+Elija un usuario standard (distinto de Root). Parrot Security requiere que la distribución se ejecute con un usuario standard para su perfecto funcionamiento.
+
+
+
+Puede introducir cualquier nombre aquí. Yo he escogido el nombre “ParrotSecurity” exactamente igual al nombre del sistema. Ud. puede elegir el nombre que desee. Pulse Enter.
+
+A continuación se le solicitará el nombre que utilizará el sistema para dicho usuario. Yo he elegido de nuevo “ParrotSecurity”. Este será el nombre que deba introducir para ingresar en el sistema. Por defecto es el mismo que el seleccionado en la pantalla anterior. Pulse Enter una vez esté satisfecho con su elección.
+
+
+
+\\ {{:vbox_images/capture_22.png|}} \\
+
+
+
+==== Paso 5.i: Introduzca la contraseña del usuario recién creado ====
+
+
+Este paso se le solicitara dos veces, para confirmar que esta Ud. introduciendo la contraseña correctamente.
+
+
+\\ {{:vbox_images/capture_23.png|}} \\
+
+
+
+==== Paso 5.j: Configure el reloj ====
+
+Generalmente Ud. debe elegir correctamente el Estado o provincia aquí.
+
+
+
+\\ {{:vbox_images/capture_24.png|}} \\
+
+
+
+===== Paso 6: Particionado de disco Parrot Security =====
+
+
+
+Al ser un sistema Virtualizado, Ud. puede seleccionar cualquier tipo de particionado. \\
+
+Personalmente creo que el particionado guiado para los usuarios con menos experiencia es lo recomendado, 80 gigas o más son suficientes, a no ser que quiera instalar muchos más programas o mantener ficheros grandes en su disco duro.
+
+
+
+\\ {{:vbox_images/capture_25.png|}} \\
+
+
+
+==== Paso 6.a: Seleccione el disco a particionar ====
+
+
+
+Ud. debe tener únicamente 1 disco en esta pantalla, márquelo y pulse Enter.
+
+
+
+\\ {{:vbox_images/capture_26.png|}} \\
+
+
+
+==== Paso 6.b: Seleccione el esquema de particionado ====
+
+
+
+Resalte ''“All files in one partition”'' y pulse Enter.
+
+
+
+\\ {{:vbox_images/capture_27.png|}} \\
+
+
+
+**En la siguiente pantalla, marque ‘Finish partitioning and write changes to disk’ escribiendo los cambios del particionado. Pulse Enter.**
+
+
+
+\\ {{:vbox_images/capture_28.png|}} \\
+
+
+
+**Su instalación comenzará ahora. En mi PC, el cual tiene un disco duro de 6500 RPM, tarda 8 mins. aproximadamente**
+
+
+
+\\ {{:vbox_images/capture_29.png|}} \\
+
+
+
+===== Paso 7: Instalar el cargador de arranque GRUB =====
+
+
+
+Seleccione Yes para instalar el cargador de arranque grub en la siguiente pantalla. Presione Enter cuando esté preparado.
+
+
+
+\\ {{:vbox_images/capture_30.png|}} \\
+
+
+
+==== Paso 7.a: Instalación del cargador de arranque GRUB en el disco duro ====
+
+
+
+Seleccione el único disco duro disponible (generalmente la última opción) 
+
+
+
+\\ {{:vbox_images/capture_31.png|}} \\
+
+
+
+==== Paso 7.b: Pulse Continue para finalizar la instalación ====
+
+
+
+Una vez la instalación haya finalizado, pulse continue y el sistema terminará instalando y se reiniciará.
+
+
+
+\\ {{:vbox_images/capture_32.png|}} \\
+
+
+
+==== Paso 7.c: Acceda a Parrot Security la primera vez ====
+
+
+
+Introduzca su Contraseña
+
+
+
+\\ {{:vbox_images/capture_33.png|}} \\
+
+
+
+**Ud. acaba de instalar Parrot Security y ha terminado!**
+
+
+
+\\ {{:vbox_images/capture_34.png|}} \\
+
+
+
+====== Instale VirtualBox Guest Additions ===== 
+
+<WRAP center round info 60%>
+
+Ud. puede ya instalar las VirtualBox Guest Additions, para ajustar la resolución de su monitor, para compartir su portapapeles etc... \\ \\
+
+[[virtualbox-guest-additions|Virtualbox Guest Additions]]
+
+</WRAP>
+
