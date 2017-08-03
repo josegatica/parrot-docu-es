@@ -1,0 +1,90 @@
+ ==== De conocimiento básico ====
+
+
+Cree un dispositivo USB Live común con Parrot.
+
+Puede seguir la guía "Cómo crear un dispositivo de arranque"
+
+
+Recuerde que debe crear dos particiones, la primera que contenga sólo el sistema, porlo que debe ser mayor que el tamaño de la imagen ISO.
+
+La mejor manera para crear esta primera partición es usar el método dd.
+
+El segundo paso es crear una segunda partición formateada en ext4 con la etiqueta "persistence", esta segunda partición debe contener un archivo ''persistence.conf'' conteniendo el siguiente texto: ''/union''
+
+Pero vamos más allá
+
+
+----
+==== Primer paso ====
+
+
+Una vez que haya descargado su imagen ISO de Parrot, usted puede usar dd para copiarlo en su memoria USB, como se explica a continuación:
+
+ADVERTENCIA.
+Si bien el proceso de creación de imagen Parrot en una memoria USB es bastante fácil, recomendamos que continue sólo una vez que haya dominado cada uno de los pasos del proceso:
+Un simple error en el procedimiento "dd" puede recultar en la destrucción de particiones arbitrarias. Usted ha sido advertido(a)
+
+Conecte su dispositivo USB en el puerto USB de su computador con GNU/Linux.
+
+Verifique la ruta de dispositivo de su almacenamiento USB con ''dmesg'' o con ''ls /dev | grep sd''.
+
+Cuidadosamente proceda con la creación de imagen de la ISO de Parrot en el dispositivo USB:
+
+''dd if=Parrot.iso of=/dev/sdb''
+
+Espere hasta que el proceso finalice.
+
+
+----
+==== Segundo paso ====
+
+=== Con Gparted ===
+
+
+Abra Gparted y seleccione el pendrive
+
+Encontrará una primera partición no reconocida, seguida por un espacio vacío
+
+Cree una nueva partición ext4 en el siguiente espacio vacío, éste debe ser mayor que el espacio de persistencia que quiera darle a sus dispositivo USB con Parrot.
+
+De a esta nueva partición la etiqueta "persistence"
+
+Confirme y espere a que el proceso termine
+
+Luego monte la partición persistente y cree el archivo persistence.conf en ella.
+
+Abra el archivo con un editor simple de texto, escriba ''/ union'' y guarde el archivo
+
+
+¡Hecho! Ahora su dispositivo USB con Parrot puede iniciar con persistencia si usted lo arranca usando la etiqueta "persistence" en el menú de inicio.
+
+
+----
+=== Desde la terminal ===
+
+
+Cree y formatee una partición adicional en su memoria USB. Ennuestro ejemplo, hemos creado una partición persistente de 2GB y creado un archivo persistence.conf en ésta.
+
+
+''size=2gb
+
+iso=Parrot.iso
+
+
+read bytes _ < <(du -bcm $iso |tail -1); echo $bytes
+
+parted /dev/sdb mkpart primary $bytes $size
+
+mkfs.ext4 -L persistence /dev/sdb2
+
+e2label /dev/sdb2 persistence
+
+mkdir -p /mnt/parrot_usb
+
+mount /dev/sdb2 /mnt/parrot_usb
+
+echo "/ union" > /mnt/parrot_usb/persistence.conf
+
+umount /dev/sdb2''
+
