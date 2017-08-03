@@ -1,8 +1,7 @@
 ﻿===== ¿Qué es AnonSurf?? =====
 
      ***  
-Anonsurf [1] es el modo anónimo de Parrot para forzar conexiones a través de tor y / o la red i2p. El uso de Anonsurf tiene una interfaz gráfica y
-Interfaz de CommandLine (CLI). **
+Anonsurf [1] es el modo anónimo de Parrot para forzar conexiones a través de tor y/o la red i2p. El uso de Anonsurf tiene una interfaz gráfica y una Interfaz de CommandLine (CLI). **
 
 ===== que es Tor? =====
      *** 
@@ -21,16 +20,9 @@ Tor [2] es un protocolo de cifrado SOCKS4 [3] & SOCKS5. **
        Multiplexación [6] múltiples "circuitos" a través de una única conexión TLS de nodo a nodo. **
    *** El tráfico Tor se encamina a través de 3 nodos de forma predeterminada: Guardia, relé y salida. **
 
-
-{{: Torroutingdiagram.png? 600 |}}
-
-
 ** Para poder enrutar varios relés, Tor tiene algo llamado capacidad de multiplexación de flujo:
 [+] Múltiples conexiones TCP pueden ser llevadas a través de un único circuito Tor.
 [+] Cada nodo conoce solamente el emparejamiento de origen y destino para un circuito. No conoce todo el camino.
 **
-     
-{{: Torcircuitsandstreams.png? 600 |}}
-
 
 ** Tomado de la charla de Mike Perry en blackhat en 2007 encontrada aquí [7] **
