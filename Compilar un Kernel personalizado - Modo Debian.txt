@@ -1,20 +1,20 @@
-﻿======Compilar un Kernel personalizado "Modo Debian"======
+======Compilar un Kernel personalizado "Modo Debian"======
 
 ====Instalando dependencias de compilación====
-Para trabajar con el kernel debianizado linux, necesitas tener algunos paquetes de desarrollo. Los instalaremos con el siguiente comando
+Para trabajar con el kernel debianizado linux, necesita tener algunos paquetes de desarrollo. Los instalaremos con el siguiente comando
 
 ''sudo apt build-dep linux''
 
 
 ====Descargue el código de fuente del Kernel====
-Puedes obtener el código fuente del kernel del loro desde diferentes lugares
+Usted puede obtener el código fuente del kernel del loro desde diferentes lugares.
 
 
 ===INSTALAR APT===
 
 Ejecute ''sudo apt update'' para actualizar la lista de fuentes 
 
-lance ''sudo apt install linux-source'' para descargar el código de fuente del kernel en  ''/usr/src''
+Luego lance ''sudo apt install linux-source'' para descargar el código fuente del kernel en  ''/usr/src''
 
 
 ===FUENTE APT (Source)===
@@ -23,18 +23,18 @@ edite ''/etc/apt/sources.list.d/parrot.list'' y asegurese de que el deb-src dire
 
 Ejecute ''sudo apt update'' para actualizar la lista de fuentes 
 
-lance ''apt source linux'' para descargar el código fuente del kernel linux desde nuestro repositorio
+Lance ''apt source linux'' para descargar el código fuente del kernel linux desde nuestro repositorio
 
 ===GIT===
 
-Asegúrese de haber instalado el git con ''sudo apt install git''
+Asegúrese de haber instalado git con ''sudo apt install git''
 
-Lance ''git clone https://github.com/parrotsec/linux-parrot.git'' para descargar la fuente del parrot kernel en la carpeta actual 
+Lance ''git clone https://github.com/parrotsec/linux-parrot.git'' para descargar el código fuente del kernel de Parrot en la carpeta actual 
 
 
 ====Configurar el código fuente====
 
-Abra una ventana de terminal e ingrese la fuente del kernel, luego ejecute
+Abra una ventana de terminal e ingrese a la fuente del kernel, luego ejecute
 
 ''make menuconfig''
 
@@ -43,7 +43,7 @@ Este comando abrirá el editor de configuración, donde podrá ver los módulos 
 ===Instalar hardware-info===
 Mediante ejecución
 ''sudo apt install hwinfo''
-para que pueda eliminar de forma segura el soporte para hardware que no va a utilizar en su maquina.
+para que pueda eliminar de forma segura el soporte para hardware que no va a utilizar en su máquina.
 Esto hará que su kernel sea mas ligero y rápido.
 
 Una vez hecho esto, puede guardar la configuración y continuar con el siguiente paso.
@@ -59,7 +59,7 @@ make deb-pkg
 
 ====Instalar los nuevos paquetes kernel====
 
-Una vez hecho esto, instale los paquetes resultantes en el siguiente comando
+Una vez hecho esto, instale los paquetes resultantes con el siguiente comando
 
 <code>
 sudo dpkg -i ../linux-{image,headers}-*.deb
