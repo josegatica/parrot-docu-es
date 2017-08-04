@@ -1,0 +1,38 @@
+====Primer paso====
+
+Primero de todo necesitas descargar el último archivo ISO de nuestra página de descarga.
+
+Después descarga ROSA Image Writer desde nuestros servidores.
+
+Necesitas un lápiz USB de por lo menos 4GB para Parrot Full o 2GB para la versión lite.
+
+
+
+====Procedimiento de instalación del modo Live====
+
+
+Inserta tu lápiz USB en tu puerto USB y inicia <html><a href="http://cloudflare.archive.parrotsec.org/parrot/misc/image-writer/README.html">ROSA Image Writer</a></html>
+
+Selecciona el archivo Parrot ISO y verifica que el lápiz USB que vas a sobreescribir es el correcto
+
+<html><img src="http://cloudflare.archive.parrotsec.org/parrot/misc/image-writer/screenshots/screenshot0.png"></html>
+
+
+<html><img src="http://cloudflare.archive.parrotsec.org/parrot/misc/image-writer/screenshots/screenshot1.png"></html>
+
+Una vez que se haya grabado, puedes usar el dispositivo USB como el dispositivo de arranque de tu PC/laptop e iniciar en Parrot OS.
+
+
+
+====Como iniciar====
+
+
+Si no sabes como iniciar con tu nuevo dispositivo bootable sigue esta guía -> [[how to boot]]
+
+
+
+
+====Persistencia====
+
+
+Puedes encontrar algunas instrucciones acerca de como crear un dispositivo live con persistencia aquí --> [[Parrot USB Live Persistence]]

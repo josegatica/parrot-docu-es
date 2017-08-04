@@ -1,0 +1,16 @@
+==== Que es el modo live ====
+
+El **modo live** es un modo de boot ofrecido por varias distribuciones de Linux, incluyendo Parrot OS, esto permite a los usuarios,
+Cargar el entorno de Linux de forma completamente funcional sin necesidad de instalarlo.
+
+Esto es posible porque el sistema no está cargado en el disco duro del sistema, sino está cargado en la memoria.
+
+Parrot OS ofrece la habilidad de instalar el OS mientras esté en el entorno live, usando todos todos los tools e incluso creando a [[Parrot USB Live Persistence | persistent live environment]].
+
+Para crear un dispositivo live boot por favor lee [[How to create a live boot device] | esta ]] página.\\
+Para aprender como iniciar desde el dispositivo live lee [[How to boot | esta]] página.
+
+\\
+=== Usuario y contraseña por defecto ===
+
+En el entorno live de Parrot OS el nombre de usuario por defecto es **user** y la contraseña por defecto es **toor**. 
