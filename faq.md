@@ -5,7 +5,7 @@ La prueba de penetración es un trabajo que consume mucho tiempo, por lo que es 
 
 Hacemos más fácil para los profesionales realizar tareas que deben ser automatizadas reduciendo el tiempo y los esfuerzos que tienen que poner en ellos.
 
-## ¿Cuál es la contraseña en vivo por defecto? 
+## ¿Cuál es la contraseña de la imagen LIVE por defecto? 
 * Contraseña para usuario: `toor`
 * Contraseña para root: `toor`
 * Usuario para Raspberry pi: `parrot`
@@ -30,7 +30,7 @@ Si el error involucra un paquete de software que no aparece [aquí](https://dev.
 
 Si no está seguro de qué software está involucrado o si no sabe cómo ponerse en contacto con el responsable correcto, Nosotros en nuestro [portal de la comunidad](https://community.parrotsec.org/)
 
-## ¿Cómo debería ser mi lista de fuentes?
+## ¿Cómo debería lucir mi archivo sources.list?
 /etc/apt/sources.list debe ser EMPTY
 
 /etc/apt/sources.list.d/parrot.list debe contener el siguiente contenido
@@ -58,5 +58,5 @@ En construcción..
 Sí lo está
 
 ## ¿Puedo contribuir a esta FAQ?
-Por supuesto, puedes unirte a nuestra [comunidad](https://docs.parrotsec.org/doku.php/community#groups) y proponer las preguntas que piensas que se deben mostrar aquí
+Por supuesto, puedes unirte a nuestra [comunidad](https://community.parrotsec.org/viewforum.php?id=25) y proponer las preguntas que piensas que se deben mostrar aquí
       
