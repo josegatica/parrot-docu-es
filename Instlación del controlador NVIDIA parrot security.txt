@@ -27,7 +27,7 @@ https://goo.gl/mR4E1k
 https://goo.gl/ddPfw1
 
 
-7. REINICIA
+7. "REINICIE"
 
 * Compruebe y compruebe la versión de instalación de Nvidia
 
