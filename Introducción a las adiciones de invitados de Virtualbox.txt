@@ -1,33 +1,33 @@
-INTRODUCCI”N A LAS ADICIONES DE INVITADOS DE VIRTUALBOX
+INTRODUCCI√ìN A LAS ADICIONES DE INVITADOS DE VIRTUALBOX
 
-Las adiciones de invitado est·n diseÒadas para instalarse dentro de una m·quina virtual despuÈs de haber instalado el sistema operativo invitado.
-Consisten en controladores de dispositivos y aplicaciones de sistema que optimizan el sistema operativo huÈsped para un mejor rendimiento y facilidad de uso.
-CaracterÌsticas de las adiciones de invitados de Virtualbox
+Las adiciones de invitado est√°n dise√±adas para instalarse dentro de una m√°quina virtual despu√©s de haber instalado el sistema operativo invitado.
+Consisten en controladores de dispositivos y aplicaciones de sistema que optimizan el sistema operativo hu√©sped para un mejor rendimiento y facilidad de uso.
+Caracter√≠sticas de las adiciones de invitados de Virtualbox
 
-    a.- IntegraciÛn del puntero del ratÛn
-        	Al presionar la tecla Host ya no es necesario "liberar" al ratÛn para que sea capturado por el sistema operativo invitado.
+    a.- Integraci√≥n del puntero del rat√≥n
+        	Al presionar la tecla Host ya no es necesario "liberar" al rat√≥n para que sea capturado por el sistema operativo invitado.
     b.- Carpetas compartidas
         	Carpetas compartidas entre Host y Parrot.
     c.- Mejor soporte de video
-        	Mientras que la tarjeta gr·fica virtual que VirtualBox emula para cualquier sistema operativo invitado proporciona todas las caracterÌsticas b·sicas, los controladores de vÌdeo personalizados que se instalan con las adiciones de invitado le proporcionan modos de vÌdeo extra y no est·ndar, asÌ como el rendimiento de vÌdeo acelerado.
-        	(Generalmente se utiliza para cambiar la resoluciÛn del monitor)
+        	Mientras que la tarjeta gr√°fica virtual que VirtualBox emula para cualquier sistema operativo invitado proporciona todas las caracter√≠sticas b√°sicas, los controladores de v√≠deo personalizados que se instalan con las adiciones de invitado le proporcionan modos de v√≠deo extra y no est√°ndar, as√≠ como el rendimiento de v√≠deo acelerado.
+        	(Generalmente se utiliza para cambiar la resoluci√≥n del monitor)
     d.- Ventanas sin costuras
-        	Con esta caracterÌstica, las ventanas individuales que se muestran en el escritorio de la m·quina virtual se pueden asignar en el escritorio del host, como si la aplicaciÛn subyacente se estuviera ejecutando realmente en el host.
-    e.- Canales genÈricos de comunicaciÛn de host / invitado
-        	Las adiciones de invitado le permiten controlar y supervisar la ejecuciÛn de invitados de formas distintas a las mencionadas anteriormente. Las denominadas "propiedades de invitado" proporcionan un mecanismo genÈrico basado en cadenas para intercambiar bits de datos entre un huÈsped y un host, algunos de los cuales tienen significados especiales para controlar y supervisar al invitado.
-    f.- SincronizaciÛn de tiempo
+        	Con esta caracter√≠stica, las ventanas individuales que se muestran en el escritorio de la m√°quina virtual se pueden asignar en el escritorio del host, como si la aplicaci√≥n subyacente se estuviera ejecutando realmente en el host.
+    e.- Canales gen√©ricos de comunicaci√≥n de host / invitado
+        	Las adiciones de invitado le permiten controlar y supervisar la ejecuci√≥n de invitados de formas distintas a las mencionadas anteriormente. Las denominadas "propiedades de invitado" proporcionan un mecanismo gen√©rico basado en cadenas para intercambiar bits de datos entre un hu√©sped y un host, algunos de los cuales tienen significados especiales para controlar y supervisar al invitado.
+    f.- Sincronizaci√≥n de tiempo
        	 Sincronice la fecha y la hora del host con Parrot.
     g.- Portapapeles compartido
         	Portapapeles compartido desde el host a Parrot.
 
 
 INSTALACION DE ADICIONES DE INVITADOS (es)
-1.- MÈtodo 1 (m·s f·cil)
+1.- M√©todo 1 (m√°s f√°cil)
 
 	q. Abra un terminal y actualice la lista de paquetes del repositorio con
 	sudo apt-get update
 
-	https://goo.gl/n7Fhyz
+	<https://goo.gl/n7Fhyz>
 
 	b. Instale las adiciones de invitado del repositorio de ParrotOS con
 	sudo apt-get install virtualbox-guest-utils
@@ -36,29 +36,29 @@ INSTALACION DE ADICIONES DE INVITADOS (es)
 
 	https://goo.gl/GjqJfX
 
-	c. E instale el ˙ltimo paquete con
+	c. E instale el √∫ltimo paquete con
 	sudo apt-get install virtualbox-guest-x11
 
 	https://goo.gl/6cpihi
 
-	d. Cuando se complete la instalaciÛn, puede reiniciar su
+	d. Cuando se complete la instalaci√≥n, puede reiniciar su
 	sudo reboot
 
 	https://goo.gl/ixCFyD
 
-	e. Compruebe si las adiciones de invitado est·n correctamente instaladas ejecutando
+	e. Compruebe si las adiciones de invitado est√°n correctamente instaladas ejecutando
 	sudo /usr/sbin/VBoxService -V
 
 	https://goo.gl/QtWQ1A
 
 2.- METODO 2 (desde ISO)
 
-	a. En la barra de men˙s de Virtual Machine, seleccione
-	Devices > Insert Guest Additions CD imageÖ
+	a. En la barra de men√∫s de Virtual Machine, seleccione
+	Devices > Insert Guest Additions CD image‚Ä¶
 
 	https://goo.gl/XntdV3
 
-	b. Inicie sesiÛn como root utilizando "sudo su" e introduzca su contraseÒa de usuario actual
+	b. Inicie sesi√≥n como root utilizando "sudo su" e introduzca su contrase√±a de usuario actual
 	
 	https://goo.gl/7YQXXr
 
@@ -88,7 +88,7 @@ INSTALACION DE ADICIONES DE INVITADOS (es)
 
 	https://goo.gl/dAZ34b
 
-	8. Cuando se complete la instalaciÛn, reinicie la m·quina virtual con 
+	8. Cuando se complete la instalaci√≥n, reinicie la m√°quina virtual con 
 	reboot
 	
 	https://goo.gl/fmgiXu
