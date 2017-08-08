@@ -1,0 +1,38 @@
+INSTALACIÓM DEL CONTROLADOR NVIDIA PARROT SECURITY
+
+
+Siga los siguientes pasos:
+
+1. Abra un Terminal, Alt + t o simplemente use el menú.
+
+2. sudo apt-get update && sudo apt-get dist-upgrade
+
+3. sudo apt-get install nvidia-driver bumblebee-nvidi
+
+
+-Editar archivo de conferencia
+
+
+4. sudo nano /etc/bumblebee/bumblebee.conf
+
+
+-Editar archivo de conferencia
+4. sudo nano /etc/bumblebee/bumblebee.conf 
+https://goo.gl/e5wWqJ
+
+5. 5. Driver = tiene que ser "Driver=nvidia"
+https://goo.gl/mR4E1k
+
+6. KernelDriver=nvidia-current 
+https://goo.gl/ddPfw1
+
+
+7. REINICIA
+
+* Compruebe y compruebe la versión de instalación de Nvidia
+
+
+8. optirun glxinfo | Grep OpenGL
+
+9. Hecho
+
