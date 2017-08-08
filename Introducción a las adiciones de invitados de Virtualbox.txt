@@ -27,7 +27,7 @@ INSTALACION DE ADICIONES DE INVITADOS (es)
 	q. Abra un terminal y actualice la lista de paquetes del repositorio con
 	sudo apt-get update
 
-	<https://goo.gl/n7Fhyz>
+	<a href=https://goo.gl/n7Fhyz>
 
 	b. Instale las adiciones de invitado del repositorio de ParrotOS con
 	sudo apt-get install virtualbox-guest-utils
