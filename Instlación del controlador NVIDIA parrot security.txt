@@ -1,9 +1,9 @@
-INSTALACIÓM DEL CONTROLADOR NVIDIA PARROT SECURITY
+INSTALACIÃ“N DEL CONTROLADOR NVIDIA PARROT SECURITY
 
 
 Siga los siguientes pasos:
 
-1. Abra un Terminal, Alt + t o simplemente use el menú.
+1. Abra un Terminal, Alt + t o simplemente use el menÃº.
 
 2. sudo apt-get update && sudo apt-get dist-upgrade
 
@@ -29,7 +29,7 @@ https://goo.gl/ddPfw1
 
 7. REINICIA
 
-* Compruebe y compruebe la versión de instalación de Nvidia
+* Compruebe y compruebe la versiÃ³n de instalaciÃ³n de Nvidia
 
 
 8. optirun glxinfo | Grep OpenGL
