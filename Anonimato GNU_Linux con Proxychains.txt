@@ -59,8 +59,6 @@ Antes podriamos probar instalando la ultima version de Tor, sitienes algun probl
 https://dist.torproject.org/torbrowser/
 
 
-
-
 pondremos en consola el siguiente comando para probar el status de Tor:
 
 <service tor status>
@@ -70,7 +68,10 @@ si nos da el error “tor is not running” pondremos el siguiente comando:
 
 <service tor start> 
 
-y ya estamos ok para trabajar por consola.
+<https://goo.gl/CFfNp6>
+
+ya estamos ok para trabajar por consola.
+
 
 Para ejecutar un programa con acceso a Internet usando nuestros proxies, usaremos el comando “proxychains”. Ejemplos:
 
