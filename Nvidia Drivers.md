@@ -1,15 +1,15 @@
-Parrot incluye tres controladores nvidia, el primero es el driver opensource nouveau que está preinstalado y soporta muchas tarjetas nvidia comunes.
+Parrot incluye tres controladores nvidia, el primero es el driver opensource nouveau que estÃ¡ preinstalado y soporta muchas tarjetas nvidia comunes.
 
-El otro controlador es el controlador propietario oficial enviado por Nvidia, que está dividido en 2 controladores, un controlador heredado para dispositivos antiguos que ya no son compatibles con Nvidia y el último controlador Nvidia que admite las últimas GPUs.
+El otro controlador es el controlador propietario oficial enviado por Nvidia, que estÃ¡ dividido en 2 controladores, un controlador heredado para dispositivos antiguos que ya no son compatibles con Nvidia y el Ãºltimo controlador Nvidia que admite las Ãºltimas GPUs.
 
 
 1.- Controlador propietario de Nvidia
 
-Parrot incluye el último controlador nvidia 367.44
+Parrot incluye el Ãºltimo controlador nvidia 367.44
 
-Esta versión sólo admite GeForce, Quadro, NVS, Tesla, ... GPU basadas en las arquitecturas Fermi, Kepler, Maxwell o nuevas. Mira los paquetes heredados para tarjetas más antiguas.
+Esta versiÃ³n sÃ³lo admite GeForce, Quadro, NVS, Tesla, ... GPU basadas en las arquitecturas Fermi, Kepler, Maxwell o nuevas. Mira los paquetes heredados para tarjetas mÃ¡s antiguas.
 
-"CÓMO INSTALAR"
+"CÃ“MO INSTALAR"
 
 En consola escriba:
 sudo apt update
@@ -257,14 +257,14 @@ sudo apt install nvidia-driver
 
 Este controlador incluye todas las GPU compatibles con el controlador nvidia 340
 
-Esta versión heredada es la última versión que admite las siguientes GPUs:
+Esta versiÃ³n heredada es la Ãºltima versiÃ³n que admite las siguientes GPUs:
 
 
-Hay varias GPUs "más modernas" soportadas por este paquete, también, pero los controladores actualizados en los paquetes heredados más recientes o el actual paquete nvidia-driver suelen ofrecer más funciones y un mejor soporte.
+Hay varias GPUs "mÃ¡s modernas" soportadas por este paquete, tambiÃ©n, pero los controladores actualizados en los paquetes heredados mÃ¡s recientes o el actual paquete nvidia-driver suelen ofrecer mÃ¡s funciones y un mejor soporte.
 
-Mira los otros paquetes heredados para tarjetas más antiguas.
+Mira los otros paquetes heredados para tarjetas mÃ¡s antiguas.
 
-"Cómo instalar"
+"CÃ³mo instalar"
 sudo apt update
 sudo apt install nvidia-legacy-340xx-driver
 
@@ -494,12 +494,12 @@ Si necesitas Xorg.conf mira en la parte inferior.
 
 Este controlador incluye todas las GPU compatibles con el controlador nvidia 340
 
-Esta versión heredada es la última versión que admite las siguientes GPUs:
+Esta versiÃ³n heredada es la Ãºltima versiÃ³n que admite las siguientes GPUs:
 
 
-Hay varias GPUs "más modernas" soportadas por este paquete, también, pero los controladores actualizados en los paquetes heredados más recientes o el actual paquete nvidia-driver suelen ofrecer más funciones y un mejor soporte.
+Hay varias GPUs "mÃ¡s modernas" soportadas por este paquete, tambiÃ©n, pero los controladores actualizados en los paquetes heredados mÃ¡s recientes o el actual paquete nvidia-driver suelen ofrecer mÃ¡s funciones y un mejor soporte.
 
-"Cómo instalar"
+"CÃ³mo instalar"
 sudo apt update
 sudo apt install nvidia-legacy-304xx-driver
 
