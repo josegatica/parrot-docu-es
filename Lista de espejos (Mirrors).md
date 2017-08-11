@@ -2,7 +2,7 @@ LISTA DE ESPEJOS (Mirrors)
 
 La siguiente es una lista de todos los espejos de nuestro repositorio
 Lista de fuentes
-¿Cómo debería ser mi lista de fuentes?
+Â¿CÃ³mo deberÃ­a ser mi lista de fuentes?
 
 
 /etc/apt/sources.list should be EMPTY
@@ -23,7 +23,7 @@ repository setup (etc/apt/sources.list.d/parrot.list)
         #deb-src http://mjnlk3fwben7433a.onion/parrot/ parrot main contrib non-free
 
 
-==> NORTEAMËRICA:
+==> NORTEAMÃ‹RICA:
 
 "Massachussetts"
 SIPB MIT (Student Information Processing Board, Massachussetts Institute of Technology)
@@ -94,7 +94,7 @@ repository setup (etc/apt/sources.list.d/parrot.list)
 
 
 "Ecuador"
-UTA (Universidad Técnica de ambato)
+UTA (Universidad TÃ©cnica de ambato)
 100 Mbps
       https://mirror.uta.edu.ec/parrot/
 
@@ -454,11 +454,11 @@ Aptus - Tanzania
 Puede configurar un Parrot mirror utilizando rsync
 
 Configure el servidor web que prefiera (como por ejemplo Apache) para ajustarse a sus propias necesidades.
-De forma predeterminada, Apache hace que la carpeta / var / www / html esté públicamente disponible a través de su dirección IP, pero puede personalizarla
+De forma predeterminada, Apache hace que la carpeta / var / www / html estÃ© pÃºblicamente disponible a travÃ©s de su direcciÃ³n IP, pero puede personalizarla
 Todo lo que quieras
 
 El comando siguiente descarga el repositorio Parrot en el directorio / var / www / html / parrot
-Cambiar el parámetro final para descargarlo en una carpeta personalizada
+Cambiar el parÃ¡metro final para descargarlo en una carpeta personalizada
 
 
 3.- ELIJA EL SERVIDOR MAESTRO
@@ -477,15 +477,15 @@ note:
 4.- DESCARGUE EL PARROT MIRROR
 Nota: si desea alojar todo el archivo alojado en nuestro
         Servidores (reflejando todo el directorio archive.parrotsec.org)
-        Use el siguiente código
+        Use el siguiente cÃ³digo
 
 rsync -az --delete rsync://archive.parrotsec.org:/parrot /var/www/html/parrot
 
 
-5.- DESCARGAR SÓLO EL ARCHIVO ISO 
+5.- DESCARGAR SÃ“LO EL ARCHIVO ISO 
 
-Nota: si desea alojar las imágenes ISO SOLAMENTE
-        Use el siguiente código
+Nota: si desea alojar las imÃ¡genes ISO SOLAMENTE
+        Use el siguiente cÃ³digo
 
 rsync -az --delete rsync://archive.parrotsec.org:/parrot-iso /var/www/html/parrot
 
@@ -493,9 +493,9 @@ rsync -az --delete rsync://archive.parrotsec.org:/parrot-iso /var/www/html/parro
 
 6.- CONFIGURAR UN CRONOJOB 
 
-Una vez que hayas probado cómo funciona el espejo, entonces puedes proceder configurando
+Una vez que hayas probado cÃ³mo funciona el espejo, entonces puedes proceder configurando
 Un cronjob para volver a sincronizar el repositorio cuando lo desee, le sugerimos que sincronice
-Una vez por hora, así que vamos a ver cómo configurar un horario cronjob
+Una vez por hora, asÃ­ que vamos a ver cÃ³mo configurar un horario cronjob
 
 Abra una ventana de terminal y escriba
 crontab -e
@@ -507,11 +507,11 @@ Luego agrege el comando para ejecutar
 Y guardelo.
 
 
-7.- AÑADIR EL ESPEJO EN ESTA LISTA
+7.- AÃ‘ADIR EL ESPEJO EN ESTA LISTA
 
-Si estás configurando un archivo personal, entonces es todo lo que necesitas, pero si quieres hacerlo oficial
+Si estÃ¡s configurando un archivo personal, entonces es todo lo que necesitas, pero si quieres hacerlo oficial
 
-Parrot mirror, luego envíenos un correo electrónico al equipo AT parrotsec DOT org.
+Parrot mirror, luego envÃ­enos un correo electrÃ³nico al equipo AT parrotsec DOT org.
 
 
 
