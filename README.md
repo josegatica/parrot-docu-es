@@ -11,7 +11,7 @@ Nuestra web: https://www.parrotsec-es.org/
 
 La web de ParrotSec en inglés: https://www.parrotsec.org/
 
-Además puedes escribir por correo a josegatica@parrotsec.org si tienes alguna consulta que hacer en privado.
+Además, si encuentras algún detalle por mejorar o corregir, puedes escribir por correo a josegatica@parrotsec.org.
 
 ¿Por qué PARROT (Loro)?
 
