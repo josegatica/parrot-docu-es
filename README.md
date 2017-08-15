@@ -13,6 +13,6 @@ La web de ParrotSec en inglés: https://www.parrotsec.org/
 
 Además, si encuentras algún detalle por mejorar o corregir, puedes escribir por correo a josegatica@parrotsec.org.
 
-¿Por qué PARROT (Loro)?
+<h2>¿Por qué PARROT (Loro)?</h2>
 
 "No concebimos que un pirata que zurca los siete mares, peleando batallas y haciendo juerga con sus filibusteros, no tenga un loro en su hombro"
