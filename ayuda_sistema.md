@@ -1,7 +1,7 @@
 # Páginas Manual
 En GNU/Linux (y en la gran mayoría de sistemas Unix, sino en todos), prácticamente cada comando, utilidad o función, dispone de un manual que nos explicará cada una de las opciones que tenemos para él. Incluso en algunas ocasiones podremos ver ejemplos de su utilización con alguna de sus opciones, dandonos una idea aproximada de cómo se debe utilizar el programa, utilidad o función. Tanto si comienza ahora a utilizar linux, como si ya es un experto, debería consultar amenudo dichos manuales, ya que las opciones que tenemos para cada comando son muchas y en ocasiones difíciles de recordar todas.
 
-Lás páginas de los manuales se dividen en secciones númeradas:
+Lás páginas de los manuales se dividen en secciones númeradas:   
 	1- Programas ejecutables o comandos de la shell.    
 	2- Llamadas al sistema (funciones provistas por el kernel).    
 	3- Llamadas a las librerías (funciones de las librerías del programa).  
