@@ -1,5 +1,5 @@
 # Páginas Manual
-En GNU/Linux (y en la gran mayoría de sistemas Unix, sino en todos), prácticamente cada comando, utilidad o función, dispone de un manual que nos explicará cada una de las opciones que tenemos para él. Incluso en algunas ocasiones podremos ver ejemplos de su utilización con alguna de sus opciones, dandonos una idea aproximada de cómo se debe utilizar el programa, utilidad o función. Tanto si comienza ahora a utilizar linux, como si ya es un experto, debería consultar amenudo dichos manuales, ya que las opciones que tenemos para cada comando son muchas y en ocasiones difíciles de recordar todas.
+En GNU/Linux (y en la gran mayoría de sistemas Unix, sino en todos), prácticamente cada comando, utilidad o función, dispone de un manual que nos explicará cada una de las opciones que tenemos para él. Incluso en algunas ocasiones, podremos ver ejemplos de su utilización con alguna de sus opciones, dándonos una idea aproximada de cómo se debe utilizar el programa, utilidad o función. Tanto si comienza ahora a utilizar GNU/Linux, como si ya es un experto, debería consultar amenudo dichos manuales, ya que las opciones que tenemos para cada comando son muchas y en ocasiones difíciles de recordar todas.
 
 Lás páginas de los manuales se dividen en secciones númeradas:   
 	1- Programas ejecutables o comandos de la shell.    
@@ -16,14 +16,14 @@ Lás páginas de los manuales se dividen en secciones númeradas:
 Para poder ver un manual de un comando debemos ejecutar:
 	$ man <comando>
 
-Navegaremos por el documento con los cursores, av. página, re. página, la tecla de espacio, la tecla intro (para saltar una pantalla de texto), y buscaremos una cadena de texto dentro del manual escribiendo '/texto_a_buscar' sin las comillas. Para salir del manual pulsaremos la tecla 'q'.
+Navegaremos por el documento con los cursores, av. página, re. página, la tecla de espacio, la tecla intro, y buscaremos una cadena de texto dentro del manual escribiendo '/texto_a_buscar' sin las comillas. Para salir del manual pulsaremos la tecla 'q'.
 
 Veamos varios ejemplos y opciones que utilizaremos junto a man.
 
 	$ man man (recuerde utilizar la tecla 'q' para salir).
 
 
-Las páginas man suelen tener al principo de dicho manual, una breve descripción del comando o función. Podemos forzar a man para que nos busque una o varias palabras en dichas descripciones. Por ejemplo, sabiendo que el planificador de GNU/Linux se llama cron, podríamos buscar todas las páginas relacionadas con este sistema. Para ello utilizaremos la opción '-k'.
+Las páginas man suelen tener al principo de dicho manual, una breve descripción del comando o función. Podemos forzar a man para que busque una o varias palabras en dichas descripciones. Por ejemplo, sabiendo que el planificador de GNU/Linux se llama cron, podríamos buscar todas las páginas relacionadas con este sistema. Para ello utilizaremos la opción '-k'.
 
 	$ man -k cron 
 
@@ -33,11 +33,11 @@ Las páginas man suelen tener al principo de dicho manual, una breve descripció
 	DateTime::Locale::en_FM (3pm) - Locale data examples for the English Micronesia (en-FM) locale
 
 Esto habría sido lo mismo que utilizar el comando apropos ('apropos cron').
-Podemos observar todas las páginas que contienen en la descripción o título la palabra buscada, cron. Ahora podríamos leer más en cada una de las páginas ofrecidas por el sistema.
+Podemos observar que el resultado obtenido son todas las páginas que contienen en la descripción o título la palabra buscada, cron. Ahora podríamos leer más en cada una de las páginas ofrecidas por el sistema.
 
 	$ man cron (recuerde utilizar 'q' para salir)
 
-El número que aparece entre paréntesis, indica la sección a la que pertenece ese manual. En este caso podemos observar que existen dos manuales que se llaman igual en la sección 1 y 5. Si queremos acceder al situado en la primera sección podemos ejecutar:
+El número que aparece entre paréntesis, indica la sección a la que pertenece ese manual. En este caso, podemos observar que existen dos manuales que se llaman igual en la sección 1 y 5. Si queremos acceder al situado en la primera sección, podemos ejecutar:
 
 	$ man crontab 
 
@@ -45,7 +45,7 @@ o
 
 	$ man 1 crontab
 
-Para poder leer el que se situa en la sección 5 (y que nos explicará el formato que debemos utilizar en los ficheros de configuración, ya que por eso se encuentra en esta sección) utilizaremos:
+Para poder leer el que se sitúa en la sección 5 (y que nos explicará el formato que debemos utilizar en los ficheros de configuración, ya que por eso se encuentra en esta sección) utilizaremos:
 
 	$ man 5 crontab
 
@@ -63,7 +63,7 @@ Pódremos obtener una lista de los comandos a utilizar con help simplemente escr
 
 # Ayuda del comando
 
-Muchos comandos nos otorgan información sobre ellos utilizando alguno de estos métodos:
+Muchos comandos nos otorgan información sobre ellos mismos, utilizando alguno de estos métodos:
 
 	$ <comando> --help
 	$ <comando> -h
