@@ -2,15 +2,15 @@
 En GNU/Linux (y en la gran mayoría de sistemas Unix, sino en todos), prácticamente cada comando, utilidad o función, dispone de un manual que nos explicará cada una de las opciones que tenemos para él. Incluso en algunas ocasiones podremos ver ejemplos de su utilización con alguna de sus opciones, dandonos una idea aproximada de cómo se debe utilizar el programa, utilidad o función. Tanto si comienza ahora a utilizar linux, como si ya es un experto, debería consultar amenudo dichos manuales, ya que las opciones que tenemos para cada comando son muchas y en ocasiones difíciles de recordar todas.
 
 Lás páginas de los manuales se dividen en secciones númerados:
-	1- Programas ejecutables o comandos de la shell.
-	2- Llamadas al sistema (funciones provistas por el kernel).
-	3- Llamadas a las librerías (funciones de las librerías del programa).
-	4- Archivos especiales (normalmente se encuentran /dev).
-	5- Formato de archivos y convenciones (por ejemplo /etc/passwd).
-	6- Juegos
-	7- Diversos (incluyendo macro paquetes y convenciones, como por ejemplo man(7), groff(7)).
-	8- Comandos de administración del sistema (normalmente sólo para root).
-	9- Rutinas del kernel (no standard).
+	1- Programas ejecutables o comandos de la shell. 
+	2- Llamadas al sistema (funciones provistas por el kernel). 
+	3- Llamadas a las librerías (funciones de las librerías del programa). 
+	4- Archivos especiales (normalmente se encuentran /dev). 
+	5- Formato de archivos y convenciones (por ejemplo /etc/passwd). 
+	6- Juegos. 
+	7- Diversos (incluyendo macro paquetes y convenciones, como por ejemplo man(7), groff(7)). 
+	8- Comandos de administración del sistema (normalmente sólo para root). 
+	9- Rutinas del kernel (no standard). 
 
 
 Para poder ver un manual de un comando debemos ejecutar:
@@ -77,7 +77,7 @@ Podemos encontrar diversa documentación de programas en la ruta /usr/share/doc.
 
 Internet es un "gran libro" que usted puede utilizar mediante los diversos buscadores que se encuentran a su disposición.
 
-Nos gustaría también presentarle la página de documentación de Parrotsec OS:
+Nos gustaría también, presentarle la página de documentación de Parrotsec OS:
 https://docs.parrotsec.org/community
 
 Y su versión en español (en la que puede encontrar incluso más contenido que en la versión inglesa):
@@ -89,5 +89,5 @@ https://community.parrotsec.org/
 E incluso disponemos de una comunidad activa a través de la plataforma Telegram:
 https://t.me/parrotsecgroup
 
-Y también en español, simplemente preséntese y exponga su problema. Será bienvenido:
+Y también Telegram en español. Simplemente preséntese y exponga su problema. Será bienvenido:
 https://t.me/ParrotSpanishGroup
