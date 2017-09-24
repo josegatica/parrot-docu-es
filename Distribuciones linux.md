@@ -64,7 +64,7 @@ El siguiente grafo muestra la evolución de todas las distribuciones Linux desde
 
 [[Imagen: https://ubunturoot.files.wordpress.com/2008/02/44218-linuxdistrotimeline-72.png ]]
 
-[[Imagen: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg]]
+[[Imagen: https://upload.wikimedia.org/wikipedia/commons/1/1b/Linux_Distribution_Timeline.svg ]]
 
 
 
