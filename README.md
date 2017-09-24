@@ -30,3 +30,5 @@ Además, si encuentras algún detalle por mejorar o corregir, puedes escribir po
 <h2>¿Por qué PARROT (Loro)?</h2>
 
 "No concebimos que un pirata que zurca los siete mares, peleando batallas y haciendo juerga con sus filibusteros, no tenga un loro en su hombro"
+
+Prueba
