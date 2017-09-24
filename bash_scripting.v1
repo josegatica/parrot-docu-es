@@ -7,7 +7,7 @@ NOTA: Los comandos que se muestran están pensados para escribirlos en un archiv
 NOTA2: 
 
 
-Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemnete abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extesion de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
+Bash es principalmente un lenguaje de scripting, aparte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemnete abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extesion de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
 
 	#!/bin/bash         
 
