@@ -1,0 +1,87 @@
+#Scripting
+
+##Hola parrot
+
+NOTA: Los comandos que se muestran están pensados para escribirlos en un archivo de texto y no en la terminal, a no ser que se indique lo contrario.
+
+NOTA2: 
+
+
+Bash es principalmente un lenguaje de scripting, aparte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemnete abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extesion de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
+
+	#!/bin/bash         
+
+	echo "Hola ParrotSec"
+
+
+
+
+En la primera linea del script simplemente definimos el interprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash. 
+En la segunda linea utilizamos la instrucción echo para mostrar un texto por pantalla. En nuestro caso "Hola ParrotSec".
+Guardamos el script en la ubicación que deseemos con el nombre "hola_parrot.sh", o cualquier otro que deseemos.
+
+Y eso es todo. Muy sencillo verdad?.
+
+
+Para poder ejecutar el script, el archivo debe tener los permisos correctos. Para cambiar los permisos utilizaremos la instruccion chmod (change mode) así:
+
+	$ chmod u+x /Path/donde/este/el/archivo/hola_parrot.sh   #Añade permiso de ejecución al usuario propietario del script
+	# O
+	$ chmod 700 /Path/donde/este/el/archivo/hola_parrot.sh   #Otorga control total al usuario propietario, eliminando el acceso al resto de usuarios
+
+Esto nos dará los permisos necesarios para poder ejecutar el script. Ahora puede abrir un terminal y ejecutar el script de la siguiente manera:
+
+	$ /Path/donde/este/el/archivo/hola_parrot.sh
+
+Si todo es correcto podrá ver el texto "Hola Parrotsec" por pantalla. Felicidades!!! Acaba de crear su primer Bash script.
+
+CONSEJO: Si escribe en la terminal
+
+	$ pwd
+
+Podrá ver el directorio en el que usted está trabajando (pwd es un comando que le muestra la ruta en la que está situado. Si su path actual es /Path/donde/este/el/archivo/, el comando anterior podría reducirse de la siguiente forma:
+
+	$ pwd
+	/Path/donde/este/el/archivo
+	$ ./hola_parrot.sh
+
+Es el momento de ver cosas más interesantes, Variables!
+
+
+#Variables
+
+Las variables, básicamente, guardan información que puede variar (o no). Quedemonos con el dato de que guardan información.
+Usted puede crear y asignar valores a una variable de la siguiente forma:
+
+	var="PARROT"
+
+El nombre de la variable puede ser culaquier cadena de texto sin espacios, siempre y cuando no comience por un numero. A esta variable (en nuestro caso la hemos llamado 'var') le podremos asignar cualquier cadena de texto o número.
+
+Para poder extraer el contenido de una variable simplemente utilizaremos el nombre de dicha variable precedida por el simbolo "$", como indicamos en el siguiente ejemplo:
+
+	var="PARROT"
+	echo $var
+
+Escriba las dos lineas anteriores en un terminal. Verá que la primera linea no devuelve nada más que el prompt. Al pulsar enter, tras introducir la segunda linea, el sistema escribirá en pantalla PARROT.
+
+Creemos un script que nos solicite información para mostrarla por pantalla.
+
+	#!/bin/bash
+	clear
+	echo "Introduzca su nombre:"
+	read nombre
+	echo "Introduzca su distribución favorita:"
+	read distribucion
+	echo "Introduzca la marca de su PC/Laptop:"
+	read PC
+	echo "$nombre!! no sería fabuloso instalar $distribucion en su equipo $PC?"
+
+La instrucción 'read' le permite al usuario introducir información, y guardar dicha información en una variable con el nombre definido después de 'read'.  'read' tomará la cadena introducida, para guardarla en $variable. Podemos acceder a su contenido mediante la instrucción 'echo' para así formar una frase.  Vamos a realizar unos cambios en nuestro script:
+
+	#!/bin/bash
+	clear
+	read -p "Introduzca su nombre: " nombre
+	read -p "Introduzca su distribución favorita: " distribucion
+	read -p "Introduzca la marca de su PC/Laptop: " PC
+	echo "$nombre!! no sería fabuloso instalar $distribucion en su equipo $PC?"
+
