@@ -193,12 +193,10 @@ Las siguientes tablas estan sacadas del man de test (man test):
 ##Operdores para cadenas de texto 
 Operador		Verdad (TRUE) si:
 ------------------------------------------
-cadena1 = cadena2	cadena1 es igual a cadena2
-cadena1 != cadena2	cadena1 no es igual a cadena2
-cadena1 < cadena2	cadena1 es menor que cadena2
-cadena1 > cadena 2	cadena1 es mayor que cadena 2
--n cadena1		cadena1 no es igual al valor nulo (longitud mayorque 0)
--z cadena1		cadena1 tiene un valor nulo (longitud 0)
+cadena1 = cadena2	las cadenas son iguales
+cadena1 != cadena2	las cadenas no son iguales
+-n cadena		la longitud de cadena no es 0
+-z cadena		la longitud de cadena es 0
 
 
 
@@ -236,9 +234,84 @@ fichero1 -ot fichero2	fichero1 es mas antiguo que fichero2
 
 
 
-Existen más operadores. Uno para combinar diversas condiciones '&&'(AND) y '||'(OR). Y '!'  para negar una condición.
+Existen más operadores. Uno para combinar diversas condiciones '-a'(AND) y '-o'(OR). Y '!'  para negar una condición.
 
-	 
+Veamos unos cuantos ejemplos. Por favor, lean los comentarios de los scripts.
+
+Ej. 1:
+	#!/bin/bash
+	#
+	# En este ejemplo comprobaremos cadenas
+	#
+	
+	#Solicitamos al usuario que introduzca dos textos que guardaremos en variables texto1 y texto2
+	read -p "Escriba un texto:" texto1
+	read -p "Escriba otro texto:" texto2
+
+	#Comprobamos si alguna cadena de texto es vacia (texto1 es vacio o texto2 es vacio)
+	#Preste atención al entrecomillado para que realmente sea considerado texto
+	if [ -z "$texto1" -o -z "$texto2" ]; then
+		#Si entra en esta condición, no se necesita continuar con el script
+		#Por lo que provocamos una salida del mismo, con un valor 1. Hablaremos de esto en algún punto posterior.
+		#De momento debemos saber que exit finaliza el script y que el valor 1 es el codigo de retorno del script, porque así lo hemos indicado
+		echo "Uno de los textos está vacío"
+		exit 1
+	fi
+
+	#Comprobamos si texto1 es igual a texto2
+	if [ $texto1 = $texto2 ]
+	then
+		echo "$texto1 es igual a $texto2"
+	#Podriamos haber escogido simplemente else, y ahorrarnos la definición de la condición
+	elif [ $texto1 != $texto2 ]; then
+		# \" se utiliza para escapar las '"'. Es decir, el interprete debe saber que esas comillas no son la terminación del comando echo, sino
+		# que debe mostrar esas comillas dentro de la cadena.  
+		echo "El texto \"$texto1\" y el texto \"$texto2\" no es igual"
+	fi
+
+Anexo 1 Ej. 1: echo y secuencia de escape
+
+Trate de escribir en una linea de comandos:
+	$ echo "hola Parrot"
+
+Pero... cómo escribimos un comando echo para que muestre por pantalla hola "ParrotSec"? 
+echo aunque tiene diversas opciones y podemos utilizar otros simbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usa con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
+
+Mire el siguiente ejemplo:
+	$ echo "hola "Parrot""
+
+Pues bien, para que las comillas intermedias sean parte de la cadena a mostrar debemos escapar dichas comillas. Esto se hace anteponiendo un simbolo '\' al caracter especial. Esto es muy utilizado para otros comandos tambíén.Siguiendo con nuestro ejemplo, el comando quedaría de la siguiente forma:
+	$ echo " hola \"Parrot\"  "
+
+Se han añadido varios espacios en la cadena a mostrar, tanto al principio como al final, simplemente para que se vea más claro el ejemplo.	 
+
+
+
+
+Ej. 2:
+
+	#!/bin/bash
+	#
+	## Comparacion de valores numericos
+	#
+
+	read -p "Introduce el primer número:" NUM1
+	read -p "Introduce el segundo número:" NUM2
+	read -p "Introduce el tercer número:" NUM3
+
+
+	# Utilizar '&&' es lo mismo que utilizar el operador '-a'
+	if [ $NUM1 -ne $NUM2 ] && [ $NUM1 -ne $NUM3 ]; then
+		echo "$NUM1 es diferente a $NUM2 y $NUM3"
+	fi
+
+	# Utilizar '||' es lo mismo que utilizar el operador '-o'
+	if [ $NUM1 -gt $NUM3 ] || [ $NUM1 -gt $NUM2 ]; then
+	        echo "$NUM1 es el número más grande de los 3 introducidos"
+        fi
+
+
+
 	
 Storing application stdout to a variable:
 
