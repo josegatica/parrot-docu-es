@@ -448,3 +448,124 @@ I love to go to bars
 
 
 https://en.wikibooks.org/wiki/Bash_Shell_Scripting
+
+
+
+for
+
+La sintaxis de esta construccion es la siguiente:
+for nombre [in lista]
+do
+   comandos que pueden utilizar $nombre
+done
+
+
+Un ejemplo nos aclarara las cosas. Vamos a listar informacion en el DNS de una lista de direcciones web:
+#!/bin/bash
+#
+#for HOST in www.google.com www.altavista.com www.yahoo.com
+#do
+#  echo "-----------------------"
+#    echo $HOST
+#      echo "-----------------------"
+#        
+#          /usr/bin/host $HOST
+#            echo "-----------------------"
+#
+#            done
+#
+#
+#            while
+#
+#            La sintaxis de esta construccion es la siguiente:
+#            while condicion
+#            do
+#              comandos
+#              done
+#
+#
+#              Un ejemplo simple con while en donde escribimos el valor de una variable 10 veces, despues de incrementar su valor:
+#              #!/bin/bash
+#
+#              NUM=0
+#
+#              while [ $NUM -le 10 ]; do
+#                  echo "\$NUM: $NUM"
+#                      let NUM=$NUM+1
+#                      done
+#
+#
+#                      until
+#
+#                      La sintaxis de esta construccion es la siguiente:
+#                      until condicion; do
+#                         comandos
+#                         done
+#
+#
+#                         Un ejemplo simple con until en donde escribimos el valor de una variable 10 veces, despues de incrementar su valor:
+#                         #!/bin/bash
+#
+#                         NUM=0
+#
+#                         until [ $NUM -gt 10 ]; do
+#                             echo "\$NUM: $NUM"
+#                                 let NUM=$NUM+1
+#                                 done
+#
+#
+#                                 case
+#
+#                                 La sintaxis de esta construccion es la siguiente:
+#                                 case expresion in
+#                                      caso_1 )
+#                                              comandos;;
+#                                                   caso_2 ) 
+#                                                   	comandos;;
+#                                                   	     ......
+#                                                   	     esac  
+#
+#
+#                                                   	     Un ejemplo simple con case para aclarar las cosas:
+#                                                   	     #!/bin/bash
+#
+#                                                   	     for NUM in 0 1 2 3
+#                                                   	     do
+#                                                   	       case $NUM in
+#                                                   	             0)
+#                                                   	             	  echo "\$NUM es igual a cero";;
+#                                                   	             	        1)
+#                                                   	             	        	  echo "\$NUM es igual a uno";;
+#                                                   	             	        	        2)
+#                                                   	             	        	        	  echo "\$NUM es igual a dos";;
+#                                                   	             	        	        	        3)
+#                                                   	             	        	        	        	  echo "\$NUM es igual a tres";;
+#                                                   	             	        	        	        	    esac
+#                                                   	             	        	        	        	    done
+#
+#
+#                                                   	             	        	        	        	    select
+#
+#                                                   	             	        	        	        	    La sintaxis de esta construccion es la siguiente:
+#                                                   	             	        	        	        	    select nombre [in lista]
+#                                                   	             	        	        	        	    do
+#                                                   	             	        	        	        	      comandos que pueden utilizar $nombre
+#                                                   	             	        	        	        	      done
+#
+#
+#                                                   	             	        	        	        	      Un ejemplo simple para aclarar las cosas.
+#                                                   	             	        	        	        	      #!/bin/bash
+#
+#                                                   	             	        	        	        	      select OPCION in opcion_1 opcion_2 opcion_3
+#                                                   	             	        	        	        	        do
+#                                                   	             	        	        	        	          if [ $OPCION ]; then
+#                                                   	             	        	        	        	                echo "Opcion elegida: $OPCION"
+#                                                   	             	        	        	        	                      break
+#                                                   	             	        	        	        	                        else
+#                                                   	             	        	        	        	                              echo "Opcion no valida"
+#                                                   	             	        	        	        	                                fi
+#                                                   	             	        	        	        	                                done
+#
+#
+#                                                   	             	        	        	        	                                Bueno esto es todo por hoy en nuestra introduccion a Bash. En el proximo articulo de esta serie veremos diferentes aspectos de la entrada y salida de datos en un script Bash.
+#
