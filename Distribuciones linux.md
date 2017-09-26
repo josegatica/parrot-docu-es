@@ -47,7 +47,7 @@ Estos son grandes colecciones de programas de escritorio, en lugar de entornos m
 *Mageia, creada por ex trabajadores de Mandriva, muy parecida a su precursor.
 *Mandriva, mantenida por la compañía francesa del mismo nombre, es un sistema popular en Francia y Brasil. Está basada en Red Hat.
 *openSUSE, originalmente basada en Slackware es patrocinada actualmente por la compañía SUSE (Micro Focus International).
-*Parrot, derivada de Debian, aún en crecimiento prometer ser una de las distribuciones por excelencia en el mundo del software libre.
+*Parrot, derivada de Debian, aún en crecimiento promete ser una de las distribuciones por excelencia en el mundo del pentesting.
 *PCLinuxOS, derivada de Mandriva, pasó de ser un pequeño proyecto a una popular distribución con una gran comunidad de desarrolladores.
 *Puppy Linux, versión para equipos antiguos o con pocos recursos que pesa unos 130 MiB.
 *Red Hat Enterprise Linux, derivada de Fedora, es mantenida y soportada comercialmente por Red Hat.
