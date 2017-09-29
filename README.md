@@ -32,4 +32,3 @@ Además, si encuentras algún detalle por mejorar o corregir, puedes escribir po
 
 "No concebimos que un pirata que zurca los siete mares, peleando batallas y haciendo juerga con sus filibusteros, no tenga un loro en su hombro"
 
-Prueba
