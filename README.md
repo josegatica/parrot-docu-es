@@ -6,14 +6,15 @@ Además de traducir el contenido publicado en https://docs.parrotsec.org/doku.ph
 <hr>
 
 El <b>equipo directivo</b> de Parrot Security OS en español se compone de las siguientes personas:
-- José Gatica (Director de proyecto ParrotSec-ES)
+
 - Selinex Tapia (Directora de Documentación)
 - Josu Elgezabal (Director de Documentación)
 - Claudio Marcial (Director equipo web)
 - Alejandro Pineda (Diseño ParrotSec-ES)
 - Raúl Alderete (Material Audiovisual)
 <br>
-<b>Lorenzo "palinuro" Faletra</b> (Director y Desarrollador Parrot Security OS)
+<b>Lorenzo "palinuro" Faletra</b> (Director y Desarrollador Parrot Security OS)<p>
+<b> José Gatica</b> (Director de proyecto ParrotSec-ES)
 
 <hr>
 
@@ -31,4 +32,3 @@ Además, si encuentras algún detalle por mejorar o corregir, puedes escribir po
 
 "No concebimos que un pirata que zurca los siete mares, peleando batallas y haciendo juerga con sus filibusteros, no tenga un loro en su hombro"
 
-Prueba
