@@ -89,7 +89,7 @@ La instrucción 'read' le permite al usuario introducir información, y guardar 
 	echo "$nombre!! no sería fabuloso instalar $distribucion en su equipo $PC?"
 
 
-#Estructuras de control: Si condicional
+#Estructuras de control: condicional (if)
 La estructura condicional se puede utilizar para ejecutar algo en función de un resultado dado que comprobaremos o realizar otra acción en el caso de que no se haya producido dicho resultado. Por ejemplo, podríamos consultar una variable y comprobar si su valor es 'PARROT', en el caso de que fuese así podriamos mostrar un texto y si fuese cualquier otro valor , mostrariamos otro texto diferente.
 
 El formato para construir estructuras de control condicionales es:
@@ -309,6 +309,94 @@ Ej. 2:
 	if [ $NUM1 -gt $NUM3 ] || [ $NUM1 -gt $NUM2 ]; then
 	        echo "$NUM1 es el número más grande de los 3 introducidos"
         fi
+
+
+
+
+#Estructuras de control: condicional (case)
+Podríamos considerar la estructura de control "CASE" como un formato condicional parecido al "IF". Dado un resultado de una variable, seleccionaremos unas instrucciones concretas.
+El formato para construir estructuras de control CASE es:
+
+	case $variable in
+     		caso_1 )
+        		comandos;;
+     		caso_2 ) 
+			comandos;;
+  		......
+	esac  
+
+
+
+Ej. 1:
+	case "$1" in
+		start)
+			echo "Opción pasada: Start"
+			;;
+		stop)
+			echo "Opción pasada: Stop"
+			;;
+		*)
+			echo "Uso: $0 {start|stop}"
+			exit 1
+			;;
+	esac
+
+
+
+Ej. 2:
+	read opcion
+	case $opcion in
+		s|S)
+			echo "Se ha pulsado Si"
+			;;
+		n|N)
+			echo "Se ha pulsado No"
+			;;
+		*)
+			echo "No es una opción contemplada"
+			;;
+	esac
+
+
+
+
+#Estructura blucle: FOR
+Para acciones repititivas se han creado estructuras en forma de bucle. Hay varios tipos. En este primer lugar veremos bucles for.
+
+La forma que tiene esta estructura es la siguiente:
+	for variable [in lista]
+	do
+		ejecucion
+	done
+
+
+Ej. 1:
+	for i in 1 2 3 4 5
+	do
+		echo "Cuenta $i"
+	done
+
+
+Ej. 2:
+	for i in {2..10..2}
+	do
+		echo "$i es par"
+	do
+
+Anexo Ej. 2:
+En versiones bash anteriores a la V.3, se utilizaba normalmente un comando seq para sacar una lista de valores incrementales. En la versión 4 de bash se implementó una forma de crear estos valores incrementales dentro del propio blucle for.
+No es necesario llamar ya al programa externo "seq", ya que el built-in del for aplicado en este ejemplo es más rápido. "{Primer_numero..Ultimo_numero..Incremento}"
+
+
+Ej. 3:
+	for (( c=1; c<=5; c++))
+	do
+		echo "Valor de c es : $c"
+	done
+
+Anexo Ej. 3:
+Este ejemplo de for, es igual (no es extraño ya que es heredado de él) al for del lenguaje de programación C.
+
 
 
 
