@@ -362,7 +362,41 @@ Ej. 2:
 
 
 #Estructura de control: condicional (SELECT)
+Esta estructura es especial y el sueño de muchos programadores. Es la forma más sencila de crear un menú.
 
+La forma que tiene esta estructura es:
+
+	select nombre in opcion1 opcion2 opcion3
+	do
+  		comandos
+	done
+
+
+
+Ej. 1:
+	#!/bin/bash
+	select OPCION in parrot debian otros salir
+	do
+		case $OPCION in
+			parrot)
+				echo "Selecciono usted: $OPCION"
+				;;
+			debian)	
+				echo "Selecciono usted $OPCION. Esta preparado para utilizar ParrotSec"
+				;;
+			otros)
+				echo "Hágase un favor a usted mismo e instalese Parrot"
+				;;
+			salir)
+				echo "Hecho"
+				exit
+				;;
+		esac
+	done
+
+
+Anexo Ej. 1:
+Como puede observar en este ejemplo, hemos encadenado dentro de nuestra estructura select otra estructura de tipo case. 
 
 
 
