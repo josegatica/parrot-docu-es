@@ -4,10 +4,7 @@
 
 NOTA: Los comandos que se muestran están pensados para escribirlos en un archivo de texto y no en la terminal, a no ser que se indique lo contrario.
 
-NOTA2: 
-
-
-Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemnete abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extesion de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
+Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemente abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extensión de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
 
 	#!/bin/bash         
 	# Sscript hola ParrotSec
@@ -16,15 +13,15 @@ Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a i
 
 
 
-En la primera linea del script simplemente definimos el interprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash. 
-En la segunda linea podemos ver un comentario. Cualquier cosa que empiece por '#', salvo '#!' que apareció en la primera linea, será tomado por el interprete como un comentario y no se ejecuatará. Acostumbrese a escribir sus scripts con estos comentarios, para explicar lo que va haciendo y posteriormente pueda revisar su código de una manera más fácil.
-En la tercera linea utilizamos la instrucción echo para mostrar un texto por pantalla. En nuestro caso "Hola ParrotSec".
+En la primera línea del script simplemente definimos el interprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash. 
+En la segunda línea podemos ver un comentario. Cualquier cosa que empiece por '#', salvo '#!' que apareció en la primera línea, será tomado por el intérprete como un comentario y no se ejecutará. Acostúmbrese a escribir sus scripts con estos comentarios, para explicar lo que va haciendo y posteriormente pueda revisar su código de una manera más fácil.
+En la tercera línea utilizamos la instrucción "echo" para mostrar un texto por pantalla. En nuestro caso "Hola ParrotSec".
 Guardamos el script en la ubicación que deseemos con el nombre "hola_parrot.sh", o cualquier otro que deseemos.
 
-Y eso es todo. Muy sencillo verdad?.
+Y eso es todo. Muy sencillo verdad?
 
 
-Para poder ejecutar el script, el archivo debe tener los permisos correctos. Para cambiar los permisos utilizaremos la instruccion chmod (change mode) así:
+Para poder ejecutar el script, el archivo debe tener los permisos correctos. Para cambiar los permisos utilizaremos la instrucción "chmod" (change mode) así:
 
 	$ chmod u+x /Path/donde/este/el/archivo/hola_parrot.sh   #Añade permiso de ejecución al usuario propietario del script
 	# O
@@ -53,19 +50,19 @@ Es el momento de ver cosas más interesantes, Variables!
 
 #Variables
 
-Las variables, básicamente, guardan información que puede variar (o no). Quedemonos con el dato de que guardan información.
+Las variables, básicamente, guardan información que puede variar (o no). Quedémonos con el dato de que guardan información.
 Usted puede crear y asignar valores a una variable de la siguiente forma:
 
 	var="PARROT"
 
-El nombre de la variable puede ser culaquier cadena de texto sin espacios, siempre y cuando no comience por un numero. A esta variable (en nuestro caso la hemos llamado 'var') le podremos asignar cualquier cadena de texto o número.
+El nombre de la variable puede ser cualquier cadena de texto sin espacios, siempre y cuando no comience por un número. A esta variable (en nuestro caso la hemos llamado 'var') le podremos asignar cualquier cadena de texto o número.
 
-Para poder extraer el contenido de una variable simplemente utilizaremos el nombre de dicha variable precedida por el simbolo "$", como indicamos en el siguiente ejemplo:
+Para poder extraer el contenido de una variable simplemente utilizaremos el nombre de dicha variable precedida por el símbolo "$", como indicamos en el siguiente ejemplo:
 
 	var="PARROT"
 	echo $var
 
-Escriba las dos lineas anteriores en un terminal. Verá que la primera linea no devuelve nada más que el prompt. Al pulsar enter, tras introducir la segunda linea, el sistema escribirá en pantalla PARROT.
+Escriba las dos líneas anteriores en un terminal. Verá que la primera línea no devuelve nada más que el prompt. Al pulsar enter, tras introducir la segunda linea, el sistema escribirá en pantalla PARROT.
 
 Creemos un script que nos solicite información para mostrarla por pantalla.
 
@@ -90,7 +87,7 @@ La instrucción 'read' le permite al usuario introducir información, y guardar 
 
 
 #Estructuras de control: condicional (if)
-La estructura condicional se puede utilizar para ejecutar algo en función de un resultado dado que comprobaremos o realizar otra acción en el caso de que no se haya producido dicho resultado. Por ejemplo, podríamos consultar una variable y comprobar si su valor es 'PARROT', en el caso de que fuese así podriamos mostrar un texto y si fuese cualquier otro valor , mostrariamos otro texto diferente.
+La estructura condicional se puede utilizar para ejecutar algo en función de un resultado dado que comprobaremos o realizar otra acción en el caso de que no se haya producido dicho resultado. Por ejemplo, podríamos consultar una variable y comprobar si su valor es 'PARROT', en el caso de que fuese así podríamos mostrar un texto y si fuese cualquier otro valor, mostraríamos otro texto diferente.
 
 El formato para construir estructuras de control condicionales es:
 
@@ -109,7 +106,7 @@ El formato para construir estructuras de control condicionales es:
 		comandos
 	fi
 
-Las lineas  else if, else o  elif no son estricatamente necesarias, pero se podrá utilizar si se desea.
+Las líneas  else if, else o  elif no son estrictamente necesarias, pero se podrá utilizar si se desea.
 Es importante cerrar las estructuras de control condicionales para indicar que se han terminado las instrucciones de esta estructura. Para ello utilizaremos "fi".
 Veamos un ejemplo
 
@@ -136,7 +133,7 @@ En el ejemplo anterior, en la estructura de control:
 		di "$distribucion está bien. Pero pruebe Parrot"
 	fin
 
-La estructura condicional es un concepto sencillo ya que se parece mucho al concepto condicional que utilizamos al hablar, utilizando "si [esto] haz instruccion". Las estructuras condicionales se pueden encadenar. Piense en otro ejemplo. Añadamos una condicón más a nuestro ejemplo anterior. Supongamos que queremos controlar si el usuario introduce la distribución "Debian". Es decir, si introduce "parrot" mostramos el texto ya conocido y si es cualquier otra cosa, mostraremos el texto correspondiente. Pero ahora queremos controlar la salida de texto para la opción "Debian".
+La estructura condicional es un concepto sencillo ya que se parece mucho al concepto condicional que utilizamos al hablar, utilizando "si [esto] haz instrucción". Las estructuras condicionales se pueden encadenar. Piense en otro ejemplo. Añadamos una condición más a nuestro ejemplo anterior. Supongamos que queremos controlar si el usuario introduce la distribución "Debian". Es decir, si introduce "parrot" mostramos el texto ya conocido y si es cualquier otra cosa, mostraremos el texto correspondiente. Pero ahora queremos controlar la salida de texto para la opción "Debian".
 
 Veamos dos formas de hacerlo y elija la que más le guste (solo mostraré como queda la estructura de control y no todo el script):
 
@@ -152,7 +149,7 @@ Veamos dos formas de hacerlo y elija la que más le guste (solo mostraré como q
 		fi
 	fi
 
-otra forma:
+Otra forma:
 	if [ $distribucion = parrot ]
 	then
 		echo "A todos nos gusta ParrotSEC"
@@ -164,12 +161,12 @@ otra forma:
 	fi 
 			
 
-Esta última forma nos permite escribir de forma sencilla condicionales que bien podrían ir encadenadas (ejemplo 1), pero que requeririan mayor atención, sobre todo en el cierre de estas condiciones (fi). Hay otras formas de tener el control de condiciones multiples pero hablaremos más adelante de esto.
+Esta última forma nos permite escribir de forma sencilla condicionales que bien podrían ir encadenadas (ejemplo 1), pero que requerirían mayor atención, sobre todo en el cierre de estas condiciones (fi). Hay otras formas de tener el control de condiciones múltiples pero hablaremos más adelante de esto.
 
 
 
-Hemos visto como podemos controlar condiciones sobre cadenas de texto, pero podemos ejecutar estructuras de control condicional sobre valores alfanúmericos.
-Podríamos utilizar condiciones del estilo "Si variable es mayor o igual que un numero dado, resta 1 a variable", "Si una variable es menor que un valor dado, suma 3 a variable2",...
+Hemos visto cómo podemos controlar condiciones sobre cadenas de texto, pero podemos ejecutar estructuras de control condicional sobre valores alfanuméricos.
+Podríamos utilizar condiciones del estilo "Si variable es mayor o igual que un número dado, resta 1 a variable", "Si una variable es menor que un valor dado, suma 3 a variable2",...
 
 Ejemplo: 
 	#!/bin/bash
@@ -187,10 +184,10 @@ Ejemplo:
 
 La condición dada y traducida al "español" sería la siguiente: "si el valor de $valor es mayor o igual a 5". ge significa "Greater or Equal than" (moyor o igual que).
 
-Las siguientes tablas estan sacadas del man de test (man test):
+Las siguientes tablas están sacadas del man de test (man test):
 
 
-##Operdores para cadenas de texto 
+##Operadores para cadenas de texto 
 Operador		Verdad (TRUE) si:
 ------------------------------------------
 cadena1 = cadena2	las cadenas son iguales
@@ -221,16 +218,16 @@ Operador		Verdad (TRUE) si:
 			directorio, u otro tipo de fichero especial)
 
 -r fichero		Tienes permiso de lectura en fichero
--s fichero		fichero existe y no esta vacio
+-s fichero		fichero existe y no está vacío
 -w fichero		Tienes permiso de escritura en fichero
--x fichero		Tienes permiso de ejecucion en fichero (o de busqueda
+-x fichero		Tienes permiso de ejecución en fichero (o de búsqueda
 			si es un directorio)
 
 -O fichero		Eres el dueño del fichero
 -G fichero		El grupo del fichero es igual al tuyo.
 
-fichero1 -nt fichero2	fichero1 es mas reciente que fichero2
-fichero1 -ot fichero2	fichero1 es mas antiguo que fichero2
+fichero1 -nt fichero2	fichero1 es más reciente que fichero2
+fichero1 -ot fichero2	fichero1 es más antiguo que fichero2
 
 
 
@@ -248,12 +245,12 @@ Ej. 1:
 	read -p "Escriba un texto:" texto1
 	read -p "Escriba otro texto:" texto2
 
-	#Comprobamos si alguna cadena de texto es vacia (texto1 es vacio o texto2 es vacio)
+	#Comprobamos si alguna cadena de texto es vacia (texto1 es vacío o texto2 es vacío)
 	#Preste atención al entrecomillado para que realmente sea considerado texto
 	if [ -z "$texto1" -o -z "$texto2" ]; then
 		#Si entra en esta condición, no se necesita continuar con el script
 		#Por lo que provocamos una salida del mismo, con un valor 1. Hablaremos de esto en algún punto posterior.
-		#De momento debemos saber que exit finaliza el script y que el valor 1 es el codigo de retorno del script, porque así lo hemos indicado
+		#De momento debemos saber que exit finaliza el script y que el valor 1 es el código de retorno del script, porque así lo hemos indicado
 		echo "Uno de los textos está vacío"
 		exit 1
 	fi
@@ -262,25 +259,25 @@ Ej. 1:
 	if [ $texto1 = $texto2 ]
 	then
 		echo "$texto1 es igual a $texto2"
-	#Podriamos haber escogido simplemente else, y ahorrarnos la definición de la condición
+	#Podríamos haber escogido simplemente else, y ahorrarnos la definición de la condición
 	elif [ $texto1 != $texto2 ]; then
-		# \" se utiliza para escapar las '"'. Es decir, el interprete debe saber que esas comillas no son la terminación del comando echo, sino
-		# que debe mostrar esas comillas dentro de la cadena.  
+		# \" se utiliza para escapar las '"'. Es decir, el intérprete debe saber que esas comillas no son la terminación del comando echo, sino
+		# qué debe mostrar esas comillas dentro de la cadena.  
 		echo "El texto \"$texto1\" y el texto \"$texto2\" no es igual"
 	fi
 
 Anexo 1 Ej. 1: echo y secuencia de escape
 
-Trate de escribir en una linea de comandos:
+Trate de escribir en una línea de comandos:
 	$ echo "hola Parrot"
 
 Pero... cómo escribimos un comando echo para que muestre por pantalla hola "ParrotSec"? 
-echo aunque tiene diversas opciones y podemos utilizar otros simbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usa con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
+"echo" aunque tiene diversas opciones y podemos utilizar otros símbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usa con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
 
 Mire el siguiente ejemplo:
 	$ echo "hola "Parrot""
 
-Pues bien, para que las comillas intermedias sean parte de la cadena a mostrar debemos escapar dichas comillas. Esto se hace anteponiendo un simbolo '\' al caracter especial. Esto es muy utilizado para otros comandos tambíén.Siguiendo con nuestro ejemplo, el comando quedaría de la siguiente forma:
+Pues bien, para que las comillas intermedias sean parte de la cadena a mostrar debemos escapar dichas comillas. Esto se hace anteponiendo un símbolo '\' al carácter especial. Esto es muy utilizado para otros comandos tambíén. Siguiendo con nuestro ejemplo, el comando quedaría de la siguiente forma:
 	$ echo " hola \"Parrot\"  "
 
 Se han añadido varios espacios en la cadena a mostrar, tanto al principio como al final, simplemente para que se vea más claro el ejemplo.	 
@@ -292,7 +289,7 @@ Ej. 2:
 
 	#!/bin/bash
 	#
-	## Comparacion de valores numericos
+	## Comparación de valores numéricos
 	#
 
 	read -p "Introduce el primer número:" NUM1
@@ -342,7 +339,7 @@ Ej. 1:
 	esac
 
 Anexo Ej. 1:
-El valor de $1, es la primera opción pasada a nuestro script. Es decir, si nuestro script se llama "miscript.sh", podriamos ejecutar "./miscript.sh opcion1"y $1 sería igual a opcion1.
+El valor de $1, es la primera opción pasada a nuestro script. Es decir, si nuestro script se llama "miscript.sh", podríamos ejecutar "./miscript.sh opcion1"y $1 sería igual a opcion1.
 
 
 Ej. 2:
@@ -362,7 +359,7 @@ Ej. 2:
 
 
 #Estructura de control: condicional (SELECT)
-Esta estructura es especial y el sueño de muchos programadores. Es la forma más sencila de crear un menú.
+Esta estructura es especial y el sueño de muchos programadores. Es la forma más sencilla de crear un menú.
 
 La forma que tiene esta estructura es:
 
@@ -396,13 +393,13 @@ Ej. 1:
 
 
 Anexo Ej. 1:
-Como puede observar en este ejemplo, hemos encadenado dentro de nuestra estructura select otra estructura de tipo case. 
+Como puede observar en este ejemplo, hemos encadenado dentro de nuestra estructura "select" otra estructura de tipo case. 
 
 
 
 #Estructura blucle: FOR
-Para acciones repititivas se han creado estructuras en forma de bucle. Hay varios tipos. En este primer lugar veremos bucles for.
-El bucle es una lista de comandos que se realiza de forma repititiva.
+Para acciones repetitivas se han creado estructuras en forma de bucle. Hay varios tipos. En este primer lugar veremos bucles for.
+El bucle es una lista de comandos que se realiza de forma repetitiva.
 En el caso de FOR, este bloque se repetirá mientras tengamos valores en la lista que estamos comprobando.
 La forma que tiene esta estructura es la siguiente:
 	for variable [in lista]
@@ -425,7 +422,7 @@ Ej. 2:
 	do
 
 Anexo Ej. 2:
-En versiones bash, anteriores a la V.3, se utilizaba normalmente un comando seq para sacar una lista de valores incrementales. En la versión 4 de bash se implementó una forma de crear estos valores incrementales dentro del propio blucle for.
+En versiones bash, anteriores a la V.3, se utilizaba normalmente un comando seq para sacar una lista de valores incrementales. En la versión 4 de bash se implementó una forma de crear estos valores incrementales dentro del propio bucle for.
 No es necesario llamar ya al programa externo "seq", ya que el built-in del for aplicado en este ejemplo es más rápido. "{Primer_numero..Ultimo_numero..Incremento}"
 
 
@@ -487,7 +484,7 @@ Ej. 3:
 	done < archivo
 
 Anexo Ej. 3:
-Se utiliza esta estructura para leer un archivo linea a linea. "archivo" es un nombre de archivo que nuestro bucle leerá linea a linea.
+Se utiliza esta estructura para leer un archivo línea a línea. "archivo" es un nombre de archivo que nuestro bucle leerá línea a línea.
 
 
 
@@ -504,9 +501,9 @@ La forma que tiene esta estructura es:
 
 
 Diferencias de bucle until y while:
-1.- El bucle until se ejecuta mientras la condicion retorna un valor "nozero".
-2.- El bucle while se ejecuta mientras la condición retorna un valor "zero".
-3.- El bucle until siempre se ejecuta por lo menos una vez.
+	1- El bucle until se ejecuta mientras la condición retorna un valor "nozero".
+	2- El bucle while se ejecuta mientras la condición retorna un valor "zero".
+	3- El bucle until siempre se ejecuta por lo menos una vez.
 
 
 Ej. 1:
@@ -520,6 +517,8 @@ Ej. 1:
 
 
 	
+
+
 Storing application stdout to a variable:
 
 Application stdout ( what you see on the terminal screen, with an un-piped application ) can be saved and used in Bash. The simplest and most elegant way is to use command substitution, by wrapping the code in $(...)
