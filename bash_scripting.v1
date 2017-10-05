@@ -519,23 +519,134 @@ Ej. 1:
 	
 
 
-Storing application stdout to a variable:
+#Guardando la salida de un comando en una variable
 
-Application stdout ( what you see on the terminal screen, with an un-piped application ) can be saved and used in Bash. The simplest and most elegant way is to use command substitution, by wrapping the code in $(...)
+En bash scripting, incluso en la shell, podemos asignar a una variable el resultado de un comando que ejecutemos. La forma elegante de hacerlo es con el siguiente formato: VARIABLE=$(comando).
 
-Example
+Ejemplo
+	$ VARIABLE=$(who)
+	$ echo $VARIABLE
 
-fooVar=$(who)
-echo $fooVar
+Al ejecutar estos comandos, se nos mostrará por pantalla los usuarios conectados a cualquier terminal de nuestro sistema,
+Tenga en cuenta que esto elimina los saltos de linea. Acuérdese de que puede utilizar pipes "|" para filtrar el resultado. Como en el siguiente ejemplo:
+	
+	$ VARIABLE=$(who|awk '{print $1}')
+	$ echo $VARIABLE
 
-This code should output the current users, their respective ttys, and date of login. Note that this strips newlines. Be sure to do any parsing in line ( | grep, etc ) and then pass it to a variable. We will try this again, but grep for tty7, the GUI's tty.
+En este ejemplo hemos recogido, mediante awk, el primer campo de la salida de who. Es decir el/los nombre/s de usuario logeado/s en nuestro sistema.
 
-Example 2
 
-fooVar=$(who | grep tty7)
-echo $fooVar
 
-This should output the single user that is currently logged into the WM. Let's move on to more advanced data manipulation within command substitution.
+
+
+#Redirigir salidas de un comando a un fichero
+
+Un comando tiene 2 punteros asociados a su salida por pantalla. La salida "1" o salida estandar y la salida de errores o "2". Ejecutemos 2 comandos "ls" para ver esto. En una terminal ejecute los siguientes comandos:
+
+	$ ls -la /etc/passwd
+	$ ls -la /nombre_no_existente
+
+Al ejecutar el primer comando deberemos ver lo siguiente (o algo parecido):
+
+	-rw-r--r-- 1 root root 3395 Sep 15 08:37 /etc/passwd	
+
+Este resultado, al ser correcto, se ha mostrado en el terminal por la salida estandar o "1".
+En el segundo comando veremos un mensaje de error, ya que el archivo no existe.
+
+	ls: cannot access '/nombre_no_existente': No such file or directory
+
+Para mostrar este resultado, el sistema ha direccionado ese error a la salida "2" o salida de errores.
+
+Podemos redirigir esa salida a un fichero si queremos (incluso al fichero especial /dev/null, el "agujero negro" o papelera sin retorno del sistema).
+
+Veamos varios ejemplos, abriendo una terminal:
+
+	$ ls -la /etc/passwd 1> salida1.standard
+	$ cat salida1.satnadard
+
+Vemos que aparentemente el primer comando no ha mostrado nada por pantalla. Lo que hemos hecho es redirigir su salida estandar a un archivo salida1.txt.
+El operador "1" se puede omitir si se desea. Podriamos haber escrito:
+	
+	$ ls -la /etc/passwd > salida1.standard
+
+Siendo exactamente igual. Esto sólo lo podemos hacer para la salida estandar, no podemos utilizarlo para la salida de errores.
+
+Veamos cómo podemos redirigir la salida de errores. Como ya hemos comentado, la salida de errores tiene un puntero representado con el número "2".
+
+	$ ls -la /nombre_no_existente 2> salida2.error
+	$ cat salida2.error
+
+En este caso, como en el ejemplo anterior, no vemos el error por pantalla ya que hemos redirigido esta salida ("2" por ser error) al archivo salida2.txt
+
+Podemos, también, direccionar en una sóla línea tanto la salida estandar como la de errores:
+	
+	$ ls -la /etc/passwd /nombre_no existente 1> salida1.standar 2>salida2.error
+
+Existen varias opciones para redireccionar las dos salidas a un archivo común:
+	
+	$ ls -la /etc/passwd /nombre_no_existente 1> salida.txt 2> salida.txt
+
+O también:
+	$ ls -la /etc/passwd /nombre/no_existente > salida.txt 2>&1
+
+En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar que a donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estandar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estandar (1)".
+
+Redirigiendo las salidas, bien sea la estandar como la de errores, a un archivo, este se generará vacío cada vez que el símbolo ">" aparezca. Veamos esto con un ejemplo, mediante un script que nos escriba la fecha del sistema cada segundo en un archivo:
+
+	#!/bin/bash
+	#
+	#Escribir en el fichero fecha.txt, la fecha del sistema cada segundo hasta 3 veces
+	#
+	for ((i=0; i<3; i++))
+	do
+		#El primer date lo mostramos por pantalla
+		date
+		#El segundo date lo redirigimos a fecha.txt
+		date > fecha.txt
+		#La siguiente instrucción, simplemente para la ejecución del script durante un segundo
+		sleep 1
+	done
+
+
+En este ejemplo, hemos redirigido con el símbolo ">" la salida de "date" a "fecha.txt". Si hacemos "cat fecha.txt" sólo veremos una linea (la de la última ejecución). Explicando esto en más detalle, vemos que nuestro script ha repetido la iteración "for" 3 veces. En la primera ejecución, tras mostrar por pantalla la salida de "date", ha creado un archivo nuevo "fecha.txt" para escribir la salida estandar del siguiente "date". En la segunda ejecución del bucle ocurre lo mismo. En la instrucción "date > fecha.txt", la salida del comando se redirige a un archivo recién creado llamado "fecha.txt", sobreescribiéndolo . De esta forma perderá el contenido de la primera iteración. En la tercera pasada vuelve a ocurrir exactamente lo mismo, generando que el archivo resultante sólo muestre la última ejecución.
+Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Con esto, conseguiremos que no se sobreescriba el archivo sino que la salida se añadira al final de él.
+
+	#!/bin/bash
+	#
+	#Escribir en el fichero fecha.txt, la fecha del sistema cada segundo hasta 3 veces
+	#
+	#El siguiente comando es una forma simple para vaciar un archivo. Lo utilizo para eliminar la ejecución del script anterior
+	>fecha.txt
+
+	for ((i=1; i<3; i++))
+	do
+		date
+		date >> fecha.txt
+		sleep 1
+	done
+
+
+Ahora sí, el archivo contiene la salida de las tres iteraciones.
+
+
+Existe un comando para poder añadir las salidas de un comando a un archivo y mostrarlos también por pantalla. Esta instrucción es "tee". 
+De esta forma, nuestro script quedará de la siguiente forma:
+
+	#!/bin/bash
+	#
+	#Escribir en el fichero fecha.txt, la fecha del sistema cada segundo hasta 3 veces
+	#
+	>fecha.txt
+	for ((i=1; i<3; i++))
+	do
+		date | tee -a fecha.txt
+		sleep 1
+	done
+
+
+
+
+
 
 FUNctions
  
@@ -654,124 +765,3 @@ I love to go to bars
 
 
 https://en.wikibooks.org/wiki/Bash_Shell_Scripting
-
-
-
-for
-
-La sintaxis de esta construccion es la siguiente:
-for nombre [in lista]
-do
-   comandos que pueden utilizar $nombre
-done
-
-
-Un ejemplo nos aclarara las cosas. Vamos a listar informacion en el DNS de una lista de direcciones web:
-#!/bin/bash
-#
-#for HOST in www.google.com www.altavista.com www.yahoo.com
-#do
-#  echo "-----------------------"
-#    echo $HOST
-#      echo "-----------------------"
-#        
-#          /usr/bin/host $HOST
-#            echo "-----------------------"
-#
-#            done
-#
-#
-#            while
-#
-#            La sintaxis de esta construccion es la siguiente:
-#            while condicion
-#            do
-#              comandos
-#              done
-#
-#
-#              Un ejemplo simple con while en donde escribimos el valor de una variable 10 veces, despues de incrementar su valor:
-#              #!/bin/bash
-#
-#              NUM=0
-#
-#              while [ $NUM -le 10 ]; do
-#                  echo "\$NUM: $NUM"
-#                      let NUM=$NUM+1
-#                      done
-#
-#
-#                      until
-#
-#                      La sintaxis de esta construccion es la siguiente:
-#                      until condicion; do
-#                         comandos
-#                         done
-#
-#
-#                         Un ejemplo simple con until en donde escribimos el valor de una variable 10 veces, despues de incrementar su valor:
-#                         #!/bin/bash
-#
-#                         NUM=0
-#
-#                         until [ $NUM -gt 10 ]; do
-#                             echo "\$NUM: $NUM"
-#                                 let NUM=$NUM+1
-#                                 done
-#
-#
-#                                 case
-#
-#                                 La sintaxis de esta construccion es la siguiente:
-#                                 case expresion in
-#                                      caso_1 )
-#                                              comandos;;
-#                                                   caso_2 ) 
-#                                                   	comandos;;
-#                                                   	     ......
-#                                                   	     esac  
-#
-#
-#                                                   	     Un ejemplo simple con case para aclarar las cosas:
-#                                                   	     #!/bin/bash
-#
-#                                                   	     for NUM in 0 1 2 3
-#                                                   	     do
-#                                                   	       case $NUM in
-#                                                   	             0)
-#                                                   	             	  echo "\$NUM es igual a cero";;
-#                                                   	             	        1)
-#                                                   	             	        	  echo "\$NUM es igual a uno";;
-#                                                   	             	        	        2)
-#                                                   	             	        	        	  echo "\$NUM es igual a dos";;
-#                                                   	             	        	        	        3)
-#                                                   	             	        	        	        	  echo "\$NUM es igual a tres";;
-#                                                   	             	        	        	        	    esac
-#                                                   	             	        	        	        	    done
-#
-#
-#                                                   	             	        	        	        	    select
-#
-#                                                   	             	        	        	        	    La sintaxis de esta construccion es la siguiente:
-#                                                   	             	        	        	        	    select nombre [in lista]
-#                                                   	             	        	        	        	    do
-#                                                   	             	        	        	        	      comandos que pueden utilizar $nombre
-#                                                   	             	        	        	        	      done
-#
-#
-#                                                   	             	        	        	        	      Un ejemplo simple para aclarar las cosas.
-#                                                   	             	        	        	        	      #!/bin/bash
-#
-#                                                   	             	        	        	        	      select OPCION in opcion_1 opcion_2 opcion_3
-#                                                   	             	        	        	        	        do
-#                                                   	             	        	        	        	          if [ $OPCION ]; then
-#                                                   	             	        	        	        	                echo "Opcion elegida: $OPCION"
-#                                                   	             	        	        	        	                      break
-#                                                   	             	        	        	        	                        else
-#                                                   	             	        	        	        	                              echo "Opcion no valida"
-#                                                   	             	        	        	        	                                fi
-#                                                   	             	        	        	        	                                done
-#
-#
-#                                                   	             	        	        	        	                                Bueno esto es todo por hoy en nuestra introduccion a Bash. En el proximo articulo de esta serie veremos diferentes aspectos de la entrada y salida de datos en un script Bash.
-#
