@@ -648,43 +648,101 @@ De esta forma, nuestro script quedará de la siguiente forma:
 
 
 
-FUNctions
+#Funciones
  
-Bash lets you create a function on the fly, really handy if you plan on using a code block more then once. Functions reduce the amounts of editing you have to do in a script, if and when you have to update your script. Let's get to it!
+Bash permite crear funciones, lo cual es muy útil si va a utilizar un bloque de codigo más de una vez. Las funciones reducen la cantidad de código que debe escribir y editar en el caso de modificaciones. Veámoslo!!!
 
-Example
 
-Here is an example script:
+Ejemplo:
 
-echo "echo is Called"
-echo "Functions are FUN!"
-echo "echo is Called"
+	echo "Hola parrot"
+	echo "Que función más divertida"
+	echo "Hola parrot"
 
-Although this example is simple, you can see that if you want to change "echo is Called" to say "foo is Called" you would have to edit twice.
 
-Below is the same app using functions.
+Aunque es un script muy sencillo, podemos ver como debemos editar dos lineas para cambiar el mensaje "Hola parrot" por "Buenos días PARROT".
+La estructura de las funciones es la siguiente:
+	
+	nombre_funcion() {
+		comandos
+		}
 
-echoFunction() {
-  echo "echo is Called"
-}
-fooBar() {
-  echo "Functions are FUN!"
-}
+	....
+	....
+	....
 
-echoFunction;
-fooBar;
-echoFunction;
-# You call functions without (), just the function name then a semicolon.
+	nombre_funcion
 
-This example, as you can see may be longer now, but you can imagine how, adding features, this will eliminate code and reduce complexity. Also, you can see if you want to change the echo call, you have to edit one line, not two.
 
-Debugging
+A continuación veremos cómo podemos utilizar funciones en el script anterior.
 
-I always find it useful to trace a script to find out why something does not work as expected. To trace, start it through bash explicitly and use the -x option, like so:
+Ejemplo:
 
-bash -x ./script.sh
+	funcion_parrot() {
+  		echo "Buenos días PARROT"
+	}
+	funcion_diver() {
+  		echo "Que función más divertida"
+	}
 
-This will write each command to standard error (preceded by a ‘+ ’) before it is executed.
+	funcion_parrot
+	funcion_diver
+	funcion_parrot
+
+
+Para llamar a las funciones simplemente escribimos el nombre de la función que queremos utilizar sin los parentesis. Ahora podriamos extender nuestras funciones simplemente cambiando el bloque de código correspondiente.
+
+
+
+#Depuración de código
+
+Siempre es útil poder depurar el código. Para tracear un bash script, podemos ejecutarlo mediante una llamada a bash especificando la opción "-x".
+
+Ejecutaremos en la línea de comando:
+
+	$ bash -x ./script.sh
+
+Esto escribirá cada comando por la salida de errores (precedido por el símbolo "+") antes de ser ejecutado.
+
+
+
+
+
+
+
+
+Exit status[edit]
+
+When a process completes, it returns a small non-negative integer value, called its exit status or its return status, to the operating system. By convention, it returns zero if it completed successfully, and a positive number if it failed with an error. (This approach allows multiple different errors to be distinguished by using different positive numbers.) A Bash script can obey this convention by using the built-in command exit. The following command:
+
+exit 4
+
+
+terminates the shell script, returning an exit status of four, indicating some sort of error. When no exit status is specified (either because exit is run with no argument, or because the script ends without calling exit), the script returns the exit status of the last command it ran.
+
+One way that exit statuses are used is with the Bash operators && ("and") and || ("or"). If two commands are separated by &&, then the command on the left is run first, and the command on the right is only run if the first command succeeds. Conversely, if they are separated by ||, then the command on the right is only run if the command on the left fails.
+
+For example, suppose we want to delete the file file.txt and recreate it as a blank file. We can delete it using the common Unix utility rm ("remove"), and recreate it using the common Unix utility touch; so, we might write this:
+
+rm file.txt
+touch file.txt
+
+
+But really, if rm fails, we don't want to run touch: we don't want to recreate the file if we failed to delete it to begin with. So, we can write this instead:
+
+rm file.txt && touch file.txt
+
+
+This is the same as before, except that it won't try to run touch unless rm has succeeded.
+
+A third Boolean-like operator, ! ("not"), inverts the exit status of a command. For example, this command:
+
+! rm file.txt
+
+
+is equivalent to rm file.txt, except that it will indicate success if rm indicates failure, and vice versa. (This is not usually useful when exit statuses are used as actual exit statuses, indicating success or failure, but we will soon see some extended uses of exit statuses where a "not" operation is more useful.)
+
+The exit status of a command is (briefly) available as $?. This can be useful when it is necessary to distinguish between multiple different failure statuses; for example, the grep command (which searches for lines in a file that match a specified pattern) returns 0 if it finds a match, 1 if it finds no matches, and 2 if a genuine error occurs.
 
 Other Scripting Languages related to Bash
 
