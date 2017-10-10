@@ -711,38 +711,62 @@ Esto escribirá cada comando por la salida de errores (precedido por el símbolo
 
 
 
-Exit status[edit]
+#Salida de comandos
 
-When a process completes, it returns a small non-negative integer value, called its exit status or its return status, to the operating system. By convention, it returns zero if it completed successfully, and a positive number if it failed with an error. (This approach allows multiple different errors to be distinguished by using different positive numbers.) A Bash script can obey this convention by using the built-in command exit. The following command:
+Cuando un proceso termina, devuelve un valor no negativo llamado valor de retorno o código de salida (exit code) al sistema operativo. Generalmente y por conveniencia devolverá un 0 si se ha ejecutado correctamente y culaquier otro valor si hay un error. De esta forma también se pueden elegir diferentes códigos de error en función del error que haya producido el comando. Un bash script puede devolver un valor utilizando el comando "exit". Por ejemplo:
 
-exit 4
-
-
-terminates the shell script, returning an exit status of four, indicating some sort of error. When no exit status is specified (either because exit is run with no argument, or because the script ends without calling exit), the script returns the exit status of the last command it ran.
-
-One way that exit statuses are used is with the Bash operators && ("and") and || ("or"). If two commands are separated by &&, then the command on the left is run first, and the command on the right is only run if the first command succeeds. Conversely, if they are separated by ||, then the command on the right is only run if the command on the left fails.
-
-For example, suppose we want to delete the file file.txt and recreate it as a blank file. We can delete it using the common Unix utility rm ("remove"), and recreate it using the common Unix utility touch; so, we might write this:
-
-rm file.txt
-touch file.txt
+	exit 4
 
 
-But really, if rm fails, we don't want to run touch: we don't want to recreate the file if we failed to delete it to begin with. So, we can write this instead:
+finaliza el script devolviendo un código de retorno "4" indicando algún tipo de error. Si no especificamos el código de salida, el script devolverá la salida del último comando ejecutado.
 
-rm file.txt && touch file.txt
+Una forma de utilizar estos valores de salida es utilizando los operadores && ("y") y || ("o"). Si disponemos de dos comandos separados por &&, entonces el comando que está a la izquierda se ejecutará primero, y  el comando que está a la derecha sólo se ejecutará si el primero ha terminado satisfactoriamente. Al revés, si están separados por ||, el segundo comando sólo se ejecutará si falla el primero.
 
+Por ejemplo, supongamos que queremos suprimir el archivo log.txt y volverlo a crear como un archivo vacío. Podemos ejecutar estas dos instrucciones:
 
-This is the same as before, except that it won't try to run touch unless rm has succeeded.
-
-A third Boolean-like operator, ! ("not"), inverts the exit status of a command. For example, this command:
-
-! rm file.txt
+	$ rm log.txt
+	$ touch log.txt
 
 
-is equivalent to rm file.txt, except that it will indicate success if rm indicates failure, and vice versa. (This is not usually useful when exit statuses are used as actual exit statuses, indicating success or failure, but we will soon see some extended uses of exit statuses where a "not" operation is more useful.)
+"rm" elimina un archivo dado y "touch" lo  crea vacío en el caso de no existir. Pero realmente, si "rm" falla no queremos ejecutar "touch", es decir, si el archivo log.txt no existe no queremos recrearlo. De esta forma podrá ejecutar los siguientes comandos:
 
-The exit status of a command is (briefly) available as $?. This can be useful when it is necessary to distinguish between multiple different failure statuses; for example, the grep command (which searches for lines in a file that match a specified pattern) returns 0 if it finds a match, 1 if it finds no matches, and 2 if a genuine error occurs.
+	$ rm log.txt && touch log.txt
+
+
+Esto es lo mismo que los dos comandos ejecutados anteriormente, exceptuando que el archivo no será creado si este no existía con anterioridad.
+
+El código de retorno de un comando se puede consultar a través de "$?".
+
+Veamos varios ejemplos:
+
+	$ ls ficheronoexistente
+	$ echo $?
+
+La salida de estos dos comandos debería ser algo perecido a:
+
+	ls: cannot access 'ficheronoexistente': No such file or directory
+	2
+
+La primera línea indica un error a la hora de listar la existencia de un archivo (inventado para la ocasión).
+En la segunda linea la respuesta es un "2". Es decir, nuestro "ls" devolvió un "2" ya que se produjo un error.
+Tenga en cuenta que "echo $?", sólamente podrá retener el "exit code" de la última instrucción ejecutada, en este caso un "ls" de un fichero inexistente.
+
+Comprobemos el "exit code" del mismo comando sobre un archivo que sí exista:
+
+
+	$ ls /home
+	$ echo $?
+
+Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si una instrucción que ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código) ha terminado correctamente. Para ello, tras la ejecución del comando, y sinejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
+
+
+
+A continuación podemos ver un ejemplo de un script, en el que veremos la utilidad de esto.
+
+
+
+
+
 
 Other Scripting Languages related to Bash
 
