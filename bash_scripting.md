@@ -13,7 +13,7 @@ Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a i
 
 
 
-En la primera línea del script simplemente definimos el interprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash. 
+En la primera línea del script simplemente definimos el intérprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash. 
 En la segunda línea podemos ver un comentario. Cualquier cosa que empiece por '#', salvo '#!' que apareció en la primera línea, será tomado por el intérprete como un comentario y no se ejecutará. Acostúmbrese a escribir sus scripts con estos comentarios, para explicar lo que va haciendo y posteriormente pueda revisar su código de una manera más fácil.
 En la tercera línea utilizamos la instrucción "echo" para mostrar un texto por pantalla. En nuestro caso "Hola ParrotSec".
 Guardamos el script en la ubicación que deseemos con el nombre "hola_parrot.sh", o cualquier otro que deseemos.
@@ -62,7 +62,7 @@ Para poder extraer el contenido de una variable simplemente utilizaremos el nomb
 	var="PARROT"
 	echo $var
 
-Escriba las dos líneas anteriores en un terminal. Verá que la primera línea no devuelve nada más que el prompt. Al pulsar enter, tras introducir la segunda linea, el sistema escribirá en pantalla PARROT.
+Escriba las dos líneas anteriores en un terminal. Verá que la primera línea no devuelve nada más que el prompt. Al pulsar enter, tras introducir la segunda línea, el sistema escribirá en pantalla PARROT.
 
 Creemos un script que nos solicite información para mostrarla por pantalla.
 
@@ -182,7 +182,7 @@ Ejemplo:
 
 
 
-La condición dada y traducida al "español" sería la siguiente: "si el valor de $valor es mayor o igual a 5". ge significa "Greater or Equal than" (moyor o igual que).
+La condición dada y traducida al "español" sería la siguiente: "si el valor de $valor es mayor o igual a 5". ge significa "Greater or Equal than" (mayor o igual que).
 
 Las siguientes tablas están sacadas del man de test (man test):
 
@@ -277,7 +277,7 @@ Pero... cómo escribimos un comando echo para que muestre por pantalla hola "Par
 Mire el siguiente ejemplo:
 	$ echo "hola "Parrot""
 
-Pues bien, para que las comillas intermedias sean parte de la cadena a mostrar debemos escapar dichas comillas. Esto se hace anteponiendo un símbolo '\' al carácter especial. Esto es muy utilizado para otros comandos tambíén. Siguiendo con nuestro ejemplo, el comando quedaría de la siguiente forma:
+Pues bien, para que las comillas intermedias sean parte de la cadena a mostrar debemos escapar dichas comillas. Esto se hace anteponiendo un símbolo '\' al carácter especial. Esto es muy utilizado para otros comandos también. Siguiendo con nuestro ejemplo, el comando quedaría de la siguiente forma:
 	$ echo " hola \"Parrot\"  "
 
 Se han añadido varios espacios en la cadena a mostrar, tanto al principio como al final, simplemente para que se vea más claro el ejemplo.	 
@@ -382,7 +382,7 @@ Ej. 1:
 				echo "Selecciono usted $OPCION. Esta preparado para utilizar ParrotSec"
 				;;
 			otros)
-				echo "Hágase un favor a usted mismo e instalese Parrot"
+				echo "Hágase un favor a usted mismo e instálese Parrot"
 				;;
 			salir)
 				echo "Hecho"
@@ -528,7 +528,7 @@ Ejemplo
 	$ echo $VARIABLE
 
 Al ejecutar estos comandos, se nos mostrará por pantalla los usuarios conectados a cualquier terminal de nuestro sistema,
-Tenga en cuenta que esto elimina los saltos de linea. Acuérdese de que puede utilizar pipes "|" para filtrar el resultado. Como en el siguiente ejemplo:
+Tenga en cuenta que esto elimina los saltos de línea. Acuérdese de que puede utilizar pipes "|" para filtrar el resultado. Como en el siguiente ejemplo:
 	
 	$ VARIABLE=$(who|awk '{print $1}')
 	$ echo $VARIABLE
@@ -539,9 +539,9 @@ En este ejemplo hemos recogido, mediante awk, el primer campo de la salida de wh
 
 
 
-#Redirigir salidas de un comando a un fichero
+#Redirigir salida de un comando a un fichero
 
-Un comando tiene 2 punteros asociados a su salida por pantalla. La salida "1" o salida estandar y la salida de errores o "2". Ejecutemos 2 comandos "ls" para ver esto. En una terminal ejecute los siguientes comandos:
+Un comando tiene 2 punteros asociados a su salida por pantalla. La salida "1" o salida estándar y la salida de errores o "2". Ejecutemos 2 comandos "ls" para ver esto. En una terminal ejecute los siguientes comandos:
 
 	$ ls -la /etc/passwd
 	$ ls -la /nombre_no_existente
@@ -550,7 +550,7 @@ Al ejecutar el primer comando deberemos ver lo siguiente (o algo parecido):
 
 	-rw-r--r-- 1 root root 3395 Sep 15 08:37 /etc/passwd	
 
-Este resultado, al ser correcto, se ha mostrado en el terminal por la salida estandar o "1".
+Este resultado, al ser correcto, se ha mostrado en el terminal por la salida estándar o "1".
 En el segundo comando veremos un mensaje de error, ya que el archivo no existe.
 
 	ls: cannot access '/nombre_no_existente': No such file or directory
@@ -564,12 +564,12 @@ Veamos varios ejemplos, abriendo una terminal:
 	$ ls -la /etc/passwd 1> salida1.standard
 	$ cat salida1.satnadard
 
-Vemos que aparentemente el primer comando no ha mostrado nada por pantalla. Lo que hemos hecho es redirigir su salida estandar a un archivo salida1.txt.
-El operador "1" se puede omitir si se desea. Podriamos haber escrito:
+Vemos que aparentemente el primer comando no ha mostrado nada por pantalla. Lo que hemos hecho es redirigir su salida estándar a un archivo salida1.txt.
+El operador "1" se puede omitir si se desea. Podríamos haber escrito:
 	
 	$ ls -la /etc/passwd > salida1.standard
 
-Siendo exactamente igual. Esto sólo lo podemos hacer para la salida estandar, no podemos utilizarlo para la salida de errores.
+Siendo exactamente igual. Esto sólo lo podemos hacer para la salida estándar, no podemos utilizarlo para la salida de errores.
 
 Veamos cómo podemos redirigir la salida de errores. Como ya hemos comentado, la salida de errores tiene un puntero representado con el número "2".
 
@@ -578,7 +578,7 @@ Veamos cómo podemos redirigir la salida de errores. Como ya hemos comentado, la
 
 En este caso, como en el ejemplo anterior, no vemos el error por pantalla ya que hemos redirigido esta salida ("2" por ser error) al archivo salida2.txt
 
-Podemos, también, direccionar en una sóla línea tanto la salida estandar como la de errores:
+Podemos, también, direccionar en una sola línea tanto la salida estándar como la de errores:
 	
 	$ ls -la /etc/passwd /nombre_no existente 1> salida1.standar 2>salida2.error
 
@@ -589,9 +589,9 @@ Existen varias opciones para redireccionar las dos salidas a un archivo común:
 O también:
 	$ ls -la /etc/passwd /nombre/no_existente > salida.txt 2>&1
 
-En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar que a donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estandar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estandar (1)".
+En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar que a donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estándar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estándar (1)".
 
-Redirigiendo las salidas, bien sea la estandar como la de errores, a un archivo, este se generará vacío cada vez que el símbolo ">" aparezca. Veamos esto con un ejemplo, mediante un script que nos escriba la fecha del sistema cada segundo en un archivo:
+Redirigiendo las salidas, bien sea la estándar como la de errores, a un archivo, este se generará vacío cada vez que el símbolo ">" aparezca. Veamos esto con un ejemplo, mediante un script que nos escriba la fecha del sistema cada segundo en un archivo:
 
 	#!/bin/bash
 	#
@@ -608,8 +608,8 @@ Redirigiendo las salidas, bien sea la estandar como la de errores, a un archivo,
 	done
 
 
-En este ejemplo, hemos redirigido con el símbolo ">" la salida de "date" a "fecha.txt". Si hacemos "cat fecha.txt" sólo veremos una linea (la de la última ejecución). Explicando esto en más detalle, vemos que nuestro script ha repetido la iteración "for" 3 veces. En la primera ejecución, tras mostrar por pantalla la salida de "date", ha creado un archivo nuevo "fecha.txt" para escribir la salida estandar del siguiente "date". En la segunda ejecución del bucle ocurre lo mismo. En la instrucción "date > fecha.txt", la salida del comando se redirige a un archivo recién creado llamado "fecha.txt", sobreescribiéndolo . De esta forma perderá el contenido de la primera iteración. En la tercera pasada vuelve a ocurrir exactamente lo mismo, generando que el archivo resultante sólo muestre la última ejecución.
-Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Con esto, conseguiremos que no se sobreescriba el archivo sino que la salida se añadira al final de él.
+En este ejemplo, hemos redirigido con el símbolo ">" la salida de "date" a "fecha.txt". Si hacemos "cat fecha.txt" sólo veremos una línea (la de la última ejecución). Explicando esto en más detalle, vemos que nuestro script ha repetido la iteración "for" 3 veces. En la primera ejecución, tras mostrar por pantalla la salida de "date", ha creado un archivo nuevo "fecha.txt" para escribir la salida estándar del siguiente "date". En la segunda ejecución del bucle ocurre lo mismo. En la instrucción "date > fecha.txt", la salida del comando se redirige a un archivo recién creado llamado "fecha.txt", sobrescribiéndolo. De esta forma perderá el contenido de la primera iteración. En la tercera pasada vuelve a ocurrir exactamente lo mismo, generando que el archivo resultante sólo muestre la última ejecución.
+Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Con esto, conseguiremos que no se sobrescriba el archivo sino que la salida se añadirá al final de él.
 
 	#!/bin/bash
 	#
@@ -650,7 +650,7 @@ De esta forma, nuestro script quedará de la siguiente forma:
 
 #Funciones
  
-Bash permite crear funciones, lo cual es muy útil si va a utilizar un bloque de codigo más de una vez. Las funciones reducen la cantidad de código que debe escribir y editar en el caso de modificaciones. Veámoslo!!!
+Bash permite crear funciones, lo cual es muy útil si va a utilizar un bloque de código más de una vez. Las funciones reducen la cantidad de código que debe escribir y editar en el caso de modificaciones. Veámoslo!!!
 
 
 Ejemplo:
@@ -660,7 +660,7 @@ Ejemplo:
 	echo "Hola parrot"
 
 
-Aunque es un script muy sencillo, podemos ver como debemos editar dos lineas para cambiar el mensaje "Hola parrot" por "Buenos días PARROT".
+Aunque es un script muy sencillo, podemos ver como debemos editar dos líneas para cambiar el mensaje "Hola parrot" por "Buenos días PARROT".
 La estructura de las funciones es la siguiente:
 	
 	nombre_funcion() {
@@ -690,7 +690,7 @@ Ejemplo:
 	funcion_parrot
 
 
-Para llamar a las funciones simplemente escribimos el nombre de la función que queremos utilizar sin los parentesis. Ahora podriamos extender nuestras funciones simplemente cambiando el bloque de código correspondiente.
+Para llamar a las funciones simplemente escribimos el nombre de la función que queremos utilizar sin los paréntesis. Ahora podríamos extender nuestras funciones simplemente cambiando el bloque de código correspondiente.
 
 
 
@@ -711,9 +711,9 @@ Esto escribirá cada comando por la salida de errores (precedido por el símbolo
 
 
 
-#Salida de comandos
+#exit code
 
-Cuando un proceso termina, devuelve un valor no negativo llamado valor de retorno o código de salida (exit code) al sistema operativo. Generalmente y por conveniencia devolverá un 0 si se ha ejecutado correctamente y culaquier otro valor si hay un error. De esta forma también se pueden elegir diferentes códigos de error en función del error que haya producido el comando. Un bash script puede devolver un valor utilizando el comando "exit". Por ejemplo:
+Cuando un proceso termina, devuelve un valor no negativo llamado valor de retorno o código de salida (exit code) al sistema operativo. Generalmente y por conveniencia devolverá un 0 si se ha ejecutado correctamente y cualquier otro valor si hay un error. De esta forma también se pueden elegir diferentes códigos de error en función del error que haya producido el comando. Un bash script puede devolver un valor utilizando el comando "exit". Por ejemplo:
 
 	exit 4
 
@@ -748,8 +748,8 @@ La salida de estos dos comandos debería ser algo perecido a:
 	2
 
 La primera línea indica un error a la hora de listar la existencia de un archivo (inventado para la ocasión).
-En la segunda linea la respuesta es un "2". Es decir, nuestro "ls" devolvió un "2" ya que se produjo un error.
-Tenga en cuenta que "echo $?", sólamente podrá retener el "exit code" de la última instrucción ejecutada, en este caso un "ls" de un fichero inexistente.
+En la segunda línea la respuesta es un "2". Es decir, nuestro "ls" devolvió un "2" ya que se produjo un error.
+Tenga en cuenta que "echo $?", solamente podrá retener el "exit code" de la última instrucción ejecutada, en este caso un "ls" de un fichero inexistente.
 
 Comprobemos el "exit code" del mismo comando sobre un archivo que sí exista:
 
@@ -757,93 +757,144 @@ Comprobemos el "exit code" del mismo comando sobre un archivo que sí exista:
 	$ ls /home
 	$ echo $?
 
-Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si una instrucción que ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código) ha terminado correctamente. Para ello, tras la ejecución del comando, y sinejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
+Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si, sobre todo cuando  una instrucción ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código), ha terminado correctamente. Para ello, tras la ejecución del comando, y sin ejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
 
 
 
-A continuación podemos ver un ejemplo de un script, en el que veremos la utilidad de esto.
+A continuación podemos ver un ejemplo de un script, con la utilidad de esto.
 
 
+	#!/bin/bash
+	#
+	#Script que solicita una cadena a buscar entre todos los archivos de un directorio dado
+	#
+	#
+        clear
+
+	#Recogida de datos
+        read -p "Introduzca un archivo con su ruta absoluta: " ARCHIVO
+        read -p "Introduzca cadena de búsqueda: " CADENA
+
+	#Redireccionamos las salidas tanto estándar como de errores para que no aparezca nada por pantalla
+        grep -r $CADENA $ARCHIVO 1>/dev/null 2>&1
+	
+	#Podríamos haber recogido el exit code en una variable
+        #EXITCODE=$(echo $?)
+        #case $EXITCODE in
+        
+        
+        case $? in
+	#Preguntamos por el exit code de nuestro grep
+        0)
+        	echo "Se encontraron coincidencias"
+		#Nuestro script devuelve 0 en su exit code
+                exit 0
+                ;;
+        1)
+                echo "No se encontraron coincidencias"
+		#Aunque el exit code del grep ha sido "1", en la salida de nuestro script devolvemos un "0", ya que así lo queremos.
+                exit 0
+                ;;
+        2)
+                echo "Compruebe el nombre de archivo"
+                exit 2
+                ;;
+        *)
+                echo "Error no contemplado"
+                exit 3
+                ;;
+        esac
 
 
+Intente comprobar las diferentes opciones de nuestro "case". En cada una de las ejecuciones, escriba en la terminal $? para comprobar los exit codes forzados por nosotros.
 
 
-Other Scripting Languages related to Bash
+#Otras variables interesantes
 
-tr
+	$0 - El nombre de nuestro bash script.
+	$1-$9 - Los primeros 9 argumentos pasados desde la línea de comandos a nuestro bash script.
+	$# - Muestra el número de argumentos pasados desde la línea de comandos a nuestro script.
+	$@ - Muestra todos los argumentos que se han pasado a nuestro script.
+	$? - Muestra el exit code del último proceso ejecutado.
+	$$ - Muestra el PID (Process ID) del script.
+	$USER - Usuario que está ejecutando el script.
+	$HOSTNAME - El hostname de la máquina en la que está corriendo el script.
+	$SECONDS - El número de segundos desde que el script comenzó.
+	$RANDOM - Devuelve un número aleatorio cada vez que es invocado.
 
-tr is one of the most basic applications to pipe data through that uses a basic scripting syntax. In this case, it accepts Regular Expressions. Let's do a normally complicated task, transforming a string to all uppercase.
 
-Example
-
-read foo
-var=$(echo $foo | tr "{a-z}" "{A-Z}")
- # {a-z} Matches a through z
- # {A-Z} matches A through Z
-echo $var
-
-The output should look something like this:
-
-this is a test
-THIS IS A TEST
-
-tr also can TRanslate strings, so let's translate all "tar" in $foo to "bar".
-
-Example
-
-echo "Type in: I love tars"
-read foo
-var=$(echo $foo | tr "t" "b")
-echo $var
-
-the output should look something like this:
-
-I love tars
-I love bars
-
-AWK
-
-AWK ( Short for Aho, Weinberger & Kernighan )
-
-awk has its own custom scripting language, suitable for a tutorial by itself, so I will cover only the basics to help assist when you are bash scripting. This is not meant to be complete or comprehensive in any way.
-
-pidof clone
-
-Let's make a quick pidof clone that prompts for a process identifier, then echoes the process ID.
-
-read pname
-ps -ef | grep -v grep | grep $pname | awk '{print $2}'
-
-Let's take some pipes out and use only awk for the filtering
-
-read pname
-ps -ef | awk -v p=${pname} '$8 ~ p { print $2 }'
-
-Single quotes are used to pass the awk command(s). The curly braces are to use the awk language (for stuff like prints, ifs, etc.). Print prints the column passed given by the $ markup, space delimited.
-
-The awk -v option allow passing a shell value into an awk variable, the $8 is a field variable (column 8 of the ps -ef command's output) and the operator ~ is a regular expression match.
-
-There are a lot more commands than the print command, including if statements, etc., and is worth looking into if you are interested in what you see here!
-
-SED
-
-sed is one of the most complicated scripting languages on the GNU / Linux system. I am only going to cover the s/ command here.
-
-Basic Substitution
-
-Try this out to show that sed can not only replace inline, but unlike tr, replace with a longer or shorter string than before.
-
-read foo
-echo $foo | sed "s/foo/bars/"
-
-When this command is run, it should substitute the first appearance of "foo" with "bars".
-
-This is an example of the output.
-
-I love to go to foo
-I love to go to bars
+Si escribe "env" en la línea de comandos, podrá ver una lista con diferentes variables que puede utilizar.
+También puede ver otras variables y mucha más información en la página del manual de bash. 
+	$ man bash
 
 
 
 
-https://en.wikibooks.org/wiki/Bash_Shell_Scripting
+#Otros "lenguajes" relacionados con bash
+
+
+Es muy interesante que comprueben el funcionamiento de varios programas muy utilizados en la realización de bash scripts. Pueden ver sus páginas man, e incluso comprobar páginas de ayuda en Internet para ver su funcionamiento.
+
+	tr:  cambia y elimina caracteres de una cadena.
+	awk: un lenguaje de programación en si. Se utiliza para procesar textos y cadenas.
+	sed: También muy utilizado para procesado de textos.
+	grep: Busca cadenas de texto en archivos.
+	cut: Procesa textos, mostrándonos diferentes campos.
+
+
+
+#whiptail
+
+En Bash script también podemos mostrar cajas de diálogo si el programa whiptail está instalado. Por defecto, Parrot ya lo tiene instalado.
+
+	$ whiptail
+	Box options: 
+		--msgbox <text> <height> <width>
+		--yesno  <text> <height> <width>
+		--infobox <text> <height> <width>
+		--inputbox <text> <height> <width> [init] 
+		--passwordbox <text> <height> <width> [init] 
+		--textbox <file> <height> <width>
+		--menu <text> <height> <width> <listheight> [tag item] ...
+		--checklist <text> <height> <width> <listheight> [tag item status]...
+		--radiolist <text> <height> <width> <listheight> [tag item status]...
+		--gauge <text> <height> <width> <percent>
+	Options: (depend on box-option)
+		--clear				clear screen on exit
+		--defaultno			default no button
+		--default-item <string>		set default string
+		--fb, --fullbuttons		use full buttons
+		--nocancel			no cancel button
+		--yes-button <text>		set text of yes button
+		--no-button <text>		set text of no button
+		--ok-button <text>		set text of ok button
+		--cancel-button <text>		set text of cancel button
+		--noitem			don't display items
+		--notags			don't display tags
+		--separate-output		output one line at a time
+		--output-fd <fd>		output to fd, not stdout
+		--title <title>			display title
+		--backtitle <backtitle>		display backtitle
+		--scrolltext			force vertical scrollbars
+		--topleft			put window in top-left corner
+		-h, --help			print this message
+		-v, --version			print version information
+
+
+Veamos el ejemplo más simple:
+	$ whiptail --title "Ejemplo de diálogo" --infobox "Parrot es maravilloso" 8 78
+
+Ejecutamos (o escribimos en un bash script) whiptail con las siguientes opciones:
+	- title "Título". El título que queramos para nuestro cuadro de diálogo.
+	- infobox "texto". Seleccionamos el tipo de cuadro de diálogo que queremos utilizar. 
+	- 8 78. El tamaño de nuestro 
+
+#Dónde conseguir más información
+Podemos conseguir más información en las siguientes fuentes:
+	- El man de bash
+	- http://tldp.org/guides.html
+	- http://linuxcommand.org/
+	- Realizando las búsquedas pertinentes en su buscador favorito
+	- Preguntando en el foro de parrotsec https://community.parrotsec.org/
+	- Accediendo al grupo de telegram tanto en inglés(https://t.me/parrotsecgroup) como en español (https://t.me/ParrotSpanishGroup). ESTAREMOS ENCANTADOS DE CONOCERLE Y AYUDARLE EN LO QUE PODAMOS.
+
