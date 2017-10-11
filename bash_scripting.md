@@ -1,13 +1,13 @@
-#Scripting
+# Scripting
 
-##Hola parrot
+## Hola parrot
 
 NOTA: Los comandos que se muestran están pensados para escribirlos en un archivo de texto y no en la terminal, a no ser que se indique lo contrario.
 
 Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemente abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extensión de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
 
 	#!/bin/bash         
-	# Sscript hola ParrotSec
+	#Script hola ParrotSec
 	echo "Hola ParrotSec"
 
 
@@ -48,7 +48,7 @@ Podrá ver el directorio en el que usted está trabajando (pwd es un comando que
 Es el momento de ver cosas más interesantes, Variables!
 
 
-#Variables
+## Variables
 
 Las variables, básicamente, guardan información que puede variar (o no). Quedémonos con el dato de que guardan información.
 Usted puede crear y asignar valores a una variable de la siguiente forma:
@@ -86,7 +86,7 @@ La instrucción 'read' le permite al usuario introducir información, y guardar 
 	echo "$nombre!! no sería fabuloso instalar $distribucion en su equipo $PC?"
 
 
-#Estructuras de control: condicional (if)
+## Estructuras de control: condicional (if)
 La estructura condicional se puede utilizar para ejecutar algo en función de un resultado dado que comprobaremos o realizar otra acción en el caso de que no se haya producido dicho resultado. Por ejemplo, podríamos consultar una variable y comprobar si su valor es 'PARROT', en el caso de que fuese así podríamos mostrar un texto y si fuese cualquier otro valor, mostraríamos otro texto diferente.
 
 El formato para construir estructuras de control condicionales es:
@@ -187,47 +187,47 @@ La condición dada y traducida al "español" sería la siguiente: "si el valor d
 Las siguientes tablas están sacadas del man de test (man test):
 
 
-##Operadores para cadenas de texto 
-Operador		Verdad (TRUE) si:
-------------------------------------------
-cadena1 = cadena2	las cadenas son iguales
-cadena1 != cadena2	las cadenas no son iguales
--n cadena		la longitud de cadena no es 0
--z cadena		la longitud de cadena es 0
+	##Operadores para cadenas de texto 
+	Operador		Verdad (TRUE) si:
+	------------------------------------------
+	cadena1 = cadena2	las cadenas son iguales
+	cadena1 != cadena2	las cadenas no son iguales
+	-n cadena		la longitud de cadena no es 0
+	-z cadena		la longitud de cadena es 0
 
 
 
-##Operadores para valores alfanuméricos
-Operador		Verdad (TRUE) si:
-------------------------------------------
-x -lt y			x menor que y
-x -le y			x menor o igual que y
-x -eq y			x igual que y
-x -ge y			x mayor o igual que y
-x -gt y			x mayor que y
-x -ne y			x no igual que y
+	##Operadores para valores alfanuméricos
+	Operador		Verdad (TRUE) si:
+	------------------------------------------
+	x -lt y			x menor que y
+	x -le y			x menor o igual que y
+	x -eq y			x igual que y
+	x -ge y			x mayor o igual que y
+	x -gt y			x mayor que y
+	x -ne y			x no igual que y
 
 
 
-##Operadores para ficheros
-Operador		Verdad (TRUE) si:
-------------------------------------------
--d fichero		fichero existe y es un directorio
--e fichero		fichero existe
--f fichero		fichero existe y es un fichero regular (no un
-			directorio, u otro tipo de fichero especial)
+	##Operadores para ficheros
+	Operador		Verdad (TRUE) si:
+	------------------------------------------
+	-d fichero		fichero existe y es un directorio
+	-e fichero		fichero existe
+	-f fichero		fichero existe y es un fichero regular (no un
+				directorio, u otro tipo de fichero especial)
 
--r fichero		Tienes permiso de lectura en fichero
--s fichero		fichero existe y no está vacío
--w fichero		Tienes permiso de escritura en fichero
--x fichero		Tienes permiso de ejecución en fichero (o de búsqueda
-			si es un directorio)
+	-r fichero		Tienes permiso de lectura en fichero
+	-s fichero		fichero existe y no está vacío
+	-w fichero		Tienes permiso de escritura en fichero
+	-x fichero		Tienes permiso de ejecución en fichero (o de búsqueda
+				si es un directorio)
 
--O fichero		Eres el dueño del fichero
--G fichero		El grupo del fichero es igual al tuyo.
+	-O fichero		Eres el dueño del fichero
+	-G fichero		El grupo del fichero es igual al tuyo.
 
-fichero1 -nt fichero2	fichero1 es más reciente que fichero2
-fichero1 -ot fichero2	fichero1 es más antiguo que fichero2
+	fichero1 -nt fichero2	fichero1 es más reciente que fichero2
+	fichero1 -ot fichero2	fichero1 es más antiguo que fichero2
 
 
 
@@ -310,7 +310,7 @@ Ej. 2:
 
 
 
-#Estructuras de control: condicional (case)
+## Estructuras de control: condicional (case)
 Podríamos considerar la estructura de control "CASE" como un formato condicional parecido al "IF". Dado un resultado de una variable, seleccionaremos unas instrucciones concretas.
 El formato para construir estructuras de control CASE es:
 
@@ -358,7 +358,7 @@ Ej. 2:
 
 
 
-#Estructura de control: condicional (SELECT)
+## Estructura de control: condicional (SELECT)
 Esta estructura es especial y el sueño de muchos programadores. Es la forma más sencilla de crear un menú.
 
 La forma que tiene esta estructura es:
@@ -397,7 +397,7 @@ Como puede observar en este ejemplo, hemos encadenado dentro de nuestra estructu
 
 
 
-#Estructura blucle: FOR
+## Estructura blucle: FOR
 Para acciones repetitivas se han creado estructuras en forma de bucle. Hay varios tipos. En este primer lugar veremos bucles for.
 El bucle es una lista de comandos que se realiza de forma repetitiva.
 En el caso de FOR, este bloque se repetirá mientras tengamos valores en la lista que estamos comprobando.
@@ -442,7 +442,7 @@ Expresion3 = incremento de variable
 
 
 
-#Estructura bucle: WHILE
+## Estructura bucle: WHILE
 En esta estructura el bucle se ejecutará mientras se cumpla una condición.
 La forma que tiene esta estructura es:
 	while condicion
@@ -489,7 +489,7 @@ Se utiliza esta estructura para leer un archivo línea a línea. "archivo" es un
 
 
 
-#Estructura bucle: UNTIL
+## Estructura bucle: UNTIL
 El bucle until continua ejecutando comandos mientras se cumpla la condición. Una vez que dicha condición sea falsa, se sale del bucle.
 La forma que tiene esta estructura es:
 	until condicion
@@ -519,7 +519,7 @@ Ej. 1:
 	
 
 
-#Guardando la salida de un comando en una variable
+## Guardando la salida de un comando en una variable
 
 En bash scripting, incluso en la shell, podemos asignar a una variable el resultado de un comando que ejecutemos. La forma elegante de hacerlo es con el siguiente formato: VARIABLE=$(comando).
 
@@ -539,7 +539,7 @@ En este ejemplo hemos recogido, mediante awk, el primer campo de la salida de wh
 
 
 
-#Redirigir salida de un comando a un fichero
+## Redirigir salida de un comando a un fichero
 
 Un comando tiene 2 punteros asociados a su salida por pantalla. La salida "1" o salida estándar y la salida de errores o "2". Ejecutemos 2 comandos "ls" para ver esto. En una terminal ejecute los siguientes comandos:
 
@@ -648,7 +648,7 @@ De esta forma, nuestro script quedará de la siguiente forma:
 
 
 
-#Funciones
+## Funciones
  
 Bash permite crear funciones, lo cual es muy útil si va a utilizar un bloque de código más de una vez. Las funciones reducen la cantidad de código que debe escribir y editar en el caso de modificaciones. Veámoslo!!!
 
@@ -694,7 +694,7 @@ Para llamar a las funciones simplemente escribimos el nombre de la función que 
 
 
 
-#Depuración de código
+## Depuración de código
 
 Siempre es útil poder depurar el código. Para tracear un bash script, podemos ejecutarlo mediante una llamada a bash especificando la opción "-x".
 
@@ -711,7 +711,7 @@ Esto escribirá cada comando por la salida de errores (precedido por el símbolo
 
 
 
-#exit code
+## Exit code
 
 Cuando un proceso termina, devuelve un valor no negativo llamado valor de retorno o código de salida (exit code) al sistema operativo. Generalmente y por conveniencia devolverá un 0 si se ha ejecutado correctamente y cualquier otro valor si hay un error. De esta forma también se pueden elegir diferentes códigos de error en función del error que haya producido el comando. Un bash script puede devolver un valor utilizando el comando "exit". Por ejemplo:
 
@@ -809,7 +809,7 @@ A continuación podemos ver un ejemplo de un script, con la utilidad de esto.
 Intente comprobar las diferentes opciones de nuestro "case". En cada una de las ejecuciones, escriba en la terminal $? para comprobar los exit codes forzados por nosotros.
 
 
-#Otras variables interesantes
+## Otras variables interesantes
 
 	$0 - El nombre de nuestro bash script.
 	$1-$9 - Los primeros 9 argumentos pasados desde la línea de comandos a nuestro bash script.
@@ -830,7 +830,7 @@ También puede ver otras variables y mucha más información en la página del m
 
 
 
-#Otros "lenguajes" relacionados con bash
+## Otros "lenguajes" relacionados con bash
 
 
 Es muy interesante que comprueben el funcionamiento de varios programas muy utilizados en la realización de bash scripts. Pueden ver sus páginas man, e incluso comprobar páginas de ayuda en Internet para ver su funcionamiento.
@@ -843,7 +843,7 @@ Es muy interesante que comprueben el funcionamiento de varios programas muy util
 
 
 
-#whiptail
+## whiptail
 
 En Bash script también podemos mostrar cajas de diálogo si el programa whiptail está instalado. Por defecto, Parrot ya lo tiene instalado.
 
@@ -889,7 +889,7 @@ Ejecutamos (o escribimos en un bash script) whiptail con las siguientes opciones
 	- infobox "texto". Seleccionamos el tipo de cuadro de diálogo que queremos utilizar. 
 	- 8 78. El tamaño de nuestro 
 
-#Dónde conseguir más información
+## Dónde conseguir más información
 Podemos conseguir más información en las siguientes fuentes:
 	- El man de bash
 	- http://tldp.org/guides.html
