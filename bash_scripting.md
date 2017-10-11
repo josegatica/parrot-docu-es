@@ -350,6 +350,7 @@ El valor de $1, es la primera opción pasada a nuestro script. Es decir, si nues
 
 
 Ej. 2:
+
 	read opcion
 	case $opcion in
 		s|S)
@@ -906,16 +907,16 @@ Veamos el ejemplo más simple:
 	$ whiptail --title "Ejemplo de diálogo" --infobox "Parrot es maravilloso" 8 78
 
 Ejecutamos (o escribimos en un bash script) whiptail con las siguientes opciones:   
-	- title "Título". El título que queramos para nuestro cuadro de diálogo.    
-	- infobox "texto". Seleccionamos el tipo de cuadro de diálogo que queremos utilizar.    
-	- 8 78. El tamaño de nuestra caja.         
+- title "Título". El título que queramos para nuestro cuadro de diálogo.    
+- infobox "texto". Seleccionamos el tipo de cuadro de diálogo que queremos utilizar.    
+- 8 78. El tamaño de nuestra caja.         
 
 ## Dónde conseguir más información
 Podemos conseguir más información en las siguientes fuentes:   
-	- El man de bash   
-	- http://tldp.org/guides.html   
-	- http://linuxcommand.org/   
-	- Realizando las búsquedas pertinentes en su buscador favorito  
-	- Preguntando en el foro de parrotsec https://community.parrotsec.org/   
-	- Accediendo al grupo de telegram tanto en inglés(https://t.me/parrotsecgroup) como en español (https://t.me/ParrotSpanishGroup). ESTAREMOS ENCANTADOS DE CONOCERLE Y AYUDARLE EN LO QUE PODAMOS.    
+- El man de bash   
+- http://tldp.org/guides.html   
+- http://linuxcommand.org/   
+- Realizando las búsquedas pertinentes en su buscador favorito  
+- Preguntando en el foro de parrotsec https://community.parrotsec.org/   
+- Accediendo al grupo de telegram tanto en inglés(https://t.me/parrotsecgroup) como en español (https://t.me/ParrotSpanishGroup). ESTAREMOS ENCANTADOS DE CONOCERLE Y AYUDARLE EN LO QUE PODAMOS.    
 
