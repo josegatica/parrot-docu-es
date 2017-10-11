@@ -920,3 +920,5 @@ Podemos conseguir más información en las siguientes fuentes:
 - Preguntando en el foro de parrotsec https://community.parrotsec.org/   
 - Accediendo al grupo de telegram tanto en inglés(https://t.me/parrotsecgroup) como en español (https://t.me/ParrotSpanishGroup). ESTAREMOS ENCANTADOS DE CONOCERLE Y AYUDARLE EN LO QUE PODAMOS.    
 
+
+
