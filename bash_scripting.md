@@ -13,7 +13,7 @@ Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a i
 
 
 
-En la primera línea del script simplemente definimos el intérprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash.  
+En la primera línea del script simplemente definimos el intérprete a utilizar. NOTA: No hay espacio antes de  #!/bin/bash.   
 En la segunda línea podemos ver un comentario. Cualquier cosa que empiece por '#', salvo '#!' que apareció en la primera línea, será tomado por el intérprete como un comentario y no se ejecutará. Acostúmbrese a escribir sus scripts con estos comentarios, para explicar lo que va haciendo y posteriormente pueda revisar su código de una manera más fácil.   
 En la tercera línea utilizamos la instrucción "echo" para mostrar un texto por pantalla. En nuestro caso "Hola ParrotSec".   
 Guardamos el script en la ubicación que deseemos con el nombre "hola_parrot.sh", o cualquier otro que deseemos.   
@@ -272,12 +272,14 @@ Ej. 1:
 Anexo 1 Ej. 1: echo y secuencia de escape
 
 Trate de escribir en una línea de comandos:
+
 	$ echo "hola Parrot"
 
 Pero... cómo escribimos un comando echo para que muestre por pantalla hola "ParrotSec"? 
 "echo" aunque tiene diversas opciones y podemos utilizar otros símbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usa con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
 
 Mire el siguiente ejemplo:
+
 	$ echo "hola "Parrot""
 
 Pues bien, para que las comillas intermedias sean parte de la cadena a mostrar debemos escapar dichas comillas. Esto se hace anteponiendo un símbolo '\' al carácter especial. Esto es muy utilizado para otros comandos también. Siguiendo con nuestro ejemplo, el comando quedaría de la siguiente forma:  
@@ -567,14 +569,14 @@ Al ejecutar el primer comando deberemos ver lo siguiente (o algo parecido):
 
 	-rw-r--r-- 1 root root 3395 Sep 15 08:37 /etc/passwd	
 
-Este resultado, al ser correcto, se ha mostrado en el terminal por la salida estándar o "1".
-En el segundo comando veremos un mensaje de error, ya que el archivo no existe.
+Este resultado, al ser correcto, se ha mostrado en el terminal por la salida estándar o "1".  
+En el segundo comando veremos un mensaje de error, ya que el archivo no existe.   
 
 	ls: cannot access '/nombre_no_existente': No such file or directory
 
-Para mostrar este resultado, el sistema ha direccionado ese error a la salida "2" o salida de errores.
+Para mostrar este resultado, el sistema ha direccionado ese error a la salida "2" o salida de errores.  
 
-Podemos redirigir esa salida a un fichero si queremos (incluso al fichero especial /dev/null, el "agujero negro" o papelera sin retorno del sistema).
+Podemos redirigir esa salida a un fichero si queremos (incluso al fichero especial /dev/null, el "agujero negro" o papelera sin retorno del sistema).  
 
 Veamos varios ejemplos, abriendo una terminal:
 
@@ -582,33 +584,34 @@ Veamos varios ejemplos, abriendo una terminal:
 	$ cat salida1.satnadard
 
 Vemos que aparentemente el primer comando no ha mostrado nada por pantalla. Lo que hemos hecho es redirigir su salida estándar a un archivo salida1.txt.
-El operador "1" se puede omitir si se desea. Podríamos haber escrito:
+El operador "1" se puede omitir si se desea. Podríamos haber escrito:  
 	
 	$ ls -la /etc/passwd > salida1.standard
 
-Siendo exactamente igual. Esto sólo lo podemos hacer para la salida estándar, no podemos utilizarlo para la salida de errores.
+Siendo exactamente igual. Esto sólo lo podemos hacer para la salida estándar, no podemos utilizarlo para la salida de errores.  
 
-Veamos cómo podemos redirigir la salida de errores. Como ya hemos comentado, la salida de errores tiene un puntero representado con el número "2".
+Veamos cómo podemos redirigir la salida de errores. Como ya hemos comentado, la salida de errores tiene un puntero representado con el número "2".   
 
 	$ ls -la /nombre_no_existente 2> salida2.error
 	$ cat salida2.error
 
-En este caso, como en el ejemplo anterior, no vemos el error por pantalla ya que hemos redirigido esta salida ("2" por ser error) al archivo salida2.txt
+En este caso, como en el ejemplo anterior, no vemos el error por pantalla ya que hemos redirigido esta salida ("2" por ser error) al archivo salida2.txt.   
 
-Podemos, también, direccionar en una sola línea tanto la salida estándar como la de errores:
+Podemos, también, direccionar en una sola línea tanto la salida estándar como la de errores:   
 	
 	$ ls -la /etc/passwd /nombre_no existente 1> salida1.standar 2>salida2.error
 
-Existen varias opciones para redireccionar las dos salidas a un archivo común:
+Existen varias opciones para redireccionar las dos salidas a un archivo común:   
 	
 	$ ls -la /etc/passwd /nombre_no_existente 1> salida.txt 2> salida.txt
 
 O también:
+
 	$ ls -la /etc/passwd /nombre/no_existente > salida.txt 2>&1
 
-En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar que a donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estándar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estándar (1)".
+En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar que a donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estándar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estándar (1)".  
 
-Redirigiendo las salidas, bien sea la estándar como la de errores, a un archivo, este se generará vacío cada vez que el símbolo ">" aparezca. Veamos esto con un ejemplo, mediante un script que nos escriba la fecha del sistema cada segundo en un archivo:
+Redirigiendo las salidas, bien sea la estándar como la de errores, a un archivo, este se generará vacío cada vez que el símbolo ">" aparezca. Veamos esto con un ejemplo, mediante un script que nos escriba la fecha del sistema cada segundo en un archivo:  
 
 	#!/bin/bash
 	#
@@ -625,7 +628,7 @@ Redirigiendo las salidas, bien sea la estándar como la de errores, a un archivo
 	done
 
 
-En este ejemplo, hemos redirigido con el símbolo ">" la salida de "date" a "fecha.txt". Si hacemos "cat fecha.txt" sólo veremos una línea (la de la última ejecución). Explicando esto en más detalle, vemos que nuestro script ha repetido la iteración "for" 3 veces. En la primera ejecución, tras mostrar por pantalla la salida de "date", ha creado un archivo nuevo "fecha.txt" para escribir la salida estándar del siguiente "date". En la segunda ejecución del bucle ocurre lo mismo. En la instrucción "date > fecha.txt", la salida del comando se redirige a un archivo recién creado llamado "fecha.txt", sobrescribiéndolo. De esta forma perderá el contenido de la primera iteración. En la tercera pasada vuelve a ocurrir exactamente lo mismo, generando que el archivo resultante sólo muestre la última ejecución.
+En este ejemplo, hemos redirigido con el símbolo ">" la salida de "date" a "fecha.txt". Si hacemos "cat fecha.txt" sólo veremos una línea (la de la última ejecución). Explicando esto en más detalle, vemos que nuestro script ha repetido la iteración "for" 3 veces. En la primera ejecución, tras mostrar por pantalla la salida de "date", ha creado un archivo nuevo "fecha.txt" para escribir la salida estándar del siguiente "date". En la segunda ejecución del bucle ocurre lo mismo. En la instrucción "date > fecha.txt", la salida del comando se redirige a un archivo recién creado llamado "fecha.txt", sobrescribiéndolo. De esta forma perderá el contenido de la primera iteración. En la tercera pasada vuelve a ocurrir exactamente lo mismo, generando que el archivo resultante sólo muestre la última ejecución.   
 Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Con esto, conseguiremos que no se sobrescriba el archivo sino que la salida se añadirá al final de él.
 
 	#!/bin/bash
@@ -646,8 +649,8 @@ Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Co
 Ahora sí, el archivo contiene la salida de las tres iteraciones.
 
 
-Existe un comando para poder añadir las salidas de un comando a un archivo y mostrarlos también por pantalla. Esta instrucción es "tee". 
-De esta forma, nuestro script quedará de la siguiente forma:
+Existe un comando para poder añadir las salidas de un comando a un archivo y mostrarlos también por pantalla. Esta instrucción es "tee".     
+De esta forma, nuestro script quedará de la siguiente forma:   
 
 	#!/bin/bash
 	#
@@ -764,9 +767,9 @@ La salida de estos dos comandos debería ser algo perecido a:
 	ls: cannot access 'ficheronoexistente': No such file or directory
 	2
 
-La primera línea indica un error a la hora de listar la existencia de un archivo (inventado para la ocasión).
-En la segunda línea la respuesta es un "2". Es decir, nuestro "ls" devolvió un "2" ya que se produjo un error.
-Tenga en cuenta que "echo $?", solamente podrá retener el "exit code" de la última instrucción ejecutada, en este caso un "ls" de un fichero inexistente.
+La primera línea indica un error a la hora de listar la existencia de un archivo (inventado para la ocasión).  
+En la segunda línea la respuesta es un "2". Es decir, nuestro "ls" devolvió un "2" ya que se produjo un error.   
+Tenga en cuenta que "echo $?", solamente podrá retener el "exit code" de la última instrucción ejecutada, en este caso un "ls" de un fichero inexistente.   
 
 Comprobemos el "exit code" del mismo comando sobre un archivo que sí exista:
 
@@ -840,7 +843,7 @@ Intente comprobar las diferentes opciones de nuestro "case". En cada una de las 
 	$RANDOM - Devuelve un número aleatorio cada vez que es invocado.
 
 
-Si escribe "env" en la línea de comandos, podrá ver una lista con diferentes variables que puede utilizar.
+Si escribe "env" en la línea de comandos, podrá ver una lista con diferentes variables que puede utilizar.   
 También puede ver otras variables y mucha más información en la página del manual de bash. 
 	$ man bash
 
@@ -899,19 +902,20 @@ En Bash script también podemos mostrar cajas de diálogo si el programa whiptai
 
 
 Veamos el ejemplo más simple:
+
 	$ whiptail --title "Ejemplo de diálogo" --infobox "Parrot es maravilloso" 8 78
 
-Ejecutamos (o escribimos en un bash script) whiptail con las siguientes opciones:
-	- title "Título". El título que queramos para nuestro cuadro de diálogo.
-	- infobox "texto". Seleccionamos el tipo de cuadro de diálogo que queremos utilizar. 
-	- 8 78. El tamaño de nuestro 
+Ejecutamos (o escribimos en un bash script) whiptail con las siguientes opciones:   
+	- title "Título". El título que queramos para nuestro cuadro de diálogo.    
+	- infobox "texto". Seleccionamos el tipo de cuadro de diálogo que queremos utilizar.    
+	- 8 78. El tamaño de nuestra caja.         
 
 ## Dónde conseguir más información
-Podemos conseguir más información en las siguientes fuentes:
-	- El man de bash
-	- http://tldp.org/guides.html
-	- http://linuxcommand.org/
-	- Realizando las búsquedas pertinentes en su buscador favorito
-	- Preguntando en el foro de parrotsec https://community.parrotsec.org/
-	- Accediendo al grupo de telegram tanto en inglés(https://t.me/parrotsecgroup) como en español (https://t.me/ParrotSpanishGroup). ESTAREMOS ENCANTADOS DE CONOCERLE Y AYUDARLE EN LO QUE PODAMOS.
+Podemos conseguir más información en las siguientes fuentes:   
+	- El man de bash   
+	- http://tldp.org/guides.html   
+	- http://linuxcommand.org/   
+	- Realizando las búsquedas pertinentes en su buscador favorito  
+	- Preguntando en el foro de parrotsec https://community.parrotsec.org/   
+	- Accediendo al grupo de telegram tanto en inglés(https://t.me/parrotsecgroup) como en español (https://t.me/ParrotSpanishGroup). ESTAREMOS ENCANTADOS DE CONOCERLE Y AYUDARLE EN LO QUE PODAMOS.    
 
