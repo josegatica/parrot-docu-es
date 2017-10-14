@@ -8,7 +8,7 @@ Las distribuciones están divididas en «paquetes». Cada paquete contiene una a
 
 El paquete es generalmente distribuido en su versión compilada y la instalación y desinstalación de los paquetes es controlada por un sistema de gestión de paquetes en lugar de un simple gestor de archivos. En este caso Cada paquete elaborado para ese sistema de paquetes contiene meta-información tal como fecha de creación, descripción del paquete y sus dependencias. El sistema de paquetes analiza esta información para permitir la búsqueda de paquetes, actualizar las librerías y aplicaciones instaladas, revisar que todas las dependencias se cumplan y obtenerlas si no se cuenta con ellas de manera automática.
 
-Algunos de los sistemas de paquetes más usados son:
+Algunos de los gestores de paquetes más usados son:
 
 *RPM, creado por Red Hat y usado por un gran número de distribuciones de Linux, es el formato de paquetes del Linux Standard Base. Originalmente introducido por Red Hat, pero ahora se usa en muchas distribuciones, como por ejemplo Mandriva.
 *Deb, paquetes Debian, originalmente introducidos por Debian, pero también utilizados por otros como Knoppix y Ubuntu. 
@@ -17,15 +17,15 @@ Algunos de los sistemas de paquetes más usados son:
 *Pacman, para Arch Linux, usa binarios precompilados distribuidos en un fichero .pkg.tar.gz ó .pkg.tar.xz.
 *PET, utilizado por Puppy Linux, sus derivados y Quirky, su proyecto hermano.
 
-== Escritorio Linux ==
+== Entornos de Escritorio ==
 El escritorio es el entorno visual que se encarga de interactuar entre el kernel de Linux y los programas, siendo vital para el usuario. Cuando te instales el sistema operativo, este te vendrá con un escritorio preinstalado, pero posteriormente puedes instalar tú otro distinto y elegir qué escritorio quieres usar cada vez en el menú de inicio de sesión. Según el ordenador que tengas y el uso que le quieras dar te convendrá usar un escritorio determinado. 
 
-Comunmente la gente tiende a confundir distribución con escritorio. Podemos ver dos distribuciones visualmente iguales que por dentro funcionen de forma distinta. Por ejemplo, podriamos tener arch con un escritorio KDE y un Debian con escritorio KDE. Visualmente son iguales. Por dentro, por ejemplo, para instalar un paquete Arch usará pacman -S y Debian apt-get install.
+Comunmente la gente tiende a confundir distribución con escritorio. Podemos ver dos distribuciones visualmente iguales que por dentro funcionen de manera distinta. Por ejemplo, podríamos tener Arch con un escritorio KDE y un Debian con escritorio KDE. Visualmente son iguales. Por dentro, por ejemplo, para instalar un paquete Arch usará pacman -S y Debian apt-get install.
 
-El escritorio linux generalmente tendrá instalado por defecto paquetes destinados al "usuario final". Algunas distribuciones Linux se han centrado específicamente en el rol de escritorio. Otras incluyen un conjunto de todas las aplicaciones para la plataforma. En ese caso, el usuario puede seleccionar entre "escritorio" o "servidor" al momento de ser instalado el sistema operativo.
+El escritorio GNU/linux generalmente tendrá instalado por defecto paquetes destinados al "usuario final". Algunas distribuciones Linux se han centrado específicamente en el rol de escritorio. Otras incluyen un conjunto de todas las aplicaciones para la plataforma. En ese caso, el usuario puede seleccionar entre "escritorio" o "servidor" al momento de ser instalado el sistema operativo.
 
-= Algunos entornos =
-Linux ofrece muchas alternativas. Los entornos de escritorio más populares son GNOME, KDE, XFCE, MATE y Cinnamon.
+= Algunos entornos de escritorio =
+GNU/Linux ofrece muchas alternativas. Los entornos de escritorio más populares son GNOME, KDE, XFCE, MATE y Cinnamon.
 
 Estos son grandes colecciones de programas de escritorio, en lugar de entornos más simples de gestores de ventanas X como FVWM, IceWM entre muchos otros. Estos entornos presentan un GUI usando una escritorio metáfora.
 
