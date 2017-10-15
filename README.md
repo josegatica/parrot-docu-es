@@ -9,6 +9,7 @@ El <b>equipo directivo</b> de Parrot Security OS en español se compone de las s
 
 - Selinex Tapia (Directora de Documentación)
 - Josu Elgezabal (Director de Documentación)
+- Romel Marín (Director de Documentación)
 - Claudio Marcial (Director equipo web)
 - Alejandro Pineda (Diseño ParrotSec-ES)
 - Raúl Alderete (Material Audiovisual)
