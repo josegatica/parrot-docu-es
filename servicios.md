@@ -114,15 +114,22 @@ Varias palabras claves podemos observar en la salida de estado de un servicio:
 
 ## Listando unidades con systemctl
 - Consulta el estado de todas las unidades
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl 
+
 - Consulta el estado de los servicios arrancados
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl --type=service
+
 - Consulta el estado de un servicio
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl status sshd 
+
 - Aunque si observamos la salida de la opción "status", podemos llegar a saber si un servicio debe o no arrancarse en el inicio y si está activo, tenemos también varias opciones para verlo más facilmente:
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl is-active apache2
 	inactive
@@ -132,7 +139,9 @@ Varias palabras claves podemos observar en la salida de estado de un servicio:
 	┌─[✗]─[root@parrot]─[~]
 	└──╼ #systemctl is-enabled sshd
 	enabled
+
 - Comprobar servicios fallidos
+
 	┌─[✗]─[root@parrot]─[~]
 	└──╼ #systemctl --failed --type=service
 
@@ -140,6 +149,7 @@ Varias palabras claves podemos observar en la salida de estado de un servicio:
 Arrancar, parar, recargar y verificar el estado son tareas comunes cuando administramos un sistema.
 
 - Para ver el estado de un servicio:
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl status sshd
 	● ssh.service - OpenBSD Secure Shell server
@@ -152,12 +162,14 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 
 
 - Para comprobar que el proceso está corriendo:
+
 	┌─[root@parrot]─[~]
 	└──╼ #ps -up 1135
 	USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 	root      1135  0.0  0.0  71972  5440 ?        Ss   Oct09   0:00 /usr/sbin/sshd -D
 
 - Parar el servicio y verificar su estado:
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl stop sshd
 	┌─[root@parrot]─[~]
@@ -169,6 +181,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 	 Main PID: 1135 (code=exited, status=0/SUCCESS)
 
 - Arrancar el servicio y ver el estado. El ID del proceso ha cambiado:
+
 	┌─[✗]─[root@parrot]─[~]
 	└──╼ #systemctl start sshd
 	┌─[root@parrot]─[~]
@@ -184,6 +197,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 
 
 - Rearrancar el servicio y comprobar su estado:
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl restart sshd
 	┌─[root@parrot]─[~]
@@ -198,6 +212,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 	           └─5231 /usr/sbin/sshd -D
 
 - Recargar un servicio sin llegar a pararlo, por ejemplo para que lea un cambio en su configuración. En este caso el ID de proceso no cambiará.
+
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl reload sshd
 	┌─[root@parrot]─[~]
