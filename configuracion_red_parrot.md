@@ -16,12 +16,12 @@ Para comprobar si tenemos activado NetworkManager:
 
 
 Para NetworkManager:
-- un "device" es una interfaz de red
-- un "connection" es una colección de parametros que se pueden configurar para un "device"
+- Un "device" es una interfaz de red
+- Un "connection" es una colección de parametros que se pueden configurar para un "device"
 - Sólo se puede activar una conexión para cada "device" a la vez
 - Cada conexión tiene un nombre o ID que lo identifica
-- Las conexiones y configuraciones se guardan en /etc/NetworkManager/system-connections , en un archivo con el nombre de la conexión
-- Podemos utilizar la utilidad nmcli para crear y editar conexiones desde la linea de comandos
+- Las conexiones y configuraciones se guardan en /etc/NetworkManager/system-connections, en un archivo con el nombre de la conexión
+- Podemos utilizar la utilidad nmcli para crear y editar conexiones desde la línea de comandos
 
 
 
@@ -194,7 +194,7 @@ Veamos ahora un ejemplo con una configuración para la misma interfaz eth0, pero
 ## Controlando las conexiones de red
 
 
-El comando "nmcli con up <nombre_conexion>" activará la conexión "nombre_conexion" en la interfaz a la que este asociada dicha configuración. Recuerde que que el comando toma como argumento el nombre de la conxión y no el nombre de la interfaz.
+El comando "nmcli con up <nombre_conexion>" activará la conexión "nombre_conexion" en la interfaz a la que este asociada dicha configuración. Recuerde que el comando toma como argumento el nombre de la conexión y no el nombre de la interfaz.
 
 
 	┌─[root@parrot]─[~]
@@ -303,7 +303,7 @@ Por ejemplo, imaginemos que queremos cambiar la conexión "con_static" para que 
 
 
 
-Es importante que si cambiamos una conexión tipo DHCP a estática, modifiquemops también el parametro ipv4.method de auto a manual.
+Es importante que si cambiamos una conexión tipo DHCP a estática, modifiquemos también el parametro ipv4.method de auto a manual.
 
 Tras los cambios deberemos ejecutar "nmcli con reload <nombre_conexion>" para que estos tomen efecto.
 
@@ -329,11 +329,11 @@ Abrimos este fichero con nuestro editor favorito y debemos combrobar que tenemos
 
 
 ## Borrando una conexión de red
-El comando "nmcli con del <nombre_conexion> borrará la conexión que le indiquemos.
+El comando "nmcli" con "del <nombre_conexion>" borrará la conexión que le indiquemos.
 
 
 ## Modificando el nombre de nuestro sistema
-El comando "hostname" muestra o cmabia temporalmente el nombre de nuestro sistema.
+El comando "hostname" muestra o cambia temporalmente el nombre de nuestro sistema.
 
 	┌─[root@parrot]─[~]
 	└──╼ #hostname
@@ -342,7 +342,7 @@ El comando "hostname" muestra o cmabia temporalmente el nombre de nuestro sistem
 
 Podemos modificar el fichero /etc/hostname para cambiar el nombre de nuestro sistema.  
 
-También podemos utilizar el comando hostnamectl, con la opción set-hostname. "hostnamectl" también nos sirve apra comprobar el nombre de nuestro sistema actualmente.
+También podemos utilizar el comando hostnamectl, con la opción set-hostname. "hostnamectl" también nos sirve para comprobar el nombre de nuestro sistema actualmente.
 
 	┌─[root@parrot]─[~]
 	└──╼ #hostnamectl set-hostname demo.test.com
