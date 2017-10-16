@@ -96,44 +96,62 @@ $ ls
 	Lista ficheros de un directorio.
 	
 	$ ls -l
+		
 		Lista tambien las propiedades y atributos.
+	
 	$ ls -la
+		
 		Lista ficheros incluidos los ocultos del sistema.
+	
 	$ ls -la | more
+		
 		Lista los ficheros de un directorio de forma paginada.
+	
 	$ ls -lh
+		
 		Lista ficheros especificando la unidad de tamaño.
+	
 	$ ls -l | grep^d
+		
 		Lista solo los directorios.
 
 $ cat -n fichero
+	
 	Muestra el contenido de un fichero (-n lo numera).
 
 $ pr -t fichero
+	
 	Muestra el contenido de un fichero de manera formateada
 
 $ more fichero
 $ less fichero
+	
 	Muestran el contenido de un fichero de forma paginada.
 
 $ zcat fichero
 $ zmore fichero
 $ zless fichero
+	
 	Muestran el contenido de un fichero comprimido (.gz).
 
 $ echo cadena
+	
 	Muestra en pantalla el texto que le siga.
 
 $ grep 'cadena' archivo
+	
 	Muestra las lineas de un archivo que contienen la cadena.
 
 $ stat fichero
+	
 	Muestra el estado de un fichero.
 
 $ file fichero
+	
 	Muestra de que tipo es un fichero.
 
 $ tail archivo
+	
 	Muestra las últimas lineas de un archivo, 10 por defecto.
 	
 	$ tail -n 12 archivo
@@ -142,21 +160,27 @@ $ tail archivo
 		Muestra las últimas líneas del archivo, actualizándolo a medida que se van añadiendo. Útil para controlar logs.
 
 $ head archivo
+	
 	Muestra las primeras 10 líneas de un archivo. Admite -n al igual que el comando tail.
 
 $ find /usr -name lilo -print
+	
 	Busca todos los ficheros con el nombre lilo en /usr.
 
 $ find /home/user -name *.jpg -print
+	
 	Busca todas las imagenes *.jpg en /home/user/
 
 $ pwd
+	
 	Visualiza el directorio actual.
 
 $ history
+	
 	Muestra el listado de comandos usados por el usuario.
 
 $ cd directorio
+	
 	Cambia de directorio.
 
 	$ cd ..
@@ -166,30 +190,38 @@ $ cd directorio
 		Cambia al directorio Documents indicando la ruta completa.
 
 $ cp -pR fichero /home/user/directorio/
+	
 	Copia el fichero hacia directorio, conservando el nombre actual del fichero.
 
 	-R Indica que se va a copiar un directorio recursivamente, salvo los ficheros especiales
 	-p Incica que se va a copiar preservando permisos, propietario, grupo y fechas.
 
 $ mv ruta_fichero1 ruta_fichero2
+	
 	Mueve y/o renombra ficheros o directorios.
 
 $ mkdir directorio
+	
 	Crea u directorio.
 
 $ rmdir directorio
+	
 	Borra un directorio vacío.
 
 $ rm archivo
+	
 	Elimina archivos.
 
 $ rm -r directorio
+	
 	Borra los ficheros de un directorio recursivamente.
 
 $ wc
+	
 	Muestra el numero de palabras, líneas y caracteres de un archivo.
 
 $ touch fichero
+	
 	Crea un fichero con la fecha actual.
 
 # == Conclusión pendiente ==
