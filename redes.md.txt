@@ -1,66 +1,64 @@
-redes :::se trata de un conjunto de ordenadores conectados entre sÌ Internet es una red de redes
+Redes :::se trata de un conjunto de ordenadores conectados entre s√≠. Internet es una red de redes
 
-Las llamadas redes de ·rea local tambiÈn denominadas con el acrÛnimo LAN (Local Area Network), que son las que abarcan una zona no demasiado grande, tales como un par de ordenadores domÈsticos, los ordenadores de un aula o centro, los ordenadores de una empresa, etc. en las cuales las conexiones se realizan mediante cables.
-Las redes de ·rea amplia o WAN (de Wide Area Network), que abarcan una regiÛn m·s extensa (uno o varios paÌses, por ejemplo), y en las que los enlaces se establecen generalmente por medio de lÌneas telefÛnicas o lÌneas dedicadas de alta velocidad, por ejemplo de fibra Ûptica, mediante satÈlites, etc
+Las llamadas redes de √°rea local tambi√©n denominadas con el acr√≥nimo LAN (Local Area Network), que son las que abarcan una zona no demasiado grande, tales como un par de ordenadores dom√©sticos, los ordenadores de un aula o centro, los ordenadores de una empresa, etc. en las cuales las conexiones se realizan mediante cables.
+Las redes de √°rea amplia o WAN (de Wide Area Network), que abarcan una regi√≥n m√°s extensa (uno o varios pa√≠ses, por ejemplo), y en las que los enlaces se establecen generalmente por medio de l√≠neas telef√≥nicas o l√≠neas dedicadas de alta velocidad, por ejemplo: de fibra √≥ptica, mediante sat√©lites, etc
 
-las redes se comunican por protocolos los protocolos de comunicaciÛn TCP/IP. Estas siglas corresponden a los dos protocolos que se han combinado para conseguir el conjunto de reglas que permiten la comunicaciÛn en Internet: Transmission Control Protocol e Internet Protocol. 
-
-
-La informaciÛn se transmite fragmentada en paquetes: serÌa algo similar a las piezas de un puzzle que se recomponen cuando llegan a su destino. Eso explica que cuando navegas por la web las p·ginas se vayan visualizando de forma fragmentada, normalmente primero el texto y luego las im·genes.
-
-Cada paquete es autoenrutable, esto es, busca su camino para viajar hasta su destino. Ese es el motivo por el que dos ordenadores situados uno junto a otro en la misma red y solicitando a la vez la misma p·gina web no la reciben simult·neamente, ya que mientras unos paquetes han podido tomar una "autopista" despejada otros pueden haberse encontrado con una retenciÛn o haber tomado una "carretera secundaria". Esto fue lo que dio lugar a que los anglosajones hicieran un juego fonÈtico con las siglas World Wide Web (Red de amplitud mundial) diciendo que en muchos casos se trataba de la World Wait Web (Red de la espera mundial)
-
-tambien esTA UDP 
-Un protocolo es un mÈtodo est·ndar que permite la comunicaciÛn entre procesos (que potencialmente se ejecutan en diferentes equipos), es decir, es un conjunto de reglas y procedimientos que deben respetarse para el envÌo y la recepciÛn de datos a travÈs de una red. 
-
-En Internet, los protocolos utilizados pertenecen a una sucesiÛn de protocolos o a un conjunto de protocolos relacionados entre sÌ. Este conjunto de protocolos se denomina TCP/IP
+Las redes se comunican por protocolos, los protocolos de comunicaci√≥n TCP/IP. Estas siglas corresponden a los dos protocolos que se han combinado para conseguir el conjunto de reglas que permiten la comunicaci√≥n en Internet: Transmission Control Protocol e Internet Protocol. 
 
 
-entre otros como:
+La informaci√≥n se transmite fragmentada en paquetes: ser√≠a algo similar a las piezas de un puzzle que se recomponen cuando llegan a su destino. Eso explica que cuando navegas por la web las p√°ginas se vayan visualizando de forma fragmentada, normalmente primero el texto y luego las im√°genes.
+
+Cada paquete es autoenrutable, esto es, busca su camino para viajar hasta su destino. Ese es el motivo por el que dos ordenadores situados uno junto a otro en la misma red y solicitando a la vez la misma p√°gina web no la reciben simult√°neamente, ya que mientras unos paquetes han podido tomar una "autopista" despejada otros pueden haberse encontrado con una retenci√≥n o haber tomado una "carretera secundaria". Esto fue lo que dio lugar a que los anglosajones hicieran un juego fon√©tico con las siglas World Wide Web (Red de amplitud mundial) diciendo que en muchos casos se trataba de la World Wait Web (Red de la espera mundial)
+
+Tambi√©n est√° UDP 
+Un protocolo es un m√©todo est√°ndar que permite la comunicaci√≥n entre procesos (que potencialmente se ejecutan en diferentes equipos), es decir, es un conjunto de reglas y procedimientos que deben respetarse para el env√≠o y la recepci√≥n de datos a trav√©s de una red. 
+
+En Internet, los protocolos utilizados pertenecen a una sucesi√≥n de protocolos o a un conjunto de protocolos relacionados entre s√≠. Este conjunto de protocolos se denomina TCP/IP, entre otros como:
 
 HTTP, FTP, ARP, ICMP, IP, TCP, UDP, SMTP, Telnet,
 
-http:El propÛsito del protocolo HTTP es permitir la transferencia de archivos (principalmente, en formato HTML). entre un navegador (el cliente) y un servidor web (denominado, entre otros, httpd en equipos UNIX) localizado mediante una cadena de caracteres denominada direcciÛn URL
+HTTP:El prop√≥sito del protocolo HTTP es permitir la transferencia de archivos (principalmente, en formato HTML) entre un navegador (el cliente) y un servidor web (denominado, entre otros, httpd en equipos UNIX) localizado mediante una cadena de caracteres denominada direcci√≥n URL
 
-ftp: el  objetivo del protocolo FTP es permitir el intercambio de archivos entre equipos remotos, de una manera eficaz e independientemente del sistema de archivos utilizado en cada equipo. 
+FTP: el  objetivo del protocolo FTP es permitir el intercambio de archivos entre equipos remotos, de una manera eficaz e independientemente del sistema de archivos utilizado en cada equipo. 
 
-El protocolo FTP est· incluido dentro del modelo cliente-servidor, es decir, un equipo envÌa Ûrdenes (el cliente) y el otro espera solicitudes para llevar a cabo acciones (el servidor).
-Durante una conexiÛn FTP, se encuentran abiertos dos canales de transmisiÛn: un canal de comandos (canal de control)
+El protocolo FTP est√° incluido dentro del modelo cliente-servidor, es decir, un equipo env√≠a √≥rdenes (el cliente) y el otro espera solicitudes para llevar a cabo acciones (el servidor).
+Durante una conexi√≥n FTP, se encuentran abiertos dos canales de transmisi√≥n: un canal de comandos (canal de control)
 
-ARP El protocolo ARP tiene un papel clave entre los protocolos de capa de Internet relacionados con el protocolo TCP/IP, ya que permite que se conozca la direcciÛn fÌsica de una tarjeta de interfaz de red correspondiente a una direcciÛn IP Por eso se llama Protocolo de ResoluciÛn de DirecciÛn
-Para que las direcciones fÌsicas se puedan conectar con las direcciones lÛgicas, el protocolo ARP interroga a los equipos de la red para averiguar sus direcciones fÌsicas y luego crea una tabla de b˙squeda entre las direcciones lÛgicas y fÌsicas en una memoria cache
+ARP: El protocolo ARP tiene un papel clave entre los protocolos de capa de Internet relacionados con el protocolo TCP/IP, ya que permite que se conozca la direcci√≥n f√≠sica de una tarjeta de interfaz de red correspondiente a una direcci√≥n IP Por eso se llama Protocolo de Resoluci√≥n de Direcci√≥n
+Para que las direcciones f√≠sicas se puedan conectar con las direcciones l√≥gicas, el protocolo ARP interroga a los equipos de la red para averiguar sus direcciones f√≠sicas y luego crea una tabla de b√∫squeda entre las direcciones l√≥gicas y f√≠sicas en una memoria cache
 
-El protocolo RARP (Protocolo de ResoluciÛn de DirecciÛn Inversa) es mucho menos utilizado. Es un tipo de directorio inverso de direcciones lÛgicas y fÌsicas.
-En realidad, el protocolo RARP se usa esencialmente para las estaciones de trabajo sin discos duros que desean conocer su direcciÛn fÌsica.
+El protocolo RARP (Protocolo de Resoluci√≥n de Direcci√≥n Inversa) es mucho menos utilizado. Es un tipo de directorio inverso de direcciones l√≥gicas y f√≠sicas.
+En realidad, el protocolo RARP se usa esencialmente para las estaciones de trabajo sin discos duros que desean conocer su direcci√≥n f√≠sica.
 
-El protocolo RARP le permite a la estaciÛn de trabajo averiguar su direcciÛn IP desde una tabla de b˙squeda entre las direcciones MAC (direcciones fÌsicas) y las direcciones IP alojadas por una pasarela ubicada en la misma red de ·rea local (LAN)
+El protocolo RARP le permite a la estaci√≥n de trabajo averiguar su direcci√≥n IP desde una tabla de b√∫squeda entre las direcciones MAC (direcciones f√≠sicas) y las direcciones IP alojadas por una pasarela ubicada en la misma red de √°rea local (LAN)
 
-ICMP (Protocolo de mensajes de control de Internet) es un protocolo que permite administrar informaciÛn relacionada con errores de los equipos en red.
+ICMP (Protocolo de mensajes de control de Internet): es un protocolo que permite administrar informaci√≥n relacionada con errores de los equipos en red.
 
-Los mensajes de error ICMP se envÌan a travÈs de la red en forma de datagramas, como cualquier otro dato. Por lo tanto, los mismos mensajes de error pueden contener errores. 
-PING. Este comando, que permite evaluar la red, envÌa un datagrama a un destino y solicita que regrese. 
-"datagrama Un datagrama es un fragmento de paquete (an·logo a un telegrama) que es enviado con la suficiente informaciÛn para que la red pueda simplemente encaminar el fragmento hacia el equipo terminal de datos receptor, de manera independiente a los fragmentos restantes"
-IP:;
-el protocolo IP (Internet Protocol). Este protocolo utiliza direcciones numÈricas denominadas direcciones IP compuestas por cuatro n˙meros enteros (4 bytes) entre 0 y 255, y escritos en el formato xxx.xxx.xxx.xxx. Por ejemplo, 194.153.205.26 es una direcciÛn IP
+Los mensajes de error ICMP se env√≠an a trav√©s de la red en forma de datagramas, como cualquier otro dato. Por lo tanto, los mismos mensajes de error pueden contener errores. 
 
-TCP
-TCP (que significa Protocolo de Control de TransmisiÛn) es uno de los principales protocolos de la capa de transporte del modelo TCP/IP. En el nivel de aplicaciÛn, posibilita la administraciÛn de datos que vienen del nivel m·s bajo del modelo, o van hacia Èl, (es decir, el protocolo IP). Cuando se proporcionan los datos al protocolo IP, los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipaciÛn que el protocolo es TCP). TCP es un protocolo orientado a conexiÛn, es decir, que permite que dos m·quinas que est·n comunicadas controlen el estado de la transmisiÛn.
+PING. Este comando, que permite evaluar la red, env√≠a un datagrama a un destino y solicita que regrese. 
+"Un datagrama es un fragmento de paquete (an√°logo a un telegrama) que es enviado con la suficiente informaci√≥n para que la red pueda simplemente encaminar el fragmento hacia el equipo terminal de datos receptor, de manera independiente a los fragmentos restantes"
+
+Protocolo IP (Internet Protocol). Este protocolo utiliza direcciones num√©ricas denominadas direcciones IP compuestas por cuatro n√∫meros enteros (4 bytes) entre 0 y 255, y escritos en el formato xxx.xxx.xxx.xxx. Por ejemplo, 194.153.205.26 es una direcci√≥n IP
+
+TCP (que significa Protocolo de Control de Transmisi√≥n): es uno de los principales protocolos de la capa de transporte del modelo TCP/IP. En el nivel de aplicaci√≥n, posibilita la administraci√≥n de datos que vienen del nivel m√°s bajo del modelo, o van hacia √©l, (es decir, el protocolo IP). Cuando se proporcionan los datos al protocolo IP, los agrupa en datagramas IP, fijando el campo del protocolo en 6 (para que sepa con anticipaci√≥n que el protocolo es TCP). TCP es un protocolo orientado a conexi√≥n, es decir, que permite que dos m√°quinas que est√°n comunicadas controlen el estado de la transmisi√≥n.
 UDP
-El protocolo UDP (Protocolo de datagrama de usuario) es un protocolo no orientado a conexiÛn.
+El protocolo UDP (Protocolo de datagrama de usuario) es un protocolo no orientado a conexi√≥n.
 
-Existen miles de puertos (codificados en 16 bits, es decir que se cuenta con 65.536 posibilidades). Es por ello que la IANA (Internet Assigned Numbers Authority [Agencia de AsignaciÛn de N˙meros de Internet]) desarrollÛ una aplicaciÛn est·ndar para ayudar con las configuraciones de red.
+Existen miles de puertos (codificados en 16 bits, es decir que se cuenta con 65.536 posibilidades). Es por ello que la IANA (Internet Assigned Numbers Authority [Agencia de Asignaci√≥n de N√∫meros de Internet]) desarroll√≥ una aplicaci√≥n est√°ndar para ayudar con las configuraciones de red.
+
 ///////////////
-Los puertos del 0 al 1.023 son los puertos conocidos o reservados. En tÈrminos generales, est·n reservados para procesos del sistema (daemons) o programas ejecutados por usuarios privilegiados. Sin embargo, un administrador de red puede conectar servicios con puertos de su elecciÛn. Los puertos del 1.024 al 49.151 son los puertos registrados. Los puertos del 49.152 al 65.535 son los puertos din·micos y/o privados
+Los puertos del 0 al 1.023 son los puertos conocidos o reservados. En t√©rminos generales, est√°n reservados para procesos del sistema (daemons) o programas ejecutados por usuarios privilegiados. Sin embargo, un administrador de red puede conectar servicios con puertos de su elecci√≥n. Los puertos del 1.024 al 49.151 son los puertos registrados. Los puertos del 49.152 al 65.535 son los puertos din√°micos y/o privados
 
-puertos conocidos y mas usados 
+Puertos conocidos y m√°s usados 
 
 21:	FTP
-23	;Telnet
-25	;SMTP
-53;	Sistema de nombre de dominio
-63;	Whois
-70;	Gopher
-79;	Finger
-80	;HTTP
-110	;POP3
-119	;NNTP
+23: Telnet
+25: SMTP
+53: Sistema de nombre de dominio
+63: Whois
+70: Gopher
+79: Finger
+80: HTTP
+110: POP3
+119: NNTP
