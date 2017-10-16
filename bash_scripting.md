@@ -1,10 +1,10 @@
 # Scripting
 
-## Hola parrot
+## Hola Parrot
 
 NOTA: Los comandos que se muestran están pensados para escribirlos en un archivo de texto y no en la terminal, a no ser que se indique lo contrario.
 
-Bash es principalmente un lenguaje de scripting, a parte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemente abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extensión de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
+Bash es principalmente un lenguaje de scripting, aparte de una shell. Vamos a introducirnos en el maravilloso mundo de scripting, comenzando por el consabido script "Hola Mundo". Usted puede crear scripts simplemente abriendo su editor de texto favorito y guardándolo. Aunque no es necesario que nuestros scripts tengan una extensión de archivo, generalmente se utiliza .sh como referencia. En nuestros ejemplos usaremos .sh
 
 	#!/bin/bash         
 	#Script hola ParrotSec
@@ -135,7 +135,7 @@ En el ejemplo anterior, en la estructura de control:
 
 La estructura condicional es un concepto sencillo ya que se parece mucho al concepto condicional que utilizamos al hablar, utilizando "si [esto] haz instrucción". Las estructuras condicionales se pueden encadenar. Piense en otro ejemplo. Añadamos una condición más a nuestro ejemplo anterior. Supongamos que queremos controlar si el usuario introduce la distribución "Debian". Es decir, si introduce "parrot" mostramos el texto ya conocido y si es cualquier otra cosa, mostraremos el texto correspondiente. Pero ahora queremos controlar la salida de texto para la opción "Debian".
 
-Veamos dos formas de hacerlo y elija la que más le guste (solo mostraré como queda la estructura de control y no todo el script):
+Veamos dos formas de hacerlo y elija la que más le guste (solo mostraré cómo queda la estructura de control y no todo el script):
 
 	if [ $distribucion = parrot ]
 	then
@@ -275,7 +275,7 @@ Trate de escribir en una línea de comandos:
 
 	$ echo "hola Parrot"
 
-Pero... cómo escribimos un comando echo para que muestre por pantalla hola "ParrotSec"? 
+Pero... ¿cómo escribimos un comando echo para que muestre por pantalla hola "ParrotSec"? 
 "echo" aunque tiene diversas opciones y podemos utilizar otros símbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usa con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
 
 Mire el siguiente ejemplo:
@@ -507,7 +507,7 @@ Se utiliza esta estructura para leer un archivo línea a línea. "archivo" es un
 
 
 ## Estructura bucle: UNTIL
-El bucle until continua ejecutando comandos mientras se cumpla la condición. Una vez que dicha condición sea falsa, se sale del bucle.
+El bucle until continúa ejecutando comandos mientras se cumpla la condición. Una vez que dicha condición sea falsa, se sale del bucle.
 La forma que tiene esta estructura es:  
 
 	until condicion
@@ -778,7 +778,7 @@ Comprobemos el "exit code" del mismo comando sobre un archivo que sí exista:
 	$ ls /home
 	$ echo $?
 
-Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si, sobre todo cuando  una instrucción ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código), ha terminado correctamente. Para ello, tras la ejecución del comando, y sin ejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
+¿Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si, sobre todo cuando  una instrucción ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código), ha terminado correctamente. Para ello, tras la ejecución del comando, y sin ejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
 
 
 
