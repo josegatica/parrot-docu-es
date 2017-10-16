@@ -4,74 +4,55 @@ Todo usuario nuevo, antes de hacer cualquier otra cosa en Linux, debe entender c
 
 Un exelente comando para comezar a utilizar la shell es "uname", este nos muestra que sistema operativo estamos usando.
 
-┌─[user@parrot]─[~]
-└──╼ $ uname
+$ uname
 Linux
-┌─[user@parrot]─[~]
-└──╼ $
 
 Haciendo uso de la obcion -a podemos encontrar información adicional.
 
-┌─[user@parrot]─[~]
-└──╼ $uname -a
+$uname -a
 Linux parrot 4.11.0-parrot6-amd64 #1 SMP Parrot 4.11.6-1parrot6 (2017-06-28) x86_64 GNU/Linux
-┌─[user@parrot]─[~]
-└──╼ $
+
 La obción "-a" nos aporta más información, incluyendo la version actual del Kernel Linux que esta sienso usado, el Hostname, la Arquitectura del sistema. El comando uname -a es un exelente comando para comenzar a trabajar con la Shell de Linux, ya que nos permite obtener información sobre el sistema operativo que estamos usando. La Shell nos permite ejecutar comandos Internos y Externos, es importante diferenciar cada uno de estos dos tipos.
 
 Los comandos Internos son aquellos que están integrados en la Shell (Built into shell), estos comandos internos nos permiten realizar tareas comunes como:
 
 Mostrar el directorio actual:
-┌─[user@parrot]─[~]
-└──╼ $ pwd
+$ pwd
 
 Cambiar de directorio:
-┌─[user@parrot]─[~]
-└──╼ $ cd /ruta/del/nuevo/directorio
+$ cd /ruta/del/nuevo/directorio
 
 Mostrar un texto en pantala:
-┌─[user@parrot]─[~]
-└──╼ $ echo "Texto que queremos mostrar"
+$ echo "Texto que queremos mostrar"
 
 Tiempo de ejecución de un comando:
-┌─[user@parrot]─[~]
-└──╼ $ time pwd		# Esto nos indica el tiempo de ejecución del comando pwd
+$ time pwd		# Esto nos indica el tiempo de ejecución del comando pwd
 
 Establecer obciones:
-┌─[user@parrot]─[~]
-└──╼ $ set --help
+$ set --help
+
 El comando set muestra una gran variedad de obciones relacionadas con las operaciones de la shell. Estas obciones son muy similares a las variables de entorno pero no son la misma cosa.
 
 Cerrar la Shell:
-┌─[user@parrot]─[~]
-└──╼ $ exit
+$ exit
+
 Los comandos exit y logout terminan la shell. El comando exit, termina cualquier shell, mientras que el comando logout sólo termina las shell de inicio de sesión. Estas shell de inicio de sesión son aquellas que se inician en el inicio de una sesión en modo texto.
-┌─[user@parrot]─[~]
-└──╼ $ logout
+$ logout
 
 Se puede comprobar facilmente cuando un comando es Interno o Externo utilizando el comando "type" antes del comando que queremos comprobar.
-┌─[user@parrot]─[~]
-└──╼ $ type cd
+$ type cd
 cd is a shell builtin
-┌─[user@parrot]─[~]
-└──╼ $ type bash
+$ type bash
 bash is /bin/bash
-┌─[user@parrot]─[~]
-└──╼ $
 
 Algunos comandos internos estan duplicados por comandos externos que hacen exactamente la misma función, estos comandos externos no siempre estan instalados en todos los sistemas. Podemos chequear cuales de estos comandos internos estan duplicados por comandos externos usando la obción "-a" al ejecutar el comando "type".
-┌─[user@parrot]─[~]
-└──╼ $ type -a pwd
+$ type -a pwd
 pwd is a shell builtin
 pwd is /bin/pwd
-┌─[user@parrot]─[~]
-└──╼ $
+
 En la ejecución anterior podemos ver como exite una instalación externa del comando pwd en ParrotSec. Es importante mencionar que cuando un comando externo esta instalado, el comando interno tiene prioridad. Si queremos ejecutar el comando externo en lugar del interno, debemos especificar el path del comando externo, ejemplo:
-┌─[user@parrot]─[~]
-└──╼ $ /bin/pwd
+$ /bin/pwd
 /home/user
-┌─[user@parrot]─[~]
-└──╼ $ 
 
 Estos son algunos conceptos básicos que deben aprender antes de profundizar en el uso de la Shell y de comandos en GNU/Linux. Es importante tener conocimiento no solo de las operaciones que se pueden realizar con un comando sino tambien de su origen y de como funciona este.
 
