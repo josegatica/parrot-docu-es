@@ -39,20 +39,35 @@ $ sudo adduser [nombre_de_usuario]
 ejemplo:
 
 $ sudo adduser parrot
+
 Adding user `parrot' ...
+
 Adding new group `parrot' (1001) ...
+
 Adding new user `parrot' (1001) with group `parrot' ...
+
 Creating home directory `/home/parrot' ...
+
 Copying files from `/etc/skel' ...
+
 Enter new UNIX password: 
+
 Retype new UNIX password: 
+
 Changing the user information for parrot
+
 Enter the new value, or press ENTER for the default
+
 	Full Name []: Parrot El Pirata
+	
 	Room Number []: Centro de Operaciones
+	
 	Work Phone []: *************
+	
 	Home Phone []: *************
+	
 	Other []: ************
+
 Is the information correct? [Y/n] 
 
 
