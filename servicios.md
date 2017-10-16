@@ -113,22 +113,22 @@ Varias palabras claves podemos observar en la salida de estado de un servicio:
 
 
 ## Listando unidades con systemctl
-- Consulta el estado de todas las unidades   
+Consulta el estado de todas las unidades   
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl 
 
-- Consulta el estado de los servicios arrancados
+Consulta el estado de los servicios arrancados
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl --type=service
 
-- Consulta el estado de un servicio
+Consulta el estado de un servicio
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl status sshd 
 
-- Aunque si observamos la salida de la opción "status", podemos llegar a saber si un servicio debe o no arrancarse en el inicio y si está activo, tenemos también varias opciones para verlo más facilmente:
+Aunque si observamos la salida de la opción "status", podemos llegar a saber si un servicio debe o no arrancarse en el inicio y si está activo, tenemos también varias opciones para verlo más facilmente:
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl is-active apache2
@@ -140,7 +140,7 @@ Varias palabras claves podemos observar en la salida de estado de un servicio:
 	└──╼ #systemctl is-enabled sshd
 	enabled
 
-- Comprobar servicios fallidos
+Comprobar servicios fallidos
 
 	┌─[✗]─[root@parrot]─[~]
 	└──╼ #systemctl --failed --type=service
