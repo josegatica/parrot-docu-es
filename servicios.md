@@ -148,7 +148,7 @@ Comprobar servicios fallidos
 ## Arrancando y parando demonios del sistema
 Arrancar, parar, recargar y verificar el estado son tareas comunes cuando administramos un sistema.
 
-- Para ver el estado de un servicio:
+Para ver el estado de un servicio:
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl status sshd
@@ -161,14 +161,14 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 	           └─1135 /usr/sbin/sshd -D
 
 
-- Para comprobar que el proceso está corriendo:
+Para comprobar que el proceso está corriendo:
 
 	┌─[root@parrot]─[~]
 	└──╼ #ps -up 1135
 	USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
 	root      1135  0.0  0.0  71972  5440 ?        Ss   Oct09   0:00 /usr/sbin/sshd -D
 
-- Parar el servicio y verificar su estado:
+Parar el servicio y verificar su estado:
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl stop sshd
@@ -180,7 +180,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 	  Process: 1135 ExecStart=/usr/sbin/sshd -D $SSHD_OPTS (code=exited, status=0/SUCCESS)
 	 Main PID: 1135 (code=exited, status=0/SUCCESS)
 
-- Arrancar el servicio y ver el estado. El ID del proceso ha cambiado:
+Arrancar el servicio y ver el estado. El ID del proceso ha cambiado:
 
 	┌─[✗]─[root@parrot]─[~]
 	└──╼ #systemctl start sshd
@@ -196,7 +196,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 	           └─5223 /usr/sbin/sshd -D
 
 
-- Rearrancar el servicio y comprobar su estado:
+Rearrancar el servicio y comprobar su estado:
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl restart sshd
@@ -211,7 +211,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 	   CGroup: /system.slice/ssh.service
 	           └─5231 /usr/sbin/sshd -D
 
-- Recargar un servicio sin llegar a pararlo, por ejemplo para que lea un cambio en su configuración. En este caso el ID de proceso no cambiará.
+Recargar un servicio sin llegar a pararlo, por ejemplo para que lea un cambio en su configuración. En este caso el ID de proceso no cambiará.
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl reload sshd
@@ -233,7 +233,7 @@ Arrancar, parar, recargar y verificar el estado son tareas comunes cuando admini
 
 Los servicios se arrancan al inicio del sistema cuando se crean links en los directorios correctos de systemd. Estos links se pueden crear y/o borrar con los siguientes comandos de systemctl.
 
-- Deshabilitar un servicio en el arranque y comprobar su estado:
+Deshabilitar un servicio en el arranque y comprobar su estado:
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl disable ssh
@@ -252,7 +252,7 @@ Los servicios se arrancan al inicio del sistema cuando se crean links en los dir
 	   CGroup: /system.slice/ssh.service
 	           └─5231 /usr/sbin/sshd -D
 
-- Habilitar un servicio en el arranque y comprobar su estado:
+Habilitar un servicio en el arranque y comprobar su estado:
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl enable ssh
