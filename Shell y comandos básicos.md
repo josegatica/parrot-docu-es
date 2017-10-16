@@ -9,14 +9,16 @@ $ uname
 Linux
 
 
-Haciendo uso de la obcion -a podemos encontrar información adicional.
+Haciendo uso de la opción -a podemos encontrar información adicional.
 
 $uname -a
 
 Linux parrot 4.11.0-parrot6-amd64 #1 SMP Parrot 4.11.6-1parrot6 (2017-06-28) x86_64 GNU/Linux
 
 
-La obción "-a" nos aporta más información, incluyendo la version actual del Kernel Linux que esta sienso usado, el Hostname, la Arquitectura del sistema. El comando uname -a es un exelente comando para comenzar a trabajar con la Shell de Linux, ya que nos permite obtener información sobre el sistema operativo que estamos usando. La Shell nos permite ejecutar comandos Internos y Externos, es importante diferenciar cada uno de estos dos tipos.
+La opción "-a" nos aporta más información, incluyendo la versión actual del Kernel Linux que está sienso usado, el hostname, la arquitectura del sistema. El comando uname -a es un exelente comando para comenzar a trabajar con la Shell de Linux, ya que nos permite obtener información sobre el sistema operativo que estamos usando. 
+
+La Shell nos permite ejecutar comandos Internos y Externos, es importante diferenciar cada uno de estos dos tipos.
 
 Los comandos Internos son aquellos que están integrados en la Shell (Built into shell), estos comandos internos nos permiten realizar tareas comunes como:
 
@@ -31,7 +33,7 @@ Cambiar de directorio:
 $ cd /ruta/del/nuevo/directorio
 
 
-Mostrar un texto en pantala:
+Mostrar un texto en pantalla:
 
 $ echo "Texto que queremos mostrar"
 
@@ -86,7 +88,7 @@ $ /bin/pwd
 /home/user
 
 
-Estos son algunos conceptos básicos que deben aprender antes de profundizar en el uso de la Shell y de comandos en GNU/Linux. Es importante tener conocimiento no solo de las operaciones que se pueden realizar con un comando sino tambien de su origen y de como funciona este.
+Estos son algunos conceptos básicos que deben aprender antes de profundizar en el uso de la Shell y de comandos en GNU/Linux. Es importante tener conocimiento no solo de las operaciones que se pueden realizar con un comando sino también de su origen y de como funciona este.
 
 ### Trabajando con ficheros desde la Shell
 
