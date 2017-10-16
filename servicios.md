@@ -25,7 +25,7 @@ Durante muchos años, el proceso ID 1 de Linux y sistemas Unix ha sido el proces
 
 Los demonios usuados frecuentemente eran arrancados al inicio del sistema con "system V y scipts de inicio LSB". Menos frecuentemente los demonios se arrancaban bajo demanda como inetd o xinetd.
 
-El sistema "System V", que como se ha dicho llebvaba con nosotros muchos (demasiados?) años tenia una serie de limitaciones. Es por esto que han surgido diferentes sistemas de arranque para intentar solucionar esto. Debian (y la gran mayoría de distribuciones) han escogido como método de arranque "systemd".
+El sistema "System V", que como se ha dicho llevaba con nosotros muchos (¿demasiados?) años tenía una serie de limitaciones. Es por esto que han surgido diferentes sistemas de arranque para intentar solucionar esto. Debian (y la gran mayoría de distribuciones) han escogido como método de arranque "systemd".
 
 
 ## systemctl y unidades systemd
@@ -57,7 +57,7 @@ Algunas unidades son:
 - Unidades "socket". Tienen la extensión ".socket" y representan la comunicación entre procesos (IPC).
 - Unidades "path". Tienen la extensión ".path" y se utilizan para retrasar la activación de un servicio hasta que el Filesystem este activo.
 
-Puede comprobar todas las unidades que hay en su sistema con la instrucción "systemctl list-unit-files". Compruebe como cada unidad tiene una extensión que nos indica que tipo de objeto es.
+Puede comprobar todas las unidades que hay en su sistema con la instrucción "systemctl list-unit-files". Compruebe cómo cada unidad tiene una extensión que nos indica que tipo de objeto es.
 
 ## Estados de Servicio
 
