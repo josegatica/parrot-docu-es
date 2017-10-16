@@ -113,7 +113,7 @@ Varias palabras claves podemos observar en la salida de estado de un servicio:
 
 
 ## Listando unidades con systemctl
-- Consulta el estado de todas las unidades
+- Consulta el estado de todas las unidades   
 
 	┌─[root@parrot]─[~]
 	└──╼ #systemctl 
