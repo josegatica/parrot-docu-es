@@ -1,6 +1,20 @@
 # NetworkManager
 
 En Parrot la configuración de las interfaces de red se maneja por medio de un demonio de sistema llamado NetworkManager.
+Para comprobar si tenemos activado NetworkManager:
+
+	┌─[root@parrot]─[~]
+	└──╼ #systemctl status NetworkManager
+	● NetworkManager.service - Network Manager
+   	Loaded: loaded (/lib/systemd/system/NetworkManager.service; enabled; vendor preset: enabled)
+   	Active: active (running) since Mon 2017-10-09 15:39:51 CEST; 6 days ago
+    	 Docs: man:NetworkManager(8)
+	 Main PID: 1010 (NetworkManager)
+	    Tasks: 3 (limit: 4915)
+	   CGroup: /system.slice/NetworkManager.service
+	           └─1010 /usr/sbin/NetworkManager --no-daemon
+
+
 Para NetworkManager:
 - un "device" es una interfaz de red
 - un "connection" es una colección de parametros que se pueden configurar para un "device"
