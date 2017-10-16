@@ -138,21 +138,22 @@ parrot : parrot hackers
 En el ejemplo anterior, utilizamos el comando groups para mostrar el grupo actual de la cuenta del usuario parrot, el grupo actual es parrot, para agregarlo como miembro en otro grupo, se utiliza el comando usermod con los parametros -a y -G esto nos permite conservar la membresía en el grupo original (parrot).
 
 
-## Uso del comando change
+## Uso del comando chage
 
-El comando change nos permite modificar los ajustes de la cuenta relacionados con la caducidad de la misma. Es posible configurar las cuentas en Linux de modo que expiren automáticamente si se cumplen dos condiciones:
+El comando chage nos permite modificar los ajustes de la cuenta relacionados con la caducidad de la misma. Es posible configurar las cuentas en Linux de modo que expiren automáticamente si se cumplen dos condiciones:
 
 1 - La contraseña no se ha cambiado en un periodo de tiempo especificado.
 
 2 - La fecha del sistema ha pasado un tiempo predeterminado.
-Estos ajustes se controlan a través de la utilidad change, su sintaxis es la siquiente:
 
-change [-l] [-m dias_minimos] [-M dias_máximos] [-d último_dia] [-I dias_inactivos] 
+Estos ajustes se controlan a través de la utilidad chage, su sintaxis es la siquiente:
+
+chage [-l] [-m dias_minimos] [-M dias_máximos] [-d último_dia] [-I dias_inactivos] 
 	[-E fecha_de_expiración] [-W advertencia] nombre_de_usuario
 
-Estos parámetro modifican las acciones del comando change.
+Estos parámetro modifican las acciones del comando chage.
 
-- El parámetro -l hace que change muestre la caducidad de la cuentea y la información de envejecimiento de la contraseña par aun usuario particular.
+- El parámetro -l hace que chage muestre la caducidad de la cuentea y la información de envejecimiento de la contraseña par aun usuario particular.
 
 - El parámetro -m establece el número mímimo de días entre los cambios de contraseña o indica que un usuario puede cambiar una contraseña varias veces en un día, indicando con números cada cuantos dias puede cambiar la contraseña el usuario, 1 indica que el usuario puede cambiar la contraseña una vez al día, 2 indica que el usuario puede cambiar la contraseña cada 2 días y así sucesíbamente.
 
@@ -162,14 +163,14 @@ Estos parámetro modifican las acciones del comando change.
 
 - El parámetro -I establece el número de días entre la caducidad de la contraseña y la cuenta, Una cuenta caducada no se puede utilizar o puede obligar al usuario a cambiar la contraseña inmediatamente después de conectarse, esto depende de la distribución.
 
-- El parámetro -E establece una fecha de caducidad obsoleta, por ejemplo, puede utilizar -E 2017/12/31 para que una cuenta venza el 31 de Diciembre del 2017 o utilizando el número de días desde el 1ro de Enero de 1970, tambien es importante mencionar que el valor -1 no representa una fecha de caducidad.
+- El parámetro -E establece una fecha de caducidad obsoleta, por ejemplo, puede utilizar -E 2017/12/31 para que una cuenta vensa el 31 de Diciembre del 2017 o utilizando el número de días desde el 1ro de Enero de 1970, tambien es importante mencionar que el valor -1 no representa una fecha de caducidad.
 
 - El parámetro -W establece e número de días antes de la expiración de la cuenta en los que el sistema debe enviar avisos sobre la caducidad inminente al usuario. Es importante mencionar que estos avisos solo se muestran a usuarios de inicio de sesión en modo texto, los usuarios que inician sesión desde la GUI por lo general no ven estos avisos.
 
 
 ## Descripción de los archivos de configuración de las cuentas.
 
-Se pueden modificar directamente los archivos de condiguración del usuario, los archivos /etc/passwd y /etc/shadow controlan la mayoría de las características básicas de una cuenta. AMbos archivos constan de un conjunto de registros, una línea por registro de cuenta. Cada registro comienza con un nombre de usuario y continua con un conjunto de campos determinados por dos puntos (:). Muchos de estos artículos pueden ser modificados con usermod o passwd. Una entrada de registro típica de /etc/passwd es similar a la siguiente:
+Se pueden modificar directamente los archivos de condiguración del usuario, los archivos /etc/passwd y /etc/shadow controlan la mayoría de las características básicas de una cuenta. Ambos archivos constan de un conjunto de registros, una línea por registro de cuenta. Cada registro comienza con un nombre de usuario y continua con un conjunto de campos determinados por dos puntos (:). Muchos de estos artículos pueden ser modificados con usermod o passwd. Una entrada de registro típica de /etc/passwd es similar a la siguiente:
 
 user:x:1000:1000:User,,,:/home/user:/bin/bash
 
@@ -194,7 +195,7 @@ Normalmente una entrada de registro en /etc/shadow se parece a la siguiente:
 
 user:$6$vocRBGox$Nngt/9rYAijBogufMToHFdb3xzD/7J0GLp9.67/WM82mSsfb3FuC0:17450:0:99999:7:-1:-1:
 
-La mayoría de los campos corresponden a las opciones establecidas con la herramienta change, otras se establecen con passwd, useradd o usermod. A continuación se explica el significado de cada uno de los campos.
+La mayoría de los campos corresponden a las opciones establecidas con la herramienta chage, otras se establecen con passwd, useradd o usermod. A continuación se explica el significado de cada uno de los campos.
 
 - Cada línea comienza con el nombre de usuario, se puede notar como el UID no utiliza en el archivo /etc/shadow. El nombre de usuario vincula las entradas de este archivo a las de /etc/passwd.
 
@@ -211,7 +212,7 @@ La mayoría de los campos corresponden a las opciones establecidas con la herram
 - Normalmente en un sistema configurado para caducar las cuentas, nos encontramos con 3 campos más, Dias entre la Expiración y la Desactivaciòn de la cuenta (-1 en el ejemplo anterior), Dia de Expiración de la cuenta (-1 en el ejemplo anterior) y el último campo esta reservado para un uso futuro, por lo general en todos los sistemas Linux no se usa o contiene un valor sin sentido.
 
 
-  Analizando detenidamente lo anterior, podemos afirmar que las cuentas de usuario pueden ser modificadas editando directamente estos archivos (/etc/passwd y /etc/shadow). Los valores -1 y 99999 indican que dicho campo ha sido desactivado, esta inutilizado. Realmente se recomienda realizar estas modificaciones usando las herramientas usermod y change ya que es mucho más dificil realizar estos cambios directamente en los archivos de configuración ya que se pueden cometer errores como: desactivar una cuenta antes o despues del tiempo requerido, cometer un error a la hora de calcular los días desde el 1ro de Enero de 1970, omitir años bisiestos, etc.
+  Analizando detenidamente lo anterior, podemos afirmar que las cuentas de usuario pueden ser modificadas editando directamente estos archivos (/etc/passwd y /etc/shadow). Los valores -1 y 99999 indican que dicho campo ha sido desactivado, esta inutilizado. Realmente se recomienda realizar estas modificaciones usando las herramientas usermod y chage ya que es mucho más dificil realizar estos cambios directamente en los archivos de configuración ya que se pueden cometer errores como: desactivar una cuenta antes o despues del tiempo requerido, cometer un error a la hora de calcular los días desde el 1ro de Enero de 1970, omitir años bisiestos, etc.
 
   Algo similar sucede al tratar de modificar en hash de la contraseña, este no puede ser editado de forma efectiva exepto a traves de la herramienta passwd o herramientas similares. Se puede copiar y pegar un valor de un archivo compatible o usar cripto, pero generalmente es mucho más fácil usar passwd, por otro lado, no es recomendable copiar hashes de contraseñas desde otros sistemas porque significa que los usuarios tendran las mismas contraseñas en ambos sistemas y este hecho será obvio para alguien que haya adquirido ambas listas de hashes.
 
