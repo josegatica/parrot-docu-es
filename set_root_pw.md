@@ -7,5 +7,5 @@ Ahora verifique que todo está ok
 
 su
 
-ingresa la clave que definió en el paso anterior y <i>voilà</i> usted ya estaría como usuario root.
+ingresa la clave que definió en el paso anterior y <i>voilà!</i>, usted ya estaría como usuario root.
 
