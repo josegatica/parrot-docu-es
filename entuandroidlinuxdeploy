@@ -1,48 +1,45 @@
-» usted debe tener su telefono rooteado y contst con 6 gb libres
-como minimo de espacio disponible
+» Usted debe tener su Dispositivo rooteado y contar con 6 Gb como mínimo de espacio disponible
 
 Abra linux deploy 
 
-eliga el icono de la parte inferior derecha
+Elija el icono de la parte inferior derecha
 
-use debian como distribucion
+Use Debian como distribución
 
-suite de distribucion: testing
+Suite de distribución: Testing
 
-defina http://ftp.halifax.rwth-aachen.de/parrotsec como ruta de origen
+Defina http://ftp.halifax.rwth-aachen.de/parrotsec como ruta de origen
 
-Ruta de Instalacion parrot.img
+Ruta de Instalación parrot.img
 
 Tamaño de Disco MB 4096
 
-nombre de usuario: parrot
+Nombre de usuario: parrot
 
-active ssh
+Active ssh
 
-active gui
+Active gui
 
-graficos subsistema: x11
+Gráficos subsistema: x11
 
-entorno de escritorio: Xfce
+Entorno de escritorio: Xfce
 
-Ahora Ve atras hemos denido los parametros
+Ahora Ve atrás, hemos denido los parametros
 
 Vamos a Instalar
 
-Eliges el boton de la parte superiror derecha
+Eliges el botón de la parte superior derecha
 
-La 1era opcion "Instalar"
+La 1era opción "Instalar"
 
-Este repositorio ya contiene los parrot
+Este repositorio ya contiene los Parrot
 
-Es decir que en se instalara parrot directamente en tu android.
+Es decir que en se instalará Parrot directamente en tu android.
 
-si viste el mensaje "deploy" al iniciar y terminar la instalacion
-
-elige en la misma zona el boton start 
+Si viste el mensaje "deploy" al iniciar y terminar la instalación, elige en la misma zona el boton start 
 
 
-deberas ver algo muy similar
+Ddeberás ver algo muy similar:
 
 [03:21:43] >>> start
 [03:21:43] Checking file system ... done
@@ -65,7 +62,7 @@ deberas ver algo muy similar
 
 
 
-ahora elige status
+Ahora elige status
 
 
 
@@ -116,34 +113,32 @@ ahora elige status
 
 ok
 
-si estamos en el misno canal avancemos
+Si estamos en el misno canal avancemos
 
-la aplicacipn linux deploy te asifno una ip memorizala
+La aplicación linux deploy te asignó una IP, memorízala
 
 
-abre termux 
+Abre termux 
 
-escribe
+Escribe:
 
 ssh parrot@192.168.0.5
 
-ingresa la clave
+Ingresa la clave
 
-ahora sigue este procedimiento 
+Ahora sigue este procedimiento:
 
 https://github.com/josegatica/parrot-docu-es/blob/master/set_root_pw
 
-bien digita 
+Bien, digita: 
 
 su
 
-autenticate
+Autentícate
 
-lo has logrado
+¡¡¡Lo has logrado!!!
 
-busca el link de actualizaciones y manten
-
-tu parrot tuneado
+Busca el link de actualizaciones y mantén tu Parrot tuneado
 
 
 ┌─[root@localhost]─[/home/parrot]
