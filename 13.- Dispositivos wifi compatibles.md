@@ -1,0 +1,37 @@
+Adaptadores y chipsets USB Wifi compatibles compatibles con Parrot Security
+
+La siguiente es una lista de tarjetas Wifi conocidas por tener un excelente soporte para Linux, sniffing y características de inyección, antenas externas (que pueden ser reemplazadas) y una potente potencia TX con buena sensibilidad RX
+
+* TP-LINK TL-WN722N ( Volumen 1 solamente)
+
+* Alfa AWUS036NH
+
+Y aquí están los chipsets con el mejor soporte para linux, si no desea comprar uno de los dispositivos anteriores, asegúrese de que el dispositivo wifi de su elección incluye uno de los siguientes chipsets
+
+
+* Atheros AR9271
+
+* Ralink RT3070
+
+* Ralink RT3572
+
+* Atheros AR9485
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
