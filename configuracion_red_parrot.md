@@ -329,7 +329,7 @@ Abrimos este fichero con nuestro editor favorito y debemos combrobar que tenemos
 
 
 ## Borrando una conexión de red
-El comando "nmcli" con "del <nombre_conexion>" borrará la conexión que le indiquemos.
+El comando "nmcli con del <nombre_conexion>" borrará la conexión que le indiquemos.
 
 
 ## Modificando el nombre de nuestro sistema
