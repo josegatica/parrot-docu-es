@@ -1,12 +1,11 @@
 sudo passwd
 
-Ingresa ese comando y allí asigna la nueva clave que deseas.
+Ingrese ese comando y allí asigne la nueva clave que desee.
 
 
-Ahora verifica quu todo esta ok
+Ahora verifique que todo está ok
 
 su
 
-ingresa la clave que dwfiniste en el paso anterior y vuala debes estar
-como root
+ingresa la clave que definió en el paso anterior y <i>voilà</i> usted ya estaría como usuario root.
 
