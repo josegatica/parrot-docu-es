@@ -1,0 +1,151 @@
+» usted debe tener su telefono rooteado y contst con 6 gb libres
+como minimo de espacio disponible
+
+Abra linux deploy 
+
+eliga el icono de la parte inferior derecha
+
+use debian como distribucion
+
+suite de distribucion: testing
+
+defina http://ftp.halifax.rwth-aachen.de/parrotsec como ruta de origen
+
+Ruta de Instalacion parrot.img
+
+Tamaño de Disco MB 4096
+
+nombre de usuario: parrot
+
+active ssh
+
+active gui
+
+graficos subsistema: x11
+
+entorno de escritorio: Xfce
+
+Ahora Ve atras hemos denido los parametros
+
+Vamos a Instalar
+
+Eliges el boton de la parte superiror derecha
+
+La 1era opcion "Instalar"
+
+Este repositorio ya contiene los parrot
+
+Es decir que en se instalara parrot directamente en tu android.
+
+si viste el mensaje "deploy" al iniciar y terminar la instalacion
+
+elige en la misma zona el boton start 
+
+
+deberas ver algo muy similar
+
+[03:21:43] >>> start
+[03:21:43] Checking file system ... done
+[03:21:43] Mounting partitions: 
+[03:21:43] / ... done
+[03:21:43] /proc ... done
+[03:21:43] /sys ... done
+[03:21:43] /sys/fs/selinux ... done
+[03:21:43] /dev ... done
+[03:21:43] /dev/pts ... done
+[03:21:43] /dev/shm ... done
+[03:21:44] :: Configuring core/mnt ... 
+[03:21:44] :: Configuring core/net ... 
+[03:21:44] :: Starting extra/dbus ... done
+[03:21:44] :: Starting extra/ssh ... done
+[03:21:44] :: Starting graphics/x11 ... done
+[03:21:44] <<< start
+
+
+
+
+
+ahora elige status
+
+
+
+
+[02:56:00] >>> status
+[02:56:01] Device: X
+[02:56:01] Android: 6.0
+[02:56:01] Architecture: armv7l
+[02:56:01] Kernel: 3.10.90-g22b72ae
+[02:56:01] Memory: 135/2793 MB
+[02:56:01] Swap: 167/511 MB
+[02:56:01] SELinux: yes
+[02:56:01] Loop devices: yes
+[02:56:01] Support binfmt_misc: no
+[02:56:01] Supported FS: cramfs exfat ext2 ext3 ext4 f2fs fuseblk msdos ntfs vfat 
+[02:56:01] Installed system: Parrot GNU/Linux 3.8 JollyRoger
+[02:56:01] Status of components: 
+[02:56:01] :: extra/dbus ... started
+[02:56:01] :: extra/ssh ... started
+[02:56:01] :: graphics/x11 ... started
+[02:56:01] Mounted parts: 
+[02:56:01] * /
+[02:56:01] * /proc
+[02:56:01] * /sys
+[02:56:01] * /sys/fs/selinux
+[02:56:01] * /dev
+[02:56:01] * /dev/pts
+[02:56:01] * /dev/shm
+[02:56:01] Available mount points: 
+[02:56:01] * /sys/kernel/debug  0.0/0.0 GB (debugfs)
+[02:56:01] * /mnt/runtime/default/emulated  3.0/24.5 GB (sdcardfs)
+[02:56:01] * /mnt/runtime/read/emulated  3.0/24.5 GB (sdcardfs)
+[02:56:01] * /mnt/runtime/write/emulated  3.0/24.5 GB (sdcardfs)
+[02:56:01] * /system  0.0/2.4 GB (ext4)
+[02:56:01] * /cust  0.3/0.5 GB (ext4)
+[02:56:01] * /cache  0.2/0.2 GB (ext4)
+[02:56:01] * /splash2  0.0/0.1 GB (ext4)
+[02:56:01] * /3rdmodem  0.1/0.1 GB (ext4)
+[02:56:01] * /3rdmodemnvm  0.0/0.0 GB (ext4)
+[02:56:01] * /3rdmodemnvmbkp  0.0/0.0 GB (ext4)
+[02:56:01] * /sec_storage  0.0/0.0 GB (ext4)
+[02:56:01] * /modem_log  0.0/0.0 GB (ext4)
+[02:56:01] * /storage/emulated  3.0/24.5 GB (sdcardfs)
+[02:56:01] * /data  3.0/24.6 GB (ext4)
+[02:56:01] Available partitions: 
+[02:56:01]  ...no available partitions
+[02:56:01] <<< status
+
+ok
+
+si estamos en el misno canal avancemos
+
+la aplicacipn linux deploy te asifno una ip memorizala
+
+
+abre termux 
+
+escribe
+
+ssh parrot@192.168.0.5
+
+ingresa la clave
+
+ahora sigue este procedimiento 
+
+https://github.com/josegatica/parrot-docu-es/blob/master/set_root_pw
+
+bien digita 
+
+su
+
+autenticate
+
+lo has logrado
+
+busca el link de actualizaciones y manten
+
+tu parrot tuneado
+
+
+┌─[root@localhost]─[/home/parrot]
+└──╼ #uname -a
+Linux localhost 3.10.90-g22b72ae #1 SMP PREEMPT Fri May 20 04:25:13 CST 2016 armv7l GNU/Linux
