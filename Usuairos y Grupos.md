@@ -22,53 +22,38 @@ La frecuencia con la que se realiza el mantenimiento de las cuentas de usuario, 
 
 Para agregar usuarios en Linux, podemos hacer uso del comando useradd (en algunas distribuciones podemos encontrarlo como adduser). su sintaxis básica es la siguiente:
 
-$ sudo useradd [-c comment] [-d directorio_home] [-e fecha_de_expiración] [-f dias_inactivos] 
-  [-g grupo_por_defecto] [-G grupo] [-p password] [-s shell] [-u UID] nombre_de_usuario
+	$ sudo useradd [-c comment] [-d directorio_home] [-e fecha_de_expiración] [-f dias_inactivos] 
+  	[-g grupo_por_defecto] [-G grupo] [-p password] [-s shell] [-u UID] nombre_de_usuario
 
 ejemplo:
 
-$ sudo useradd -m -d /home/parrot -g hackers -G hackers,noobs,sudo parrot
+	$ sudo useradd -m -d /home/parrot -g hackers -G hackers,noobs,sudo parrot
 
 este comando nos crearia el usuario parrot, su carpeta home seria /home/parrot, grupo por defecto hackers, grupos secundarios hackers,noobs,sudo.
 
 
 adduser es una utilidad menos compleja, ya que esta nos autocompleta practicamente casi todo, es útil para la creación de usuarios estandars en un sistema pequeño. Su sintaxis básica es la siguiente:
 
-$ sudo adduser [nombre_de_usuario]
+	$ sudo adduser [nombre_de_usuario]
 
 ejemplo:
 
-$ sudo adduser parrot
-
-Adding user `parrot' ...
-
-Adding new group `parrot' (1001) ...
-
-Adding new user `parrot' (1001) with group `parrot' ...
-
-Creating home directory `/home/parrot' ...
-
-Copying files from `/etc/skel' ...
-
-Enter new UNIX password: 
-
-Retype new UNIX password: 
-
-Changing the user information for parrot
-
-Enter the new value, or press ENTER for the default
-
-	Full Name []: Parrot El Pirata
-	
-	Room Number []: Centro de Operaciones
-	
-	Work Phone []: *************
-	
-	Home Phone []: *************
-	
-	Other []: ************
-
-Is the information correct? [Y/n] 
+	$ sudo adduser parrot
+	Adding user `parrot' ...
+	Adding new group `parrot' (1001) ...
+	Adding new user `parrot' (1001) with group `parrot' ...
+	Creating home directory `/home/parrot' ...
+	Copying files from `/etc/skel' ...
+	Enter new UNIX password: 
+	Retype new UNIX password: 
+	Changing the user information for parrot
+	Enter the new value, or press ENTER for the default
+		Full Name []: Parrot El Pirata
+		Room Number []: Centro de Operaciones
+		Work Phone []: *************
+		Home Phone []: *************
+		Other []: ************
+	Is the information correct? [Y/n] 
 
 
 Con esto ya tendriamos creado el usuario parror en el sistema.
@@ -90,7 +75,7 @@ Las cuentas de usuario pueden modificarse de varias formas.
 
 La herramienta useradd proporciona el parámetro -p para establecer una contraseña, esta herramienta no es muy útil cuando directamente agrega un usuario porque requiere una contraseña pre-hash. Por lo tanto, suele ser más fácil crear una cuenta en forma deshabilitada (por no hacer uso del parametro -p) y una vez creada la cuenta configurarle una contraseña. Para ello podemos hacer uso de la herramienta passwd, su sintaxis es la siquiente:
 
-$ sudo passwd [-k] [-l] [-u [-f]] [-d] [-S] [nombre de usuario]
+	$ sudo passwd [-k] [-l] [-u [-f]] [-d] [-S] [nombre de usuario]
 
 - El parámetro -k indica que el sistema debe actualizar una cuenta expirada.
 
@@ -105,10 +90,10 @@ $ sudo passwd [-k] [-l] [-u [-f]] [-d] [-S] [nombre de usuario]
 
 Anteriormente creamos la cuenta para el usuario "Parrot El Pirata (parrot)", para establecer una nueva contraseña al usuario "parrot" utilizamos el comando passwd como se muestra en el siguiente ejemplo.
 
-$ sudo passwd parrot 
-Enter new UNIX password: 
-Retype new UNIX password: 
-passwd: password updated successfully
+	$ sudo passwd parrot 
+	Enter new UNIX password: 
+	Retype new UNIX password: 
+	passwd: password updated successfully
 
 ## Uso básico de usermod
 
@@ -129,10 +114,10 @@ La herramienta usermod es muy similar a la herramienta useradd en cuanto a sus f
 
   Cuendo se utiliza la opción -G para agregar un usuario a nuevos grupos, tenga en cuenta que cualquier grupo que no esté listado será eliminado, por lo tanto, es una buena idea utilizar el parámetro -a también. Utilizar los parámetros -a y -G juntos nos permite agregar un usuario a un nuevo grupo sin tener que enumerar los grupos antiguos en el comando. Por ejemplo para agregar el usuario pirata al grupo hackers, utilizamos el siguiente comando:
 
-$ groups parrot
-parrot : parrot
-$ sudo usermod -a -G hackers parrot
-parrot : parrot hackers
+		$ groups parrot
+		parrot : parrot
+		$ sudo usermod -a -G hackers parrot
+		parrot : parrot hackers
 
 
 En el ejemplo anterior, utilizamos el comando groups para mostrar el grupo actual de la cuenta del usuario parrot, el grupo actual es parrot, para agregarlo como miembro en otro grupo, se utiliza el comando usermod con los parametros -a y -G esto nos permite conservar la membresía en el grupo original (parrot).
@@ -148,7 +133,7 @@ El comando chage nos permite modificar los ajustes de la cuenta relacionados con
 
 Estos ajustes se controlan a través de la utilidad chage, su sintaxis es la siquiente:
 
-chage [-l] [-m dias_minimos] [-M dias_máximos] [-d último_dia] [-I dias_inactivos] 
+	chage [-l] [-m dias_minimos] [-M dias_máximos] [-d último_dia] [-I dias_inactivos] 
 	[-E fecha_de_expiración] [-W advertencia] nombre_de_usuario
 
 Estos parámetro modifican las acciones del comando chage.
@@ -172,7 +157,7 @@ Estos parámetro modifican las acciones del comando chage.
 
 Se pueden modificar directamente los archivos de condiguración del usuario, los archivos /etc/passwd y /etc/shadow controlan la mayoría de las características básicas de una cuenta. Ambos archivos constan de un conjunto de registros, una línea por registro de cuenta. Cada registro comienza con un nombre de usuario y continua con un conjunto de campos determinados por dos puntos (:). Muchos de estos artículos pueden ser modificados con usermod o passwd. Una entrada de registro típica de /etc/passwd es similar a la siguiente:
 
-user:x:1000:1000:User,,,:/home/user:/bin/bash
+	user:x:1000:1000:User,,,:/home/user:/bin/bash
 
 Cada uno de los campos tiene un significado específico:
 
@@ -193,7 +178,7 @@ Cada uno de los campos tiene un significado específico:
 
 Normalmente una entrada de registro en /etc/shadow se parece a la siguiente:
 
-user:$6$vocRBGox$Nngt/9rYAijBogufMToHFdb3xzD/7J0GLp9.67/WM82mSsfb3FuC0:17450:0:99999:7:-1:-1:
+	user:$6$vocRBGox$Nngt/9rYAijBogufMToHFdb3xzD/7J0GLp9.67/WM82mSsfb3FuC0:17450:0:99999:7:-1:-1:
 
 La mayoría de los campos corresponden a las opciones establecidas con la herramienta chage, otras se establecen con passwd, useradd o usermod. A continuación se explica el significado de cada uno de los campos.
 
