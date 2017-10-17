@@ -1,0 +1,12 @@
+sudo passwd
+
+Ingresa ese comando y allí asigna la nueva clave que deseas.
+
+
+Ahora verifica quu todo esta ok
+
+su
+
+ingresa la clave que dwfiniste en el paso anterior y vuala debes estar
+como root
+
