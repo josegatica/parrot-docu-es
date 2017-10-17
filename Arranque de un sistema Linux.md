@@ -40,7 +40,7 @@ A continuación vamos a ver cada una de estas fases de arranque y como funcionan
 
 Ubicaciones de los Bootloaders (Cargadores de arranque):
 	
-	- En un disquete (actualmente es una obción obsoleta).
+  - En un disquete (actualmente es una obción obsoleta).
 	
   - En el disco duro: a menudo se encuentra ubicado en el primer sector de una partición del disco duro, en el sector de arranque global MBR (Master Boot Record) o en moderno sistema de particiones GUID Globally-Unique Identifier (GPT) que es el estandar EFI (Extensible Firmware Interface) propuesto por Intel para reemplazar el viejo BIOS (GPT sustituye al MBR usado con el BIOS en ordenadores y portatiles modernos).
 	
@@ -59,48 +59,37 @@ Tipos de Bootloaders en Linux
 
 	Ambos son capaces de cargar tanto sistemas Linux como otros sistemas operativos y suelen estar ubicados en el MBR del disco duro.
 
-LILO: es un Bootloader rudimentario de una sola etapa, no entiende de sistemas operativos ni de sistemas de ficheros. Lilo lee datos desde el disco utilizando llamadas nativas de la BIOS que indican directamente los ficheros que se necesitan, estos ficheros son almacenados a través de un fichero mapa que se almacena en el sector de arranque.
+  LILO: es un Bootloader rudimentario de una sola etapa, no entiende de sistemas operativos ni de sistemas de ficheros. Lilo lee datos desde el disco utilizando llamadas nativas de la BIOS que indican directamente los ficheros que se necesitan, estos ficheros son almacenados a través de un fichero mapa que se almacena en el sector de arranque.
 
-	Funcionamiento de LILO: El firmware carga el sector de arranque de LILO y lo ejecuta, luego LILO carga su fichero mapa por medio de llamadas de la BIOS, el cual muestra el prompt de opciones a cargar. El usuario selecciona el kernel que desea arrancar y LILO carga el kernel seleccionado por medio de llamadas de la BIOS y utilizando los parámetros de ubicación en el fichero mapa. Por ultimo LILO ejecuta el kernel indicando donde esta el root fs (el sistema de archivos de raiz) y si es necesario el ramdisk.
+  Funcionamiento de LILO: El firmware carga el sector de arranque de LILO y lo ejecuta, luego LILO carga su fichero mapa por medio de llamadas de la BIOS, el cual muestra el prompt de opciones a cargar. El usuario selecciona el kernel que desea arrancar y LILO carga el kernel seleccionado por medio de llamadas de la BIOS y utilizando los parámetros de ubicación en el fichero mapa. Por ultimo LILO ejecuta el kernel indicando donde esta el root fs (el sistema de archivos de raiz) y si es necesario el ramdisk.
 
 Ficheros de LILO:
 	
-  - Ejemplo de /etc/lilo.conf
-	
-  boot=/dev/hda2
-	
-  root=/dev/hda2
-	
-  install=/boot/boot.b
-	
-  map=/boot/map
-	
-  vga=normal
-	
-  delay=20
-	
-  image=/vmlinuz
-	
-  label=Linux
-	
-  read-only
-	
-  other=/dev/hda1
-	
-  table=/dev/hda
-	
-  label=win
+- Ejemplo de /etc/lilo.conf
+
+		boot=/dev/hda2
+		root=/dev/hda2
+		install=/boot/boot.b
+		map=/boot/map
+		vga=normal
+		delay=20
+		image=/vmlinuz
+		label=Linux
+		read-only
+		other=/dev/hda1
+		table=/dev/hda
+		label=win
 	
   - Para cargar la configuración hay que ejecutar el comando lilo.
 	
-  $ lilo /etc/lilo.conf
+  		$ lilo /etc/lilo.conf
 
 
-GRUB: es un Bootloader más avanzado y más moderno que LILO. Trabaja en dos o tres etapas (Stages) y tiene capacidad para cargar un kernel via red. GRUB en cada etapa va cargando más elementos para arrancar, entiende de ficheros y permite especificar parámetros de forma dinámica en el arranque, no utiliza valores estáticos.
+  GRUB: es un Bootloader más avanzado y más moderno que LILO. Trabaja en dos o tres etapas (Stages) y tiene capacidad para cargar un kernel via red. GRUB en cada etapa va cargando más elementos para arrancar, entiende de ficheros y permite especificar parámetros de forma dinámica en el arranque, no utiliza valores estáticos.
 	
-	Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es obcional, a continuación vamos a ver cada una de estas estapas.
+  Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es obcional, a continuación vamos a ver cada una de estas estapas.
 
-	Etapa 1: El firmware carga el sector de arranque de GRUB en memoria.
+  Etapa 1: El firmware carga el sector de arranque de GRUB en memoria.
 	
   Etapa 1.5: Su objetivo es cargar el código que reconoce sistemas de ficheros y a partir de ahí carga la etapa 2 como un fichero.
 	
@@ -113,25 +102,16 @@ Estas etapas y caracteristicas de GRUB demuestran su potencia y superioridad a L
 
 Ficheros de GRUB en Parrot:
 
-$ ls -la
-
-total 1359
-
-drwxr-xr-x 5 root root    1024 oct  3 21:36 .
-
-drwxr-xr-x 4 root root    1024 oct 12 22:34 ..
-
-drwxr-xr-x 2 root root    1024 oct  3 21:36 fonts
-
--r--r--r-- 1 root root    6574 oct  3 21:36 grub.cfg
-
--rw-r--r-- 1 root root    1024 oct  3 21:36 grubenv
-
-drwxr-xr-x 2 root root    9216 oct  3 21:36 i386-pc
-
-drwxr-xr-x 2 root root    1024 oct  3 21:36 locale
-
--rw-r--r-- 1 root root 1362622 oct  3 21:24 unicode.pf2
+	$ ls -la
+	total 1359
+	drwxr-xr-x 5 root root    1024 oct  3 21:36 .
+	drwxr-xr-x 4 root root    1024 oct 12 22:34 ..
+	drwxr-xr-x 2 root root    1024 oct  3 21:36 fonts
+	-r--r--r-- 1 root root    6574 oct  3 21:36 grub.cfg
+	-rw-r--r-- 1 root root    1024 oct  3 21:36 grubenv
+	drwxr-xr-x 2 root root    9216 oct  3 21:36 i386-pc
+	drwxr-xr-x 2 root root    1024 oct  3 21:36 locale
+	-rw-r--r-- 1 root root 1362622 oct  3 21:24 unicode.pf2
 
 
 Estos ficheros varian en dependencia de la distribución, en distribuciones basadas en Debian, suele verse así.
