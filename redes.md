@@ -10,7 +10,9 @@ La información se transmite fragmentada en paquetes: sería algo similar a las 
 
 Cada paquete es autoenrutable, esto es, busca su camino para viajar hasta su destino. Ese es el motivo por el que dos ordenadores situados uno junto a otro en la misma red y solicitando a la vez la misma página web no la reciben simultáneamente, ya que mientras unos paquetes han podido tomar una "autopista" despejada otros pueden haberse encontrado con una retención o haber tomado una "carretera secundaria". Esto fue lo que dio lugar a que los anglosajones hicieran un juego fonético con las siglas World Wide Web (Red de amplitud mundial) diciendo que en muchos casos se trataba de la World Wait Web (Red de la espera mundial)
 
-También está UDP 
+También está UDP.
+
+
 Un protocolo es un método estándar que permite la comunicación entre procesos (que potencialmente se ejecutan en diferentes equipos), es decir, es un conjunto de reglas y procedimientos que deben respetarse para el envío y la recepción de datos a través de una red. 
 
 En Internet, los protocolos utilizados pertenecen a una sucesión de protocolos o a un conjunto de protocolos relacionados entre sí. Este conjunto de protocolos se denomina TCP/IP, entre otros como:
