@@ -303,12 +303,11 @@ Vuelve al directorio anterior.
 Cambia al directorio Documents indicando la ruta completa.
 
 	$ cp -pR fichero /home/user/directorio/
+		# -R Indica que se va a copiar un directorio recursivamente, salvo los ficheros especiales
+		# -p Incica que se va a copiar preservando permisos, propietario, grupo y fechas.
 Copia el fichero hacia directorio, conservando el nombre actual del fichero.
 
-	-R Indica que se va a copiar un directorio recursivamente, salvo los ficheros especiales
-	-p Incica que se va a copiar preservando permisos, propietario, grupo y fechas.
-
-	
+		
 	$ mv ruta_fichero1 ruta_fichero2
 Mueve y/o renombra ficheros o directorios.
 
