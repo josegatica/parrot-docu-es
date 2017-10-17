@@ -14,7 +14,7 @@ Aquí vamos team
    update-rc.d metasploit enable
    update-rc.d nginx enable
 
-4. Creamos usaurio root en la base de datos de metasploit
+4. Creamos usuario root en la base de datos de metasploit
   
    su postgres
    createuser root -P
