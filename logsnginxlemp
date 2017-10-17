@@ -1,0 +1,23 @@
+lemp   ?
+
+tail /var/log/messages
+sudo service php7.1-fpm status -l
+journalctl -xn
+sudo php-fpm7.1 -t
+
+grep -Ev '#' /etc/nginx/sites-available/default
+sudo chown root /var/www/html
+
+netstat -tulpn | grep :80
+
+systemctl enable php7.1-fpm.service
+systemctl restart php7.1-fpm.service
+sudo service nginx start
+sudo service nginx restart
+sudo service nginx status -l
+nano /etc/nginx/sites-available/Yoursite.com
+cat /etc/nginx/sites-available/* | grep 'var/www'
+
+sudo /etc/init.d/nginx reload
+service nginx stop
+service nginx restart
