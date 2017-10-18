@@ -1,4 +1,4 @@
-Aquí vamos
+Aquí vamos:
 
 1. Descargamos Metasploit pro
 
@@ -37,7 +37,7 @@ Aquí vamos
    ruby script/createuser root
 
 
-En seis puntos una guía sencilla
+En seis puntos, una guía sencilla:
 
 Aquí ya podemos abrir la consola de Metasploit
 
@@ -57,19 +57,3 @@ no olviden abrir los puertos que ustedes definan durante la instalacion,
 y los que vayan a requerir para sus laboratorios, Urug puede entrar en mas detalles si  gustan
 
 Enjoy and care!
-
-...
-
-
-
-Vamos ahora con neXpose
-
-Este funciona mejor en Windows
-
-1. wget http://download2.rapid7.com/download/InsightVM/Rapid7Setup-Linux64.bin
-
-2. Instalan y permiten tráfico en el firewall y en su vps en caso de tenerlo sobre una
-
-3. Prueban localmente
-
-Puertos= 3790 metasploit, neXpose + Insigth VM 3780, 40814, 40815
