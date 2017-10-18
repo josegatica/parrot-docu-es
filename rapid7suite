@@ -1,4 +1,4 @@
-Aquí vamos team
+Aquí vamos
 
 1. Descargamos Metasploit pro
 
@@ -30,14 +30,14 @@ Aquí vamos team
    exit
 
 6. Creamos el usuario root para la interfaz web de Metasploit
-
+/
    locate diagnostic_shell
    sudo /opt/metasploit/diagnostic_shell
    cd /opt/metasploit/apps/pro/ui
    ruby script/createuser root
 
 
-En seis puntos traté de darles una guía sencilla
+En seis puntos una guía sencilla
 
 Aquí ya podemos abrir la consola de Metasploit
 
@@ -49,27 +49,26 @@ Vamos a esta dirección:
 
   http://r-7.co/trymsp
 
-Usamos cualquier correo
-
 Eliges para uso personal
+En este caso usaremos el trial 
+incluye para 3 usuarios
 
-Puedes  volver a generar el # de licencias que gustes que incluye para 3 usuarios
-
-Disfrutemos mientras se pueda, no olviden abrir los puertos que ustedes definan durante la instalacion, y los que vayan a requerir para sus laboratorios, Urug puede entrar en mas detalles si  gustan
+no olviden abrir los puertos que ustedes definan durante la instalacion, 
+y los que vayan a requerir para sus laboratorios, Urug puede entrar en mas detalles si  gustan
 
 Enjoy and care!
 
 ...
 
-Bien parceros
+
 
 Vamos ahora con neXpose
 
 Este funciona mejor en Windows
 
-1. http://download2.rapid7.com/download/InsightVM/Rapid7Setup-Windows64.exe
+1. wget http://download2.rapid7.com/download/InsightVM/Rapid7Setup-Linux64.bin
 
-2. Instalan y permiten tráfico en el firewall de Windows puertos y en su vps en caso de tenerlo sobre una
+2. Instalan y permiten tráfico en el firewall y en su vps en caso de tenerlo sobre una
 
 3. Prueban localmente
 
