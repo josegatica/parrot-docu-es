@@ -22,7 +22,7 @@ La salida del comando "ls -l" nos indica si es un archivo (-) o directorio (d), 
 El significado de estos permisos es diferente para archivos y para carpetas, a continuación vamos a explicar cada uno de los casos.
 
 
-En el caso de archivo.txt, tiene permisos de lectura para:
+En el caso de archivo.txt, tiene los siguientes permisos:
 
 	Propietario	Grupo	Resto de usuarios
 	r w -           r w -	r - -
