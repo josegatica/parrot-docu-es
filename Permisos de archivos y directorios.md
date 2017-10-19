@@ -30,45 +30,46 @@ En el caso de archivo.txt, tiene permisos de lectura para:
 Esto quiere decir que todos los usuarios del sistema tienen permisos para leer este archivo, pero solo el propietario del archivo y los usuarios que sean miembros del grupo propietario podran realizar modificaciones en este archivo.
 
 Para calcular el valor de un permiso nos basaremos en la suma de sus valores decimales según la siguiente correspondencia:
-   __________________________
-  |Permiso	|r | w | x |
-  |_______________|__|___|___|
-  |Valor decimal	|4 | 2 | 1 |
-  |_______________|__|___|___|
+   
+	 --------------------------
+	|Permiso	|r | w | x |
+	|---------------|--|---|---|
+	|Valor decimal	|4 | 2 | 1 |
+	 --------------------------
 
 O sea, el valor decimal para el permiso de lectura es 4, el valor decimal para permiso de escritura es 2 y el valor decimal para permiso de ejecución es 1. Por lo tanto los posibles valores para un permiso son los siguientes:
 
-   -----------------
-  |Permisos | Valor |
-  |-----------------|
-  |  rwx    |   7   |
-  |---------|-------|
-  |  rw-    |   6   |
-  |---------|-------|
-  |  r-x    |   5   |
-  |---------|-------|
-  |  r--    |   4   |
-  |---------|-------|
-  |  -wx    |   3   |
-  |---------|-------|
-  |  -w-    |   2   |
-  |---------|-------|
-  |  --r    |   1   |
-  |---------|-------|
-  |  ---    |   0   |
-   -----------------
+   	 -----------------
+  	|Permisos | Valor |
+  	|-----------------|
+  	|  rwx    |   7   |
+  	|---------|-------|
+ 	|  rw-    |   6   |
+ 	|---------|-------|
+ 	|  r-x    |   5   |
+ 	|---------|-------|
+ 	|  r--    |   4   |
+ 	|---------|-------|
+ 	|  -wx    |   3   |
+ 	|---------|-------|
+ 	|  -w-    |   2   |
+ 	|---------|-------|
+ 	|  --r    |   1   |
+ 	|---------|-------|
+ 	|  ---    |   0   |
+ 	 -----------------
 
 Por lo tanto llegamos a la siguiente conclusion:
  
-   ------------------------
-  | Permiso     |   Valor  |
-  |-------------|----------|
-  | rwx rwx rwx |   777    |
-  |-------------|----------|
-  | rwx r-x r-- |   754    |
-  |-------------|----------|
-  | r-x r-- --- |   540    |
-   ------------------------
+  	 ------------------------
+  	| Permiso     |   Valor  |
+  	|-------------|----------|
+  	| rwx rwx rwx |   777    |
+  	|-------------|----------|
+  	| rwx r-x r-- |   754    |
+  	|-------------|----------|
+  	| r-x r-- --- |   540    |
+  	 ------------------------
 
 Teniendo claro esto, podemos pasar al uso de "chmod", el cual nos sirbe para administrar los permisos de archivos y carpetas.
 
@@ -254,24 +255,24 @@ Practicamente son las mismas obciones de "chown", con la diferencia de que "chgr
 
 - Ejemplo de uso de chgrp:
 
-	┌─[root@parrot-armhf]─[/home/parrot]
-	└──╼ #ls -l scripts/
-	total 16
-	-rwxrw---- 1 parrot root  932 oct 18 01:06 ddos-detect.py
-	-rwxrw---- 1 parrot root  235 oct 18 01:06 ping.sh
-	-rwxrw---- 1 parrot root  780 oct 18 01:17 wireless-dos-ids.py
-	-rwxrw---- 1 parrot root 1587 oct 18 01:05 wireless-dos.py
-	┌─[root@parrot-armhf]─[/home/parrot]
-	└──╼ #chgrp -R parrot scripts/
-	┌─[root@parrot-armhf]─[/home/parrot]
-	└──╼ #ls -l scripts/
-	total 16
-	-rwxrw---- 1 parrot parrot  932 oct 18 01:06 ddos-detect.py
-	-rwxrw---- 1 parrot parrot  235 oct 18 01:06 ping.sh
-	-rwxrw---- 1 parrot parrot  780 oct 18 01:17 wireless-dos-ids.py
-	-rwxrw---- 1 parrot parrot 1587 oct 18 01:05 wireless-dos.py
-	┌─[root@parrot-armhf]─[/home/parrot]
-	└──╼ #
+		┌─[root@parrot-armhf]─[/home/parrot]
+		└──╼ #ls -l scripts/
+		total 16
+		-rwxrw---- 1 parrot root  932 oct 18 01:06 ddos-detect.py
+		-rwxrw---- 1 parrot root  235 oct 18 01:06 ping.sh
+		-rwxrw---- 1 parrot root  780 oct 18 01:17 wireless-dos-ids.py
+		-rwxrw---- 1 parrot root 1587 oct 18 01:05 wireless-dos.py
+		┌─[root@parrot-armhf]─[/home/parrot]
+		└──╼ #chgrp -R parrot scripts/
+		┌─[root@parrot-armhf]─[/home/parrot]
+		└──╼ #ls -l scripts/
+		total 16
+		-rwxrw---- 1 parrot parrot  932 oct 18 01:06 ddos-detect.py
+		-rwxrw---- 1 parrot parrot  235 oct 18 01:06 ping.sh
+		-rwxrw---- 1 parrot parrot  780 oct 18 01:17 wireless-dos-ids.py
+		-rwxrw---- 1 parrot parrot 1587 oct 18 01:05 wireless-dos.py
+		┌─[root@parrot-armhf]─[/home/parrot]
+		└──╼ #
 
 En el ejemplo anterior, se puede apreciar como el grupo propietario de todos los archivos dentro del directorio scripts cambio a parrot.
 
