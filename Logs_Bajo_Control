@@ -5,13 +5,13 @@
 |_|   \__,_|_|  |_|  \___/ \__| |____/ \___|\___|
 
 
-Primero inicie sesion en su Parrot Security
+Primero inicie sesión en su Parrot Security
 
-En mi caso estoy usando la version 3.9 Intruter en VPS
+En mi caso estoy usando la versión 3.9 Intruter en VPS
 y 3.8 JollyRoger en Android con Linux Deploy
 
 En esta oportunidad revisaremos como acceder a los logs
-para entender un problema cuando se presente de ser asi la solucion
+para entender un problema cuando se presente de ser asi la solución
 esta en leer claramente y entender el mensaje de error que esta generandose.
 
 Por defecto, la mayoría de los archivos de bitácora
