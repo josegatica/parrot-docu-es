@@ -1,4 +1,4 @@
-Edita ru repositorio mayor detalle en https://mirrors.ocf.berkeley.edu/parrot
+Edite su repositorio, mayor detalle en https://mirrors.ocf.berkeley.edu/parrot
 
 nano /etc/apt/sources.list.d/parrot.list
 
@@ -11,8 +11,8 @@ deb http://deb.parrotsec.org/parrot stable main contrib non-free
 Ctrl + x
 Yes
 
-Ahora linea por linea hasta queque lo mas actualizado posible,
-repitelo hasta que tu sistema quede volando y se resuelvan los problemas
+Ahora linea por linea hasta que su sistema quede lo mas actualizado posible
+repitalo hasta que su sistema quede volando y se resuelvan los problemas
 
 
 
