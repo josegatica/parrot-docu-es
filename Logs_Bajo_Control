@@ -1,0 +1,188 @@
+ ____                      _     ____
+|  _ \ __ _ _ __ _ __ ___ | |_  / ___|  ___  ___
+| |_) / _` | '__| '__/ _ \| __| \___ \ / _ \/ __|
+|  __/ (_| | |  | | | (_) | |_   ___) |  __/ (__
+|_|   \__,_|_|  |_|  \___/ \__| |____/ \___|\___|
+
+
+Primero inicie sesión en su Parrot Security
+
+En mi caso estoy usando la versión 3.9 Intruter en VPS
+y 3.8 JollyRoger en Android con Linux Deploy
+
+En esta oportunidad revisaremos como acceder a los logs
+para entender un problema cuando se presente de ser asi la solución
+esta en leer claramente y entender el mensaje de error que esta generandose.
+
+Por defecto, la mayoría de los archivos de bitácora
+están situados en /var/log.  
+Por lo general, es común que los programas cuenten 
+con un log interno. Por convención, estos se ubican en  
+/var/log/nombre-de-programa
+Esto que parece una trivialidad, es sumamente importante ya que permite
+centralizar los archivos de bitácora. El log más importante es probablemente el
+que se encuentra en var/log/messages.  
+Adicionalmente existen programas que manejan su propio intervalo de registro
+de bitácoras, uno de los más interesantes es el shell bash. 
+Por defecto, el bash guarda un archivo histórico de los comandos ejecutados
+en usuario/.bash_history 
+
+El sistema operativo utiliza LogCheck para realizar el análisis
+
+» Vamos con postgresql
+
+1. cd /var/log/postgresql
+
+2. ls
+
+En mi caso tengo estos 3 archivos
+postgresql-10-main.log  postgresql-9.6-main.log  postgresql-9.6-main.log.1
+
+Si queremos ver el conetenido de uno de ellos usamos este comando ´cat´
+
+Ejemplo:
+
+3. cat postgresql-10-main.log
+
+
+» Ahora vamos con Nginx
+
+cd /var/log/nginx
+
+Podemos usar ls -lart
+
+para ver fechas del contenido y que tipo es si es carpeta o archivo
+
+En mi caso tengo estos logs
+
+┌─[root@parrot]─[/var/log/nginx]
+└──╼ #ls -lart
+total 28
+-rw-r-----  1 www-data adm   289 Oct 17 06:15 access.log.3.gz
+-rw-r-----  1 www-data adm   943 Oct 17 22:15 access.log.2.gz
+-rw-r-----  1 www-data adm    78 Oct 18 18:28 error.log.1
+-rw-r-----  1 www-data adm  1816 Oct 18 22:11 access.log.1
+-rw-r-----  1 www-data adm     0 Oct 19 06:25 error.log
+drwxr-xr-x  2 root     adm  4096 Oct 19 06:25 .
+drwxr-xr-x 21 root     root 4096 Oct 19 06:25 ..
+-rw-r-----  1 www-data adm  1584 Oct 19 13:42 access.log
+
+Es este caso veamos que errores tiene Nginx con el siguiente comando
+
+cat error.log
+
+
+» Para el caso de Apache
+
+El archivo de registro de acceso registra las solicitudes entrantes y
+todas las solicitudes procesadas por apache. Tales como solicitudes de
+obtención y publicación de HTTP.
+Estos registros pueden ser analizados por analizadores de registro
+como awstats o webalizer. Esto es configurable por la directiva CustomLog.
+cat /var/log/apache2/access.log
+
+Todos los errores de Apache y la información de diagnóstico encontrada mientras se
+procesan las solicitudes se almacenan aquí. La ubicación del archivo error.log está
+establecida por la Directiva de ErrorLog.
+cat /var/log/apache2/error.log
+
+» Ahora seamos mas practicos veamos si mysql directamente tiene algun error, 
+para ello digite cat /var/log/mysql/error.log
+
+
+» Log del sistema
+
+cat /var/log/syslog
+
+Contiene mensajes globales del sistema, incluidos los mensajes registrados durante el inicio.
+Varias cosas se registran en este archivo, incluidos correo, cron, daemon, kern, auth, etc.
+cat /var/log/messages
+
+kern.log contiene el registro de la inicialización de kernels en el arranque del sistema,
+así como cualquier error de kernel o mensajes informativos que se envíen desde el kernel
+cat /var/log/kern.log
+
+Muestra información de inicio de sesión reciente. Este es un comando que se ejecuta
+para ver la información proporcionada.
+
+Cómo usar el comando "last"
+
+Por lo general, solo le interesarán los intentos de inicio de sesión más recientes.
+Puede verlos con la herramienta "last" :
+
+last
+cat /var/log/lastlog
+
+Cómo utilizar el comando "lastlog"
+
+Si desea ver esta situación desde un ángulo diferente, puede ver la última vez que se conectó
+cada usuario en el sistema.
+
+Esta información se proporciona accediendo al archivo "/ etc / log / lastlog".
+Luego se clasifica de acuerdo con las entradas en el archivo "/ etc / passwd":
+
+lastlog
+
+
+El registro de depuración, proporciona mensajes de depuración
+detallados del sistema y las aplicaciones que inician sesión en el nivel DEBUG.
+cat /var/log/debug
+
+Es un programa que se ejecuta en segundo plano de su sistema operativo, lo que garantiza un mejor
+funcionamiento de su sistema operativo. El registro de Daemon se ejecuta y muestra
+información sobre el sistema en ejecución y los daemons de aplicación. 
+Esta aplicación le permite detectar y solucionar problemas antes de que ocurran.
+cat /var/logdaemon.log
+
+Cómo monitorear inicios de sesión del sistema
+
+Un componente fundamental de la gestión de la autenticación es la supervisión del
+sistema una vez que haya configurado a sus usuarios.
+
+Afortunadamente, los sistemas modernos de Linux registran todos los intentos de autenticación
+en un archivo discreto. Esto se encuentra en "/var/log/auth.log":
+cat /var/log/auth.log
+
+Cuando ejecuta alternativas de actualización,
+los mensajes resultantes se ingresan en este archivo de registro. 
+Por lo general, estará vacío si no ha ejecutado el comando update-alternatives.
+
+alternatives crea, elimina, mantiene y muestra información sobre los enlaces simbólicos
+que componen el sistema.
+cat /var/log/alternatives.log
+
+Como revisar que actualizaciones se aplicaron recientemente en detalle
+cat var/log/apt/history.log
+
+Fontconfig es una biblioteca de programas de software gratuita diseñada
+para proporcionar configuración, enumeración y sustitución de fuentes a otros programas.
+cat var/log/fontconfig.log
+
+Utilidad para manipular la dirección MAC de las interfaces de red
+cat var/log/macchanger.log
+
+Revisemos la parte de Graficos X11 freedesktop/DisplayManager/Session0
+cat /var/log/var/log/lightdm/lightdm.log 
+cat /var/log/var/log/lightdm/seat0-greeter.log
+cat /var/log/var/log/lightdm/x-0.log
+
+Veampos los detalles del sistema operativo
+cat /var/log/installer/lsb-release
+
+Entendamos como esta particionado el almacenamiento
+cat /var/log/installer/partman
+
+Revise que paquetess tiene instalados
+cat /var/log/installer/status
+
+Revise los logs desde que su maquina inicia o botea
+cat /var/log/installer/syslog
+
+Identifiquemos que tipo de maquina esta soportando nuestro Parrot
+cat /var/log/installer/hardware-summary
+
+
+
+
+
+
