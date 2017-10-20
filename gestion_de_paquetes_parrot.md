@@ -49,52 +49,52 @@ Veamos que podemos hacer con él. Veremos las opciones mas comunes pero podemos 
 
 - Mostrar información del paquete:
 
-	$ apt show <paquete>
+		# apt show <paquete>
 
 - Mostrar dependencias de un paquete:
 
-	$ apt depends <paquete>
+		# apt depends <paquete>
 
 - Mostrar los nombres de todos los paquetes instalados en el sistema:
 	
-	$ apt list --installed
+		# apt list --installed
 
 - Instalar un paquete:
  
-	$ apt install <paquete>
+		# apt install <paquete>
 
 - Desinstalar un paquete:
 
-	$ apt remove <paquete>
+		# apt remove <paquete>
 
 - Eliminar un paquete incluidos sus ficheros de configuración:
 
-	$ apt purge <paquete>
+		# apt purge <paquete>
 
 - Eliminar de forma automática aquellos paquetes que no se estén utilizando:
 
-	$ apt autoremove
+		# apt autoremove
 
 - Actualizar información de los repositorios:
 	
-	$ apt update
+		# apt update
 
 - Actualizar un paquete a la última versión disponible en el repositorio:
 
-	$ apt upgrade <paquete>
+		# apt upgrade <paquete>
 
 - Actualizar el sistema. Actualizará todos los paquetes que dispongan de una versión superior:
 
-	$ apt upgrade
+		# apt upgrade
 
 - Actualizar la distribución completa. Actualizará nuestro sistema a la siguiente versión disponible:
 
-	$ apt dist-upgrade
+		# apt dist-upgrade
 
 - Limpiar cachés, paquetes descargados, etc:
 
-	$ apt clean   
-	$ apt autoclean
+		# apt clean   
+		# apt autoclean
 
 
 Estos son sólo unos ejemplos. Si requiere más información debería comprobar la página del manual (man 8 apt).
