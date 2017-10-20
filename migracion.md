@@ -232,3 +232,7 @@ Donde "password=" queda vacío.
 NOTA= si su versión de Windows es posterior a windows XP es más que probable que no deba indicar "vers=1.0".
 
 Consulte la página de manual (man 8 mount.cifs) para más información.
+
+
+## Desde Parrot a Windows
+#Continuo el proximo dia
