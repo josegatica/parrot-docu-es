@@ -45,7 +45,7 @@ Veamos que podemos hacer con él. Veremos las opciones mas comunes pero podemos 
 
 - Buscar un paquete o cadena de texto:
 	
-	$ apt search <cadena_texto>
+	$apt search <cadena_texto>
 
 - Mostrar información del paquete:
 
@@ -93,7 +93,7 @@ Veamos que podemos hacer con él. Veremos las opciones mas comunes pero podemos 
 
 - Limpiar cachés, paquetes descargados, etc:
 
-	$ apt clean
+	$ apt clean   
 	$ apt autoclean
 
 
