@@ -297,3 +297,6 @@ En el ejemplo anterior, se puede apreciar como el grupo propietario de todos los
 	└──╼ #
 
 En el ejemplo anterior, se puede apreciar como el grupo propietario de los archivos wireless-dos-ids.py y wireless-dos.py cambio de parrot a root.
+
+
+## Conclusión pendiente y algunos pequeños cambios
