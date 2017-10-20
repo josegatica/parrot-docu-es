@@ -10,13 +10,13 @@ Las cuentas típicas de Linux son cuentas de usuario identificadas a través del
 
 ## Vinculación de usuarios a través de grupos.
 
- Linux utiliza los grupos para organizar los usuarios, estos estan definidos en archivos de configuración similares, tienen nombres similares a los nombres de usuarios y están representados internamente por números. Cada archivo en Linux está asociado con un usuario específico y un grupo específico, esto nos permite asignar varios permisos a los miembros de un grupo, por ejemplo los miembros del grupo "Dirección" en una empresa se le pueden permitir leer algunos archivos, pero a los miembros del grupo "Obreros" pueden ser desautorizado el acceso a estos archivos. Ya que Linux proporciona acceso a la mayoría de los dispositivos de hardware a través de archivos, tambien se puede utilizar este mecanismo para controlar el acceso al Hardware, cada grupo puede tener desde ninguno hasta tantos miembros como usuarios en el sistema.
+ Linux utiliza los grupos para organizar los usuarios, estos están definidos en archivos de configuración similares, tienen nombres similares a los nombres de usuarios y están representados internamente por números. Cada archivo en Linux está asociado con un usuario específico y un grupo específico, esto nos permite asignar varios permisos a los miembros de un grupo, por ejemplo los miembros del grupo "Dirección" en una empresa se les puede permitir leer algunos archivos, pero a los miembros del grupo "Obreros" les será desautorizado el acceso a estos archivos. Ya que Linux proporciona acceso a la mayoría de los dispositivos de hardware a través de archivos, también se puede utilizar este mecanismo para controlar el acceso al Hardware, cada grupo puede tener desde ninguno hasta tantos miembros como usuarios en el sistema.
 
-La pertenencia a grupos se controla a través del archivo /etc/grups, este archivo contiene una lista de grupos y miembros de cada grupo. Cada usuario tiene un grupo primario, este grupo primario de cada usuario se establece en el registro de configuración en /etc/passwd, este archivo define cada cuenta de sistema a través de registros de configuración de cuentas individuales. Cuando los usuarios inician sesión en el equipo, su grupo de miembro se establece en su grupo principal. Un usuario puede acceder a los archivos pertenecientes a otros grupos mientras que el usuario pertenezca a ese grupo y los permisos de dicho grupo permitan el acceso por parte de este usuario. Para ejecutar programas o crear archivos que no pertenescan a su grupo primario, el usuario debe ejecutar el comando "newgrp" para cambiar la pertenencia al grupo actual.
+La pertenencia a grupos se controla a través del archivo /etc/grups, este archivo contiene una lista de grupos y miembros de cada grupo. Cada usuario tiene un grupo primario, este grupo primario de cada usuario se establece en el registro de configuración en /etc/passwd, este archivo define cada cuenta de sistema a través de registros de configuración de cuentas individuales. Cuando los usuarios inician sesión en el equipo, su grupo de miembro se establece en su grupo principal. Un usuario puede acceder a los archivos pertenecientes a otros grupos mientras que el usuario pertenezca a ese grupo y los permisos de dicho grupo permitan el acceso por parte de este usuario. Para ejecutar programas o crear archivos que no pertenezcan a su grupo primario, el usuario debe ejecutar el comando "newgrp" para cambiar la pertenencia al grupo actual.
 
 ## Configurando cuenta de usuario
 
-La frecuencia con la que se realiza el mantenimiento de las cuentas de usuario, depende de la naturaleza del sistema que se administre. Algunos sistemas como pequeñas estaciones de trabajo, rara vez requieren cambios, en cambio otros como servidores multiusuarios, pueden requerir mantenimiento a diario. En este capítulo vamos a trabajar con las herramientas tradicionales utilizadas en Linux para realizar este tipo de operaciones, altas, bajas, modificación y eliminación de cuentas de usuario. La mayoria de las distrubuciones hoy en día, se entregan con herramientas GUI que nos permiten realizar estas mismas operaciones, estas herramientas GUI varian en dependencia de la distribución por lo que es dificil dar una explicación generalizada para todas las distribuciones de estas herramientas de GUI. En general, las herramientas basadas en texto proporcionan mayor flexibilidad y son más ampliamente aplicables.
+La frecuencia con la que se realiza el mantenimiento de las cuentas de usuario, depende de la naturaleza del sistema que se administre. Algunos sistemas como pequeñas estaciones de trabajo, rara vez requieren cambios, en cambio otros como servidores multiusuarios, pueden requerir mantenimiento a diario. En este capítulo vamos a trabajar con las herramientas tradicionales utilizadas en Linux para realizar este tipo de operaciones, altas, bajas, modificación y eliminación de cuentas de usuario. La mayoía de las distrubuciones hoy en día, se entregan con herramientas GUI que nos permiten realizar estas mismas operaciones, estas herramientas GUI varían en dependencia de la distribución por lo que es dificil dar una explicación generalizada para todas las distribuciones de estas herramientas de GUI. En general, las herramientas basadas en texto proporcionan mayor flexibilidad y son más ampliamente aplicables.
 
 ## Agregando usuarios
 
@@ -29,10 +29,10 @@ ejemplo:
 
 	$ sudo useradd -m -d /home/parrot -g hackers -G hackers,noobs,sudo parrot
 
-este comando nos crearia el usuario parrot, su carpeta home seria /home/parrot, grupo por defecto hackers, grupos secundarios hackers,noobs,sudo.
+este comando nos crearía el usuario parrot, su carpeta home sería /home/parrot, grupo por defecto hackers, grupos secundarios hackers,noobs,sudo.
 
 
-adduser es una utilidad menos compleja, ya que esta nos autocompleta practicamente casi todo, es útil para la creación de usuarios estandars en un sistema pequeño. Su sintaxis básica es la siguiente:
+adduser es una utilidad menos compleja, ya que esta nos autocompleta prácticamente casi todo, es útil para la creación de usuarios estandars en un sistema pequeño. Su sintaxis básica es la siguiente:
 
 	$ sudo adduser [nombre_de_usuario]
 
@@ -56,7 +56,7 @@ ejemplo:
 	Is the information correct? [Y/n] 
 
 
-Con esto ya tendriamos creado el usuario parror en el sistema.
+Con esto ya tendríamos creado el usuario parror en el sistema.
 
 
 ## Modificando Cuentas de Usuario.
@@ -67,13 +67,13 @@ Las cuentas de usuario pueden modificarse de varias formas.
 
  1 - Editando directamente archivos críticos como /etc/passwd. (no recomendado).
  
- 2 - Modificando los archivos de configuración específicos del usuarioen el directorio principal de la cuenta.
+ 2 - Modificando los archivos de configuración específicos del usuario en el directorio principal de la cuenta.
  
  3 - Utilizando las herramientas del sistema utilizadas anteriormente para crear cuentas.
 
 ## Configurar o cambiar contraseñas
 
-La herramienta useradd proporciona el parámetro -p para establecer una contraseña, esta herramienta no es muy útil cuando directamente agrega un usuario porque requiere una contraseña pre-hash. Por lo tanto, suele ser más fácil crear una cuenta en forma deshabilitada (por no hacer uso del parametro -p) y una vez creada la cuenta configurarle una contraseña. Para ello podemos hacer uso de la herramienta passwd, su sintaxis es la siquiente:
+La herramienta useradd proporciona el parámetro -p para establecer una contraseña, esta herramienta no es muy útil cuando directamente agrega un usuario porque requiere una contraseña pre-hash. Por lo tanto, suele ser más fácil crear una cuenta en forma deshabilitada (por no hacer uso del parametro -p) y una vez creada la cuenta configurarle una contraseña. Para ello podemos hacer uso de la herramienta passwd, su sintaxis es la siguiente:
 
 	$ sudo passwd [-k] [-l] [-u [-f]] [-d] [-S] [nombre de usuario]
 
@@ -85,7 +85,7 @@ La herramienta useradd proporciona el parámetro -p para establecer una contrase
 
 - El parámetro -d elimina la contraseña de una cuenta sin mensaje de advertencia ni nada.
 
-- El parámetro -S muestra información sobre la contraseña de una cuenta, esta información nos dice si esta establecida una contraseña y que tipo de algoritmo fue utilizado para encriptar la contraseña en un hash.
+- El parámetro -S muestra información sobre la contraseña de una cuenta, esta información nos dice si está establecida una contraseña y qué tipo de algoritmo fue utilizado para encriptar la contraseña en un hash.
 
 
 Anteriormente creamos la cuenta para el usuario "Parrot El Pirata (parrot)", para establecer una nueva contraseña al usuario "parrot" utilizamos el comando passwd como se muestra en el siguiente ejemplo.
@@ -97,22 +97,22 @@ Anteriormente creamos la cuenta para el usuario "Parrot El Pirata (parrot)", par
 
 ## Uso básico de usermod
 
-La herramienta usermod es muy similar a la herramienta useradd en cuanto a sus funciones y parametros, con la diferencia de que esta es para realizar cambios en una cuenta existente en lugar de crear una nueva. Las diferencias entre ambas herramientas son las siguientes:
+La herramienta usermod es muy similar a la herramienta useradd en cuanto a sus funciones y parámetros, con la diferencia de que ésta es para realizar cambios en una cuenta existente en lugar de crear una nueva. Las diferencias entre ambas herramientas son las siguientes:
 
-- usermod permite el uso adicional del parámetro -m cuando se usa combina con -d. El parametro -d nos permite cambiar el directorio home del usuario pero no mueve ningun archivo, el parametro -m le permite a usermod mover los archivos del usuario al nuevo directorio home.
+- usermod permite el uso adicional del parámetro -m cuando se usa combina con -d. El párametro -d nos permite cambiar el directorio home del usuario pero no mueve ningún archivo, el parámetro -m le permite a usermod mover los archivos del usuario al nuevo directorio home.
 
-- usermod admite el paremetro -l, el cual cambia el nombre de usuario utilizado para el login a un nuevo valor especificado. Ejemplo, al ejecutar "usermod -l pirata parrot" cambiaria el nombre de usuario de parrot a pirata.
+- usermod admite el parámetro -l, el cual cambia el nombre de usuario utilizado para el login a un nuevo valor especificado. Ejemplo, al ejecutar "usermod -l pirata parrot" cambiaría el nombre de usuario de parrot a pirata.
 
 - Tambien podemos bloquear o desbloquer contraseñas de usuario utilizando los parámetros -L y -U respectivamente.
 
 - La herramienta usermod cambia el contenido del /etc/passwd o /etc/shadow, dependiendo del parámetro utilizado. Si se usa -m también mueve los archivos del usuario como se indicó anteriormente.
 
 
-  Editar las caracteristicas de una cuenta mientras esta esta en uso, puede traer consecuencias indeseadas. Principalmente cuando usamos los parámetros -d y -m, esto puede causar que el usuario pierda el acceso a archivos en los que está trabajando, al moverlos de directorio. La mayoría de los cambios en la configuración de la cuenta no sufrián efectos hasta que el usuario se haya desconectado y regresado nuevamente.
+  Editar las caracteristicas de una cuenta mientras esta está en uso, puede traer consecuencias indeseadas. Principalmente cuando usamos los parámetros -d y -m, esto puede causar que el usuario pierda el acceso a archivos en los que está trabajando, al moverlos de directorio. La mayoría de los cambios en la configuración de la cuenta no sufrián efectos hasta que el usuario se haya desconectado y regresado nuevamente.
 
   Esto sucede porque al cambiar el UID de la cuenta, esta acción no cambia los UID asociados con los archivos, debido a esto el usuario puede perder el acceso a sus archivos personales. Se puede actualizar de forma manual los UID en todos los archivos utilizando el comando chown que lo vamos a ver en el siguiente capitulo.
 
-  Cuendo se utiliza la opción -G para agregar un usuario a nuevos grupos, tenga en cuenta que cualquier grupo que no esté listado será eliminado, por lo tanto, es una buena idea utilizar el parámetro -a también. Utilizar los parámetros -a y -G juntos nos permite agregar un usuario a un nuevo grupo sin tener que enumerar los grupos antiguos en el comando. Por ejemplo para agregar el usuario pirata al grupo hackers, utilizamos el siguiente comando:
+  Cuando se utiliza la opción -G para agregar un usuario a nuevos grupos, tenga en cuenta que cualquier grupo que no esté listado será eliminado, por lo tanto, es una buena idea utilizar el parámetro -a también. Utilizar los parámetros -a y -G juntos nos permite agregar un usuario a un nuevo grupo sin tener que enumerar los grupos antiguos en el comando. Por ejemplo para agregar el usuario "pirata" al grupo "hackers", utilizamos el siguiente comando:
 
 		$ groups parrot
 		parrot : parrot
@@ -136,11 +136,11 @@ Estos ajustes se controlan a través de la utilidad chage, su sintaxis es la siq
 	chage [-l] [-m dias_minimos] [-M dias_máximos] [-d último_dia] [-I dias_inactivos] 
 	[-E fecha_de_expiración] [-W advertencia] nombre_de_usuario
 
-Estos parámetro modifican las acciones del comando chage.
+Estos parámetros modifican las acciones del comando chage.
 
-- El parámetro -l hace que chage muestre la caducidad de la cuentea y la información de envejecimiento de la contraseña par aun usuario particular.
+- El parámetro -l hace que chage muestre la caducidad de la cuenta y la información de envejecimiento de la contraseña para un usuario particular.
 
-- El parámetro -m establece el número mímimo de días entre los cambios de contraseña o indica que un usuario puede cambiar una contraseña varias veces en un día, indicando con números cada cuantos dias puede cambiar la contraseña el usuario, 1 indica que el usuario puede cambiar la contraseña una vez al día, 2 indica que el usuario puede cambiar la contraseña cada 2 días y así sucesíbamente.
+- El parámetro -m establece el número mímimo de días entre los cambios de contraseña o indica que un usuario puede cambiar una contraseña varias veces en un día, indicando con números cada cuantos dias puede cambiar la contraseña el usuario, 1 indica que el usuario puede cambiar la contraseña una vez al día, 2 indica que el usuario puede cambiar la contraseña cada 2 días y así sucesívamente.
 
 - El parámetro -M establece el número máximo de días que puede pasar entre cambios de contraseña. 30 indica que se requiere un cambio de contraseña aproximadamente una vez al mes.
 
@@ -155,7 +155,7 @@ Estos parámetro modifican las acciones del comando chage.
 
 ## Descripción de los archivos de configuración de las cuentas.
 
-Se pueden modificar directamente los archivos de condiguración del usuario, los archivos /etc/passwd y /etc/shadow controlan la mayoría de las características básicas de una cuenta. Ambos archivos constan de un conjunto de registros, una línea por registro de cuenta. Cada registro comienza con un nombre de usuario y continua con un conjunto de campos determinados por dos puntos (:). Muchos de estos artículos pueden ser modificados con usermod o passwd. Una entrada de registro típica de /etc/passwd es similar a la siguiente:
+Se pueden modificar directamente los archivos de configuración del usuario, los archivos /etc/passwd y /etc/shadow controlan la mayoría de las características básicas de una cuenta. Ambos archivos constan de un conjunto de registros, una línea por registro de cuenta. Cada registro comienza con un nombre de usuario y continúa con un conjunto de campos determinados por dos puntos (:). Muchos de estos artículos pueden ser modificados con usermod o passwd. Una entrada de registro típica de /etc/passwd es similar a la siguiente:
 
 	user:x:1000:1000:User,,,:/home/user:/bin/bash
 
@@ -163,7 +163,7 @@ Cada uno de los campos tiene un significado específico:
 
 - El primer campo en cada línea de /etc/passwd es el nombre de usuario (en este caso user).
 
-- El segundo campo se ha reservado tradicionalmente para la contraseña, sin embargo en la mayoria de los sistemas Linux hoy en día se utiliza un sistema de contraseñas de sombra en en que la contraseña se almacena en /etc/shadow, la x en el campo de contraseña de ejemplo indica que las contraseñas de sombra están en uso. En un sistema que no utiliza contraseñas sombra, en su lugar aparece una contraseña hash.
+- El segundo campo se ha reservado tradicionalmente para la contraseña, sin embargo en la mayoría de los sistemas Linux hoy en día se utiliza un sistema de contraseñas de sombra en en que la contraseña se almacena en /etc/shadow, la x en el campo de contraseña de ejemplo indica que las contraseñas de sombra están en uso. En un sistema que no utiliza contraseñas sombra, en su lugar aparece una contraseña hash.
 
 - La siguiente contraseña es el ID de la cuenta de usuario (1000 en este ejemplo).
 
@@ -173,7 +173,7 @@ Cada uno de los campos tiene un significado específico:
 
 - El directorio principal del usuario, /home/user, es el siguiente campo de datos en el registro.
 
-- La Shell predeterminada es el último elemento de cada registro de /etc/passwd, normalmente /bin/bash o alguna otra Shell de comandos común. También es posible crear cuentas de usuario con un shell por defecto como /bin/false, lo cual impide que los usuarios incien sesión como usuarios comunes pero dejando intactas otras utilidades del sistema como resivir correos electronicos utilizando protocolos de recuperación como POP, IMAP... otro ejemplo interesante es utilizar /bin/passwd para que los usuarios puedan cambiar su contraseña de forma remota pero no puedan iniciar sesión utilizando una shell de comandos.
+- La Shell predeterminada es el último elemento de cada registro de /etc/passwd, normalmente /bin/bash o alguna otra Shell de comandos común. También es posible crear cuentas de usuario con un shell por defecto como /bin/false, lo cual impide que los usuarios incien sesión como usuarios comunes pero dejando intactas otras utilidades del sistema como recibir correos electrónicos utilizando protocolos de recuperación como POP, IMAP... otro ejemplo interesante es utilizar /bin/passwd para que los usuarios puedan cambiar su contraseña de forma remota pero no puedan iniciar sesión utilizando una shell de comandos.
 
 
 Normalmente una entrada de registro en /etc/shadow se parece a la siguiente:
@@ -197,9 +197,9 @@ La mayoría de los campos corresponden a las opciones establecidas con la herram
 - Normalmente en un sistema configurado para caducar las cuentas, nos encontramos con 3 campos más, Dias entre la Expiración y la Desactivaciòn de la cuenta (-1 en el ejemplo anterior), Dia de Expiración de la cuenta (-1 en el ejemplo anterior) y el último campo esta reservado para un uso futuro, por lo general en todos los sistemas Linux no se usa o contiene un valor sin sentido.
 
 
-  Analizando detenidamente lo anterior, podemos afirmar que las cuentas de usuario pueden ser modificadas editando directamente estos archivos (/etc/passwd y /etc/shadow). Los valores -1 y 99999 indican que dicho campo ha sido desactivado, esta inutilizado. Realmente se recomienda realizar estas modificaciones usando las herramientas usermod y chage ya que es mucho más dificil realizar estos cambios directamente en los archivos de configuración ya que se pueden cometer errores como: desactivar una cuenta antes o despues del tiempo requerido, cometer un error a la hora de calcular los días desde el 1ro de Enero de 1970, omitir años bisiestos, etc.
+  Analizando detenidamente lo anterior, podemos afirmar que las cuentas de usuario pueden ser modificadas editando directamente estos archivos (/etc/passwd y /etc/shadow). Los valores -1 y 99999 indican que dicho campo ha sido desactivado, está inutilizado. Realmente se recomienda realizar estas modificaciones usando las herramientas usermod y chage ya que es mucho más dificil realizar estos cambios directamente en los archivos de configuración ya que se pueden cometer errores como: desactivar una cuenta antes o después del tiempo requerido, cometer un error a la hora de calcular los días desde el 1ro de Enero de 1970, omitir años bisiestos, etc.
 
-  Algo similar sucede al tratar de modificar en hash de la contraseña, este no puede ser editado de forma efectiva exepto a traves de la herramienta passwd o herramientas similares. Se puede copiar y pegar un valor de un archivo compatible o usar cripto, pero generalmente es mucho más fácil usar passwd, por otro lado, no es recomendable copiar hashes de contraseñas desde otros sistemas porque significa que los usuarios tendran las mismas contraseñas en ambos sistemas y este hecho será obvio para alguien que haya adquirido ambas listas de hashes.
+  Algo similar sucede al tratar de modificar en hash de la contraseña, este no puede ser editado de forma efectiva excepto a través de la herramienta passwd o herramientas similares. Se puede copiar y pegar un valor de un archivo compatible o usar cripto, pero generalmente es mucho más fácil usar passwd, por otro lado, no es recomendable copiar hashes de contraseñas desde otros sistemas porque significa que los usuarios tendran las mismas contraseñas en ambos sistemas y este hecho será obvio para alguien que haya adquirido ambas listas de hashes.
 
 # == Documento pendiente de revisión ==
 
