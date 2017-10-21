@@ -21,7 +21,7 @@ ahora
 
 nano /etc/apt/sources.list.d/parrot.list
 
-Copie esta linea 
+Copie esta línea 
 
 deb http://deb.parrotsec.org/parrot stable main contrib non-free #deb-src http://archive.parrotsec.org/parrot stable main contrib non-free
 
@@ -101,6 +101,6 @@ Codename:       intruder
 
 
 
-Esta idea esta basada en esta https://dev.parrotsec.org/parrot/alternate-install/blob/master/parrot-install.sh
+Esta idea está basada en esta https://dev.parrotsec.org/parrot/alternate-install/blob/master/parrot-install.sh
 
 Y  creada con el apoyo del grupo Documentacion Parrot OS Español
