@@ -1,8 +1,8 @@
 # Introducción
 
-Quizás se haya cansado de Microsoft Windows. Puede que ya este aburrido de los inúmerables virus de su sistema operativo. Quizás simplemente quiera conocer ese sistema del que todo el mundo habla pero no se atreva a dar el salto.
+Quizás se haya cansado de Microsoft Windows. Puede que ya esté aburrido de los inumerables virus de su sistema operativo. Quizás simplemente quiera conocer ese sistema del que todo el mundo habla pero no se atreve a dar el salto.
 
-Sea la razón por la que sea puede, que usted necesite convivir en un entorno en el que haya o bien sistemas windows en la red o mantenga un sistema con arranque dual y necesite acceder a sus particiones Windows.
+Sea la razón por la que sea, puede que usted necesite convivir en un entorno en el que haya o bien sistemas windows en la red o mantenga un sistema con arranque dual y necesite acceder a sus particiones Windows.
 
 No se preocupe, estamos aquí para ayudarle. En este capítulo aprenderá a montar particiones Windows en su sistema ParrotSec, así como a utilizar recursos compartidos entre sistemas Microsoft y su flamante ParrotSec OS.
 
@@ -11,7 +11,7 @@ No se preocupe, estamos aquí para ayudarle. En este capítulo aprenderá a mont
 
 Supongamos que tenemos un sistema con arranque dual. En un disco tengo mi sistema Parrot y en el otro Windows.
 
-Primeramente comprobemos con "fdisk" los discos y particiones de nuestro sistema. En mi caso utilizo el gestor de volumenes lógico(LVM) con lo que puede que la salida de este comando no sea exactamente igual a la suya. También he modificado un poco la salida del comando para que se vea más claro los difirentes discos y sus particiones:
+Primeramente comprobemos con "fdisk" los discos y particiones de nuestro sistema. En mi caso utilizo el gestor de volúmenes lógico(LVM) con lo que puede que la salida de este comando no sea exactamente igual a la suya. También he modificado un poco la salida del comando para que se vea más claro los difirentes discos y sus particiones:
 
 	┌─[root@parrot]─[~]
 	└──╼ #fdisk -l|grep sd
@@ -111,12 +111,12 @@ Donde /dev/sdb1 es la partición y /mnt es el punto de montaje.
 
 ## Desde windows a Parrot
 
-Tenemos varías formas de compartir recursos entre sistemas windows y GNU/Linux. Una de ellas es mediante el protocolo SMB. Este protocolo es utilizado entre los sistemas windows para compartir directorios. En GNU/Linux existe una implementación de dicho protocolo contenida en la suite SAMBA.
+Tenemos varías formas de compartir recursos entre sistemas windows y GNU/Linux. Una de ellas es mediante el protocolo SMB. Este protocolo es utilizado entre los sistemas Windows para compartir directorios. En GNU/Linux existe una implementación de dicho protocolo contenida en la suite SAMBA.
 
 
-Veamos como compartimos un recurso desde windows a nuestra querida parrot.
+Veamos como compartimos un recurso desde windows a nuestra querida Parrot.
 
-Primeramente compartamos un recurso en un sistema windows. La forma de hacer eto dependerá de la versión que utilicemos. Compruebe los manuales de su versión:
+Primeramente compartamos un recurso en un sistema Windows. La forma de hacer esto dependerá de la versión que utilicemos. Compruebe los manuales de su versión:
 
 NOTA: Esto es un windows XP
 
@@ -235,4 +235,4 @@ Consulte la página de manual (man 8 mount.cifs) para más información.
 
 
 ## Desde Parrot a Windows
-#Continuo el proximo dia
+#Continúo el proximo dia
