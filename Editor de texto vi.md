@@ -1,29 +1,29 @@
 ## Editor de texto Vi/Vim
 
-Vi es el clásico editor de texto en sistemas GNU/Linux y Unix, se puede decir que los sistemas que tienen solo un editor de texto es vi, de ahi la importancia de de aprender a trabajar con este exelente editor. Muchos lo ignoran debido a que es un poquito complejo para nuevos usuarios y terminan adaptandose a otros editores como nano, gedit o leafpad. La complejidad de Vi se debe a que fue fue creado cuando no todos los teclados tenían teclas de movimiento de cursor, por lo tanto, todas las tareas pueden realizarse en vi pueden llevarse a cabo con las teclas alfanuméricas tradicionales y otras teclas como Esc e Insert. En la actualidad contamos con una versión mejorada de vi, llamada vim, la cual es compatible con versiones anteriores de vi y cuenta con un modo gráfico (gvim) a demas de la interfaz de modo texto estandar de vi. Hoy en día en la gran mayoría de las distribuciones el comando vi suele ser un alias o un vínculo simbólico a vim.
+Vi es el clásico editor de texto en sistemas GNU/Linux y Unix, se puede decir que los sistemas que tienen solo un editor de texto es vi, de ahi la importancia de de aprender a trabajar con este excelente editor. Muchos lo ignoran debido a que es un poco complejo para nuevos usuarios y terminan adaptándose a otros editores como nano, gedit o leafpad. La complejidad de Vi se debe a que fue creado cuando no todos los teclados tenían teclas de movimiento de cursor, por lo tanto, todas las tareas pueden realizarse en vi pueden llevarse a cabo con las teclas alfanuméricas tradicionales y otras teclas como Esc e Insert. En la actualidad contamos con una versión mejorada de vi, llamada vim, la cual es compatible con versiones anteriores de vi y cuenta con un modo gráfico (gvim) a demas de la interfaz de modo texto estandar de vi. Hoy en día, en la gran mayoría de las distribuciones el comando vi suele ser un alias o un vínculo simbólico a vim.
 
 ## Versiones de VIM:
 
 - Tiny (mínima)
 
-- small (pequeña)
+- Small (pequeña)
 
-- normal
+- Normal
 
-- big (grande)
+- Big (grande)
 
-- huge (enorme)
+- Huge (enorme)
 
-Para comprobar que versión de vim estamos corriendo en nuestro sistema, ejecutamos el siguente comando:
+Para comprobar qué versión de vim estamos corriendo en nuestro sistema, ejecutamos el siguente comando:
 
 	$ vi --version
 
 
-Antes de pasar a la edición de texto, veamos cuales son las teclas que se usan para desplazarnos dentro de un archivo usando VIM.
+Antes de pasar a la edición de texto, veamos cuáles son las teclas que se usan para desplazarnos dentro de un archivo usando VIM.
 
 Use los siguientes comandos para desplazarse dentro de un archivo:
 
-- Desplazarse un caracter hacia la isquierda en la linea actual
+- Desplazarse un caracter hacia la isquierda en la línea actual
 	
 		h
  
@@ -39,7 +39,7 @@ Use los siguientes comandos para desplazarse dentro de un archivo:
 	
 		l
 
-- Pasar a la palabra siguiente en la linea actual
+- Pasar a la palabra siguiente en la línea actual
 	
 		w
 
@@ -53,11 +53,11 @@ Use los siguientes comandos para desplazarse dentro de un archivo:
 		
 		Ctrl+b
 
-- Volver a la págna anterior
+- Volver a la página anterior
 	
 		Ctrl+b
 
-Nota: si tipea un número antes de ejecutar alguno de estos comandos, el comando se repetira las veces que indique dicho número, digamos que es un conteo de repetición.
+Nota: si tipea un número antes de ejecutar alguno de estos comandos, el comando se repetirá las veces que indique dicho número, digamos que es un conteo de repetición.
 
 
 Use los siguientes comandos para desplazarse a líneas especificas dentro de un archivo.
@@ -72,13 +72,13 @@ Use los siguientes comandos para desplazarse a líneas especificas dentro de un 
 - Igual a H, pero en relación a la última línea de la pantalla. Por lo tanto, el comando 2L lo ubicará en la antepenúltima línea de la pantalla. 
 
 
-Nota: Usted debe practicar cada uno de estos comandos hasta que logre desplazarse comodamente dentro de un archivo, luego continue leyendo este capítulo.
+Nota: Usted debe practicar cada uno de estos comandos hasta que logre desplazarse cómodamente dentro de un archivo, luego continúe leyendo este capítulo.
 
 
 
 Salir del editor:
 
-Es de suma importancia que usted conosca como salir del editor para evitar cometer un error, dañar archivos de configuración o documentos importantes. Las obciones para salir de vim son las siguientes:
+Es de suma importancia que usted conozca cómo salir del editor para evitar cometer un error, dañar archivos de configuración o documentos importantes. Las opciones para salir de vim son las siguientes:
 
 	
 - Salir del editor descartando los cambios.
@@ -101,7 +101,7 @@ Es de suma importancia que usted conosca como salir del editor para evitar comet
 		
 		:!
 
-Nota: Al tipear dos puntos (:), el cursos se desplazará a la última linea de la pantalla para permitirle tipear un comando con sus respectivos parámetros. Tambien puede usar los comandos en formato no abreviado (:quit, :write, :edit), esto le permite recordar más fácil cada uno de los comandos, pero su uso es poco frecuente.
+Nota: Al tipear dos puntos (:), el cursor se desplazará a la última linea de la pantalla para permitirle tipear un comando con sus respectivos parámetros. También puede usar los comandos en formato no abreviado (:quit, :write, :edit), esto le permite recordar más fácil cada uno de los comandos, pero su uso es poco frecuente.
 
 
 
@@ -111,7 +111,7 @@ Modo comandos:
 En este modo, podemos desplazarnos dentro de un archivo y efectuar operaciones de edición como buscar texto, eliminar texto, etc. vi suele iniciarse en modo de comandos.
 
 Modo insertar:
-En el modo insertar, podemos tipear texto nuevo en el punto de inserción de un archivo. Para volder al modo comandos, precione la tecla Esc.
+En el modo insertar, podemos tipear texto nuevo en el punto de inserción de un archivo. Para volder al modo comandos, presione la tecla Esc.
 
 
 ## Edición de texto
@@ -135,7 +135,7 @@ Use los siguientes comandos para insertar, eliminar o modificar texto. Tome en c
 	
 		o
 
-- Abrir una línea nueva par ainsertar texto arriba de la línea actual.
+- Abrir una línea nueva para insertar texto arriba de la línea actual.
 	
 		O
 
@@ -148,11 +148,11 @@ Use los siguientes comandos para insertar, eliminar o modificar texto. Tome en c
 	
 		dd
 
-- Elimine el caracter en la posición del cursor. Tambien puede utilizar un conteo para varios caracteres.
+- Elimine el caracter en la posición del cursor. También puede utilizar un conteo para varios caracteres.
 		
 		x
 
-- Colocar el último texto eliminado después del caracter actual. Use P para colocarlo antes del cursos.
+- Colocar el último texto eliminado después del caracter actual. Use P para colocarlo antes del cursor.
 	
 		P
 
@@ -173,7 +173,7 @@ Nota: Puede anteponer a cualquiera de los comandos de búsqueda un número que i
 
 ## Acceder a la Ayuda en vi.
 
-- Para obtener ayuda en podemos ejecutar el siguiente comando:
+- Para obtener ayuda en vi podemos ejecutar el siguiente comando:
 	
 		:help
 
@@ -181,13 +181,13 @@ Nota: Puede anteponer a cualquiera de los comandos de búsqueda un número que i
 	
 		:help [comando]
 
-- Esta es una ayuda básica de vi, la cual se abrira dentro del mismo editor, para salir de la ayuda ejecutamos:
+- Esta es una ayuda básica de vi, la cual se abrirá dentro del mismo editor, para salir de la ayuda ejecutamos:
 	
 		:q
 
-## Conslución
+## Conclusión
 
-Como se menciono al inicio del capítulo, vi es un exelente editor de texto y es de suma importancia que todo usuario de GNU/Linux tenga al menos un conocimiento básico de su uso. Al principio puede ser una tarea tediosa, dificil e incluso aburrida. Existe una herramienta que podemos usar para aprender a trabajar con vi de forma muy fácil e interactiva, esta herramienta es vimtutor, su uso es muy sencillo y realmente ayuda mucho, de seguro cuando usted la pruebe, pasará los próximos treita minutos aprendiendo a trabajar con vi.
+Como se mencionó al inicio del capítulo, vi es un excelente editor de texto y es de suma importancia que todo usuario de GNU/Linux tenga al menos un conocimiento básico de su uso. Al principio puede ser una tarea tediosa, difícil e incluso aburrida. Existe una herramienta que podemos usar para aprender a trabajar con vi de forma muy fácil e interactiva, esta herramienta es vimtutor, su uso es muy sencillo y realmente ayuda mucho, de seguro cuando usted la pruebe, pasará los próximos treita minutos aprendiendo a trabajar con vi.
 	
 		┌─[user@parrot]~[/home/user]
 		└──╼ $ vimtutor
