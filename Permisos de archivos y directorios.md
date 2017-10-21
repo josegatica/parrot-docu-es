@@ -1,6 +1,6 @@
 ## Permisos de Archivos y Directorios
 
-Anteriormente mencionamos que en Linux, todos los archivos del sistema pertenecen a un usuario y un grupo. El dueño de un archivo es el usuario que lo ha creado y el grupo principal de este archivo es el grupo del usuario que lo creo. Por ejemplo, en capitulos anteriores trabajamos con el usuario "parrot", si este usuario crea un archivo, el usuario "parrot" y el grupo por defecto del usuario parrot, van a ser los propietarios de este nuevo archivo, o sea que el archivo pertenece al usuario parro y al grupo por defecto del usuario parrot. Por ello a menudo necesitamos hacer uso del comando "sudo" para poder leer, modificar o ejecutar algunos archivos y programas del sistema o realizar cambios en los permisos de los archivos en cuetión.
+Anteriormente mencionamos que en Linux, todos los archivos del sistema pertenecen a un usuario y un grupo. El dueño de un archivo es el usuario que lo ha creado y el grupo principal de este archivo es el grupo del usuario que lo creó. Por ejemplo, en capítulos anteriores trabajamos con el usuario "parrot", si este usuario crea un archivo, el usuario "parrot" y el grupo por defecto del usuario parrot, van a ser los propietarios de este nuevo archivo, o sea que el archivo pertenece al usuario parrot y al grupo por defecto del usuario parrot. Por ello, a menudo necesitamos hacer uso del comando "sudo" para poder leer, modificar o ejecutar algunos archivos y programas del sistema o realizar cambios en los permisos de los archivos en cuestión.
 
 Vamos a analizar la salida del comando "ls -l"
 
@@ -71,7 +71,7 @@ Por lo tanto llegamos a la siguiente conclusion:
   	| r-x r-- --- |   540    |
   	 ------------------------
 
-Teniendo claro esto, podemos pasar al uso de "chmod", el cual nos sirbe para administrar los permisos de archivos y carpetas.
+Teniendo claro esto, podemos pasar al uso de "chmod", el cual nos sirve para administrar los permisos de archivos y carpetas.
 
 ## Uso de chmod
 
@@ -79,7 +79,7 @@ Sintaxis básica de chmod:
 
 	$ chmod [modo] [permisos] [fichero o directorio]
 
-Como modo, vamos a usar solamente la obción -R, este parametro, indica a chmod que se van a cambiar los permisos de modo recursivo, útil para cambiar los permisos de los archivos de un directorio. Veamos un ejemplo:
+Como modo, vamos a usar solamente la opción -R, este parametro, indica a chmod que se van a cambiar los permisos de modo recursivo, útil para cambiar los permisos de los archivos de un directorio. Veamos un ejemplo:
 
 Tenemos esta carpeta de scripts, en la cual no todos los scripts tienen permisos de ejecución
 
@@ -91,7 +91,7 @@ Tenemos esta carpeta de scripts, en la cual no todos los scripts tienen permisos
 	-rwxr-xr-x 1 parrot hackers  780 oct 18 01:17 wireless-dos-ids.py
 	-rw-r--r-- 1 parrot hackers 1587 oct 18 01:05 wireless-dos.py
 
-Como se puede apreciar en a ejecución de "ls -l scripts/", algunos scripts tienen permisos de ejecución para todos los usurios del sistema (lo cual no es recomendable), mientras que otros no tienen permisos de ejección ni siquiera para el usuario propietario. Para corregir este error aplicamos los siguientes permisos:
+Como se puede apreciar en la ejecución de "ls -l scripts/", algunos scripts tienen permisos de ejecución para todos los usuarios del sistema (lo cual no es recomendable), mientras que otros no tienen permisos de ejecución ni siquiera para el usuario propietario. Para corregir este error aplicamos los siguientes permisos:
 
 	┌─[root@parrot-armhf]─[/home/parrot]
 	└──╼ #chmod -R 770 scripts/
@@ -103,17 +103,17 @@ Como se puede apreciar en a ejecución de "ls -l scripts/", algunos scripts tien
 	-rwxrwx--- 1 parrot hackers  780 oct 18 01:17 wireless-dos-ids.py
 	-rwxrwx--- 1 parrot hackers 1587 oct 18 01:05 wireless-dos.py
 
-Ahora el usuario porpietario y los usuarios miembros del grupo propietario tienen permisos de lectura, escritura y ejecución, miemtras que los demas usuarios del sistema no tiene acceso a estos archivos.
+Ahora el usuario propietario y los usuarios miembros del grupo propietario tienen permisos de lectura, escritura y ejecución, mientras que los demás usuarios del sistema no tienen acceso a estos archivos.
 
 Otra manera de añadir o quitar permisos, es utilizando estos modos:
 
-- a --> indica que se aplicaran a todos
+- a --> indica que se aplicará a todos
 
-- u --> indica que se aplicara al usuario
+- u --> indica que se aplicará al usuario
 
-- g --> indica que se aplicara al grupo
+- g --> indica que se aplicará al grupo
 
-- o --> indica que se aplicara a otros
+- o --> indica que se aplicará a otros
 
 - + --> indica que se añade el permiso
 
@@ -126,13 +126,13 @@ Otra manera de añadir o quitar permisos, es utilizando estos modos:
 - x --> indica permiso de ejecución
 
 
-La sintaxis básica para utilizar "chmod" con estos todos es la siguiente:
+La sintaxis básica para utilizar "chmod" con estos modos es la siguiente:
 
 	# chmod [a|u|g|o] [+|-] [r|w|x]
 
 O sea a quien se le aplica el permiso, añadir o quitar permiso y tipo de permiso que se va a añadir o quitar.
 
-Estas serian posibles combinaciones:
+Estas serían posibles combinaciones:
 
 - a+r Permisos de lectura para todos.
 
@@ -156,14 +156,14 @@ Ejemplo de uso:
 	-rwxrw---- 1 parrot hackers  780 oct 18 01:17 wireless-dos-ids.py
 	-rwxrw---- 1 parrot hackers 1587 oct 18 01:05 wireless-dos.py
 
-Si analizamos el resultado de la ejecución anterior, podemos notar como se han eliminado los permisos de ejecución para todos los usuarios del sistema, incluyendo los miembros del grupo propietario, excepto el usuario propietario, el cual conserva los permisos de lectura, escritura y ejecución.
+Si analizamos el resultado de la ejecución anterior, podemos notar cómo se han eliminado los permisos de ejecución para todos los usuarios del sistema, incluyendo los miembros del grupo propietario, excepto el usuario propietario, el cual conserva los permisos de lectura, escritura y ejecución.
 
 
 
 
 ## Uso del comando chown
 
-Chown (change owner) es otra utilidad del sistema que nos permite realizar cambios en la propiedad de los archivos, se parece a "chmod" pero la función que raliza es distinta. Como su nombre lo indica es para cambiar el propietario de un archivo o carpeta.
+Chown (change owner) es otra utilidad del sistema que nos permite realizar cambios en la propiedad de los archivos, se parece a "chmod" pero la función que realiza es distinta. Como su nombre lo indica es para cambiar el propietario de un archivo o carpeta.
 
 Su sintáxis básica es la siguiente:
 
@@ -204,7 +204,7 @@ Ejemplos de uso:
 	┌─[root@parrot-armhf]─[/home/parrot]
 	└──╼ #
 
-En el ejemplo anterior, podemos observar como ha cambiado el usuario y grupo propietario de todos los archivos que se encuentran en el directorio scripts. Veamos un ejempo en el que solo vamos a cambiar el usuario propietario.
+En el ejemplo anterior, podemos observar cómo ha cambiado el usuario y grupo propietario de todos los archivos que se encuentran en el directorio scripts. Veamos un ejemplo en el que solo vamos a cambiar el usuario propietario.
 
 	┌─[root@parrot-armhf]─[/home/parrot]
 	└──╼ #ls -l scripts/
@@ -225,7 +225,7 @@ En el ejemplo anterior, podemos observar como ha cambiado el usuario y grupo pro
 	┌─[root@parrot-armhf]─[/home/parrot]
 	└──╼ #
 
-En el ejemplo anterior, se puede apreciar como el usuario propietario de todos los archivos dentro del directorio scripts cambio a parrot.
+En el ejemplo anterior, se puede apreciar cómo el usuario propietario de todos los archivos dentro del directorio scripts cambió a parrot.
 
 
 
@@ -249,7 +249,7 @@ Opciones.
 
 - --reference --> Cambia el grupo de un archivo tomando como referencia el propietario de otro.
 
-Practicamente son las mismas obciones de "chown", con la diferencia de que "chgrp" solo cambia el grupo propietario de archivos y/o directorios, conservando el usuario propietario.
+Practicamente son las mismas opciones de "chown", con la diferencia de que "chgrp" solo cambia el grupo propietario de archivos y/o directorios, conservando el usuario propietario.
 
 
 
@@ -274,7 +274,7 @@ Practicamente son las mismas obciones de "chown", con la diferencia de que "chgr
 		┌─[root@parrot-armhf]─[/home/parrot]
 		└──╼ #
 
-En el ejemplo anterior, se puede apreciar como el grupo propietario de todos los archivos dentro del directorio scripts cambio a parrot.
+En el ejemplo anterior, se puede apreciar cómo el grupo propietario de todos los archivos dentro del directorio scripts cambió a parrot.
 
 
 	┌─[root@parrot-armhf]─[/home/parrot]
@@ -296,7 +296,7 @@ En el ejemplo anterior, se puede apreciar como el grupo propietario de todos los
 	┌─[root@parrot-armhf]─[/home/parrot]
 	└──╼ #
 
-En el ejemplo anterior, se puede apreciar como el grupo propietario de los archivos wireless-dos-ids.py y wireless-dos.py cambio de parrot a root.
+En el ejemplo anterior, se puede apreciar como el grupo propietario de los archivos wireless-dos-ids.py y wireless-dos.py cambió de parrot a root.
 
 
 ## Conclusión pendiente y algunos pequeños cambios
