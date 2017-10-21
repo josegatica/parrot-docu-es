@@ -6,8 +6,6 @@ wget -qO - https://archive.parrotsec.org/parrot/misc/parrotsec.gpg | apt-key add
 
 apt-get install parrot-archive-keyring -y
 
-apt-get install apt-parrot -y (2 Veces)
-
 sudo apt autoremove -f -y
 
 sudo apt-get autoclean 
@@ -15,11 +13,16 @@ sudo apt-get autoclean
 sudo apt-get clean
 
 sudo apt-get update -y
+
 sudo apt-get -y dist-upgrade -f
 
 sudo apt autoremove -f -y
 
+apt-get install apt-parrot -y (2 Veces)
+
 apt-get -y --force-yes -o Dpkg::Options::=”–force-overwrite” install parrot-interface parrot-interface-full parrot-tools-full
+
+
 
 sudo dpkg --configure -a
 sudo apt-get update && sudo apt-get dist-upgrade -f -y
