@@ -6,7 +6,7 @@ Desde que se usó por primera vez la palabra hacker ésta ha sido mal utilizada,
 
 Tomando en cuenta los términos “el mejor de los casos”  y “el peor de los casos”, existe una clasificación menos ambigua: Lammer, Newbie, Script Kiddie, Green, White, Gray y Black.
 
-¿DE DONDE PROVIENE EL NOMBRE?
+¿DE DÓNDE PROVIENE EL NOMBRE?
 
  Haciendo una investigación a fondo, se puede ver que el primer hacker no fue Hombre, sino una mujer, y su nombre era Grace Murray Hopper, la persona que creó y relacionó la palabra bug con vulnerabilidad, y se merece el título de la primera Hacker.
 Cuando se habla de los primeros hackers, todos coinciden que la gente del Massachusetts Institute of Technology (MIT) fueron los precursores de acuñar la cultura hacker en 1959 a un grupo de personas que se encargaban de solucionar problemas técnicos. Por tales motivos, podemos decir que Grace fue la primer hacker, pero no la creadora de la terminología, esa etiqueta se la pusieron a los chicos del MIT, casi 20 años después. 

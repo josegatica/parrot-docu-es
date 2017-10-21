@@ -391,8 +391,8 @@ Mientras que zip comprime y empaqueta,gzip ó bzip2 sólo comprimen ficheros,no 
 
 ##### Opciones de tar:
 -c : crea un nuevo archivo.
--f : cuando se usa con la opción -c,usa el nombre del fichero especificado para la creación del fichero tar
-cuando se usa con la opción -x,retira del archivo el fichero especificado.
+-f : cuando se usa con la opción -c, usa el nombre del fichero especificado para la creación del fichero tar
+cuando se usa con la opción -x, retira del archivo el fichero especificado.
 -t : muestra la lista de los ficheros que se encuentran en el fichero tar
 -v : muestra el proceso de archivo de los ficheros.
 -x : extrae los ficheros de un archivo.
@@ -439,7 +439,7 @@ cuando se usa con la opción -x,retira del archivo el fichero especificado.
 
 - pasa de ogg a wav todos los ogg del directorio en el que estamos.
 
-- (;) Puesto entre dos comandos hace que tras el primero se ejecute el segundo.Ejemplos:
+- (;) Puesto entre dos comandos hace que tras el primero se ejecute el segundo. Ejemplos:
 
         nano nuevo.txt ; cat nuevo.txt
 

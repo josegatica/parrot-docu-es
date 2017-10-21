@@ -1,0 +1,59 @@
+Aquí vamos:
+
+1. Descargamos Metasploit pro
+
+   wget https://downloads.metasploit.com/data/releases/metasploit-latest-linux-x64-installer.run
+
+2. Iniciamos servicio de postgresql
+   
+   service postgresql start
+
+3. Dejamos los 3 servicios base automáticos al iniciar el sistema
+    
+   update-rc.d postgresql enable
+   update-rc.d metasploit enable
+   update-rc.d nginx enable
+
+4. Creamos usuario root en la base de datos de metasploit
+  
+   su postgres
+   createuser root -P
+   createdb —owner=root msfdb
+   exit
+
+5. Iniciamos la consola de Metasploit verificamos que la bases de datos esté arriba, la iniciamos y activamos neXpose
+   
+   msfconsole
+   db_status
+   db_rebuild_cache
+   load nexpose
+   exit
+
+6. Creamos el usuario root para la interfaz web de Metasploit
+/
+   locate diagnostic_shell
+   sudo /opt/metasploit/diagnostic_shell
+   cd /opt/metasploit/apps/pro/ui
+   ruby script/createuser root
+
+
+En seis puntos, una guía sencilla:
+
+Aquí ya podemos abrir la consola de Metasploit
+
+https://localhost:1337
+
+Ahora lo más importante: la licencia
+
+Vamos a esta dirección:
+
+  http://r-7.co/trymsp
+
+Eliges para uso personal
+En este caso usaremos el trial 
+incluye para 3 usuarios
+
+no olviden abrir los puertos que ustedes definan durante la instalacion, 
+y los que vayan a requerir para sus laboratorios, Urug puede entrar en mas detalles si  gustan
+
+Enjoy and care!
