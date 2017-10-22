@@ -1,8 +1,8 @@
 Con este procedimiento vamos a obtener Parrot Cloud convirtiendo desde Kali 2017.2
 
-Copie esta combinación em su terminal de Parrot
+Copie esta combinación en su terminal de Parrot
 
-Tambien nos convertiremos en Beta Testers pues tendremos la version Intruder 3.9
+También nos convertiremos en Beta Testers pues tendremos la versión Intruder 3.9
 
 
 echo -e "deb http://mirrordirector.archive.parrotsec.org/parrot parrot main contrib non-free" > /etc/apt/sources.list.d/parrot.list 	echo -e "# This file is empty, feel free to add here your custom APT repositories\n\n# The standard Parrot repositories are NOT here. If you want to\n# edit them, take a look into\n#                      /etc/apt/sources.list.d/parrot.list\n#                      /etc/apt/sources.list.d/debian.list\n\n\n\n# If you want to change the default parrot repositories setting\n# another localized mirror, then use the command parrot-mirror-selector\n# and see its usage message to know what mirrors are available\n\n\n\n#uncomment the following line to enable the Parrot Testing Repository\n#deb http://us.repository.frozenbox.org/parrot testing main contrib nonfree" > /etc/apt/sources.list 	
@@ -13,7 +13,7 @@ apt-get install parrot-archive-keyring -y
 
 nano /etc/apt/sources.list
 
-Comente la primera linea agregando este simbolo 
+Comente la primera línea agregando este símbolo 
 
 #
 
@@ -87,7 +87,7 @@ sudo grub-mkconfig
 
 sudo reboot
 
-si todo salio bien usted debe ver esto al ejecutar el comando
+si todo salió bien usted debe ver esto al ejecutar el comando
 
 lsb_release-a
 
@@ -103,4 +103,4 @@ Codename:       intruder
 
 Esta idea está basada en esta https://dev.parrotsec.org/parrot/alternate-install/blob/master/parrot-install.sh
 
-Y  creada con el apoyo del grupo Documentacion Parrot OS Español
+Y  creada con el apoyo del grupo Documentación Parrot OS Español
