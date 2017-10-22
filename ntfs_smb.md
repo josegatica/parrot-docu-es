@@ -124,7 +124,7 @@ NOTA: Esto es un windows XP
 
 ![alt text](https://github.com/josegatica/parrot-docu-es/blob/master/images/migracion2.png "SMB")
 
-![alt text](https://github.com/josegatica/parrot-docu-es/blob/master/images/migarcion3.png "SMB")
+![alt text](https://github.com/josegatica/parrot-docu-es/blob/master/images/migracion3.png "SMB")
 
 
 Una vez compartido el recurso nos podremos conectar a él. En este caso, mi recurso compartido en windows XP tiene acceso total, por lo que puedo utilizar culaquier usuario con cualquier contraseña. La direccion ip de Windows XP es 192.168.56.101. También podemos ver entre los recursos compartidos "shared", que es el nombre del recurso que hemos compartido anteriormente. 
@@ -235,4 +235,127 @@ Consulte la página de manual (man 8 mount.cifs) para más información.
 
 
 ## Desde Parrot a Windows
-#Continúo el proximo dia
+
+En esta parte veremos cómo configurar nuestro sistema para ser accedido desde Windows. Para ello debemos instalar samba. Probablemente su sistema ParrotSec ya lo tenga instalado. 
+
+	┌─[root@parrot]─[~]
+	└──╼ #apt install samba
+
+El fichero de configuración se encuentra bajo "/etc/samba". Añadiremos al final del fichero smb.conf un recurso llamado test con una serie de opciones para que 
+el recurso pueda ser accedido desde windows sin petición de usuario/contraseña y que se pueda escribir en dicho recurso (ATENCION!!!ESTO ES POTENCIALMENTE PELIGROSO SI LA RED NO ES SUYA O COMPARTE UNA RED CON MAS GENTE,YA QUE EL DIRECTORIO ES ESCRIBIBLE SIN CONTRASEÑA, puede ver "man 5 smb.conf" para otras opciones).
+
+Añadimos al final del fichero /etc/samba/smb.conf:
+
+	[test]
+	  comment = Test samba en ParrotSec
+	  path = /srv/samba
+	  browsable = yes
+	  guest ok = yes
+	  read only = no
+	  create mask = 666
+	  directory mask = 777
+	  force user = test
+	  force group = test
+
+La variable path indica el directorio que queremos compartir.
+
+Ejecutaremos "testparm" para comprobar que no hay errores en smb.conf:
+
+	┌─[root@parrot]─[~]
+	└──╼ #testparm 
+	Load smb config files from /etc/samba/smb.conf
+	rlimit_max: increasing rlimit_max (1024) to minimum Windows limit (16384)
+	WARNING: The "syslog" option is deprecated
+	Processing section "[homes]"
+	Processing section "[printers]"
+	Processing section "[print$]"
+	Processing section "[test]"
+	Loaded services file OK.
+	Server role: ROLE_STANDALONE
+
+	Press enter to see a dump of your service definitions
+
+	# Global parameters
+	[global]
+		log file = /var/log/samba/log.%m
+		max log size = 1000
+		syslog = 0
+		panic action = /usr/share/samba/panic-action %d
+		usershare allow guests = Yes
+		map to guest = Bad User
+		obey pam restrictions = Yes
+		pam password change = Yes
+		passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+		passwd program = /usr/bin/passwd %u
+		server role = standalone server
+		unix password sync = Yes
+		dns proxy = No
+		idmap config * : backend = tdb
+
+
+	[homes]	
+		comment = Home Directories
+		browseable = No
+		create mask = 0700
+		directory mask = 0700
+		valid users = %S
+
+
+	[printers]
+		comment = All Printers
+		path = /var/spool/samba
+		browseable = No
+		printable = Yes
+		create mask = 0700
+
+
+	[print$]
+		comment = Printer Drivers
+		path = /var/lib/samba/printers
+
+
+	[test]
+		comment = Test samba en ParrotSec
+		path = /srv/samba
+		create mask = 0666
+		directory mask = 0777
+		force group = test
+		force user = test
+		guest ok = Yes
+		read only = No
+
+
+Ejecutamos smbpasswd para añadir al usuario test a samba. Nos solicitará su contraseña samba. Para este ejemplo en concreto, no tiene importancia su contraseña ya que desde Windows no la pedirá.
+
+	┌─[root@parrot]─[~]
+	└──╼ #smbpasswd -a test
+	New SMB password:
+	Retype new SMB password:
+
+
+Sólo queda comprobar que los permisos y propietario del directorio compartido son correctos:
+
+	┌─[root@parrot]─[~]
+	└──╼ #ls -lad /srv/samba
+	drwxr-xr-x 2 test test 4096 Oct 22 22:02 /srv/samba
+
+E iniciar el servicio samba:
+
+	┌─[root@parrot]─[~]
+	└──╼ #systemctl start smbd
+
+Comprobemos que samba está en funcionamiento:
+
+	┌─[root@parrot]─[~]
+	└──╼ #systemctl status smbd
+	● smbd.service - Samba SMB Daemon
+	   Loaded: loaded (/lib/systemd/system/smbd.service; disabled; vendor preset: en
+	   Active: active (running) since Sun 2017-10-22 22:00:58 CEST; 19min ago
+
+
+Desde un sistema windows ya podría acceder a nuestro recurso, apuntando en un explorador, a la ip de nuestro servidor SMB. (\\ip_servidor_ParrotSec).
+
+
+
+![alt text](https://github.com/josegatica/parrot-docu-es/blob/master/images/migracion4.png "SMB")
+
