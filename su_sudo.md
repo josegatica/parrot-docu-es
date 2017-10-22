@@ -1,6 +1,6 @@
 # Necesidades
 
-En GNU/Linux existe un usuario llamado root. Este usuario es especial, es el administrador del sistema. Root puede hacer todo en un sistema GNU/linux, por esta razón es muy peligroso trabajar constantemente con dicho usuario.Podríamos escribir un comando incorrectamente y provocar un error en nuestro sistema. Al no utilizar la cuenta de root para trabajar normalmente, también mitigamos la posibilidad de vernos afectados por un virus. Así que la forma correcta para trabajar en un sistema GNU/Linux, es utilizar un usuario con privilegios limitados.  
+En GNU/Linux existe un usuario llamado root. Este usuario es especial, es el administrador del sistema. Root puede hacer todo en un sistema GNU/linux, por esta razón es muy peligroso trabajar constantemente con dicho usuario. Podríamos escribir un comando incorrectamente y provocar un error en nuestro sistema. Al no utilizar la cuenta de root para trabajar normalmente, también mitigamos la posibilidad de vernos afectados por un virus. Así que la forma correcta para trabajar en un sistema GNU/Linux, es utilizar un usuario con privilegios limitados.  
 
 Pero habrá tareas para las que necesitemos convertirnos en root o al menos tener sus privilegios, o quizas lo que necesitemos sea convertirnos en otro usuario del sistema (es menos frecuente pero puede darse el caso).
 
@@ -14,7 +14,7 @@ La forma general de utilizarlo es:
 
 Pero veamos unos ejemplos para entender mejor el funcionamiento de este comando.
 
-Imaginemos una sesión con un usuario común del sistema ("whoami" para saber que usuario soy yo y "pwd" para ver dónde estoy situado en el path del sistema):
+Imaginemos una sesión con un usuario común del sistema ("whoami" para saber qué usuario soy yo y "pwd" para ver dónde estoy situado en el path del sistema):
 
 	┌─[test@parrot]─[~]
 	└──╼ $whoami
@@ -40,7 +40,7 @@ Podría interesarnos convertirnos en otro usuario, por ejemplo test2:
 
 Vemos que simplemente hemos cambiado el nombre del usuario al que nos queremos convertir. En cualquier caso nos solicitará la contraseña de dicho usuario. No la nuestra, sino la del usuario en el que nos queremos convertir. Si es root, la contraseña de root. Si es test2, la contraseña de test2.
 
-Entre las opciones que podemos usar con "su" (man 1 su), existe una para convertirnos en el usuario pero con todo su "enviroment" tal y como si nos hubiesemos logeado en el sistema. Esta opcion es "-" o "-l". Es decir, tendremos todas las variables de entorno de dicho usuario, pero sin utilizar la opción no necesariamente las tendremos:
+Entre las opciones que podemos usar con "su" (man 1 su), existe una para convertirnos en el usuario pero con todo su "enviroment" tal y como si nos hubiésemos logeado en el sistema. Esta opción es "-" o "-l". Es decir, tendremos todas las variables de entorno de dicho usuario, pero sin utilizar la opción no necesariamente las tendremos:
 
 	┌─[✗]─[test@parrot]─[~]
 	└──╼ $whoami
@@ -107,7 +107,7 @@ Para poder configurar sudo, en primer lugar deberemos tener instalado el paquete
 	┌─[root@parrot]─[~]
 	└──╼ #apt install sudo
 
-El fichero de configuración, es "/etc/sudoers". Lo podemos editar con nuestro editor favorito o bien, mediante el comando "visudo". Recomendamos utilizar este último comando ya que, entre otras cosas, se encarga de realizar un checqueo de la sintaxis del fichero una vez modificado por nosotros.
+El fichero de configuración, es "/etc/sudoers". Lo podemos editar con nuestro editor favorito o bien, mediante el comando "visudo". Recomendamos utilizar este último comando ya que, entre otras cosas, se encarga de realizar un chequeo de la sintaxis del fichero una vez modificado por nosotros.
 
 	┌─[root@parrot]─[~]
 	└──╼ #visudo
@@ -176,7 +176,7 @@ Veamos un comando ya visto anteriormente: "whoami". Este comando devuelve nuestr
 	└──╼ $whoami
 	test
 
-Que pasaría si ejecutasemos "sudo whoami"?. Estaríamos lanzando "whoami" como usuario root, por lo que la respuesta debería ser "root".
+¿Qué pasaría si ejecutásemos "sudo whoami"?. Estaríamos lanzando "whoami" como usuario root, por lo que la respuesta debería ser "root".
 
 Comprobémoslo:
 
@@ -193,7 +193,7 @@ Comprobémoslo:
 	[sudo] password for test: 
 	root
 
-Al ejecutar sudo, nos pide una contraseña. ATENCION!!! NO ES LA CONTRASEÑA DE ROOT. Es la contraseña de nuestro usuario test. Una vez introducida vemos que nos devuelve "root", indicandonos que somos root. Tras la devolución del prompt, volvemos a ser el usuario test.
+Al ejecutar sudo, nos pide una contraseña. ¡¡¡ATENCIÓN!!! NO ES LA CONTRASEÑA DE ROOT. Es la contraseña de nuestro usuario test. Una vez introducida vemos que nos devuelve "root", indicándonos que somos root. Tras la devolución del prompt, volvemos a ser el usuario test.
 
 Veamos esto:
 
@@ -207,7 +207,7 @@ Veamos esto:
 
 La primera vez ejecutamos whoami anteponiéndole sudo, es decir lo ejecutamos como root. La segunda vez desde nuestro usuario test.
 
-Como ha podido comprobar, esta segunda vez que he ejecutado sudo, no se ha solictado la contraseña del usuario test. Tal como indica la página del manual de sudoers (" The user may then use sudo without a password for a short period of time (15 minutes unless overridden by the timestamp_timeout option).") tendremos 15 minutos en los que en la sesión activa no se nos solicitrá la contraseña.
+Como ha podido comprobar, esta segunda vez que he ejecutado sudo, no se ha solictado la contraseña del usuario test. Tal como indica la página del manual de sudoers (" The user may then use sudo without a password for a short period of time (15 minutes unless overridden by the timestamp_timeout option).") tendremos 15 minutos en los que en la sesión activa no se nos solicitará la contraseña.
 
 Como podemos ejecutar cualquier programa como cualquier usuario, llegado el caso, también podríamos ejecutar comandos como otro usuario (ejemplo con test2):
 
@@ -230,7 +230,7 @@ En este último ejemplo ha cambiado la contraseña de root ;-).
 
 A modo de resumen:
 
-- su --> Nos convierte en otro usuario y debemos conocer su contraseña.
-- sudo --> Nos permite ejecutar comandos como otros usuarios y no tenemos que conocer la contraseña de dicho usuario.
+- su 	--> Nos convierte en otro usuario y debemos conocer su contraseña.
+- sudo 	--> Nos permite ejecutar comandos como otros usuarios y no tenemos que conocer la contraseña de dicho usuario.
 
 
