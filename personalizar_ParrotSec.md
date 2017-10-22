@@ -12,8 +12,8 @@ Ctrl + x
 
 Yes
 
-Ahora linea por linea hasta que su sistema quede lo mas actualizado posible
-repitalo hasta que su sistema se muestre optimo y se resuelvan los problemas.
+Ahora línea por línea hasta que su sistema quede lo más actualizado posible.
+Repítalo hasta que su sistema se muestre óptimo y se resuelvan los problemas.
 
 
 dpkg -l
