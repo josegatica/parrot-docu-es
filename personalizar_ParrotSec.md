@@ -3,9 +3,10 @@ Edite su repositorio, mayor detalle en https://mirrors.ocf.berkeley.edu/parrot
 sudo nano /etc/apt/sources.list.d/parrot.list
 (Ahora revisaremos que esté como debe estar, para el correcto funcionamiento de nuestra distro)
 
-## stable repository
+Debería lucir así:
+<i>## stable repository
 deb http://deb.parrotsec.org/parrot stable main contrib non-free<p>
-#deb-src http://archive.parrotsec.org/parrot stable main contrib non-free
+#deb-src http://archive.parrotsec.org/parrot stable main contrib non-free</i>
 
 Ctrl + x
 
