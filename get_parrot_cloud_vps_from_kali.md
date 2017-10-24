@@ -9,7 +9,6 @@ echo -e "deb http://mirrordirector.archive.parrotsec.org/parrot parrot main cont
 
 wget -qO - https://archive.parrotsec.org/parrot/misc/parrotsec.gpg | apt-key add -
 
-apt-get install parrot-archive-keyring -y
 
 nano /etc/apt/sources.list
 
@@ -39,6 +38,8 @@ sudo apt-get autoclean
 sudo apt-get clean
 
 sudo apt-get update -y
+
+apt-get install parrot-archive-keyring -y
 
 sudo apt-get -y dist-upgrade -f
 
