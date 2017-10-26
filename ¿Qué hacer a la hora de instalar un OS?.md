@@ -8,7 +8,7 @@ ISO
 *lite 1.5GB VERSION 3.8
 *full 3.6 GB VERSION 3.8
 
-Tener la documentación y soporte a la mano
+1)Tener la documentación y soporte a la mano
 si usted es un usuario nuevo es recomendable documentarse y formar parte de
 las comunidades y foros de ParrotSec 
  
@@ -18,7 +18,7 @@ foro español
 https://www.parrotsec-es.org
 
 
- Instalación de GNU/Linux
+*Instalación de GNU/Linux
 se debe tener en cuenta tener a mano la información del Hardware
 en GNU/Linux hay varios problemas con los controladores para dispositivo
 cómo ( modems integrados en board y otros periféricos menos comunes
@@ -28,8 +28,8 @@ y tomar nota de todo lo que se hace y se escoge en la instalación
 ya que para pedir ayuda es recomendable tener información de cualquier
 problema que se presente durante la instalación.
 
--conocer las aplicaciones útiles
-- particionar el disco duro es opcional si quieres una guía de como 
+-Conocer las aplicaciones útiles
+-Particionar el disco duro es opcional si quieres una guía de como 
 hacerlo con ParrotSec el link =  https://github.com/josegatica/parrot-docu-
 es/blob/master/09.-%20parrot%20Segurity%20OS%20DualBoot.md
 
