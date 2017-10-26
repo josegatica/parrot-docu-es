@@ -1,4 +1,4 @@
-¿Qué hacer a la hora de instalar un S.O ?
+¿Qué hacer a la hora de instalar un OS?
 
 Escoger versión de ParrotSec que se va a instalar dependiendo de los
 recursos de su ordenador descargue la versión más actualizada de ParrotSec y verificar el peso
