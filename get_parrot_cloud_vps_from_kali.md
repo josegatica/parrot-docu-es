@@ -55,7 +55,7 @@ sudo apt autoremove -f -y
 
 apt-get install apt-parrot -y (2 Veces)
 
-apt-get -y Dpkg::Options::="--force-overwrite" install parrot-interface parrot-interface-full parrot-tools-full
+apt-get -y -o Dpkg::Options::="--force-overwrite" install parrot-interface parrot-interface-full parrot-tools-full
 
 
 sudo apt-get update -y
