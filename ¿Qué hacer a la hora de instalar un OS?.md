@@ -17,10 +17,9 @@ Foro en español<p>
 
 Recomendaciones al pie:
 
-Debe tener en cuenta tener a mano la información del Hardware.
-En GNU/Linux hay varios reportes de problemas con controladores privativos para dispositivos cómo modems integrados en board y otros periféricos menos comunes, como Mouses inalámbricos, etc. 
-También recomendamos tener una copia de los instaladores y tomar nota de todo lo que se hace y se escoge en la instalación, ya que para pedir ayuda es recomendable tener información de cualquier problema que se presente durante la instalación.
-
+- Debe tener en cuenta tener a mano la información del Hardware.
+- En GNU/Linux hay varios reportes de problemas con controladores privativos para dispositivos cómo modems integrados en board y otros periféricos menos comunes, como Mouses inalámbricos, etc. 
+-También recomendamos tener una copia de los instaladores y tomar nota de todo lo que se hace y se escoge en la instalación, ya que para pedir ayuda es recomendable tener información de cualquier problema que se presente durante la instalación.
 - Conocer las aplicaciones útiles
 - Particionar el disco duro es opcional.
 Si quiere una guía de cómo hacerlo con ParrotSec, recomendamos leer el link https://docs.parrotsec-es.org/doku.php?id=parrot_security_os_dualboot
