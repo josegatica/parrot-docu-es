@@ -12,7 +12,15 @@ wget -qO - https://archive.parrotsec.org/parrot/misc/parrotsec.gpg | apt-key add
 
 nano /etc/apt/sources.list
 
-Comente la primera línea agregando este símbolo 
+Comente la primera línea agregando este símbolo "#"
+
+Ahora guardemos los cambios con
+
+Ctrl + x
+
+Y respondemos que estamos seguros de realizar los cambios
+
+Yes
 
 #
 
@@ -41,18 +49,20 @@ sudo apt-get update -y
 
 apt-get install parrot-archive-keyring -y
 
-sudo apt-get -y dist-upgrade -f
+
 
 sudo apt autoremove -f -y
 
 apt-get install apt-parrot -y (2 Veces)
 
-apt-get -y --force-yes -o Dpkg::Options::=”–force-overwrite” install parrot-interface parrot-interface-full parrot-tools-full
+apt-get -y -o Dpkg::Options::="--force-overwrite" install parrot-interface parrot-interface-full parrot-tools-full
 
 
 sudo apt-get update -y
 
 sudo apt-get upgrade -y
+
+sudo apt-get -y dist-upgrade -f
 
 sudo apt autoremove -f -y
 
@@ -87,6 +97,8 @@ sudo dpkg --configure -a
 sudo grub-mkconfig
 
 sudo reboot
+
+
 
 si todo salió bien usted debe ver esto al ejecutar el comando
 
