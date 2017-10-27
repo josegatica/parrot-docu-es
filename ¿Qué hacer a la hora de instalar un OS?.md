@@ -10,9 +10,9 @@ ISO
 las comunidades y foros de ParrotSec 
  
 Grupo de telegram 
-@parrotspanishgroup
-Foro español
-https://www.parrotsec-es.org
+-https://t.me/ParrotSpanishGroup
+Foro en español
+-https://www.parrotsec-es.org
 
 
 *Instalación de GNU/Linux
