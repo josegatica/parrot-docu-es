@@ -9,9 +9,9 @@ ISO
 1)Tener la documentación y soporte a la mano. Si usted es un usuario nuevo es recomendable documentarse y formar parte de
 las comunidades y foros de ParrotSec 
  
-Grupo de telegram 
+Grupo de telegram<p>
 -https://t.me/ParrotSpanishGroup
-Foro en español
+Foro en español<p>
 -https://www.parrotsec-es.org
 
 
