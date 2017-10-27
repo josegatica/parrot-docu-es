@@ -10,7 +10,7 @@ ISO
 las comunidades y foros de ParrotSec 
  
 Grupo de telegram<p>
--https://t.me/ParrotSpanishGroup
+-https://t.me/ParrotSpanishGroup<p>
 Foro en español<p>
 -https://www.parrotsec-es.org
 
