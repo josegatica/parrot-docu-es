@@ -1,6 +1,19 @@
 
 <h1>Primer paso</h1>
 
+
+#
+<h2>Que es LEMP?</h2>
+
+
+Puede encontrar cual es esta combinación de estas tecnologías usada principalmente para definir
+
+la infraestructura de un servidor web, utilizando un paradigma de programación para el desarrollo. 
+
+En --> <a href="https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29" target="blank">LEMP</a>
+
+
+#
 Antes de todo necesita tener acceso root
 
 <a href="https://github.com/josegatica/parrot-docu-es/blob/master/set_root_pw.md" target="blank">Establecer Clave Root </a>
@@ -15,7 +28,9 @@ Luego personalice su ParrotSec
 
 
 #
-Conviertase en un Beta Tester
+La versión estable actualmente es ParrotSec 3.8"
+
+Si usted gusta este paso es opcional puede convertirse en un Beta Tester siguiente espe procedimiento:
 
 <html><a href="https://github.com/josegatica/parrot-docu-es/blob/master/get_parrot_cloud_vps_from_kali.md">Parrot 3.9 Intruder</a></html>
 
@@ -30,6 +45,7 @@ Necesitará un cafe y seguir linea por linea.
 
 Primero vamos a deshabilitar Apache
 
+
 su
 
 systemctl stop apache2
@@ -41,7 +57,7 @@ sudo apt-get remove --purge apache2
 
 
 #
-Ahora instalemos LEMP
+Ahora instalemos LEMP con Nginx
 
 sudo aptitude install nginx mariadb-server mariadb-client php-mysqli php7.1-common php7.1-readline php7.1-fpm php7.1-cli php7.1-gd php7.1-mysql php7.1-mcrypt php7.1-curl php7.1-mbstring php7.1-opcache php7.1-json -y php7.1-zip php-xml apt-transport-https lsb-release ca-certificates wget
 
@@ -54,7 +70,8 @@ sudo /etc/init.d/mysql stop
 
 
 #
-Ok ahora configuremos PHP y loos limites de memoria
+Ok ahora configuremos PHP y los limites de memoria
+
 
 sudo sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.1/fpm/php.ini
 
@@ -86,6 +103,7 @@ pm.process_idle_timeout = 10s
 pm.max_requests = 200
 chdir = /
 #
+
 
 Guardemos los cambios con
 Ctr + x
@@ -153,7 +171,7 @@ Y
 #
 
 
-Activemos nuestro sitio web en Nginx
+Activemos nuestro sitio web en Nginx haciendo un link
 
 sudo ln -s /etc/nginx/sites-available/misitio.com /etc/nginx/sites-enabled/misitio.com
 
@@ -175,9 +193,9 @@ sudo chown www-data: -R /var/www/html
 
 
 #
-Descargue y descomprima la version que prefiera de Wordpress, esta procediento se realizo con la 
+Descargue y descomprima la version que prefiera de Wordpress, la version estable es Wordpress Version Estable 4.8.2.
 
-Wordpress development version (4.9-beta4-42031)
+Esta procedimiento se realizo con la Wordpress development version (4.9-beta4-42031)
 
 
 
@@ -400,16 +418,3 @@ sudo wp cli info
 sudo wp cli version
 
 sudo wp plugin update --all
-
-
-
-
-#
-<h2>Que es LEMP?</h2>
-
-
-Puede encontrar cual es esta combinación de estas tecnologías usada principalmente para definir
-
-la infraestructura de un servidor web, utilizando un paradigma de programación para el desarrollo. 
-
-En --> <a href="https://en.wikipedia.org/wiki/LAMP_%28software_bundle%29" target="blank">LEMP</a>
