@@ -428,10 +428,10 @@ Cerremos la sesion de root dado que wp cli no lo remcomienda hacer con este usua
 
 exit
 
-sudo wp cli update
+wp cli update
 
-sudo wp cli info
+wp cli info
 
-sudo wp cli version
+wp cli version
 
-sudo wp plugin update --all
+wp plugin update --all
