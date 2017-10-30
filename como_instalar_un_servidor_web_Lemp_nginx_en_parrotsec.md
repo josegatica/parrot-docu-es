@@ -1,5 +1,5 @@
+<h1>Procedimiento de instalación de un servidor web Lemp Nginx en ParrotSec</h1>
 
-<h1>Primer paso</h1>
 
 
 #
@@ -28,9 +28,9 @@ Luego personalice su ParrotSec
 
 
 #
-La versión estable actualmente es ParrotSec 3.8"
+La versión estable actualmente es ParrotSec 3.8
 
-Si usted gusta este paso es opcional puede convertirse en un Beta Tester siguiente espe procedimiento:
+Si usted gusta puede incluir este paso para convertirse en un Beta Tester siguiendo este procedimiento:
 
 <html><a href="https://github.com/josegatica/parrot-docu-es/blob/master/get_parrot_cloud_vps_from_kali.md">Parrot 3.9 Intruder</a></html>
 
@@ -40,7 +40,8 @@ Necesitará un cafe y seguir linea por linea.
 
 
 #
-<h2>Procedimiento de instalación de un servidor web Lemp</h2>
+<h2>Primer Paso</h2>
+
 
 
 Primero vamos a deshabilitar Apache
@@ -177,7 +178,7 @@ sudo ln -s /etc/nginx/sites-available/misitio.com /etc/nginx/sites-enabled/misit
 
 
 #
-Creemos la carpeta de nuestro sitio web
+Creemos la carpeta para nuestro sitio web
 
 sudo mkdir -p /var/www/html/misitio.com
 
@@ -226,7 +227,7 @@ sudo unzip wordpress-4.9-beta4.zip -d /var/www/html/misitio.com
 
 #
 
-cd /var/www/html/aka.x/wordpress
+cd /var/www/html/misitio.com/wordpress
 
 mv -v * /var/www/html/misitio.com
 
@@ -291,7 +292,7 @@ rm /etc/mysql/my.cnf
 
 #
 
-Active los servicios web para inicio automatico con el sistema
+Active los servicios web para que inicien de forma automatica con el sistema
 
 systemctl enable php7.1-fpm.service
 
@@ -306,6 +307,7 @@ update-rc.d mysql enable
 Creemos el archivo de configuracion de Wordpress 
 
 cp wp-config-sample.php wp-config.php
+
 
 Documente el archivo con el nombre de la base de datos el usuario y la clave definida por usted
 
@@ -328,7 +330,7 @@ sudo service postgresql status -l
 
 
 #
-Apunte su sitio Web a la ruta que usted creo
+Apunte su sitio Web hacia la ruta que usted creo
 
 nano /etc/nginx/sites-available/default
 
@@ -391,9 +393,22 @@ misitio.com/wp-admin/update-core.php
 
 
 #
-Ahora vamos a protegerlo usando wp cli
+Ahora vamos a Instalar wp cli para gestionar Wordpress desde la terminal 
+
+cd
+
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+hp wp-cli.phar --info
+
+chmod +x wp-cli.phar
+
+sudo mv wp-cli.phar /usr/local/bin/wp
+
+wp --info
 
 
+#
 wget https://raw.githubusercontent.com/wp-cli/wp-cli/master/utils/wp-completion.bash
 
 nano ~/.bash_profile
@@ -403,6 +418,8 @@ source /root/wp-completion.bash
 Ctr + x
 Y
 
+
+#
 cd /var/www/html/misitio.com
 
 
