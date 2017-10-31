@@ -71,7 +71,7 @@ sudo /etc/init.d/mysql stop
 
 
 #
-Ok ahora configuremos PHP y los limites de memoria
+Ok ahora configuremos PHP fpm pool y los limites de memoria
 
 
 sudo sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.1/fpm/php.ini
@@ -81,6 +81,7 @@ sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 128M/" /etc/php/7.
 sudo sed -i "s/zlib.output_compression = .*/zlib.output_compression = on/" /etc/php/7.1/fpm/php.ini
 
 sudo sed -i "s/max_execution_time = .*/max_execution_time = 18000/" /etc/php/7.1/fpm/php.ini
+
 
 sudo mv /etc/php/7.1/fpm/pool.d/www.conf /etc/php/7.1/fpm/pool.d/www.conf.org
 
@@ -113,7 +114,7 @@ Respondamos que estamos seguros pulsando
 Y
 
 
-Reinicie PHP para que se reflejen los cambios
+Reinicie php7.1-fpm para que se reflejen los cambios
 
 sudo systemctl restart php7.1-fpm 
 
@@ -133,7 +134,7 @@ nano /etc/nginx/sites-available/misitio.com
 
 #
 server {
-server_name misitio.com;
+server_name www.misitio.com misitio.com;
 listen 80;
 root /var/www/html/misitio.com;
 access_log /var/log/nginx/access.log;
@@ -340,6 +341,21 @@ root /var/www/html/misitio.com;
 
 Ctrl + x
 Y
+
+
+#
+Ajuste el valor de memoria para carge de plugins e importar resplados de Wordpress
+
+nano /etc/nginx/
+
+Busque esta zona en el archivo y agregue la linea
+
+##
+        # Basic Settings
+        ##
+
+client_max_body_size 20M;
+
 
 
 #
