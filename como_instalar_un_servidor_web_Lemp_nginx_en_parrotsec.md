@@ -1,5 +1,5 @@
+<h1>Procedimiento de instalación de un servidor web Lemp Nginx en ParrotSec</h1>
 
-<h1>Primer paso</h1>
 
 
 #
@@ -28,9 +28,9 @@ Luego personalice su ParrotSec
 
 
 #
-La versión estable actualmente es ParrotSec 3.8"
+La versión estable actualmente es ParrotSec 3.8
 
-Si usted gusta este paso es opcional puede convertirse en un Beta Tester siguiente espe procedimiento:
+Si usted gusta puede incluir este paso para convertirse en un Beta Tester siguiendo este procedimiento:
 
 <html><a href="https://github.com/josegatica/parrot-docu-es/blob/master/get_parrot_cloud_vps_from_kali.md">Parrot 3.9 Intruder</a></html>
 
@@ -40,7 +40,8 @@ Necesitará un cafe y seguir linea por linea.
 
 
 #
-<h2>Procedimiento de instalación de un servidor web Lemp</h2>
+<h2>Primer Paso</h2>
+
 
 
 Primero vamos a deshabilitar Apache
@@ -70,7 +71,7 @@ sudo /etc/init.d/mysql stop
 
 
 #
-Ok ahora configuremos PHP y los limites de memoria
+Ok ahora configuremos PHP fpm pool y los limites de memoria
 
 
 sudo sed -i "s/memory_limit = .*/memory_limit = 256M/" /etc/php/7.1/fpm/php.ini
@@ -80,6 +81,7 @@ sudo sed -i "s/upload_max_filesize = .*/upload_max_filesize = 128M/" /etc/php/7.
 sudo sed -i "s/zlib.output_compression = .*/zlib.output_compression = on/" /etc/php/7.1/fpm/php.ini
 
 sudo sed -i "s/max_execution_time = .*/max_execution_time = 18000/" /etc/php/7.1/fpm/php.ini
+
 
 sudo mv /etc/php/7.1/fpm/pool.d/www.conf /etc/php/7.1/fpm/pool.d/www.conf.org
 
@@ -112,7 +114,7 @@ Respondamos que estamos seguros pulsando
 Y
 
 
-Reinicie PHP para que se reflejen los cambios
+Reinicie php7.1-fpm para que se reflejen los cambios
 
 sudo systemctl restart php7.1-fpm 
 
@@ -132,7 +134,7 @@ nano /etc/nginx/sites-available/misitio.com
 
 #
 server {
-server_name misitio.com;
+server_name www.misitio.com misitio.com;
 listen 80;
 root /var/www/html/misitio.com;
 access_log /var/log/nginx/access.log;
@@ -177,7 +179,7 @@ sudo ln -s /etc/nginx/sites-available/misitio.com /etc/nginx/sites-enabled/misit
 
 
 #
-Creemos la carpeta de nuestro sitio web
+Creemos la carpeta para nuestro sitio web
 
 sudo mkdir -p /var/www/html/misitio.com
 
@@ -226,7 +228,7 @@ sudo unzip wordpress-4.9-beta4.zip -d /var/www/html/misitio.com
 
 #
 
-cd /var/www/html/aka.x/wordpress
+cd /var/www/html/misitio.com/wordpress
 
 mv -v * /var/www/html/misitio.com
 
@@ -291,7 +293,7 @@ rm /etc/mysql/my.cnf
 
 #
 
-Active los servicios web para inicio automatico con el sistema
+Active los servicios web para que inicien de forma automatica con el sistema
 
 systemctl enable php7.1-fpm.service
 
@@ -306,6 +308,7 @@ update-rc.d mysql enable
 Creemos el archivo de configuracion de Wordpress 
 
 cp wp-config-sample.php wp-config.php
+
 
 Documente el archivo con el nombre de la base de datos el usuario y la clave definida por usted
 
@@ -328,7 +331,7 @@ sudo service postgresql status -l
 
 
 #
-Apunte su sitio Web a la ruta que usted creo
+Apunte su sitio Web hacia la ruta que usted creo
 
 nano /etc/nginx/sites-available/default
 
@@ -338,6 +341,21 @@ root /var/www/html/misitio.com;
 
 Ctrl + x
 Y
+
+
+#
+Ajuste el valor de memoria para carge de plugins e importar resplados de Wordpress
+
+nano /etc/nginx/
+
+Busque esta zona en el archivo y agregue la linea
+
+##
+        # Basic Settings
+        ##
+
+client_max_body_size 20M;
+
 
 
 #
@@ -391,9 +409,22 @@ misitio.com/wp-admin/update-core.php
 
 
 #
-Ahora vamos a protegerlo usando wp cli
+Ahora vamos a Instalar wp cli para gestionar Wordpress desde la terminal 
+
+cd
+
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+hp wp-cli.phar --info
+
+chmod +x wp-cli.phar
+
+sudo mv wp-cli.phar /usr/local/bin/wp
+
+wp --info
 
 
+#
 wget https://raw.githubusercontent.com/wp-cli/wp-cli/master/utils/wp-completion.bash
 
 nano ~/.bash_profile
@@ -403,6 +434,8 @@ source /root/wp-completion.bash
 Ctr + x
 Y
 
+
+#
 cd /var/www/html/misitio.com
 
 
@@ -411,10 +444,10 @@ Cerremos la sesion de root dado que wp cli no lo remcomienda hacer con este usua
 
 exit
 
-sudo wp cli update
+wp cli update
 
-sudo wp cli info
+wp cli info
 
-sudo wp cli version
+wp cli version
 
-sudo wp plugin update --all
+wp plugin update --all
