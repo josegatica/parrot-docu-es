@@ -32,7 +32,7 @@ A continuación vamos a ver cada una de estas fases de arranque y cómo funciona
 	
   - Comienza el proceso de arranque del sistema, llamado Bootloader.
 
-  Una ves que la BIOS realiza todas las pruebas necesarias y chequea la configuración correspondiente del sistema, si todo esta bien, pasa el control del sistema al Bootloader o Cargador de Arranque.
+  Una vez que la BIOS realiza todas las pruebas necesarias y chequea la configuración correspondiente del sistema, y si todo esta bien, pasa el control del sistema al Bootloader o Cargador de Arranque.
 
 ## Fase 2: Bootloader
 
