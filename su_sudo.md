@@ -1,6 +1,6 @@
 # Necesidades
 
-En GNU/Linux existe un usuario llamado root. Este usuario es especial, es el administrador del sistema. Root puede hacer todo en un sistema GNU/linux, por esta razón es muy peligroso trabajar constantemente con dicho usuario. Podríamos escribir un comando incorrectamente y provocar un error en nuestro sistema. Al no utilizar la cuenta de root para trabajar normalmente, también mitigamos la posibilidad de vernos afectados por un virus. Así que la forma correcta para trabajar en un sistema GNU/Linux, es utilizar un usuario con privilegios limitados.  
+En GNU/Linux existe un usuario llamado root. Este usuario es especial, es el administrador del sistema. Root puede hacer todo en un sistema GNU/linux, por esta razón es muy peligroso trabajar constantemente con dicho usuario. Podríamos escribir un comando incorrectamente y provocar un error en nuestro sistema. Al no utilizar la cuenta de root para trabajar normalmente, también mitigamos la posibilidad de vernos afectados por un virus. Así que la forma correcta para trabajar en un sistema GNU/Linux, es utilizar un usuario con privilegios limitados.
 
 Pero habrá tareas para las que necesitemos convertirnos en root o al menos tener sus privilegios, o quizas lo que necesitemos sea convertirnos en otro usuario del sistema (es menos frecuente pero puede darse el caso).
 
