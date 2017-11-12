@@ -15,7 +15,6 @@ El <b>equipo directivo</b> de Parrot Security OS en español se compone de las s
 - Claudio Marcial (Director equipo web)
 - Alejandro Pineda (Diseño ParrotSec-ES)
 - Raúl Alderete (Material Audiovisual)
-- Israel Guzman (Escritor de Documentacion)
 <br>
 <hr>
 
