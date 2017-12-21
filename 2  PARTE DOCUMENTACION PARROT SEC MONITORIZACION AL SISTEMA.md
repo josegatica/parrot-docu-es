@@ -16,7 +16,7 @@ de lanzar sadc y mostrar la información obtenida con el colector de datos.
 
 Un ejemplo de su uso es: 
   
-$ sar -u 2 5
+  $ sar -u 2 5
   
 Mostrará 5 tomas de datos de la utilización de la CPU separadas por 2
 segundos una de otra.
