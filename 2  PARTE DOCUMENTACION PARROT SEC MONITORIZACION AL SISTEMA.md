@@ -1,6 +1,6 @@
 2  PARTE DOCUMENTACIÓN PARROT SEC 
 
-MONITORIZACIÓN AL SISTEMA
+# MONITORIZACIÓN AL SISTEMA
 
 SAR: Es una herramienta muy potente, ya que permite detectar cuellos de botella al permitir visualizar
 lo que está ocurriendo en el sistema y almacenar la información sobre la carga y el estado en
@@ -16,19 +16,19 @@ de lanzar sadc y mostrar la información obtenida con el colector de datos.
 
 Un ejemplo de su uso es: 
   
-  $ sar -u 2 5
+	$ sar -u 2 5
   
 Mostrará 5 tomas de datos de la utilización de la CPU separadas por 2
 segundos una de otra.
 
 También permite que los datos sean almacendos en un archivo, por ejemplo: 
 
-  sar I 14 o iterr 2 10 , 
+	$ sar -I 14 -o iterr 2 10 , 
 
 muestra estadísticas de la interrupciones del sistema, capturándolos 10 veces cada 2
 segundos y almacenando los resultados en un fichero llamado iterr.
 
-Usando la instrucción de la forma: sar A , se obtendrá la información de la actividad obtenida
+Usando la instrucción de la forma: sar -A , se obtendrá la información de la actividad obtenida
 en el fichero de captura del día en curso.
 
 Para generar archivos de datos usaremos sadc, indicando el tiempo entre muestras, el número
@@ -41,28 +41,30 @@ Se recogerán 10 muestras separadas por un segundo de diferencia y se almacenar�
 datafle, en la carpeta /tmp.
 
 Si el nombre del fichero no se incluye, sadc almacena la actividad del sistema en el archivo
-/varlog/sysstat/sadd, donde dd indica el número del día en el que se ha realizado el registro de
+/var/log/sysstat/sadd, donde dd indica el número del día en el que se ha realizado el registro de
 datos.
 Admite el uso de modifcadores, algunos de ellos son:
-d: captura de la actividad de los discos. Por defecto esta actividad no se captura para evita archivos hitóricos demasiado largos.
-I: captura de todas las interrupciones del sistema.
+
+	d: captura de la actividad de los discos. Por defecto esta actividad no se captura para evita archivos hitóricos demasiado largos.
+	I: captura de todas las interrupciones del sistema.
 
 También sar admite el uso de modifcadores para generar informes de diferentes
 características, algunos de ellos son:
-u: utilización del procesador.
-B: paginación de la memoria virtual.
-c: creación de procesos.
-b: transferencias con E/S.
-d: transferencias por cada disco.
-I: sistema de interrupciones.
-n: conexión de red.
-q: carga media del sistema.
-r: sistema de memoria.
-w: cambios de contexto.
-W: intercambio de memoria (swapping)
-A: toda la información almacenada.
 
-MONITORIZACIÓN DE PROGRAMAS
+	u: utilización del procesador.
+	B: paginación de la memoria virtual.
+	c: creación de procesos.
+	b: transferencias con E/S.
+	d: transferencias por cada disco.
+	I: sistema de interrupciones.
+	n: conexión de red.
+	q: carga media del sistema.
+	r: sistema de memoria.
+	w: cambios de contexto.
+	W: intercambio de memoria (swapping)
+	A: toda la información almacenada.
+
+# MONITORIZACIÓN DE PROGRAMAS
 
 Es una técnica utilizada para obtener información sobre la ejecución de programas, en particular si deseamos conocer qué parte del código de un programa es la que más tiempo de ejecución consume o cuál es la secuencia de llamadas entre procedimientos.
 Se desarrolla por medio de tres etapas principales:
