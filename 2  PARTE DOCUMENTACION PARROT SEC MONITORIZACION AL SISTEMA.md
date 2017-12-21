@@ -75,27 +75,30 @@ Se desarrolla por medio de tres etapas principales:
 
 En el ejemplo que estudiaremos aplicamos la técnica de monitorización a un fichero escrito en lenguaje C, para ello necesitamos compilarlo usando gcc con la opción pg, que genera código extra que permite el análisis con la herramienta gprof. Para ello usaremos la secuencia siguiente, suponiendo que deseamos estudiar un programa denominado prueba.c:
 
-  gcc prueba.c o prueba pg g
-  prueba
-  gprof prueba > prueba.gprof
+	$ gcc prueba.c -o prueba -pg g
+	$ prueba
+	$ gprof prueba > prueba.gprof
 
 La primera línea instrumentaliza el programa, almacenando la salida en el archivo indicado tras el modifcador o. Se incluyen también las opciones pg, para poder usar gprof, g para obtener información válida para el depurador del sistema operativo (GDB).
 La información se almacena en el fichero prueba.gprof, al que se puede acceder usando un editor de textos.
 
 
-MONITOR DEL SISTEMA 
+# MONITOR DEL SISTEMA 
 
 Un sistema Linux se puede monitorizar utilizando la herramienta de administración denominada Monitor del sistema, la cual permite monitorizar los procesos que se están ejecutando en el sistema y el uso que están haciendo de los recursos. Para facilitar su uso presenta una serie de pestañas:
 
-  Procesos: muestra los procesos activos y cómo se relacionan unos con otros.
-  Recursos: presenta la evolución del consumo.
+	Procesos: muestra los procesos activos y cómo se relacionan unos con otros.
+	Recursos: presenta la evolución del consumo.
 
-Ofrece información como la carga media en los últimos 1, 5 y 15 minutos. Los procesos aparecen en una tabla en la que, por defecto se muestra: 
- -el nombre del proceso 
- -su estado
- -el porcentaje de uso de CPU
- -su prioridad
- -su identifcador y 
- -la memoria en uso .
+Ofrece información como la carga media en los últimos 1, 5 y 15 minutos. Los procesos aparecen en una tabla en la que, por defecto se muestra:
+ 
+	-el nombre del proceso 
+	-su estado
+	-el porcentaje de uso de CPU
+	-su prioridad
+	-su identifcador y 
+	-la memoria en uso 
+
+
 Utilizando el menú ver, con la pestaña Procesos seleccionada, podemos seleccionar el tipo de procesos que deseamos monitorizar. Además podemos manipular procesos usando el menú contextual de cada uno de ellos. En particular podemos detener y continuar un proceso, forzar la terminación normal de un proceso o su muerte, cambiar su prioridad. Podemos acceder al Mapa de memoria de un proceso, donde obtendremos información acerca de los segmentos de memoria utilizados: direcciones, tamaño y otras características. Por último, podemos conocer los archivos abiertos por un proceso, obeniendo información del descriptor, el tipo y objeto de los archivos abiertos por el proceso.
 En la pestaña Recursos podemos observar algunos gráficos que representan la evolución de la CPU la Memoria de intercambio y la Red. Por su parte, en la pestaña Sistemas de archivos se presenta infomación específca de los dispositivos montados, de su directorio de montaje , tipo y memoria total, libre, disponible y usada. Por último indicar que en el menú Editar podemos acceder a Preferencias, desde donde podemos confgurar el tiempo de refresco de la información, los parámetros a monitorizar y la presentación de ciertos elementos del monitor.
