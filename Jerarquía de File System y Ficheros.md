@@ -1,7 +1,7 @@
 ﻿# JERARQUÍA DE FILESYSTEM Y FICHEROS
 
 
-El principal problema de todo usuario migrante a GNU/Linux es la estructura de archivos y ficheros, ya que comúnmente en Windows se tiene la costumbre de mencionar directorios como “C:/users/User/Desktop”,  lo que no pasa en la distribución GNU/Linux. Para facilitar la “migración” de  los usuarios hacia GNU/Linux, a continuación se explicará de manera detallada la jerarquía de filesystems que contiene el sistema ya mencionado. Encuadrados en dos tipos básicos Estáticos/Dinámicos y Compartibles/Restringidos en los que se organiza todo el árbol de directorios de Linux.
+El principal problema de todo usuario migrante a GNU/Linux es la estructura de archivos y ficheros, ya que comúnmente en Windows se tiene la costumbre de mencionar directorios como “C:\users\User\Desktop”,  lo que no pasa en GNU/Linux. Para facilitar la “migración” de  los usuarios hacia GNU/Linux, a continuación se explicará de manera detallada la jerarquía de filesystems que contiene el sistema ya mencionado. Encuadrados en dos tipos básicos Estáticos/Dinámicos y Compartibles/Restringidos en los que se organiza todo el árbol de directorios de Linux.
 
 
 # ALGUNAS CARACTERÍSTICAS DEL SISTEMA DE ARCHIVOS DE LINUX
