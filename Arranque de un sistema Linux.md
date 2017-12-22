@@ -2,13 +2,10 @@
 
 El proceso de arranque en todo sistema de computadores comienza desde la BIOS y Linux no es la excepción. En este capítulo vamos a hablar sobre el proceso de arranque de un sistema Linux, vamos a ver qué sucede en nuestro sistema desde que pulsamos el botón de encendido hasta que el sistema operativo está completamente cargado. También vamos a ver las distintas fases por las cuales pasa nuestro sistema en todo el proceso de arranque incluyendo archivos y comandos involucrados. Básicamente existen cuatro fases de arranque en un sistema Linux:
 
-Fase 1: Hardware y BIOS
-
-Fase 2: BootLoader o Cargador de Arranque
-
-Fase 3: Kernel o Nucleo del SO
-
-Fase 4: Init
+- Fase 1: Hardware y BIOS
+- Fase 2: BootLoader o Cargador de Arranque
+- Fase 3: Kernel o Nucleo del SO
+- Fase 4: Init
 
 A continuación vamos a ver cada una de estas fases de arranque y cómo funcionan.
 
@@ -21,15 +18,10 @@ A continuación vamos a ver cada una de estas fases de arranque y cómo funciona
  La BIOS se encarga de realizar las siguientes tareas:
 	
   - Verificar la Integridad del código de la BIOS.
-	
   - Determina por qué se ejecuta el POST (arranque en frío, reset, error, standby, hibernación, etc.)
-	
   - Busca, dimensiona y verifica la memoria del sistema (RAM y ROM)
-	
   - Proporciona la interfaz de usuario para configurar parámetros del sistema (Velocidad de CPU, orden de arranque, tunning y overclocking, entre otras configuraciones particulares de otros fabricantes)
-	
   - Identifica, organiza y selecciona los dispositivos de arranque disponibles.
-	
   - Comienza el proceso de arranque del sistema, llamado Bootloader.
 
   Una vez que la BIOS realiza todas las pruebas necesarias y chequea la configuración correspondiente del sistema, y si todo esta bien, pasa el control del sistema al Bootloader o Cargador de Arranque.
@@ -41,11 +33,8 @@ A continuación vamos a ver cada una de estas fases de arranque y cómo funciona
 Ubicaciones de los Bootloaders (Cargadores de arranque):
 	
   - En un disquete (actualmente es una opción obsoleta).
-	
   - En el disco duro: a menudo se encuentra ubicado en el primer sector de una partición del disco duro, en el sector de arranque global MBR (Master Boot Record) o en moderno sistema de particiones GUID Globally-Unique Identifier (GPT) que es el estandar EFI (Extensible Firmware Interface) propuesto por Intel para reemplazar el viejo BIOS (GPT sustituye al MBR usado con el BIOS en ordenadores y portátiles modernos).
-	
   - También podemos encontrar el Bootloader en un CD-ROM o DVD-ROM
-	
   - Existen algunos tipos de Bootloaders que se pueden cargar desde la red como es el caso de LinuxBios (una alternativa Open Source que tiene como objetivos sustituir la BIOS normal con una Bios con una pequeña inicialización de Hardware y un kernel de Linux comprimido, evitar el uso de Bootloaders, entre otras...)
 
 
@@ -54,7 +43,6 @@ Ubicaciones de los Bootloaders (Cargadores de arranque):
 Tipos de Bootloaders en Linux
 	
   - LILO: The LInux LOader
-	
   - GRUB: GRand Unifying Bootloader
 
 	Ambos son capaces de cargar tanto sistemas Linux como otros sistemas operativos y suelen estar ubicados en el MBR del disco duro.
@@ -80,7 +68,7 @@ Ficheros de LILO:
 		table=/dev/hda
 		label=win
 	
-  - Para cargar la configuración hay que ejecutar el comando lilo.
+- Para cargar la configuración hay que ejecutar el comando lilo.
 	
   		$ lilo /etc/lilo.conf
 
@@ -89,11 +77,9 @@ Ficheros de LILO:
 	
   Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es opcional. A continuación vamos a ver cada una de estas estapas.
 
-  Etapa 1: El firmware carga el sector de arranque de GRUB en memoria.
-	
-  Etapa 1.5: Su objetivo es cargar el código que reconoce sistemas de ficheros y a partir de ahí carga la etapa 2 como un fichero.
-	
-  Etapa 2: GRUB muestra el menú con las opciones de boot que hayamos definido y un prompt donde podemos especificar ramdisk, kernels, etc. a cargar.
+- Etapa 1: El firmware carga el sector de arranque de GRUB en memoria.
+- Etapa 1.5: Su objetivo es cargar el código que reconoce sistemas de ficheros y a partir de ahí carga la etapa 2 como un fichero.
+- Etapa 2: GRUB muestra el menú con las opciones de boot que hayamos definido y un prompt donde podemos especificar ramdisk, kernels, etc. a cargar.
 	
   Luego de estas etapas, GRUB ejecuta los comandos introducidos, las definidas por nosotros en el fichero de configuración (grub.conf, menu.lst, grub.cfg, en dependencia de la distribución) y comienza la carga del kernel.
 
@@ -121,30 +107,20 @@ Estos ficheros varían en dependencia de la distribución, en distribuciones bas
 Breve descripción del Kernel Linux:
 	
   - Arquitectura Monolítica.
-	
   - Es un complejo programa compuesto de un gran número de subsistemas lógicos.
-	
   - Gestionado directamente por Linus Trovadls.
-	
   - Con capacidad de carga de Módulos.
-	
   - Esta formado por una capa lógica pero internamente funciona con más.
 
 
 En esta fase comienza la ejecución del kernel, descomprimiéndose a sí mismo. Luego comienza la inicialización de kernel y el chequeo y puesta en marcha de algunos de los dispositivos para los que se ha dado soporte.
 	
   - Detecta la CPU y su velocidad.
-	
   - Inicializa el display para mostrar información por pantalla.
-	
   - Comprueba el bus PCI e identifica y crea una tabla con los periféricos conectados.
-	
   - Inicializa el sistema de gestión de memoria virual, incluyendo el swapper (intercambiador o memoria de intercambio, swap).
-	
   - Inicializa todos los periféricos compilados dentro del kernel, normalmente sólo se configuran así los periféricos necesarios para esta fase del arranque, el resto se configuran como módulos.
-	
   - Monta el sistema de ficheros root (/).
-	
   - A partir de aquí llama al proceso init que se ejecuta con un uid 0 y será el padre de todos los demás procesos.
 
 ## Fase 4: Init.
