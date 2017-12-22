@@ -47,9 +47,10 @@ Tipos de Bootloaders en Linux
 
 	Ambos son capaces de cargar tanto sistemas Linux como otros sistemas operativos y suelen estar ubicados en el MBR del disco duro.
 
-  LILO: es un Bootloader rudimentario de una sola etapa, no entiende de sistemas operativos ni de sistemas de ficheros. Lilo lee datos desde el disco utilizando llamadas nativas de la BIOS que indican directamente los ficheros que se necesitan, estos ficheros son almacenados a través de un fichero mapa que se almacena en el sector de arranque.
+### LILO
+LILO: es un Bootloader rudimentario de una sola etapa, no entiende de sistemas operativos ni de sistemas de ficheros. Lilo lee datos desde el disco utilizando llamadas nativas de la BIOS que indican directamente los ficheros que se necesitan, estos ficheros son almacenados a través de un fichero mapa que se almacena en el sector de arranque.
 
-  Funcionamiento de LILO: El firmware carga el sector de arranque de LILO y lo ejecuta, luego LILO carga su fichero mapa por medio de llamadas de la BIOS, el cual muestra el prompt de opciones a cargar. El usuario selecciona el kernel que desea arrancar y LILO carga el kernel seleccionado por medio de llamadas de la BIOS y utilizando los parámetros de ubicación en el fichero mapa. Por último, LILO ejecuta el kernel indicando donde esta el root fs (el sistema de archivos de raiz) y si es necesario el ramdisk.
+Funcionamiento de LILO: El firmware carga el sector de arranque de LILO y lo ejecuta, luego LILO carga su fichero mapa por medio de llamadas de la BIOS, el cual muestra el prompt de opciones a cargar. El usuario selecciona el kernel que desea arrancar y LILO carga el kernel seleccionado por medio de llamadas de la BIOS y utilizando los parámetros de ubicación en el fichero mapa. Por último, LILO ejecuta el kernel indicando donde esta el root fs (el sistema de archivos de raiz) y si es necesario el ramdisk.
 
 Ficheros de LILO:
 	
@@ -73,15 +74,16 @@ Ficheros de LILO:
   		$ lilo /etc/lilo.conf
 
 
-  GRUB: es un Bootloader más avanzado y más moderno que LILO. Trabaja en dos o tres etapas (Stages) y tiene capacidad para cargar un kernel vía red. GRUB en cada etapa va cargando más elementos para arrancar, entiende de ficheros y permite especificar parámetros de forma dinámica en el arranque, no utiliza valores estáticos.
+### GRUB
+GRUB: es un Bootloader más avanzado y más moderno que LILO. Trabaja en dos o tres etapas (Stages) y tiene capacidad para cargar un kernel vía red. GRUB en cada etapa va cargando más elementos para arrancar, entiende de ficheros y permite especificar parámetros de forma dinámica en el arranque, no utiliza valores estáticos.
 	
-  Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es opcional. A continuación vamos a ver cada una de estas estapas.
+Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es opcional. A continuación vamos a ver cada una de estas estapas.
 
 - Etapa 1: El firmware carga el sector de arranque de GRUB en memoria.
 - Etapa 1.5: Su objetivo es cargar el código que reconoce sistemas de ficheros y a partir de ahí carga la etapa 2 como un fichero.
 - Etapa 2: GRUB muestra el menú con las opciones de boot que hayamos definido y un prompt donde podemos especificar ramdisk, kernels, etc. a cargar.
 	
-  Luego de estas etapas, GRUB ejecuta los comandos introducidos, las definidas por nosotros en el fichero de configuración (grub.conf, menu.lst, grub.cfg, en dependencia de la distribución) y comienza la carga del kernel.
+Luego de estas etapas, GRUB ejecuta los comandos introducidos, las definidas por nosotros en el fichero de configuración (grub.conf, menu.lst, grub.cfg, en dependencia de la distribución) y comienza la carga del kernel.
 
 
 Estas etapas y caracteristicas de GRUB demuestran su potencia y superioridad a LILO, es capaz de cargar ficheros y realizar tareas dinámicas en la fase de arranque del sistema, de ahí que es es Bootloader por exelencia en la gran mayoria de las distribuciones.
