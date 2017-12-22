@@ -1,6 +1,6 @@
-## Editor de texto Vi/Vim
+# Editor de texto Vi/Vim
 
-Vi es el clásico editor de texto en sistemas GNU/Linux y Unix, se puede decir que los sistemas que tienen solo un editor de texto es vi, de ahi la importancia de de aprender a trabajar con este excelente editor. Muchos lo ignoran debido a que es un poco complejo para nuevos usuarios y terminan adaptándose a otros editores como nano, gedit o leafpad. La complejidad de Vi se debe a que fue creado cuando no todos los teclados tenían teclas de movimiento de cursor, por lo tanto, todas las tareas pueden realizarse en vi pueden llevarse a cabo con las teclas alfanuméricas tradicionales y otras teclas como Esc e Insert. En la actualidad contamos con una versión mejorada de vi, llamada vim, la cual es compatible con versiones anteriores de vi y cuenta con un modo gráfico (gvim) a demas de la interfaz de modo texto estandar de vi. Hoy en día, en la gran mayoría de las distribuciones el comando vi suele ser un alias o un vínculo simbólico a vim.
+Vi es el clásico editor de texto en sistemas GNU/Linux y Unix, se puede decir que los sistemas que tienen solo un editor de texto es vi, de ahi la importancia de aprender a trabajar con este excelente editor. Muchos lo ignoran debido a que es un poco complejo para nuevos usuarios y terminan adaptándose a otros editores como nano, gedit o leafpad. La complejidad de Vi se debe a que fue creado cuando no todos los teclados tenían teclas de movimiento de cursor, por lo tanto, todas las tareas pueden realizarse en vi pueden llevarse a cabo con las teclas alfanuméricas tradicionales y otras teclas como Esc e Insert. En la actualidad contamos con una versión mejorada de vi, llamada vim, la cual es compatible con versiones anteriores de vi y cuenta con un modo gráfico (gvim) a demas de la interfaz de modo texto estandar de vi. Hoy en día, en la gran mayoría de las distribuciones el comando vi suele ser un alias o un vínculo simbólico a vim.
 
 ## Versiones de VIM:
 
@@ -19,6 +19,8 @@ Para comprobar qué versión de vim estamos corriendo en nuestro sistema, ejecut
 	$ vi --version
 
 
+
+## Desplazamiento
 Antes de pasar a la edición de texto, veamos cuáles son las teclas que se usan para desplazarnos dentro de un archivo usando VIM.
 
 Use los siguientes comandos para desplazarse dentro de un archivo:
