@@ -27,7 +27,7 @@ El escritorio GNU/linux generalmente tendrá instalado por defecto paquetes dest
 ## Algunos entornos de escritorio 
 GNU/Linux ofrece muchas alternativas. Los entornos de escritorio más populares son GNOME, KDE, XFCE, MATE y Cinnamon.
 
-Estos son grandes colecciones de programas de escritorio, en lugar de entornos más simples de gestores de ventanas X como FVWM, IceWM entre muchos otros. Estos entornos presentan un GUI usando una escritorio metáfora.
+Estos son grandes colecciones de programas de escritorio, en lugar de entornos más simples de gestores de ventanas X como FVWM, IceWM entre muchos otros. Estos entornos presentan una GUI, la cual viene a ser una metáfora de un escritorio físico.
 
 # Distribuciones populares 
 - Arch Linux, una distribución basada en el principio KISS, con un sistema de desarrollo continuo entre cada versión (no es necesario volver a instalar todo el sistema para actualizarlo).
@@ -70,5 +70,7 @@ El siguiente grafo muestra la evolución de todas las distribuciones Linux desde
 
 # Info 
 [https://es.wikipedia.org/wiki/Distribuci%C3%B3n_Linux Distribución Linux]
+
 [https://es.wikipedia.org/wiki/Escritorio_Linux]
+
 [http://proyectopinguino.blogspot.com.es/2008/09/escritorios-para-linux-gnome-kde.html]
