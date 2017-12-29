@@ -197,16 +197,17 @@ Exlicado de forma sencilla:
 
 En caso de querer instalar alguna aplicación desde los repositorios, o realizar alguna otra tarea que necesite permisos administrativos, nos encontramos con el siguiente error.
 
-$ apt-get install chromium
-E: Could not open lock file /var/lib/dpkg/lock - open (13: Permission denied)
-E: Unable to lock the administration directory (/var/lib/dpkg/), are you root?
+$ apt install chromium
+E: No se pudo abrir el fichero de bloqueo «/var/lib/dpkg/lock» - open (13: Permiso denegado)
+E: No se pudo bloquear el directorio de administración (/var/lib/dpkg/), ¿está como superusuario?
+
 
 Nos dice que el permiso ha sido denegado y nos pregunta que si somos root, en cambio si usamos el comando sudo por delante:
 
-	$ sudo apt-get install chromium
+	$ sudo apt install chromium
 	[sudo] password for parrot: 
 	Reading package lists... Done
-	Building dependency tree       
+	Building dependency tree
 	Reading state information... Done
 	.............
 
@@ -332,4 +333,46 @@ Crea un fichero con la fecha actual.
 	$ ifconfig
 Mustra la configuración de los adaptadores de red
 
-	
+##Comandos del gestor de paquetes
+
+	$apt
+apt es un gestor de paquetes de línea de comando, sus comandos mas básicos son:
+
+	$apt list "argumentos" 
+Lista los paquetes según los nombres.
+(Ej: --installed --upgradable, --all-versions --manual-installed, --target-release, --verbose)
+
+	$apt search "cadena" 
+busca en las descripciones de los paquetes.
+(Ej:apt search redeclipse Ordenando... Hecho  Buscar en todo el texto... Hecho redeclipse/stable 1.5.8-1 amd64 free, casual arena shooter)
+
+	$apt show "paquete" 
+Muestra detalles del paquete.
+
+	#apt install "paquete(s)" 
+Instala paquetes.
+(Ej: apt install bash)
+
+	#apt remove "paquete(s)"
+Elimina paquetes.
+(Ej: apt remove bash)
+
+	#apt autoremove "paquete(s)"
+Elimina automáticamente todos los paquetes sin utilizar.
+(Ej: apt autoremove)
+
+	#apt update 
+Actualiza la lista de paquetes.
+(Ej: apt update)
+
+	#apt upgrade
+Actualiza el sistema mediante la instalación/actualización de paquetes.
+(Ej: apt upgrade)
+
+	#apt full-upgrade
+Actualiza el sistema mediante la instalación/eliminación/actualización de paquetes
+(Ej: apt full-upgrade)
+
+	#apt edit sources
+Permite entrar a editar sus repositorios fuente
+(Ej: apt edit-sources)
