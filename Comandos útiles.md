@@ -49,7 +49,7 @@
 		
 		Muestran el contenido de un fichero comprimido (.gz)
 
-- echo candena
+- echo cadena
 		
 		echo nos muestra en pantalla el texto que le siga.
 
@@ -96,7 +96,7 @@
 - type comando
 		
 		Muestra la ubicación del comando indicado. 
-		Si es un comando interno del shell mostrará algo así como:comando is a shell builtin.
+		Si es un comando interno del shell mostrará algo así como: command is a shell builtin.
 - pwd
 		
 		Visualiza el directorio actual.
@@ -127,7 +127,7 @@
 		Copia fichero1 a directorio, conservando fichero1 el nombre.
 	-R
      	
-		Copia un directorio recursivamente,salvo los ficheros especiales.
+		Copia un directorio recursivamente, salvo los ficheros especiales.
 	-p
      	
 		Copia preservando permisos, propietario, grupos y fechas.
@@ -157,7 +157,7 @@
 
 	rm -r directorio
 		
-		Borra los ficheros de un directorio recursivamente.Quietorrrrrrr...
+		Borra los ficheros de un directorio recursivamente.
 
 	rm *.jpg
 	
@@ -165,12 +165,12 @@
 
 - ln ruta_fichero ruta_enlace
 	
-		Crea un enlace duro (con el mismo inodo,es decir mismo fichero con distintos nombres)
+		Crea un enlace duro (con el mismo inodo, es decir mismo fichero con distintos nombres)
 
 - ln -s ruta_directorio ruta_enlace
 		
-		Crea un enlace simbólico (con diferente inodo,es decir se crea un nuevo fichero	que apunta al 
-		\"apuntado\",permitiendo enlazar con directorios y con ficheros de otro sistema de archivos)
+		Crea un enlace simbólico (con diferente inodo, es decir se crea un nuevo fichero que apunta al 
+		\"apuntado\", permitiendo enlazar con directorios y con ficheros de otro sistema de archivos)
 
 - diff [opciones] fichero1 fichero2
 		
@@ -182,7 +182,7 @@
 
 	diff -q fichero1 fichero2
 		
-		Informa sólo de si los ficheros difieren,no de los detalles de las diferencias.
+		Informa sólo de si los ficheros difieren, no de los detalles de las diferencias.
 
 	diff -y fichero1 fichero2
 		
@@ -194,7 +194,7 @@
 
 - wc fichero
 		
-		Muestra el nº de palabras,líneas y caracteres de un archivo.
+		Muestra el nº de palabras, líneas y caracteres de un archivo.
 
 - wc -c fichero
 		
@@ -206,12 +206,12 @@
 
 	touch -am fichero
 		
-		A la fecha actual.Si no existiese el fichero,se crearía.
+		A la fecha actual. Si no existiese el fichero, se crearía.
 
 	touch -am -t 0604031433.30 fich
                 
-		AAMMDDhhmm.ss ------- Si no se especifican los segundos,tomaría 0 como valor. 
-		A la fecha especificada.Si no existiese el fichero,se crearía.
+		AAMMDDhhmm.ss ------- Si no se especifican los segundos, tomaría 0 como valor. 
+		A la fecha especificada, si no existiese el fichero,se crearía.
 
 	touch fichero
 		
@@ -243,8 +243,8 @@
 		g: grupo r: lectura ejemplo: chmod +x fichero, es lo mismo que: chmod a+x fichero
 		o: otros w: escritura explicación: a es la opción por defecto.
 		a: todos x: ejecución
-		s: los atributos suid y sgid,otorgan a un \"fichero\" los permisos de su dueño o grupo respectivamente,cada vez 
-		que se ejecute,sea quien sea el que lo ejecute.
+		s: los atributos suid y sgid, otorgan a un \"fichero\" los permisos de su dueño o grupo respectivamente, cada vez 
+		que se ejecute, sea quien sea el que lo ejecute.
 
 		Ejemplo: chmod +s /usr/bin/cdrecord
 
@@ -256,10 +256,10 @@
 		Método absoluto de determinar los permisos: chmod 760 fichero
 		explicación:          dueño     grupo      otros
 		------------          -----     -----      -----
-		asci                  r w x     r w -      - - -
+		ascii                  r w x     r w -      - - -
 		binario               1 1 1     1 1 0      0 0 0
 		octal                   7         6          0
-		paso de asci          r w x     r w -      - - -    activar=1
+		paso de ascii          r w x     r w -      - - -    activar=1
 		a binario             1 1 1     1 1 0      0 0 0   desactivar=0
 		paso de               1 1 1     1 1 0      0 0 0   r activado=4
 		binario               4+2+1     4+2+0      0+0+0   w activado=2
@@ -308,7 +308,7 @@ Si es un directorio lo hace recursivamente sin emplear la opción -r
 
 
 ###### Archivos zip
-        zip -r fichero.zip fichero ;ejemplo: zip -r sinatra.zip ./sinatra/
+        zip -r fichero.zip fichero ; ejemplo: zip -r sinatra.zip ./sinatra/
 - Comprimir zip.
         
         unzip archivo.zip
@@ -352,8 +352,8 @@ Si es un directorio lo hace recursivamente sin emplear la opción -r
        
        
 ##### NOTA:
-r equivale en todos los casos a recursivo
-Mientras que zip comprime y empaqueta,gzip ó bzip2 sólo comprimen ficheros,no directorios,para eso existe tar.
+r equivale en todos los casos a recursivo.
+Mientras que zip comprime y empaqueta, gzip ó bzip2 sólo comprimen ficheros, no directorios, para eso existe tar.
 
 
 ##### Ficheros tar
@@ -406,7 +406,7 @@ cuando se usa con la opción -x, retira del archivo el fichero especificado.
 - ~/comandos.txt equivale a /home/paco/comandos.txt (si estamos en nuestro propio directorio)
 - ~pepe/comandos.txt equivale a /home/pepe/comandos.txt (pepe es otro usuario)
 
-- (?) Sustituye un solo caracter.Ejemplos:
+- (?) Sustituye un solo caracter. Ejemplos:
   
         ls p?pe
 
@@ -417,7 +417,7 @@ cuando se usa con la opción -x, retira del archivo el fichero especificado.
 - mostraría todos los ficheros de 4 caracteres y acabados en epe
 
 
-- (*) Sustituye cualquier sucesión de caracteres.Ejemplos:
+- (*) Sustituye cualquier sucesión de caracteres. Ejemplos:
 
         ls .ba*
 
@@ -443,7 +443,7 @@ cuando se usa con la opción -x, retira del archivo el fichero especificado.
 
         nano nuevo.txt ; cat nuevo.txt
 
-- nos abrirá el editor nano para que escribamos lo que queramos en un nuevo archivo que se llamará nuevo.txt y tras guardar y salir del editor,cat nos mostrará el contenido de lo que acabamos de crear. 
+- nos abrirá el editor nano para que escribamos lo que queramos en un nuevo archivo que se llamará nuevo.txt y tras guardar y salir del editor, cat nos mostrará el contenido de lo que acabamos de crear. 
 
 
 
