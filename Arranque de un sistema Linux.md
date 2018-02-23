@@ -7,7 +7,7 @@ El proceso de arranque en todo sistema de computadores comienza desde la BIOS y 
 - Fase 3: Kernel o Nucleo del SO
 - Fase 4: Init
 
-A continuación vamos a ver cada una de estas fases de arranque y cómo funcionan.
+A continuación, vamos a ver cada una de estas fases de arranque y cómo funcionan.
 
 ## Fase 1: Hardware y BIOS
 
@@ -24,7 +24,7 @@ A continuación vamos a ver cada una de estas fases de arranque y cómo funciona
   - Identifica, organiza y selecciona los dispositivos de arranque disponibles.
   - Comienza el proceso de arranque del sistema, llamado Bootloader.
 
-  Una vez que la BIOS realiza todas las pruebas necesarias y chequea la configuración correspondiente del sistema, y si todo esta bien, pasa el control del sistema al Bootloader o Cargador de Arranque.
+  Una vez que la BIOS realiza todas las pruebas necesarias y chequea la configuración correspondiente del sistema, y si todo está bien, pasa el control del sistema al Bootloader o Cargador de Arranque.
 
 ## Fase 2: Bootloader
 
@@ -33,7 +33,7 @@ A continuación vamos a ver cada una de estas fases de arranque y cómo funciona
 Ubicaciones de los Bootloaders (Cargadores de arranque):
 	
   - En un disquete (actualmente es una opción obsoleta).
-  - En el disco duro: a menudo se encuentra ubicado en el primer sector de una partición del disco duro, en el sector de arranque global MBR (Master Boot Record) o en moderno sistema de particiones GUID Globally-Unique Identifier (GPT) que es el estandar EFI (Extensible Firmware Interface) propuesto por Intel para reemplazar el viejo BIOS (GPT sustituye al MBR usado con el BIOS en ordenadores y portátiles modernos).
+  - En el disco duro: a menudo se encuentra ubicado en el primer sector de una partición del disco duro, en el sector de arranque global MBR (Master Boot Record) o en moderno sistema de particiones GUID Globally-Unique Identifier (GPT) que es el estándar EFI (Extensible Firmware Interface) propuesto por Intel para reemplazar el viejo BIOS (GPT sustituye al MBR usado con el BIOS en ordenadores y portátiles modernos).
   - También podemos encontrar el Bootloader en un CD-ROM o DVD-ROM
   - Existen algunos tipos de Bootloaders que se pueden cargar desde la red como es el caso de LinuxBios (una alternativa Open Source que tiene como objetivos sustituir la BIOS normal con una Bios con una pequeña inicialización de Hardware y un kernel de Linux comprimido, evitar el uso de Bootloaders, entre otras...)
 
@@ -50,7 +50,7 @@ Tipos de Bootloaders en Linux
 ### LILO
 LILO: es un Bootloader rudimentario de una sola etapa, no entiende de sistemas operativos ni de sistemas de ficheros. Lilo lee datos desde el disco utilizando llamadas nativas de la BIOS que indican directamente los ficheros que se necesitan, estos ficheros son almacenados a través de un fichero mapa que se almacena en el sector de arranque.
 
-Funcionamiento de LILO: El firmware carga el sector de arranque de LILO y lo ejecuta, luego LILO carga su fichero mapa por medio de llamadas de la BIOS, el cual muestra el prompt de opciones a cargar. El usuario selecciona el kernel que desea arrancar y LILO carga el kernel seleccionado por medio de llamadas de la BIOS y utilizando los parámetros de ubicación en el fichero mapa. Por último, LILO ejecuta el kernel indicando donde esta el root fs (el sistema de archivos de raiz) y si es necesario el ramdisk.
+Funcionamiento de LILO: El firmware carga el sector de arranque de LILO y lo ejecuta, luego LILO carga su fichero mapa por medio de llamadas de la BIOS, el cual muestra el prompt de opciones a cargar. El usuario selecciona el kernel que desea arrancar y LILO carga el kernel seleccionado por medio de llamadas de la BIOS y utilizando los parámetros de ubicación en el fichero mapa. Por último, LILO ejecuta el kernel indicando donde está el root fs (el sistema de archivos de raíz) y si es necesario el ramdisk.
 
 Ficheros de LILO:
 	
@@ -77,7 +77,7 @@ Ficheros de LILO:
 ### GRUB
 GRUB: es un Bootloader más avanzado y más moderno que LILO. Trabaja en dos o tres etapas (Stages) y tiene capacidad para cargar un kernel vía red. GRUB en cada etapa va cargando más elementos para arrancar, entiende de ficheros y permite especificar parámetros de forma dinámica en el arranque, no utiliza valores estáticos.
 	
-Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es opcional. A continuación vamos a ver cada una de estas estapas.
+Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres etapas, se dice que tiene dos o tres porque la segunda etapa es opcional. A continuación, vamos a ver cada una de estas etapas.
 
 - Etapa 1: El firmware carga el sector de arranque de GRUB en memoria.
 - Etapa 1.5: Su objetivo es cargar el código que reconoce sistemas de ficheros y a partir de ahí carga la etapa 2 como un fichero.
@@ -86,7 +86,7 @@ Funcionamiento de GRUB: como se mencionó anteriormente, GRUB tiene dos o tres e
 Luego de estas etapas, GRUB ejecuta los comandos introducidos, las definidas por nosotros en el fichero de configuración (grub.conf, menu.lst, grub.cfg, en dependencia de la distribución) y comienza la carga del kernel.
 
 
-Estas etapas y caracteristicas de GRUB demuestran su potencia y superioridad a LILO, es capaz de cargar ficheros y realizar tareas dinámicas en la fase de arranque del sistema, de ahí que es es Bootloader por exelencia en la gran mayoria de las distribuciones.
+Estas etapas y características de GRUB demuestran su potencia y superioridad a LILO, es capaz de cargar ficheros y realizar tareas dinámicas en la fase de arranque del sistema, de ahí que es es Bootloader por excelencia en la gran mayoría de las distribuciones.
 
 Ficheros de GRUB en Parrot:
 
@@ -110,9 +110,9 @@ Breve descripción del Kernel Linux:
 	
   - Arquitectura Monolítica.
   - Es un complejo programa compuesto de un gran número de subsistemas lógicos.
-  - Gestionado directamente por Linus Trovadls.
+  - Gestionado directamente por Linus Torvalds.
   - Con capacidad de carga de Módulos.
-  - Esta formado por una capa lógica pero internamente funciona con más.
+  - Está formado por una capa lógica pero internamente funciona con más.
 
 
 En esta fase comienza la ejecución del kernel, descomprimiéndose a sí mismo. Luego comienza la inicialización de kernel y el chequeo y puesta en marcha de algunos de los dispositivos para los que se ha dado soporte.
@@ -120,7 +120,7 @@ En esta fase comienza la ejecución del kernel, descomprimiéndose a sí mismo. 
   - Detecta la CPU y su velocidad.
   - Inicializa el display para mostrar información por pantalla.
   - Comprueba el bus PCI e identifica y crea una tabla con los periféricos conectados.
-  - Inicializa el sistema de gestión de memoria virual, incluyendo el swapper (intercambiador o memoria de intercambio, swap).
+  - Inicializa el sistema de gestión de memoria virtual, incluyendo el swapper (intercambiador o memoria de intercambio, swap).
   - Inicializa todos los periféricos compilados dentro del kernel, normalmente sólo se configuran así los periféricos necesarios para esta fase del arranque, el resto se configuran como módulos.
   - Monta el sistema de ficheros root (/).
   - A partir de aquí llama al proceso init que se ejecuta con un uid 0 y será el padre de todos los demás procesos.
@@ -131,4 +131,4 @@ En estos momentos el kernel está cargado, tenemos gestión de memoria, una part
 
 Hasta aquí hemos visto las cuatro Fases del proceso de arranque de un sistema Linux en un ordenador. Podemos concluir este capítulo con el siguiente resumen:
 
-El proceso de arranque de un sistema Linux en un ordenador comienza desde que presionamos el boton de encendido, éste le da vida a nuestro hardware haciéndolo funcionar. Luego del encendido, el hardware es testeado por el POST de la BIOS, este hace un mapeo del hardware que tenemos en nuestro ordenador y lo prueba, si todo esta funcionando correctamente, continúa el proceso de arranque. La BIOS utiliza la configuración predeterminada por el fabricante de la placa de nuestro ordenador o una configuración modidificada por el usuario, luego da paso al Bootloader o Gestor de Arranque que tengamos instalado en la partición inicial de nuestro disco duro. El Bootloader es el encargado de mostrarnos las opciones de boot que configuramos previemente en la instalación del sistema, las opciones por defecto en una instalación reciente o las de un DVD de instalación o Live. Una vez que el usuario escoge una opción de boot, el Kernel es descomprimido y posteriormente se inicia. El Kernel realiza un pequeño chequeo de los dispositivos necesarios y a los cuales se le ha dado soporte, como es el caso de CPU, Display, memoria RAM y memoria virtual (swap) y otros dispositivos necesarios, el Kernel termina montando el sistema de ficheros root y por último inicia el proceso init. Init es el encargado de el resto de iniciar el resto de los procesos del sistema, iniciando así el login en modo texto o la interfaz gráfica en sistemas con GUI (Interfaz Gráfica de Usuario) y permitiéndonos hacer uso del sistema operativo.
+El proceso de arranque de un sistema Linux en un ordenador comienza desde que presionamos el botón de encendido, éste le da vida a nuestro hardware haciéndolo funcionar. Luego del encendido, el hardware es testeado por el POST de la BIOS, este hace un mapeo del hardware que tenemos en nuestro ordenador y lo prueba, si todo está funcionando correctamente, continúa el proceso de arranque. La BIOS utiliza la configuración predeterminada por el fabricante de la placa de nuestro ordenador o una configuración modificada por el usuario, luego da paso al Bootloader o Gestor de Arranque que tengamos instalado en la partición inicial de nuestro disco duro. El Bootloader es el encargado de mostrarnos las opciones de boot que configuramos previamente en la instalación del sistema, las opciones por defecto en una instalación reciente o las de un DVD de instalación o Live. Una vez que el usuario escoge una opción de boot, el Kernel es descomprimido y posteriormente se inicia. El Kernel realiza un pequeño chequeo de los dispositivos necesarios y a los cuales se le ha dado soporte, como es el caso de CPU, Display, memoria RAM y memoria virtual (swap) y otros dispositivos necesarios, el Kernel termina montando el sistema de ficheros root y por último inicia el proceso init. Init es el encargado de el resto de iniciar el resto de los procesos del sistema, iniciando así el login en modo texto o la interfaz gráfica en sistemas con GUI (Interfaz Gráfica de Usuario) y permitiéndonos hacer uso del sistema operativo.
