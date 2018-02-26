@@ -71,7 +71,7 @@ Use los siguientes comandos para desplazarse a líneas específicas dentro de un
 - Desplazarse en relación a la línea superior de la pantalla. Por ejemplo, el comando 3H lo ubicará en la tercera línea actual de la pantalla.
 
 		L
-- Igual a H, pero en relación a la última línea de la pantalla. Por lo tanto, el comando 2L lo ubicará en la antepenúltima línea de la pantalla. 
+- Igual a H, pero en relación a la última línea de la pantalla. Por lo tanto, el comando 2L lo ubicará en la penúltima línea de la pantalla. 
 
 
 Nota: Usted debe practicar cada uno de estos comandos hasta que logre desplazarse cómodamente dentro de un archivo, luego continúe leyendo este capítulo.
@@ -99,37 +99,37 @@ Es de suma importancia que usted conozca cómo salir del editor para evitar come
 	
 		:e!
 
-- Ejecutar un comando shell. Tipee el comando y presione Enter. Cuando el comando finalice, verá los datos de salida y un aviso para volver al editor vi.
+- Ejecutar un comando shell. Escriba el comando y presione Enter. Cuando el comando finalice, verá los datos de salida y un aviso para volver al editor vi.
 		
 		:!
 
-Nota: Al tipear dos puntos (:), el cursor se desplazará a la última linea de la pantalla para permitirle tipear un comando con sus respectivos parámetros. También puede usar los comandos en formato no abreviado (:quit, :write, :edit), esto le permite recordar más fácil cada uno de los comandos, pero su uso es poco frecuente.
+Nota: Al escribir dos puntos (:), el cursor se desplazará a la última línea de la pantalla para permitirle escribir un comando con sus respectivos parámetros. También puede usar los comandos en formato no abreviado (:quit, :write, :edit), esto le permite recordar más fácilmente cada uno de los comandos, pero su uso es poco frecuente.
 
 
 
 ## Modos vi
 
 Modo comandos:
-En este modo, podemos desplazarnos dentro de un archivo y efectuar operaciones de edición como buscar texto, eliminar texto, etc. vi suele iniciarse en modo de comandos.
+En este modo, podemos desplazarnos dentro de un archivo y efectuar operaciones de edición, buscar texto, eliminar texto, etc. Vi suele iniciarse en modo comandos.
 
 Modo insertar:
-En el modo insertar, podemos tipear texto nuevo en el punto de inserción de un archivo. Para volder al modo comandos, presione la tecla Esc.
+En el modo insertar, podemos escribir texto nuevo en el punto de inserción de un archivo. Para volver al modo comandos, presione la tecla Esc.
 
 
 ## Edición de texto
 
-Use los siguientes comandos para insertar, eliminar o modificar texto. Tome en cuenta que algunos de estos comandos poseen una forma en mayúscula que es similar a la forma en minúscula.
+Use los siguientes comandos para insertar, eliminar o modificar texto. Tenga en cuenta, que algunos de estos comandos poseen una forma en mayúscula que es similar a la forma en minúscula.
 
-- Ingrese al modo insertar, tipee el texto deseado y pulse Esc para volver al modo comandos.
+- Ingrese al modo insertar, escriba el texto deseado y pulse Esc para volver al modo comandos.
 	
 		i
 
-- Ingrese al modo insertar, tipee el texto deseado y pulse Esc para volver al modo comandos.
+- Ingrese al modo insertar, escriba el texto deseado y pulse Esc para volver al modo comandos.
 		
 		a
 		# Nota: Use I para insertar texto al comienzo de la línea actual y A para insertar texto al final de la 		# línea actual.
 
-- Use c para modificar el caracter en la posición actual e ingrese al modo insertar para escribir los caracteres de reemplazo. 
+- Use c para modificar el carácter en la posición actual e ingrese al modo insertar para escribir los caracteres de reemplazo. 
 	
 		c
 
@@ -137,7 +137,7 @@ Use los siguientes comandos para insertar, eliminar o modificar texto. Tome en c
 	
 		o
 
-- Abrir una línea nueva para insertar texto arriba de la línea actual.
+- Abrir una línea nueva para insertar texto encima de la línea actual.
 	
 		O
 
@@ -146,19 +146,19 @@ Use los siguientes comandos para insertar, eliminar o modificar texto. Tome en c
 		cw
 		# use un conteo para reemplazar varias palabra y c$ para reemplazar hasta el final de la línea.
 
-- Eliminar la linea actual, se puede usar un conteo para eliminar varias líneas.
+- Eliminar la línea actual, se puede usar un conteo para eliminar varias líneas.
 	
 		dd
 
-- Elimine el caracter en la posición del cursor. También puede utilizar un conteo para varios caracteres.
+- Elimine el carácter en la posición del cursor. También puede utilizar un conteo para varios caracteres.
 		
 		x
 
-- Colocar el último texto eliminado después del caracter actual. Use P para colocarlo antes del cursor.
+- Colocar el último texto eliminado después del carácter actual. Use P para colocarlo antes del cursor.
 	
 		P
 
-- Intercambia lugares entre el caracter en la posición del cursor y el que tiene a la derecha. 
+- Intercambia lugares entre el carácter en la posición del cursor y el que tiene a la derecha. 
 	
 		xp
 
@@ -179,17 +179,17 @@ Nota: Puede anteponer a cualquiera de los comandos de búsqueda un número que i
 	
 		:help
 
-- Obtener una ayuda sobre un comando en particular.
+- Obtener ayuda sobre un comando en particular.
 	
 		:help [comando]
 
-- Esta es una ayuda básica de vi, la cual se abrirá dentro del mismo editor, para salir de la ayuda ejecutamos:
+- Esta es una ayuda básica de vi, la cual se abrirá dentro del mismo editor. Para salir de la ayuda ejecutamos:
 	
 		:q
 
 ## Conclusión
 
-Como se mencionó al inicio del capítulo, vi es un excelente editor de texto y es de suma importancia que todo usuario de GNU/Linux tenga al menos un conocimiento básico de su uso. Al principio puede ser una tarea tediosa, difícil e incluso aburrida. Existe una herramienta que podemos usar para aprender a trabajar con vi de forma muy fácil e interactiva, esta herramienta es vimtutor, su uso es muy sencillo y realmente ayuda mucho, de seguro cuando usted la pruebe, pasará los próximos treita minutos aprendiendo a trabajar con vi.
+Como se mencionó al inicio del capítulo, vi es un excelente editor de texto y es de suma importancia que todo usuario de GNU/Linux tenga al menos un conocimiento básico de su uso. Al principio puede ser una tarea tediosa, difícil e incluso aburrida. Existe una herramienta que podemos usar para aprender a trabajar con vi de forma muy fácil e interactiva, esta herramienta es vimtutor, su uso es muy sencillo y realmente ayuda mucho. Seguro que cuando usted la pruebe, pasará los próximos treinta minutos aprendiendo a trabajar con vi.
 	
 		┌─[user@parrot]~[/home/user]
 		└──╼ $ vimtutor
