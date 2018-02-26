@@ -20,7 +20,7 @@ Algunos de los gestores de paquetes más usados son:
 # Entornos de Escritorio
 El escritorio es el entorno visual que se encarga de interactuar entre el kernel de Linux y los programas, siendo vital para el usuario. Cuando te instales el sistema operativo, este te vendrá con un escritorio preinstalado, pero posteriormente puedes instalar tú otro distinto y elegir qué escritorio quieres usar cada vez en el menú de inicio de sesión. Según el ordenador que tengas y el uso que le quieras dar te convendrá usar un escritorio determinado. 
 
-Comunmente la gente tiende a confundir distribución con escritorio. Podemos ver dos distribuciones visualmente iguales que por dentro funcionen de manera distinta. Por ejemplo, podríamos tener Arch con un escritorio KDE y un Debian con escritorio KDE. Visualmente son iguales. Por dentro, por ejemplo, para instalar un paquete Arch usará pacman -S y Debian apt-get install.
+Comúnmente la gente tiende a confundir distribución con escritorio. Podemos ver dos distribuciones visualmente iguales que por dentro funcionen de manera distinta. Por ejemplo, podríamos tener Arch con un escritorio KDE y un Debian con escritorio KDE. Visualmente son iguales. Por dentro, por ejemplo, para instalar un paquete Arch usará pacman -S y Debian apt-get install.
 
 El escritorio GNU/linux generalmente tendrá instalado por defecto paquetes destinados al "usuario final". Algunas distribuciones Linux se han centrado específicamente en el rol de escritorio. Otras incluyen un conjunto de todas las aplicaciones para la plataforma. En ese caso, el usuario puede seleccionar entre "escritorio" o "servidor" al momento de ser instalado el sistema operativo.
 
@@ -40,7 +40,7 @@ Estos son grandes colecciones de programas de escritorio, en lugar de entornos m
 - Fedora, una distribución lanzada por Red Hat para la comunidad.
 - Fuduntu, distribución ligera y rápida basada en Fedora y orientada al uso en notebooks.
 - Gentoo, una distribución orientada a usuarios avanzados, conocida por la similitud en su sistema de paquetes con el FreeBSD Ports, un sistema que automatiza la compilación de aplicaciones desde su código fuente.
-- Huayra, distribución Educativa, desarrollada por el estado Argentino, desde el Anses /Programa Conectar Igualdad. Está basada en Debian Jessie con entorno de escritorio MATE.
+- Huayra, distribución Educativa, desarrollada por el estado argentino, desde el Anses /Programa Conectar Igualdad. Está basada en Debian Jessie con entorno de escritorio MATE.
 - Knoppix, fue la primera distribución live en correr completamente desde un medio extraíble. Está basada en Debian.
 - Kubuntu, la versión en KDE de Ubuntu.
 - Linux Mint, una popular distribución derivada de Ubuntu.
@@ -59,7 +59,7 @@ Estos son grandes colecciones de programas de escritorio, en lugar de entornos m
 - Zorin OS, distribución basada en Ubuntu y orientada a los usuarios de Windows que quieren pasar a Linux de la forma más fácil y sencilla posible.
 
 
-# Linea de tiempo
+# Línea de tiempo
 El siguiente grafo muestra la evolución de todas las distribuciones Linux desde el año 1993 hasta el 2007.
 
 [[Imagen: https://ubunturoot.files.wordpress.com/2008/02/44218-linuxdistrotimeline-72.png ]]
