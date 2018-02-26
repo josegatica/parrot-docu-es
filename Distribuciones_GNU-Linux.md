@@ -31,32 +31,21 @@ Estos son grandes colecciones de programas de escritorio, en lugar de entornos m
 
 # Distribuciones populares 
 - Arch Linux, una distribución basada en el principio KISS, con un sistema de desarrollo continuo entre cada versión (no es necesario volver a instalar todo el sistema para actualizarlo).
-- Canaima, es un proyecto socio-tecnológico abierto, construido de forma colaborativa, desarrollado en Venezuela y basado en Debian.
 - CentOS, una distribución creada a partir del mismo código del sistema Red Hat pero mantenida por una comunidad de desarrolladores voluntarios.
-- Chakra project, una popular distribución para escritorio, inicialmente basada en Arch Linux, actualmente se encuentra en un desarrollo independiente.
 - Debian, una distribución mantenida por una red de desarrolladores voluntarios con un gran compromiso por los principios del software libre.
-- Dragora y Trisquel, que van adquiriendo importancia entre las distribuciones que sólo contienen software libre.
-- Elementary OS Es una distribución Linux basada en Ubuntu 12.04
 - Fedora, una distribución lanzada por Red Hat para la comunidad.
-- Fuduntu, distribución ligera y rápida basada en Fedora y orientada al uso en notebooks.
 - Gentoo, una distribución orientada a usuarios avanzados, conocida por la similitud en su sistema de paquetes con el FreeBSD Ports, un sistema que automatiza la compilación de aplicaciones desde su código fuente.
-- Huayra, distribución Educativa, desarrollada por el estado argentino, desde el Anses /Programa Conectar Igualdad. Está basada en Debian Jessie con entorno de escritorio MATE.
 - Knoppix, fue la primera distribución live en correr completamente desde un medio extraíble. Está basada en Debian.
-- Kubuntu, la versión en KDE de Ubuntu.
 - Linux Mint, una popular distribución derivada de Ubuntu.
-- Mageia, creada por ex trabajadores de Mandriva, muy parecida a su precursor.
 - Mandriva, mantenida por la compañía francesa del mismo nombre, es un sistema popular en Francia y Brasil. Está basada en Red Hat.
 - OpenSUSE, originalmente basada en Slackware es patrocinada actualmente por la compañía SUSE (Micro Focus International).
 - Parrot, derivada de Debian, aún en crecimiento promete ser una de las distribuciones por excelencia en el mundo del pentesting.
-- PCLinuxOS, derivada de Mandriva, pasó de ser un pequeño proyecto a una popular distribución con una gran comunidad de desarrolladores.
-- Puppy Linux, versión para equipos antiguos o con pocos recursos que pesa unos 130 MiB.
+- DSL (Damn Small Linux), es una distribución de GNU/Linux en tan solo 50MB e indicada para sistemas con pocos recursos o antiguos.
 - Red Hat Enterprise Linux, derivada de Fedora, es mantenida y soportada comercialmente por Red Hat.
 - Slackware, una de las primeras distribuciones Linux y la más antigua en funcionamiento. Fue fundada en 1993 y desde entonces ha sido mantenida activamente por Patrick J. Volkerding.
-- Slax, es un sistema Linux pequeño, moderno, rápido y portable orientado a la modularidad. Está basado en Slackware.
-- Tuquito Basada en Ubuntu, distribución desarrollada en Argentina con buenas interfaces gráficas y drivers universales. Recomendada para usuarios iniciales.
 - Trisquel Distribución 100 % libre, utiliza el núcleo Linux-Libre y es apropiada para usuarios finales.
 - Ubuntu, una popular distribución para escritorio basada en Debian y mantenida por Canonical.
-- Zorin OS, distribución basada en Ubuntu y orientada a los usuarios de Windows que quieren pasar a Linux de la forma más fácil y sencilla posible.
+- Devuan, fork de Debian libre de systemd.
 
 
 # Línea de tiempo
