@@ -1,6 +1,6 @@
 # Editor de texto Vi/Vim
 
-Vi es el clásico editor de texto en sistemas GNU/Linux y Unix, se puede decir que los sistemas que tienen solo un editor de texto es vi, de ahi la importancia de aprender a trabajar con este excelente editor. Muchos lo ignoran debido a que es un poco complejo para nuevos usuarios y terminan adaptándose a otros editores como nano, gedit o leafpad. La complejidad de Vi se debe a que fue creado cuando no todos los teclados tenían teclas de movimiento de cursor, por lo tanto, todas las tareas pueden realizarse en vi pueden llevarse a cabo con las teclas alfanuméricas tradicionales y otras teclas como Esc e Insert. En la actualidad contamos con una versión mejorada de vi, llamada vim, la cual es compatible con versiones anteriores de vi y cuenta con un modo gráfico (gvim) a demas de la interfaz de modo texto estandar de vi. Hoy en día, en la gran mayoría de las distribuciones el comando vi suele ser un alias o un vínculo simbólico a vim.
+Vi es el clásico editor de texto en sistemas GNU/Linux y Unix. Se puede decir, que los sistemas que tienen sólo un editor de texto es vi, de ahí la importancia de aprender a trabajar con este excelente editor. Muchos lo ignoran debido a que es un poco complejo para nuevos usuarios y terminan adaptándose a otros editores como nano, gedit o leafpad. La complejidad de Vi se debe a que fue creado cuando no todos los teclados tenían teclas de movimiento de cursor, por lo tanto, todas las tareas que pueden realizarse en vi pueden llevarse a cabo con las teclas alfanuméricas tradicionales y otras teclas como Esc e Insert. En la actualidad contamos con una versión mejorada de vi, llamada vim, la cual es compatible con versiones anteriores de vi y cuenta con un modo gráfico (gvim), además de la interfaz de modo texto estándar de vi. Hoy en día, en la gran mayoría de las distribuciones, el comando vi suele ser un alias o un vínculo simbólico a vim.
 
 ## Versiones de VIM:
 
@@ -14,7 +14,7 @@ Vi es el clásico editor de texto en sistemas GNU/Linux y Unix, se puede decir q
 
 - Huge (enorme)
 
-Para comprobar qué versión de vim estamos corriendo en nuestro sistema, ejecutamos el siguente comando:
+Para comprobar qué versión de vim estamos corriendo en nuestro sistema, ejecutamos el siguiente comando:
 
 	$ vi --version
 
@@ -25,7 +25,7 @@ Antes de pasar a la edición de texto, veamos cuáles son las teclas que se usan
 
 Use los siguientes comandos para desplazarse dentro de un archivo:
 
-- Desplazarse un caracter hacia la isquierda en la línea actual
+- Desplazarse un carácter hacia la izquierda en la línea actual
 	
 		h
  
@@ -37,7 +37,7 @@ Use los siguientes comandos para desplazarse dentro de un archivo:
 	
 		k
 
-- Desplazarse un caracter a la derecha en la línea actual
+- Desplazarse un carácter a la derecha en la línea actual
 	
 		l
 
@@ -53,16 +53,16 @@ Use los siguientes comandos para desplazarse dentro de un archivo:
 
 - Pasar a la página siguiente
 		
-		Ctrl+b
+		Ctrl+n
 
 - Volver a la página anterior
 	
 		Ctrl+b
 
-Nota: si tipea un número antes de ejecutar alguno de estos comandos, el comando se repetirá las veces que indique dicho número, digamos que es un conteo de repetición.
+Nota: si escribe un número, antes de ejecutar alguno de estos comandos, el comando se repetirá el número de veces que indique dicho número, digamos que es un conteo de repetición.
 
 
-Use los siguientes comandos para desplazarse a líneas especificas dentro de un archivo.
+Use los siguientes comandos para desplazarse a líneas específicas dentro de un archivo.
 	
 		G
 - Desplazarse a una línea específica dentro del archivo. Por ejemplo, el comando 3G lo ubicará en la línea 3. Sin ningún parámetro, G lo ubica en la última línea del archivo.
