@@ -1,14 +1,4 @@
- ____                      _     ____
-|  _ \ __ _ _ __ _ __ ___ | |_  / ___|  ___  ___
-| |_) / _` | '__| '__/ _ \| __| \___ \ / _ \/ __|
-|  __/ (_| | |  | | | (_) | |_   ___) |  __/ (__
-|_|   \__,_|_|  |_|  \___/ \__| |____/ \___|\___|
 
-
-Primero inicie sesión en su Parrot Security
-
-En mi caso estoy usando la versión 3.9 Intruter en VPS
-y 3.8 JollyRoger en Android con Linux Deploy
 
 En esta oportunidad revisaremos cómo acceder a los logs para entender un problema cuando se presente; y de ser asi, la solución
 está en leer claramente y entender el mensaje de error que esta generándose.
@@ -24,7 +14,7 @@ Por lo general, es común que los programas cuenten con un log interno. Por conv
 Esto, que parece una trivialidad, es sumamente importante ya que permite centralizar los archivos de bitácora. El log más importante es probablemente el
 que se encuentra en 
 
- var/log/messages.  
+ /var/log/messages.  
 
 Adicionalmente existen programas que manejan su propio intervalo de registro de bitácoras. Uno de los más interesantes es el shell bash. 
 Por defecto, el bash guarda un archivo histórico de los comandos ejecutados en 
