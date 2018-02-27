@@ -1,3 +1,11 @@
+#
+<h1>Pre-Requisito</h1>
+Tener instalada la ultima versión estable Parrot Security 3.10 https://www.parrotsec.org/download-full.fx
+
+Necesitará un cafe y seguir linea por linea.
+
+
+
 <h1>Procedimiento de instalación de un servidor web Lemp Nginx en ParrotSec</h1>
 
 
@@ -24,17 +32,6 @@ Antes de todo necesita tener acceso root
 Luego personalice su ParrotSec
 
 <a href="https://github.com/josegatica/parrot-docu-es/blob/master/personalizar_ParrotSec.md" target="blank">Personalizar ParrotSec</a>.
-
-
-
-#
-La versión estable actualmente es ParrotSec 3.8
-
-Si usted gusta puede incluir este paso para convertirse en un Beta Tester siguiendo este procedimiento:
-
-<html><a href="https://github.com/josegatica/parrot-docu-es/blob/master/get_parrot_cloud_vps_from_kali.md">Parrot 3.9 Intruder</a></html>
-
-Necesitará un cafe y seguir linea por linea.
 
 
 
