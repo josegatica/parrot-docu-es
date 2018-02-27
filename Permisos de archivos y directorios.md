@@ -1,6 +1,6 @@
 ## Permisos de Archivos y Directorios
 
-Anteriormente mencionamos que en Linux, todos los archivos del sistema pertenecen a un usuario y un grupo. El dueño de un archivo es el usuario que lo ha creado y el grupo principal de este archivo es el grupo del usuario que lo creó. Por ejemplo, en capítulos anteriores trabajamos con el usuario "parrot", si este usuario crea un archivo, el usuario "parrot" y el grupo por defecto del usuario parrot, van a ser los propietarios de este nuevo archivo, o sea que el archivo pertenece al usuario parrot y al grupo por defecto del usuario parrot. Por ello, a menudo necesitamos hacer uso del comando "sudo" para poder leer, modificar o ejecutar algunos archivos y programas del sistema o realizar cambios en los permisos de los archivos en cuestión.
+Anteriormente mencionamos que, en Linux, todos los archivos del sistema pertenecen a un usuario y un grupo. El dueño de un archivo es el usuario que lo ha creado y el grupo principal de este archivo es el grupo del usuario que lo creó. Por ejemplo, en capítulos anteriores trabajamos con el usuario "parrot", si este usuario crea un archivo, el usuario "parrot" y el grupo por defecto del usuario parrot, van a ser los propietarios de este nuevo archivo, o sea que el archivo pertenece al usuario parrot y al grupo por defecto del usuario parrot. Por ello, a menudo necesitamos hacer uso del comando "sudo" para poder leer, modificar o ejecutar algunos archivos y programas del sistema o realizar cambios en los permisos de los archivos en cuestión.
 
 Vamos a analizar la salida del comando "ls -l"
 
@@ -19,7 +19,7 @@ La salida del comando "ls -l" nos indica si es un archivo (-) o directorio (d), 
 - Permiso de ejecución, representado por la letra x.
 
 
-El significado de estos permisos es diferente para archivos y para carpetas, a continuación vamos a explicar cada uno de los casos.
+El significado de estos permisos es diferente para archivos y para carpetas, a continuación, vamos a explicar cada uno de los casos.
 
 
 En el caso de archivo.txt, tiene los siguientes permisos:
@@ -27,7 +27,7 @@ En el caso de archivo.txt, tiene los siguientes permisos:
 	Propietario	Grupo	Resto de usuarios
 	r w -           r w -	r - -
 
-Esto quiere decir que todos los usuarios del sistema tienen permisos para leer este archivo, pero solo el propietario del archivo y los usuarios que sean miembros del grupo propietario podran realizar modificaciones en este archivo.
+Esto quiere decir que todos los usuarios del sistema tienen permisos para leer este archivo, pero solo el propietario del archivo y los usuarios que sean miembros del grupo propietario podrán realizar modificaciones en este archivo.
 
 Para calcular el valor de un permiso nos basaremos en la suma de sus valores decimales según la siguiente correspondencia:
    
@@ -37,7 +37,7 @@ Para calcular el valor de un permiso nos basaremos en la suma de sus valores dec
 	|Valor decimal	|4 | 2 | 1 |
 	 --------------------------
 
-O sea, el valor decimal para el permiso de lectura es 4, el valor decimal para permiso de escritura es 2 y el valor decimal para permiso de ejecución es 1. Por lo tanto los posibles valores para un permiso son los siguientes:
+O sea, el valor decimal para el permiso de lectura es 4, el valor decimal para permiso de escritura es 2 y el valor decimal para permiso de ejecución es 1. Por lo tanto, los posibles valores para un permiso son los siguientes:
 
    	 -----------------
   	|Permisos | Valor |
@@ -59,7 +59,7 @@ O sea, el valor decimal para el permiso de lectura es 4, el valor decimal para p
  	|  ---    |   0   |
  	 -----------------
 
-Por lo tanto llegamos a la siguiente conclusion:
+Por lo tanto, llegamos a la siguiente conclusión:
  
   	 ------------------------
   	| Permiso     |   Valor  |
@@ -79,7 +79,7 @@ Sintaxis básica de chmod:
 
 	$ chmod [modo] [permisos] [fichero o directorio]
 
-Como modo, vamos a usar solamente la opción -R, este parametro, indica a chmod que se van a cambiar los permisos de modo recursivo, útil para cambiar los permisos de los archivos de un directorio. Veamos un ejemplo:
+Como modo, vamos a usar solamente la opción -R, este parámetro, indica a chmod que se van a cambiar los permisos de modo recursivo, útil para cambiar los permisos de los archivos de un directorio. Veamos un ejemplo:
 
 Tenemos esta carpeta de scripts, en la cual no todos los scripts tienen permisos de ejecución
 
@@ -130,7 +130,7 @@ La sintaxis básica para utilizar "chmod" con estos modos es la siguiente:
 
 	# chmod [a|u|g|o] [+|-] [r|w|x]
 
-O sea a quien se le aplica el permiso, añadir o quitar permiso y tipo de permiso que se va a añadir o quitar.
+O sea, a quién se le aplica el permiso, añadir o quitar permiso y tipo de permiso que se va a añadir o quitar.
 
 Estas serían posibles combinaciones:
 
@@ -163,7 +163,7 @@ Si analizamos el resultado de la ejecución anterior, podemos notar cómo se han
 
 ## Uso del comando chown
 
-Chown (change owner) es otra utilidad del sistema que nos permite realizar cambios en la propiedad de los archivos, se parece a "chmod" pero la función que realiza es distinta. Como su nombre lo indica es para cambiar el propietario de un archivo o carpeta.
+Chown (change owner) es otra utilidad del sistema que nos permite realizar cambios en la propiedad de los archivos, se parece a "chmod" pero la función que realiza es distinta. Como su nombre indica, es para cambiar el propietario de un archivo o carpeta.
 
 Su sintáxis básica es la siguiente:
 
@@ -231,7 +231,7 @@ En el ejemplo anterior, se puede apreciar cómo el usuario propietario de todos 
 
 ## Uso del comando chgrp
 
-El comando chgrp, se utiliza para cambiar el grupo al cual pertenece un archivo o directorio. Su sntaxis básica es la siguiente:
+El comando chgrp, se utiliza para cambiar el grupo al cual pertenece un archivo o directorio. Su sintaxis básica es la siguiente:
 
 	$ chgrp [opciones] [archivo(s)] o [directorio(s)]
 
@@ -249,7 +249,7 @@ Opciones.
 
 - --reference --> Cambia el grupo de un archivo tomando como referencia el propietario de otro.
 
-Practicamente son las mismas opciones de "chown", con la diferencia de que "chgrp" solo cambia el grupo propietario de archivos y/o directorios, conservando el usuario propietario.
+Prácticamente son las mismas opciones de "chown", con la diferencia de que "chgrp" sólo cambia el grupo propietario de archivos y/o directorios, conservando el usuario propietario.
 
 
 
@@ -298,5 +298,3 @@ En el ejemplo anterior, se puede apreciar cómo el grupo propietario de todos lo
 
 En el ejemplo anterior, se puede apreciar como el grupo propietario de los archivos wireless-dos-ids.py y wireless-dos.py cambió de parrot a root.
 
-
-## Conclusión pendiente y algunos pequeños cambios
