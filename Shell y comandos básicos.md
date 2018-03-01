@@ -14,14 +14,14 @@ Haciendo uso de la opción -a podemos encontrar información adicional.
 	Linux parrot 4.11.0-parrot6-amd64 #1 SMP Parrot 4.11.6-1parrot6 (2017-06-28) x86_64 GNU/Linux
 
 
-La opción "-a" nos aporta más información, incluyendo la versión actual del Kernel Linux que está sienso usado, el hostname, la arquitectura del sistema. 
+La opción "-a" nos aporta más información, incluyendo la versión actual del Kernel Linux que está siendo usado, el hostname, la arquitectura del sistema. 
 
 La Shell nos permite ejecutar comandos Internos y Externos, es importante diferenciar cada uno de estos dos tipos.
 
 Los comandos Internos son aquellos que están integrados en la Shell (Built into shell), estos comandos internos nos permiten realizar tareas comunes como:
 
 
-Mostrar el directorio actual:
+Mostrar el directorio actual (¿en qué directorio estamos situados?):
 
 	$ pwd
 
@@ -59,7 +59,7 @@ Los comandos exit y logout terminan la shell. El comando exit, termina cualquier
 	$ logout
 
 
-Se puede comprobar facilmente cuando un comando es Interno o Externo utilizando el comando "type" antes del comando que queremos comprobar.
+Se puede comprobar fácilmente cuando un comando es Interno o Externo utilizando el comando "type" antes del comando que queremos comprobar.
 
 	$ type cd
 
@@ -70,7 +70,7 @@ Se puede comprobar facilmente cuando un comando es Interno o Externo utilizando 
 	bash is /bin/bash
 
 
-Algunos comandos internos estan duplicados por comandos externos que hacen exactamente la misma función, estos comandos externos no siempre estan instalados en todos los sistemas. Podemos chequear cuales de estos comandos internos están duplicados por comandos externos usando la opción "-a" al ejecutar el comando "type".
+Algunos comandos internos están duplicados por comandos externos que hacen exactamente la misma función. Estos comandos externos no siempre están instalados en todos los sistemas. Podemos comprobar cuales de estos comandos internos están duplicados por comandos externos usando la opción "-a" al ejecutar el comando "type".
 
 	$ type -a pwd
 
@@ -79,14 +79,14 @@ Algunos comandos internos estan duplicados por comandos externos que hacen exact
 	pwd is /bin/pwd
 
 
-En la ejecución anterior podemos ver como exite una instalación externa del comando pwd en ParrotSec. Es importante mencionar que cuando un comando externo está instalado, el comando interno tiene prioridad. Si queremos ejecutar el comando externo en lugar del interno, debemos especificar el path del comando externo, ejemplo:
+En la ejecución anterior podemos ver como existe una instalación externa del comando pwd en ParrotSec. Es importante mencionar que cuando un comando externo está instalado, el comando interno tiene prioridad. Si queremos ejecutar el comando externo en lugar del interno, debemos especificar el path del comando externo, ejemplo:
 
 	$ /bin/pwd
 
 	/home/user
 
 
-Estos son algunos conceptos básicos que deben aprender antes de profundizar en el uso de la Shell y de comandos en GNU/Linux. Es importante tener conocimiento no solo de las operaciones que se pueden realizar con un comando sino también de su origen y de cómo funciona este.
+Estos son algunos conceptos básicos que deben aprender antes de profundizar en el uso de la Shell y de comandos en GNU/Linux. Es importante tener conocimiento no sólo de las operaciones que se pueden realizar con un comando sino también de su origen y de cómo funciona este.
 
 ## Uso de su y sudo
 
@@ -94,7 +94,7 @@ Los comandos su y sudo a menudo suelen ser confundidos, digamos que tienen una p
 
 ## Comando su
 
-El comando su es al acrónimo para Switch User (Cambio de Usuario), como su nombre nos indica, este comando nos permite cambiar de usuario sin necesidad de cerrar sesión e iniciar sesión nuevamente con el usuario al que queremos cambiar. Para explicar el uso del comando su, vamos a usar "whoami" (este comando nos muestra el usuario actual con el que estamos trabajando en el sistema) y pwd que lo vimos en ejemplos anteriores.
+El comando su es al acrónimo para Switch User (Cambio de Usuario). Como su nombre indica, este comando nos permite cambiar de usuario sin necesidad de cerrar sesión e iniciar sesión nuevamente con el usuario al que queremos cambiar. Para explicar el uso del comando su, vamos a usar "whoami" (este comando nos muestra el usuario actual con el que estamos trabajando en el sistema) y pwd el cual vimos en ejemplos anteriores.
 
 	$ whoami
 	user
@@ -102,9 +102,9 @@ El comando su es al acrónimo para Switch User (Cambio de Usuario), como su nomb
 	/home/user
 
 
-Como pueden ver estos comandos nos muestras que somos el usuario "user" y estamos en el directorio "/home/user", ahora si vamos a pasar al uso del comando "su".
+Como puede ver, estos comandos nos muestra que somos el usuario "user" y estamos en el directorio "/home/user". Ahora sí, vamos a pasar a ver el uso del comando "su".
 
-Para cambiar al usuario "parrot" u otro usuario del sistema ejecutamos su seguido del nombre de usuario al que queremos cambiar:
+Para cambiar al usuario "parrot" u otro usuario del sistema, ejecutamos "su", seguido del nombre de usuario al que queremos cambiar:
 
 	$ su parrot
 	contraseña: <contraseña del usuario parrot>
@@ -112,7 +112,7 @@ Para cambiar al usuario "parrot" u otro usuario del sistema ejecutamos su seguid
 	parrot
 
 
-como pueden ver hemos utilizado el comando "su" para cambiar hacia el usuario "parrot" sin necesidad de cerrar sesión, a partir de ahora todas las operaciones que realizamos en el sistema seran con los permisos del usuario "parrot". Parra regresar hacia nuestro usuario normal, basta con ejecutar el comando "exit".
+como puede ver hemos utilizado el comando "su" para cambiar nuestra identidad por la del usuario "parrot" sin necesidad de cerrar sesión. A partir de ahora todas las operaciones que realizamos en el sistema se ejecutarán con los permisos del usuario "parrot". Para regresar hacia nuestro usuario normal, basta con ejecutar el comando "exit".
 
 	$ su parrot
 	contraseña: <contraseña del usuario parrot>
@@ -123,7 +123,7 @@ como pueden ver hemos utilizado el comando "su" para cambiar hacia el usuario "p
 	user
 
 
-Tambien podemos usar el comando "su" para cambiar hacia el usuario "root", no es necesario especificar el usuario "root" ya que si no se especifica ningún usuario, "su" toma por defecto al usuario "root".
+También podemos usar el comando "su" para cambiar hacia el usuario "root". No es necesario especificar el usuario "root", ya que si no se especifica ningún usuario, "su" toma por defecto al usuario "root".
 
 
 	$ su
@@ -134,9 +134,9 @@ Tambien podemos usar el comando "su" para cambiar hacia el usuario "root", no es
 	$ whoami
 	user
 
-Nótese cómo el prompt cambió el símbolo de $ por el símbolo #, esto se debe a que el símbolo $ representa a los usuarios normales del sistema y el símbolo de # representa al super usuario (root). Al igual para volver hacia nuestro usuario ejecutamos el comando exit.
+Nótese como el prompt cambió el símbolo de $ por el símbolo #. Esto se debe a que el símbolo $ representa a los usuarios normales del sistema y el símbolo # representa al superusuario (root). Al igual que en el ejemplo anterior, para volver hacia nuestro usuario ejecutamos el comando exit.
 
-En caso de querer cambiar hacia un usuario y a la vez cambiar hacia su carpeta personal y demás variables de entorno, agregamos un simbolo de menos (-) entre el comando su y el nombre del usuario, ejemplo:
+En caso de querer cambiar hacia un usuario y a la vez cambiar hacia su carpeta personal y demás variables de entorno, agregamos un símbolo menos (-) entre el comando su y el nombre del usuario, ejemplo:
 
 	$ whoami
 	user
@@ -158,7 +158,7 @@ Para salir del manual, presione la tecla "q".
 
 ## Comando sudo
 
-Sudo es el acronimo para "Switch User DO" (Cambiar de Usuario y Hacer...). Este comando nos permite cambiar al usuario root de una forma imperceptible y ejecutar comandos o acciones con los privilegios del usuario root de manera totalmente segura. En gran parte de las distribuciones Linux tenemos el comando sudo instalado por defecto. Este comando no puede ser usado por todos los usuarios del sistema, existe un grupo llamado "sudoers users", los usuarios que pertenecen a este grupo son los únicos que están autorizados para hacer uso de este comando, por lo general solo se suele configurar para usuarios administradores del sistema. El archivo de configuración se encuentra en /etc/sudoers.
+Sudo es el acrónimo para "Switch User DO" (Cambiar de Usuario y Hacer...). Este comando nos permite cambiar al usuario root de una forma imperceptible y ejecutar comandos o acciones con los privilegios del usuario root de manera totalmente segura. En gran parte de las distribuciones Linux tenemos el comando sudo instalado por defecto. Este comando no puede ser usado por todos los usuarios del sistema, existe un grupo llamado "sudoers users". Los usuarios que pertenecen a este grupo son los únicos que están autorizados para hacer uso de este comando. Por lo general, sólo se suele configurar para usuarios administradores del sistema. El archivo de configuración se encuentra en /etc/sudoers.
 
 Contenido del archivo sudoers en Parrot:
 
@@ -185,24 +185,24 @@ Contenido del archivo sudoers en Parrot:
 
 ¿Qué quiere decir todo esto? 
 
-Exlicado de forma sencilla:
+Explicado de forma sencilla:
  
-- Todas las líneas precedidas por el símbolo de # son comentarios que indican cada sección del archivo de configuración, estos comentarios son ignorados por el sistema.
+- Todas las líneas precedidas por el símbolo "#", son comentarios que indican cada sección del archivo de configuración. Estos comentarios son ignorados por el sistema.
 
-- La sección " # User privilege specification" la cual contiene "root	ALL=(ALL:ALL) ALL", nos indica que el usuario "root" tiene permisos para usar el comando sudo y editar la configuración del archivo "sudoers". En caso de querer agregar otro usuario a "sudoers", podemos agregar una línea similar a la del usuario "root" con el nombre del usuario deseado, ejemplo: "parrot	ALL=(ALL:ALL) ALL". En caso de que el usuario "parrot no esté en el grupo "sudoers users" o "sudo", esta nueva línea le permitiría hacer uso del comando "sudo".
+- La sección " # User privilege specification", la cual contiene "root	ALL=(ALL:ALL) ALL", nos indica que el usuario "root" tiene permisos para usar el comando sudo y editar la configuración del archivo "sudoers". En caso de querer agregar otro usuario a "sudoers", podemos agregar una línea similar a la del usuario "root" con el nombre del usuario deseado, ejemplo: "parrot	ALL=(ALL:ALL) ALL". En caso de que el usuario "parrot no esté en el grupo "sudoers users" o "sudo", esta nueva línea le permitiría hacer uso del comando "sudo".
 
-- La sección "# Allow members of group sudo to execute any command" que contiene "%sudo	ALL=(ALL:ALL) ALL", indica que los miembros del grupo "sudo" tienen permisos para usar este comando, modificar la configuración de sudoers, etc. O sea, que esta sección nos permite agregar a todos los miembros de un grupo especificado para que tengan permisos de usar el comando sudo. Ejemplo: "%administradores	ALL=(ALL:ALL) ALL", esta línea permite a todos los miembros del grupo "administradores" a usar el comando sudo, etc...
+- La sección "# Allow members of group sudo to execute any command" que contiene "%sudo	ALL=(ALL:ALL) ALL", indica que los miembros del grupo "sudo" tienen permisos para usar este comando, modificar la configuración de sudoers, etc. O sea, que esta sección nos permite agregar a todos los miembros de un grupo especificado para que tengan los  permisos necesarios para usar el comando sudo. Ejemplo: "%administradores	ALL=(ALL:ALL) ALL". Esta línea permite, a todos los miembros del grupo "administradores", usar el comando sudo, etc...
 
 ## Ejemplos de uso del comando sudo
 
-En caso de querer instalar alguna aplicación desde los repositorios, o realizar alguna otra tarea que necesite permisos administrativos, nos encontramos con el siguiente error.
+En el caso de querer instalar alguna aplicación desde los repositorios, o realizar alguna otra tarea que necesite permisos administrativos, nos encontramos con el siguiente error:
 
 $ apt install chromium
 E: No se pudo abrir el fichero de bloqueo «/var/lib/dpkg/lock» - open (13: Permiso denegado)
 E: No se pudo bloquear el directorio de administración (/var/lib/dpkg/), ¿está como superusuario?
 
 
-Nos dice que el permiso ha sido denegado y nos pregunta que si somos root, en cambio si usamos el comando sudo por delante:
+Esto nos indica que el permiso ha sido denegado y nos pregunta si somos root. En cambio, si usamos el comando sudo por delante:
 
 	$ sudo apt install chromium
 	[sudo] password for parrot: 
@@ -211,7 +211,7 @@ Nos dice que el permiso ha sido denegado y nos pregunta que si somos root, en ca
 	Reading state information... Done
 	.............
 
-... el comando sudo nos pregunta nuestra contraseña de usuario y luego ejecuta la orden siguiente con privilegios administradivos.
+... el comando sudo nos pregunta nuestra contraseña de usuario y luego ejecuta la orden siguiente con privilegios administrativos.
 
 ### Trabajando con ficheros desde la Shell
 
@@ -220,11 +220,11 @@ Lista ficheros de un directorio.
 	
 	$ ls -l
 		
-Lista tambien las propiedades y atributos.
+Lista también las propiedades y atributos.
 	
 	$ ls -la
 		
-Lista ficheros incluidos los ocultos del sistema.
+Lista ficheros, incluidos los ocultos del sistema.
 	
 	$ ls -la | more
 		
@@ -236,7 +236,7 @@ Lista ficheros especificando la unidad de tamaño.
 	
 	$ ls -l | grep^d
 	
-Lista solo los directorios.
+Lista sólo los directorios.
 
 	$ cat -n fichero
 	
@@ -266,14 +266,14 @@ Muestra las líneas de un archivo que contienen la cadena.
 Muestra el estado de un fichero.
 
 	$ file fichero
-Muestra de que tipo es un fichero.
+Muestra de qué tipo es un fichero.
 
 	$ tail archivo
 	
-Muestra las últimas lineas de un archivo, 10 por defecto.
+Muestra las últimas líneas de un archivo, 10 por defecto.
 	
 	$ tail -n 12 archivo
-Muestra las últimas 12 lineas de un archivo.
+Muestra las últimas 12 líneas de un archivo.
 	
 	$ tail -f archivo
 Muestra las últimas líneas del archivo, actualizándolo a medida que se van añadiendo. Útil para controlar logs.
@@ -305,7 +305,7 @@ Cambia al directorio Documents indicando la ruta completa.
 
 	$ cp -pR fichero /home/user/directorio/
 		# -R Indica que se va a copiar un directorio recursivamente, salvo los ficheros especiales
-		# -p Incica que se va a copiar preservando permisos, propietario, grupo y fechas.
+		# -p Indica que se va a copiar preservando permisos, propietario, grupo y fechas.
 Copia el fichero hacia directorio, conservando el nombre actual del fichero.
 
 		
@@ -331,12 +331,12 @@ Muestra el número de palabras, líneas y caracteres de un archivo.
 Crea un fichero con la fecha actual.
 
 	$ ifconfig
-Mustra la configuración de los adaptadores de red
+Muestra la configuración de los adaptadores de red. También se puede utilizar "ip -a".
 
 ##Comandos del gestor de paquetes
 
 	$apt
-apt es un gestor de paquetes de línea de comando, sus comandos mas básicos son:
+apt es un gestor de paquetes de línea de comando. Sus comandos más básicos son:
 
 	$apt list "argumentos" 
 Lista los paquetes según los nombres.
