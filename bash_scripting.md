@@ -37,7 +37,7 @@ CONSEJO: Si escribe en la terminal
 
 	$ pwd
 
-Podrá ver el directorio en el que usted está trabajando (pwd es un comando que le muestra la ruta en la que está situado. Si su path actual es /Path/donde/este/el/archivo/, el comando anterior podría reducirse de la siguiente forma:
+Podrá ver el directorio en el que usted está trabajando (pwd es un comando que le muestra la ruta en la que está situado). Si su path actual es /Path/donde/este/el/archivo/, el comando anterior podría reducirse de la siguiente forma:
 
 	$ pwd
 	/Path/donde/este/el/archivo
@@ -87,7 +87,7 @@ La instrucción 'read' le permite al usuario introducir información, y guardar 
 
 
 ## Estructuras de control: condicional (if)
-La estructura condicional se puede utilizar para ejecutar algo en función de un resultado dado que comprobaremos o realizar otra acción en el caso de que no se haya producido dicho resultado. Por ejemplo, podríamos consultar una variable y comprobar si su valor es 'PARROT', en el caso de que fuese así podríamos mostrar un texto y si fuese cualquier otro valor, mostraríamos otro texto diferente.
+La estructura condicional se puede utilizar para ejecutar algo en función de un resultado dado que comprobaremos, o realizar otra acción en el caso de que no se haya producido dicho resultado. Por ejemplo, podríamos consultar una variable y comprobar si su valor es 'PARROT', en el caso de que fuese así podríamos mostrar un texto y si fuese cualquier otro valor, mostraríamos otro texto diferente.
 
 El formato para construir estructuras de control condicionales es:
 
@@ -167,7 +167,7 @@ Esta última forma nos permite escribir de forma sencilla condicionales que bien
 
 
 Hemos visto cómo podemos controlar condiciones sobre cadenas de texto, pero podemos ejecutar estructuras de control condicional sobre valores alfanuméricos.  
-Podríamos utilizar condiciones del estilo "Si variable es mayor o igual que un número dado, resta 1 a variable", "Si una variable es menor que un valor dado, suma 3 a variable2",...  
+Podríamos utilizar condiciones del estilo "Si variable es mayor o igual que un número dado, resta 1 a variable", "Si una variable es menor que un valor dado, suma 3 a variable2", ...  
 
 Ejemplo:  
 
@@ -184,7 +184,7 @@ Ejemplo:
 
 
 
-La condición dada y traducida al "español" sería la siguiente: "si el valor de $valor es mayor o igual a 5". ge significa "Greater or Equal than" (mayor o igual que).
+La condición dada y traducida al "español" sería la siguiente: "si el valor de $valor es mayor o igual a 5". "ge" significa "Greater or Equal than" (mayor o igual que).
 
 Las siguientes tablas están sacadas del man de test (man test):
 
@@ -248,7 +248,7 @@ Ej. 1:
 	read -p "Escriba un texto:" texto1
 	read -p "Escriba otro texto:" texto2
 
-	#Comprobamos si alguna cadena de texto es vacia (texto1 es vacío o texto2 es vacío)
+	#Comprobamos si alguna cadena de texto es vacía (texto1 es vacío o texto2 es vacío)
 	#Preste atención al entrecomillado para que realmente sea considerado texto
 	if [ -z "$texto1" -o -z "$texto2" ]; then
 		#Si entra en esta condición, no se necesita continuar con el script
@@ -276,7 +276,7 @@ Trate de escribir en una línea de comandos:
 	$ echo "hola Parrot"
 
 Pero... ¿cómo escribimos un comando echo para que muestre por pantalla hola "ParrotSec"? 
-"echo" aunque tiene diversas opciones y podemos utilizar otros símbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usa con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
+"echo" aunque tiene diversas opciones y podemos utilizar otros símbolos para indicar el principio y el fin de la cadena de texto a mostrar, generalmente se usan con las ". Para poder mostrar una cadena con " debemos "escapar" las dobles comillas.
 
 Mire el siguiente ejemplo:
 
@@ -346,7 +346,7 @@ Ej. 1:
 	esac
 
 Anexo Ej. 1:   
-El valor de $1, es la primera opción pasada a nuestro script. Es decir, si nuestro script se llama "miscript.sh", podríamos ejecutar "./miscript.sh opcion1"y $1 sería igual a opcion1.
+El valor de $1, es la primera opción pasada a nuestro script. Es decir, si nuestro script se llama "miscript.sh", podríamos ejecutar "./miscript.sh opcion1" y $1 sería igual a opcion1.
 
 
 Ej. 2:
@@ -407,7 +407,7 @@ Como puede observar en este ejemplo, hemos encadenado dentro de nuestra estructu
 
 
 ## Estructura blucle: FOR
-Para acciones repetitivas se han creado estructuras en forma de bucle. Hay varios tipos. En este primer lugar veremos bucles for.    
+Para acciones repetitivas, se han creado estructuras en forma de bucle. Hay varios tipos. En este primer lugar veremos bucles for.    
 El bucle es una lista de comandos que se realiza de forma repetitiva.    
 En el caso de FOR, este bloque se repetirá mientras tengamos valores en la lista que estamos comprobando.   
 La forma que tiene esta estructura es la siguiente:   
@@ -457,7 +457,7 @@ Este ejemplo de for, es igual (no es extraño ya que es heredado de él) al for 
 
 
 ## Estructura bucle: WHILE
-En esta estructura el bucle se ejecutará mientras se cumpla una condición.   
+En esta estructura, el bucle se ejecutará mientras se cumpla una condición.   
 La forma que tiene esta estructura es:   
 
 	while condicion
@@ -553,7 +553,7 @@ Tenga en cuenta que esto elimina los saltos de línea. Acuérdese de que puede u
 	$ VARIABLE=$(who|awk '{print $1}')
 	$ echo $VARIABLE
 
-En este ejemplo hemos recogido, mediante awk, el primer campo de la salida de who. Es decir el/los nombre/s de usuario logeado/s en nuestro sistema.
+En este ejemplo hemos recogido, mediante awk, el primer campo de la salida de who. Es decir, el/los nombre/s de usuario logeado/s en nuestro sistema.
 
 
 
@@ -582,9 +582,9 @@ Podemos redirigir esa salida a un fichero si queremos (incluso al fichero especi
 Veamos varios ejemplos, abriendo una terminal:
 
 	$ ls -la /etc/passwd 1> salida1.standard
-	$ cat salida1.satnadard
+	$ cat salida1.standard
 
-Vemos que aparentemente el primer comando no ha mostrado nada por pantalla. Lo que hemos hecho es redirigir su salida estándar a un archivo salida1.txt.
+Vemos que, aparentemente, el primer comando no ha mostrado nada por pantalla. Lo que hemos hecho es redirigir su salida estándar a un archivo salida1.txt.
 El operador "1" se puede omitir si se desea. Podríamos haber escrito:  
 	
 	$ ls -la /etc/passwd > salida1.standard
@@ -610,7 +610,7 @@ O también:
 
 	$ ls -la /etc/passwd /nombre/no_existente > salida.txt 2>&1
 
-En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar que a donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estándar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estándar (1)".  
+En el caso "2>&1", estamos indicando al sistema que la salida de errores ("2"), se redirija al mismo lugar donde apunta la salida uno. Como primeramente hemos redireccionado la salida "1" (estándar) al archivo salida.txt, los mensajes de error también aparecerán en el mismo archivo. Podríamos traducir "2>&1" como "la salida de errores (2) redirígela (>) a donde apunte (&) la salida estándar (1)".  
 
 Redirigiendo las salidas, bien sea la estándar como la de errores, a un archivo, este se generará vacío cada vez que el símbolo ">" aparezca. Veamos esto con un ejemplo, mediante un script que nos escriba la fecha del sistema cada segundo en un archivo:  
 
@@ -630,7 +630,7 @@ Redirigiendo las salidas, bien sea la estándar como la de errores, a un archivo
 
 
 En este ejemplo, hemos redirigido con el símbolo ">" la salida de "date" a "fecha.txt". Si hacemos "cat fecha.txt" sólo veremos una línea (la de la última ejecución). Explicando esto en más detalle, vemos que nuestro script ha repetido la iteración "for" 3 veces. En la primera ejecución, tras mostrar por pantalla la salida de "date", ha creado un archivo nuevo "fecha.txt" para escribir la salida estándar del siguiente "date". En la segunda ejecución del bucle ocurre lo mismo. En la instrucción "date > fecha.txt", la salida del comando se redirige a un archivo recién creado llamado "fecha.txt", sobrescribiéndolo. De esta forma perderá el contenido de la primera iteración. En la tercera pasada vuelve a ocurrir exactamente lo mismo, generando que el archivo resultante sólo muestre la última ejecución.   
-Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Con esto, conseguiremos que no se sobrescriba el archivo sino que la salida se añadirá al final de él.
+Para que no ocurra esto, podemos utilizar los símbolos de redirección ">>". Con esto, conseguiremos que no se sobrescriba el archivo, añadiendo una linea de salida por cada ejecución.
 
 	#!/bin/bash
 	#
@@ -681,7 +681,7 @@ Ejemplo:
 	echo "Hola parrot"
 
 
-Aunque es un script muy sencillo, podemos ver como debemos editar dos líneas para cambiar el mensaje "Hola parrot" por "Buenos días PARROT".
+Aunque es un script muy sencillo, podemos ver cómo debemos editar dos líneas para cambiar el mensaje "Hola parrot" por "Buenos días PARROT".
 La estructura de las funciones es la siguiente:
 	
 	nombre_funcion() {
@@ -695,7 +695,7 @@ La estructura de las funciones es la siguiente:
 	nombre_funcion
 
 
-A continuación veremos cómo podemos utilizar funciones en el script anterior.
+A continuación, veremos cómo podemos utilizar funciones en el script anterior.
 
 Ejemplo:
 
@@ -734,14 +734,14 @@ Esto escribirá cada comando por la salida de errores (precedido por el símbolo
 
 ## Exit code
 
-Cuando un proceso termina, devuelve un valor no negativo llamado valor de retorno o código de salida (exit code) al sistema operativo. Generalmente y por conveniencia devolverá un 0 si se ha ejecutado correctamente y cualquier otro valor si hay un error. De esta forma también se pueden elegir diferentes códigos de error en función del error que haya producido el comando. Un bash script puede devolver un valor utilizando el comando "exit". Por ejemplo:
+Cuando un proceso termina, devuelve un valor no negativo llamado valor de retorno o código de salida (exit code) al sistema operativo. Generalmente y por conveniencia devolverá un 0 si se ha ejecutado correctamente y cualquier otro valor si hay un error. De esta forma también se pueden elegir diferentes códigos de error, en función del error que haya producido el comando. Un script de bash puede devolver un valor utilizando el comando "exit". Por ejemplo:
 
 	exit 4
 
 
 finaliza el script devolviendo un código de retorno "4" indicando algún tipo de error. Si no especificamos el código de salida, el script devolverá la salida del último comando ejecutado.
 
-Una forma de utilizar estos valores de salida es utilizando los operadores && ("y") y || ("o"). Si disponemos de dos comandos separados por &&, entonces el comando que está a la izquierda se ejecutará primero, y  el comando que está a la derecha sólo se ejecutará si el primero ha terminado satisfactoriamente. Al revés, si están separados por ||, el segundo comando sólo se ejecutará si falla el primero.
+Una forma de utilizar estos valores de salida es utilizando los operadores && ("y") y || ("o"). Si disponemos de dos comandos separados por &&, entonces el comando que está a la izquierda se ejecutará primero, y el comando que está a la derecha sólo se ejecutará si el primero ha terminado satisfactoriamente. Al revés, si están separados por ||, el segundo comando sólo se ejecutará si falla el primero.
 
 Por ejemplo, supongamos que queremos suprimir el archivo log.txt y volverlo a crear como un archivo vacío. Podemos ejecutar estas dos instrucciones:
 
@@ -749,7 +749,7 @@ Por ejemplo, supongamos que queremos suprimir el archivo log.txt y volverlo a cr
 	$ touch log.txt
 
 
-"rm" elimina un archivo dado y "touch" lo  crea vacío en el caso de no existir. Pero realmente, si "rm" falla no queremos ejecutar "touch", es decir, si el archivo log.txt no existe no queremos recrearlo. De esta forma podrá ejecutar los siguientes comandos:
+"rm" elimina un archivo dado y "touch" lo crea vacío en el caso de no existir. Pero realmente, si "rm" falla no queremos ejecutar "touch", es decir, si el archivo log.txt no existe no queremos recrearlo. De esta forma podrá ejecutar los siguientes comandos:
 
 	$ rm log.txt && touch log.txt
 
@@ -778,11 +778,11 @@ Comprobemos el "exit code" del mismo comando sobre un archivo que sí exista:
 	$ ls /home
 	$ echo $?
 
-¿Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si, sobre todo cuando  una instrucción ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código), ha terminado correctamente. Para ello, tras la ejecución del comando, y sin ejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
+¿Cuál es la respuesta del segundo comando esta vez? Efectivamente, es un "0". Esto se debe a que el directorio /home existe, por lo tanto, nuestro "ls" ha sido capaz de listar su contenido, y así el comando se ha ejecutado perfectamente y sin ningún error. El "echo $?" es muy utilizado en línea de comando para comprobar si, sobre todo cuando una instrucción ha durado en el tiempo y ha mostrado mucho texto en su salida (p.e. una compilación de código), ha terminado correctamente. Para ello, tras la ejecución del comando, y sin ejecutar ninguna instrucción preguntaremos por "$?" (echo $?) y si devuelve un "0", sabremos que ha terminado correctamente.
 
 
 
-A continuación podemos ver un ejemplo de un script, con la utilidad de esto.
+A continuación, podemos ver un ejemplo de un script, con la utilidad de esto.
 
 
 	#!/bin/bash
