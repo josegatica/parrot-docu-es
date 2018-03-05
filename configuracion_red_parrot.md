@@ -1,6 +1,6 @@
 # NetworkManager
 
-En Parrot la configuración de las interfaces de red se maneja por medio de un demonio de sistema llamado NetworkManager.
+En Parrot, la configuración de las interfaces de red se maneja por medio de un demonio de sistema llamado NetworkManager.
 Para comprobar si tenemos activado NetworkManager:
 
 	┌─[root@parrot]─[~]
@@ -17,7 +17,7 @@ Para comprobar si tenemos activado NetworkManager:
 
 Para NetworkManager:
 - Un "device" es una interfaz de red
-- Un "connection" es una colección de parametros que se pueden configurar para un "device"
+- Un "connection" es una colección de parámetros que se pueden configurar para un "device"
 - Sólo se puede activar una conexión para cada "device" a la vez
 - Cada conexión tiene un nombre o ID que lo identifica
 - Las conexiones y configuraciones se guardan en /etc/NetworkManager/system-connections, en un archivo con el nombre de la conexión
@@ -72,7 +72,7 @@ El comando "ip addr show" nos muestra la configuración actual de nuestras inter
 
 El comando "nmcli con add" se utiliza para añadir nuevas conexiones de red. En el ejemplo que veremos se asume que el nombre de la conexión que se va a añadir no está siendo utilizada.   
 El siguiente comando añadirá una nueva conexión (con_dhcp) para nuestra interfaz eth0, la cual obtendrá la información de red utilizando DHCP y se autoconectará en el inicio del sistema.
-A continuación comprobaremos su configuración desde el propio nmcli como mirando su fichero de configuración:
+A continuación, comprobaremos su configuración desde el propio nmcli y también mirando su fichero de configuración:
 
 	┌─[root@parrot]─[~]
 	└──╼ #nmcli con add con-name con_dhcp type ethernet ifname eth0
@@ -183,7 +183,7 @@ A continuación comprobaremos su configuración desde el propio nmcli como miran
 
 
 
-Veamos ahora un ejemplo con una configuración para la misma interfaz eth0, pero con una dirección ip 192.168.0.3/24 y el gateway por defecto 192.168.0.254. El nombre de la conexión la llamaremos con_static.
+Veamos ahora un ejemplo con una configuración para la misma interfaz eth0, pero con una dirección ip fija 192.168.0.3/24 y el gateway por defecto 192.168.0.254. El nombre de la conexión la llamaremos con_static.
 
 	+-[root@parrot]-[~]
 	+--? #nmcli con add con-name con_static type ethernet ifname eth0 ip4 192.168.0.3/24 gw4 192.168.0.254
@@ -207,7 +207,7 @@ El comando "nmcli dev disconnect <device>", desconectará el interfaz de red <de
 	┌─[root@parrot]─[~]
 	└──╼ #nmcli dev dis eth0
 
-Use este comando para desactivar una interfaz de red.
+Use este comando para desactivar una interfaz de red. Tenga en cuenta que esto desconectará la interfaz de la red.
 
 
 
@@ -295,8 +295,8 @@ Para comprobar la configuración actual de una conexión ejecutamos "nmcli con s
 
 
 
-Podemos utilizar el comando "nmcli con mod <nomre_conexion>" para modificar su configuración. Las diferentes configuraciones que podemos utilizar las podemos ver en la página del manual nm-settings(5).
-Por ejemplo, imaginemos que queremos cambiar la conexión "con_static" para que se utilice la dirección 192.168.1.3/24 y el gateway en 192.168.1.1, en vez de la que configuramos anteriormente.
+Podemos utilizar el comando "nmcli con mod <nomre_conexion>" para modificar su configuración. Las diferentes configuraciones que podemos utilizar, las podemos ver en la página del manual nm-settings(5).
+Por ejemplo, imaginemos que, queremos cambiar la conexión "con_static" para que se utilice la dirección 192.168.1.3/24 y el gateway en 192.168.1.1, en vez de la que configuramos anteriormente.
 
 	┌─[root@parrot]─[~]
 	└──╼ #nmcli con mod con_static ipv4.addresses "192.168.1.3/24" ipv4.gateway 192.168.1.1
