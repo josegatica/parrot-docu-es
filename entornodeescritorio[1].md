@@ -11,7 +11,7 @@ Los ligeros se preocupan de consumir la menor cantidad de recursos para garantiz
 
 # Algunos entornos de escritorio
 
-MATE: es el entorno que usa parrot. El nombre proviene de una planta que se usa como energizante. Surgió de un fork de GNOME2. Es un escritorio bastante ligero que con 512MB de memoria funciona bien. Esta escrito en C , C++ y python.
+**MATE**: es el entorno que usa parrot. El nombre proviene de una planta que se usa como energizante. Surgió de un fork de GNOME2. Es un escritorio bastante ligero que con 512MB de memoria funciona bien. Esta escrito en C , C++ y python.
 
 GNOME:
 El objetivo de este entorno es crear un sistema de escritorio para el usuario final
