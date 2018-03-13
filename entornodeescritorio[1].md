@@ -1,24 +1,19 @@
-entornos de escritorio:
-sirven para ofreces a los usuarios una interaccion amigabley comoda como
-los accesos , configuracion , barra de herramientas , integracion y aplicaciones
-habilidades como arrastrar y soltar, fondos de pantallas , wiwidgets ect 
+# Entornos de escritorio:
 
-los entornos de escritorio funcionan sobre un servidor grafico que es
-x.org o wayland 
+Es un programa que nos permite interactuar con el sistema operativo de una forma sencilla.
+Nos ofrecen a los usuarios, una interacción amigable y cómoda como accesos a directorios y ficheros, configuración, barra de herramientas, habilidades como arrastrar y soltar, fondos de pantallas, widgets, etc. 
 
-hay 2 grupo de entorno de escritorio normales y ligero 
+Los entornos de escritorio funcionan sobre un servidor grafico que es X.org o wayland.
 
-los ligeros se preocupan de consumir la menor cantidad de recursos
-para garantizar la fluidez, con poca potencia
+Se pueden catalogar los entornos de escritorio en 2 grandes grupos: Normales y ligeros. 
 
-entornos de escritorios 
+Los ligeros se preocupan de consumir la menor cantidad de recursos para garantizar la fluidez, con poca potencia.
 
-MATE: es el entorno que usa parrot el nombre proviene de una planta que se
-usa como energizante surgio de un fork de GNOME2 es un escritorio bastante
-ligero con 512MB de memoria puede  funcionar bien esta escrito en C , c++
-y python .
+# Algunos entornos de escritorio
 
-GNOME
+MATE: es el entorno que usa parrot. El nombre proviene de una planta que se usa como energizante. Surgió de un fork de GNOME2. Es un escritorio bastante ligero que con 512MB de memoria funciona bien. Esta escrito en C , C++ y python.
+
+GNOME:
 El objetivo de este entorno es crear un sistema de escritorio para el usuario final
  que sea completo, libre y fácil de usar. Usa las bibliotecas gráficas GTK y está
  bajo licencia GPL. Una característica bastante útil aunque común a prácticamente
