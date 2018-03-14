@@ -1,15 +1,15 @@
-# APT (Gestion de software Parrot)
+# APT (Gestión de software Parrot)
 
 Veremos en este capítulo una introducción al gestor de paquetes APT para Parrot.
 Un programa es una serie de instrucciones. Estas instrucciones vienen en archivos de texto llamados fuentes. Para que funcionen en nuestros sistemas se necesita pasarlos a lenguaje máquina. A este paso se le llama compilación. La compilación genera uno o varios archivos, entendibles por el sistema, que se denominan binarios.
 
 Actualmente no es necesario que el usuario compile las fuentes de cada programa. Los desarrolladores se encargan de compilarlos por nosotros y generar los respectivos binarios. Como un programa puede llevar, no sólo el ejecutable, sino otra serie de ficheros, los desarrolladores "empaquetan" dicho software en un archivo llamado paquete. Dos son los más famosos, paquetes RPM y paquetes DEB. RPM fue desarrollada por Red Hat y DEB por debian. Parrot utiliza el formato DEB.
 
-Para compilar algunos programas son necesarias librerías y otros programas. Si intentásemos compilar un programa que tuviese dependendencias con otras librerías y otros programas, anteriormente a su compilación deberíamos instalar dichas "dependencias". Igualmente, si queremos instalar un binario necesitaremos tener instaladas las dependencias necesarias para su correcto funcionamiento.
+Para compilar algunos programas son necesarias librerías y otros programas. Si intentásemos compilar un programa que tuviese dependencias con otras librerías y otros programas, anteriormente a su compilación deberíamos instalar dichas "dependencias". Igualmente, si queremos instalar un binario necesitaremos tener instaladas las dependencias necesarias para su correcto funcionamiento.
 
 Para gestionar estas dependencias y la instalación de los "paquetes", se han creado gestores de paquetes. Existen numerosos gestores de paquetes, algunos gráficos y otros en línea de comando. En este capítulo veremos uno de los más famosos, creados por los desarrolladores Debian, y el utilizado por Parrot... APT.
 
-Las funciones principales de un gestor de paquetes debe ser:
+Las funciones principales de un gestor de paquetes deben ser:
 
 - Búsqueda de software
 - Instalación de software
@@ -21,7 +21,7 @@ Las funciones principales de un gestor de paquetes debe ser:
 
 El gestor de paquetes debe comprobar en una ubicación dada (puede ser un directorio local o una dirección de red), la disponibilidad de dicho software. A estas ubicaciones se les llama repositorios. El sistema mantiene archivos de configuración para comprobar la ubicación de sus repositorios.
 
-Comenzemos...
+Comencemos...
 
 
 ## Lista de repositorios
@@ -33,15 +33,15 @@ En el sistema de ficheros, encontramos en la ruta "/etc/sources.list.d", el arch
 	deb http://deb.parrotsec.org/parrot stable main contrib non-free
 	#deb-src http://archive.parrotsec.org/parrot stable contrib non-free
 
-Con esto nos aseguramos tener la lista de repositrios correcta. En esta ubicación, los desarrolladores de Parrot, mantienen los paquetes actualizados.
+Con esto nos aseguramos tener la lista de repositorios correcta. En esta ubicación, los desarrolladores de Parrot, mantienen los paquetes actualizados.
 
 También puede ver el documento de "Lista de espejos (Mirrors)".
 
 
 ## Gestor de paquetes (APT)
 
-El gestor de paquetes de parrot es apt. Este gestor se encarga de instalar paquetes, comprobar dependencias, actualizar sistema, entre otras cosas. 
-Veamos que podemos hacer con él. Veremos las opciones mas comunes pero podemos ver varias páginas man (apt, apt-get, apt-cache, dpkg)
+El gestor de paquetes de parrot es apt. Este gestor se encarga de instalar paquetes, comprobar dependencias, actualizar el sistema, entre otras cosas. 
+Veamos qué podemos hacer con él. Veremos las opciones más comunes, pero aún asi disponemos de varias páginas man (apt, apt-get, apt-cache, dpkg), que no debería dejar de visitar:
 
 - Buscar un paquete o cadena de texto:
 	
@@ -87,11 +87,11 @@ Veamos que podemos hacer con él. Veremos las opciones mas comunes pero podemos 
 
 		# apt upgrade
 
-- Actualizar la distribución completa. Actualizará nuestro sistema a la siguiente versión disponible:
+- Actualizar la distribución completa. Esta opción eliminará los paquetes instalados si esto es necesario para la actualización completa de nuestro sistema.
 
-		# apt dist-upgrade
+		#apt full-upgrade
 
-- Limpiar cachés, paquetes descargados, etc:
+- Limpiar cachés, paquetes descargados, etc,...:
 
 		# apt clean   
 		# apt autoclean

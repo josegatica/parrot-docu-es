@@ -1,8 +1,8 @@
 # Introducción
 
-Quizás se haya cansado de Microsoft Windows. Puede que ya esté aburrido de los inumerables virus de su sistema operativo. Quizás simplemente quiera conocer ese sistema del que todo el mundo habla pero no se atreve a dar el salto.
+Quizás se haya cansado de Microsoft Windows. Puede que ya esté aburrido de los innumerables virus de su sistema operativo. Quizás simplemente quiera conocer ese sistema del que todo el mundo habla, pero no se atreve a dar el salto.
 
-Sea la razón por la que sea, puede que usted necesite convivir en un entorno en el que haya o bien sistemas windows en la red o mantenga un sistema con arranque dual y necesite acceder a sus particiones Windows.
+Sea la razón por la que sea, puede que usted necesite convivir en un entorno en el que haya, o bien sistemas windows en la red, o mantenga un sistema con arranque dual y necesite acceder a sus particiones Windows.
 
 No se preocupe, estamos aquí para ayudarle. En este capítulo aprenderá a montar particiones Windows en su sistema ParrotSec, así como a utilizar recursos compartidos entre sistemas Microsoft y su flamante ParrotSec OS.
 
@@ -11,7 +11,7 @@ No se preocupe, estamos aquí para ayudarle. En este capítulo aprenderá a mont
 
 Supongamos que tenemos un sistema con arranque dual. En un disco tengo mi sistema Parrot y en el otro Windows.
 
-Primeramente comprobemos con "fdisk" los discos y particiones de nuestro sistema. En mi caso utilizo el gestor de volúmenes lógico(LVM) con lo que puede que la salida de este comando no sea exactamente igual a la suya. También he modificado un poco la salida del comando para que se vea más claro los difirentes discos y sus particiones:
+Primeramente, comprobemos con "fdisk" los discos y particiones de nuestro sistema. En mi caso utilizo el gestor de volúmenes lógico(LVM), con lo que puede que la salida de este comando no sea exactamente igual a la suya. También he modificado un poco la salida del comando, para que se vea más claro los diferentes discos y sus particiones:
 
 	┌─[root@parrot]─[~]
 	└──╼ #fdisk -l|grep sd
@@ -32,7 +32,7 @@ Primeramente comprobemos con "fdisk" los discos y particiones de nuestro sistema
 
 
 Podemos observar que mi sistema está compuesto por 3 discos (sda, sdb, y sdc).
-En cada disco tenemos diferentes particiones. Para sdb, una partición llamada sdb1, para sdc dos particiones sdc1 y sdc2,.. Ahora mismo nos interesa ver las particiones (líneas) que contienen la palabra FAT o NTFS. Vemos que hay un disco con una partición con esa característica. El disco es el sdb y la partición la sdb1. Pués bien, esa es la partición Windows que deberemos montar en algún lugar de nuestro arbol de directorios.
+En cada disco tenemos diferentes particiones. Para sdb, una partición llamada sdb1, para sdc dos particiones sdc1 y sdc2,.. Ahora mismo nos interesa ver las particiones (líneas) que contienen la palabra FAT o NTFS. Vemos que hay un disco que dispone de una partición con esa característica. El disco es el sdb y la partición la sdb1. Pués bien, esa es la partición Windows que deberemos montar en algún lugar de nuestro arbol de directorios.
 
 Para poder trabajar con particiones del tipo NTFS necesitaremos tener instalado el paquete ntfs-3g. En mi caso ya estaba instalado:
 
@@ -44,7 +44,7 @@ Para poder trabajar con particiones del tipo NTFS necesitaremos tener instalado 
 	ntfs-3g is already the newest version (1:2016.2.22AR.2-2).
 	0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
 
-Ahora ya tan sólo nos queda seleccionar un punto de montaje (la ruta en la que accederemos a nuestro dispositivo). En mi caso, seleccionaré /mnt. Ustéd seleccione otra ruta si lo prefiere. NOTA: Monte su dispositivo en un directorio vacío.
+Ahora ya, tan sólo nos queda seleccionar un punto de montaje (la ruta en la que accederemos a nuestro dispositivo). En mi caso, seleccionaré /mnt. Usted seleccione otra ruta si lo prefiere. NOTA: Monte su dispositivo en un directorio vacío.
 
 	┌─[root@parrot]─[~]
 	└──╼ #mount /dev/sdb1 /mnt/
@@ -89,9 +89,9 @@ Vemos que ambos comandos nos han devuelto una respuesta. Ya tan sólo tenemos qu
 
 
 
-NOTA: Está usted accediendo a la partición Windows. Tenga cuidado a la hora de borrar o eliminar archivos "vitales" ya que podrían dejar inutilizado su sistema Microsoft.
+NOTA: Está usted accediendo a la partición Windows. Tenga cuidado a la hora de borrar o eliminar archivos "vitales", ya que podrían dejar inutilizado su sistema Microsoft.
 
-Para desmontarlo tan sólo debemos ejecutar "umount"  fuera del punto de montaje:
+Para desmontarlo tan sólo debemos ejecutar "umount", situándonos fuera del punto de montaje:
 
 	┌─[root@parrot]─[/mnt/Documents and Settings/josu/Escritorio]
 	└──╼ #cd /
@@ -111,12 +111,12 @@ Donde /dev/sdb1 es la partición y /mnt es el punto de montaje.
 
 ## Desde windows a Parrot
 
-Tenemos varías formas de compartir recursos entre sistemas windows y GNU/Linux. Una de ellas es mediante el protocolo SMB. Este protocolo es utilizado entre los sistemas Windows para compartir directorios. En GNU/Linux existe una implementación de dicho protocolo contenida en la suite SAMBA.
+Tenemos varias formas de compartir recursos entre sistemas windows y GNU/Linux. Una de ellas es mediante el protocolo SMB. Este protocolo es utilizado entre los sistemas Windows para compartir directorios. En GNU/Linux existe una implementación de dicho protocolo contenida en la suite SAMBA.
 
 
 Veamos como compartimos un recurso desde windows a nuestra querida Parrot.
 
-Primeramente compartamos un recurso en un sistema Windows. La forma de hacer esto dependerá de la versión que utilicemos. Compruebe los manuales de su versión:
+Primeramente, compartamos un recurso en un sistema Windows. La forma de hacer esto dependerá de la versión que utilicemos. Compruebe los manuales de su versión:
 
 NOTA: Esto es un windows XP
 
@@ -127,7 +127,7 @@ NOTA: Esto es un windows XP
 ![alt text](https://github.com/josegatica/parrot-docu-es/blob/master/images/migracion3.png "SMB")
 
 
-Una vez compartido el recurso nos podremos conectar a él. En este caso, mi recurso compartido en windows XP tiene acceso total, por lo que puedo utilizar culaquier usuario con cualquier contraseña. La direccion ip de Windows XP es 192.168.56.101. También podemos ver entre los recursos compartidos "shared", que es el nombre del recurso que hemos compartido anteriormente. 
+Una vez compartido el recurso nos podremos conectar a él. En este caso, mi recurso compartido en windows XP tiene acceso total, por lo que puedo utilizar cualquier usuario con cualquier contraseña. La dirección ip de Windows XP, en mi caso, es 192.168.56.101. También podemos ver que el nombre del recurso que hemos compartido anteriormente se llama "shared".
 
 Con smbclient podemos listar los recursos de un sistema:
 
@@ -217,32 +217,32 @@ Una vez instalado, podremos montarlo en un punto de montaje de nuestro sistema:
 
 O incluso lo podremos configurar en el archivo "/etc/fstab", agregando la siguiente línea:
 
-	//192.168.56.101/shared	/mnt	cifs	user=guest,vers=1.0 0 0
+	//192.168.56.101/shared	/mnt	cifs	user=guest,vers=1.0   0 0
 
 
-Donde el primer campo es el servidor SMB junto con el nombre del recurso compartido, el segundo campo es nuestro punto de montaje, el tercero es el tipo de filesystem (en este caso CIFS, protocolo "similar" a SMB), y en sus opciones agregamos el usuario "guest" que utilizaremos para conectarnos y vers=1.0, ya que se trata de Windows XP y su version de samba es esta. A continuación nos solicitará contraseña.
+Donde, el primer campo es el servidor SMB junto con el nombre del recurso compartido, el segundo campo es nuestro punto de montaje, el tercero es el tipo de filesystem (en este caso CIFS, protocolo "similar" a SMB), y en sus opciones agregamos el usuario "guest" que utilizaremos para conectarnos y vers=1.0, ya que se trata de Windows XP y su versión de samba es esta. A continuación nos solicitará contraseña.
 
 Si no queremos que solicite esta contraseña, y ya que nuestro recurso compartido es público, nuestra línea en /etc/fstab podría haber sido:
 
-	//192.168.56.101/shared	/mnt	cifs	user=guest,password=,vers=1.0 0 0
+	//192.168.56.101/shared	/mnt	cifs	user=guest,password=,vers=1.0   0 0
 
 Donde "password=" queda vacío.
 
 
-NOTA= si su versión de Windows es posterior a windows XP es más que probable que no deba indicar "vers=1.0".
+	NOTA: si su versión de Windows es posterior a windows XP es más que probable que no deba indicar "vers=1.0".
 
 Consulte la página de manual (man 8 mount.cifs) para más información.
 
 
 ## Desde Parrot a Windows
 
-En esta parte veremos cómo configurar nuestro sistema para ser accedido desde Windows. Para ello debemos instalar samba. Probablemente su sistema ParrotSec ya lo tenga instalado. 
+En esta parte, veremos cómo configurar nuestro sistema para ser accedido desde Windows. Para ello debemos instalar samba. Probablemente su sistema ParrotSec ya lo tenga instalado. 
 
 	┌─[root@parrot]─[~]
 	└──╼ #apt install samba
 
-El fichero de configuración se encuentra bajo "/etc/samba". Añadiremos al final del fichero smb.conf un recurso llamado test con una serie de opciones para que 
-el recurso pueda ser accedido desde windows sin petición de usuario/contraseña y que se pueda escribir en dicho recurso (ATENCION!!!ESTO ES POTENCIALMENTE PELIGROSO SI LA RED NO ES SUYA O COMPARTE UNA RED CON MAS GENTE,YA QUE EL DIRECTORIO ES ESCRIBIBLE SIN CONTRASEÑA, puede ver "man 5 smb.conf" para otras opciones).
+El fichero de configuración se encuentra bajo "/etc/samba". Añadiremos al final del fichero smb.conf, un recurso llamado "test", con una serie de opciones para que 
+el recurso pueda ser accedido desde windows sin petición de usuario/contraseña y que se pueda escribir en dicho recurso (ATENCION!!!ESTO ES POTENCIALMENTE PELIGROSO SI LA RED NO ES SUYA O COMPARTE UNA RED CON MAS GENTE, YA QUE EL DIRECTORIO ES ESCRIBIBLE SIN CONTRASEÑA). Puede comprobar con "man 5 smb.conf", otras opciones.
 
 Añadimos al final del fichero /etc/samba/smb.conf:
 
@@ -325,7 +325,7 @@ Ejecutaremos "testparm" para comprobar que no hay errores en smb.conf:
 		read only = No
 
 
-Ejecutamos smbpasswd para añadir al usuario test a samba. Nos solicitará su contraseña samba. Para este ejemplo en concreto, no tiene importancia su contraseña ya que desde Windows no la pedirá.
+Ejecutamos smbpasswd, para añadir al usuario test a samba. Nos solicitará su contraseña samba. Para este ejemplo en concreto, no tiene importancia su contraseña ya que desde Windows no la pedirá.
 
 	┌─[root@parrot]─[~]
 	└──╼ #smbpasswd -a test
