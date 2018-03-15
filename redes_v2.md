@@ -1,9 +1,9 @@
-## Introduccion
+## Introducción
 
 Esta es una guía muy básica del funcionamiento de una red. Nos servirá para poder entender más adelante cómo configurar nuestro sistema ParrotSec OS.
 En un futuro se espera de usted, lector, que investigue y estudie por su cuenta más (mucho más).
 
-Actualmente, gran cantidad de los dispostivos que nos rodean está conectados a Internet o al menos a nuestra red de casa u oficina. Nuestra SmartTV, teléfonos móviles, smartwatchs, tablets, PC, cafetera(?),...
+Actualmente, gran cantidad de los dispositivos que nos rodean está conectados a Internet o al menos a nuestra red de casa u oficina. Nuestra SmartTV, teléfonos móviles, smartwatches, tablets, PC, cafetera(?),...
 
 Es por ello, que conviene conocer a grosso modo, el funcionamiento de nuestras redes, que significan todas esas siglas y palabras que nos solicitan cuando debemos configurar nuestros dispositivos.
 
@@ -11,7 +11,7 @@ Es por ello, que conviene conocer a grosso modo, el funcionamiento de nuestras r
 
 En este documento vamos a tratar la versión 4 de IP (IPv4), aunque se está extendiendo cada vez más la versión 6 (IPv6). Pese a este incremento en el número de configuraciones IPv6, aún no es común dicha configuración en nuestras casas por lo que trataremos de explicar IPv4.
 
-Todos los sistemas que necesiten comunicarse entre ellos deben disponer de una dirección IP. Esta dirección debe ser única y no puede repetirse en una misma red. En caso de que esto ocurra, los dos dispositivos quedarán anulados hasta que se resuelva el conflicto.
+Todos los sistemas que necesiten comunicarse entre ellos, deben disponer de al menos una dirección IP. Esta dirección debe ser única y no puede repetirse en una misma red. En caso de que esto ocurra, los dos dispositivos quedarán anulados hasta que se resuelva el conflicto. Estas direcciones IPs son asignadas a las tarjetas de red o wifi.
 
 Una dirección IP (v4) está compuesta por cuatro bloques de números decimales, separados por puntos. Cada bloque de números puede ir del 0 al 255. 
 
@@ -22,11 +22,11 @@ Ejemplos:
 	* 195.255.1.37
 
 
-Existen direcciones ip públicas y privadas. La direcciones IP públicas son las que se utilizan para poder interconectar dispositivos por Internet, mientras que las privadas son utilizadas dentro de una organización, empresa o en nuestras propias casas.  
+Existen direcciones ip públicas y privadas. Las direcciones IP públicas son las que se utilizan para poder interconectar dispositivos por Internet, mientras que las privadas son utilizadas dentro de una organización, empresa o en nuestras propias casas.  
 
 Pondré un ejemplo para intentar explicar esto (los datos son inventados y los pondré sólo a modo de ejemplo). Supongamos nuestro router de casa, nuestro PC, una impresora y nuestra página favorita de internet.
 
-	PC, impresora, router: Disponen de ip privada (pertenecen a la red de nuetra casa)
+	PC, impresora, router: Disponen de ip privada (pertenecen a la red de nuestra casa)
 	Router, Página WEB: Disponen de ip pública (necesitan una ip pública para comunicarse)
 
 Puede observar que el router mantiene dos IP: una pública para poder acceder a los servicios externos que nos brinda Internet, y otra privada para interconectarse con los sistemas de nuestra red de casa.
@@ -44,12 +44,12 @@ Puede observar que el router mantiene dos IP: una pública para poder acceder a 
 	Impresora: 	192.168.0.12
 
 
-Podriamos hacer una analogía entre lo mostrado anteriormente y el sistema telefónico. Todos los números de telefono son distintos (IP pública), pero tenemos centralitas (routers) que son capaces de direccionar una llamada (enrutar) a diferentes extensiones (IP privada). Estas extensiones, fijádonos únicamente en ellas, se pueden repetir en difirentes empresas u hogares.
+Podríamos hacer una analogía entre lo mostrado anteriormente y un sistema telefónico. Todos los números de teléfono son distintos (IP pública), pero tenemos centralitas (routers) que son capaces de direccionar una llamada (enrutar) a diferentes extensiones (IP privada). Estas extensiones, fijándonos únicamente en ellas, se pueden repetir en diferentes empresas u hogares, pero nunca dentro de ellas.
 
 
 ## Máscara de red
 
-La máscara de red se utiliza en la redes privadas para indicar el rango de una subred.
+La máscara de red se utiliza en las redes privadas para indicar el rango de una subred.
 
 Las IP privadas deben estar en los rangos indicados a continuación:
 
@@ -75,7 +75,7 @@ Las siguientes IPs no deberían configurarse de modo manual:
 Cualquier otra dirección IP se considerará Pública. Las direcciones IP públicas, generalmente, vendrán asignadas por nuestro proveedor de Internet, por lo que no deberemos preocuparnos por ellas (al menos no de momento).
 
 Vuelva a mirar el rango de direcciones IP privadas. Como hemos indicado la máscara de red especifica la subred a la que pertenece un sistema.
-Es decir, con este valor indicamos a nuestro equipo si debe enviar un dato (paquete) a un equipo de nuestra subred o no. Dicho de otra forma, dada una dirección IP y una máscara de red, sabemos que parte de dicha dirección IP es el valor de la subred y cual es el número correspondiente al host. Con la máscara también indicamos el número máximo de hosts que pueden configurarse en una subred. Otra forma de indicar la máscara es con su ICDR
+Es decir, con este valor indicamos a nuestro equipo si debe enviar un dato (paquete) a un equipo de nuestra subred o no. Dicho de otra forma, dada una dirección IP y una máscara de red, sabemos qué parte de dicha dirección IP es el valor de la subred y cuál es el número correspondiente al host. Con la máscara también indicamos el número máximo de hosts que pueden configurarse en una subred. Otra forma de indicar la máscara es con su ICDR
 
 Tabla de máscaras posibles:
 
@@ -136,21 +136,21 @@ Así nuestro equipo podría comunicarse directamente con cualquier sistema de nu
 
 Si disponemos de un equipo que pertenezca a la subred 192.168.1, ya no se podría comunicar directamente y debería utilizar un gateway o puerta de enlace, que veremos a continuación.
 
-Por otro lado, si queremos que las redes 192.168.0 y 192.168.1 se vean directamente, podriamos utilizar la máscara de red 255.255.0.0. En este caso realmente se estarían viendo todas los sistemas cuyas ips comenzasen por 192.168 sin importarnos los siguientes dos bloques de números.
+Por otro lado, si queremos que las redes 192.168.0 y 192.168.1 se vean directamente, podríamos utilizar la máscara de red 255.255.0.0. En este caso, realmente, se estarían viendo todos los sistemas cuyas ips comenzasen por 192.168 sin importarnos los siguientes dos bloques de números.
 
 
 ## Gateway o Puerta de enlace
 
-Cuando un sistema debe enviar un dato (paquete) a una red a la que no pertenece, lo cual sabe por su máscara de red visto anteriormente, buscará en su tabla de enrutamiento, la dirección ip a la que debe indicar dicho dato para que salga al "exterior". Es decir, si nuestro PC quiere comunicarse con un sistema que no está en su red, debe conocer una ip por la que enviará este dato, dejando el control de envio a dicho sistema. 
+Cuando un sistema debe enviar un dato (paquete) a una red a la que no pertenece, lo cual sabe por su máscara de red visto anteriormente, buscará en su tabla de enrutamiento la dirección ip a la que debe enviar dicho dato para que salga al "exterior". Es decir, si nuestro PC quiere comunicarse con un sistema que no está en su red, debe conocer una ip por la que enviará este dato, dejando el control de envío a dicho sistema. 
 
-En nuestro ejemplo sabemos que el router tiene una dirección IP 192.168.0.1 para nuestra red interna. Sólo disponemos de esta red en nuestro hogar. Por lo tanto, nuestra ruta por defecto o gateway deberá ser la dirección del router. Dicho de una forma coloquial, si enviamos un paquete a un sistema que no esta en nuestra red, enviémoslo al router que él sabrá lo que debe hacer con dicho paquete. Internamente el router cuando reciba el paquete y vea la dirección a la que va destinada, activará sus mecanismos para enviarla a través de su dirección pública al exterior, poniéndose en contacto con el sistema externo.
+En nuestro ejemplo sabemos que el router tiene una dirección IP 192.168.0.1 para nuestra red interna. Sólo disponemos de esta red en nuestro hogar. Por lo tanto, nuestra ruta por defecto o gateway deberá ser la dirección del router. Dicho de una forma coloquial, si enviamos un paquete a un sistema que no está en nuestra red, enviémoslo al router, que él sabrá lo que debe hacer con dicho paquete. Internamente el router cuando reciba el paquete y vea la dirección a la que va destinada, activará sus mecanismos para enviarla a través de su dirección pública al exterior, poniéndose en contacto con el sistema externo.
 
 
 ## DNS (Domain Name Server)
 
-Cómo ya hemos dicho anteriormente, todos los sistemas conectados disponen de una dirección IP. Sería muy complicado que nos supiesemos de memoria todas las direcciones IP de todas las páginas a las que nos solemos conectar. Es por ello que existen servidores que son capaces de traducir un nombre a una dirección ip (y viceversa). Estos servidores se denominan DNS (Servidor de resolución de nombres).
+Como ya hemos dicho anteriormente, todos los sistemas conectados disponen de una dirección IP. Sería muy complicado que nos supiésemos de memoria todas las direcciones IP de todas las páginas a las que nos solemos conectar. Es por ello que existen servidores que son capaces de traducir un nombre a una dirección ip (y viceversa). Estos servidores se denominan DNS (Servidor de resolución de nombres).
 
-Pongamos como ejemplo la navegación a una página web. Cuando escribimos en nuestro navegador el nombre de una página, el sistema, primeramente, preguntará a nuestro DNS cual es la dirección IP de la dirección que estamos solicitando. Nuestro DNS devolverá a nuestro sistema una dirección IP que se corresponderá con la página que estamos solicitando.
+Pongamos como ejemplo la navegación a una página web. Cuando escribimos en nuestro navegador el nombre de una página, el sistema, primeramente, preguntará a nuestro DNS cual es la dirección IP de la dirección que estamos solicitando. Nuestro DNS devolverá, a nuestro sistema, una dirección IP que se corresponderá con la página que estamos solicitando.
 
 La herramienta "dig" nos permite comprobar las direcciones ips de un nombre de dominio.
 
@@ -193,16 +193,15 @@ En los puntos anteriores hemos definido varios datos que serán imprescindibles 
 	* Gateway
 	* DNS
 
-Estos valores podemos configurarlos de modo manual, aunque también se pueden configurar de forma automática cuando conectemos el sistema a la red. Estos valores nos los puede proporcionar y configurar un servidor DHCP. Generalmente, los routers vienen con esta carácteristica activada para que no tengamos que preocuparnos por nada.
+Estos valores podemos configurarlos de modo manual, aunque también se pueden configurar de forma automática cuando conectemos el sistema a la red. Estos valores nos los puede proporcionar y configurar un servidor DHCP. Generalmente, los routers vienen con esta característica activada para que no tengamos que preocuparnos por nada.
 
 
 ## Nota Final
 
 Tal como hemos indicado al principio, este documento es una breve (muy breve) introducción a redes, y una vez usted entienda el funcionamiento básico de una red debería investigar y estudiar de una forma más extensa el funcionamiento de esta.
 
-A continuación le proponemos enlaces que podrían interesarle en un futuro:
+A continuación, le proponemos enlaces que podrían interesarle en un futuro:
 
 	* https://rfc-es.org/
 	* https://www.rfc-editor.org/rfc-index.html
 	* http://www.tldp.org/HOWTO/Networking-Overview-HOWTO.html
-

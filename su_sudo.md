@@ -2,11 +2,11 @@
 
 En GNU/Linux existe un usuario llamado root. Este usuario es especial, es el administrador del sistema. Root puede hacer todo en un sistema GNU/linux, por esta razón es muy peligroso trabajar constantemente con dicho usuario. Podríamos escribir un comando incorrectamente y provocar un error en nuestro sistema. Al no utilizar la cuenta de root para trabajar normalmente, también mitigamos la posibilidad de vernos afectados por un virus. Así que la forma correcta para trabajar en un sistema GNU/Linux, es utilizar un usuario con privilegios limitados.
 
-Pero habrá tareas para las que necesitemos convertirnos en root o al menos tener sus privilegios, o quizas lo que necesitemos sea convertirnos en otro usuario del sistema (es menos frecuente pero puede darse el caso).
+Pero habrá tareas para las que necesitemos convertirnos en root o al menos tener sus privilegios, o quizás lo que necesitemos sea convertirnos en otro usuario del sistema (es menos frecuente, pero puede darse el caso).
 
 # El comando "su"
 
-El comando "su" lo utizamos para convertirnos en otro usuario. Puede ser root o puede ser otro usuario del sistema. 
+El comando "su" lo utilizamos para convertirnos en otro usuario. Puede ser root o puede ser otro usuario del sistema. 
 
 La forma general de utilizarlo es:
 	
@@ -38,9 +38,9 @@ Podría interesarnos convertirnos en otro usuario, por ejemplo test2:
 	Password: 
 
 
-Vemos que simplemente hemos cambiado el nombre del usuario al que nos queremos convertir. En cualquier caso nos solicitará la contraseña de dicho usuario. No la nuestra, sino la del usuario en el que nos queremos convertir. Si es root, la contraseña de root. Si es test2, la contraseña de test2.
+Vemos que simplemente hemos cambiado el nombre del usuario al que nos queremos convertir. En cualquier caso, nos solicitará la contraseña de dicho usuario. No la nuestra, sino la del usuario en el que nos queremos convertir. Si es root, la contraseña de root. Si es test2, la contraseña de test2.
 
-Entre las opciones que podemos usar con "su" (man 1 su), existe una para convertirnos en el usuario pero con todo su "enviroment" tal y como si nos hubiésemos logeado en el sistema. Esta opción es "-" o "-l". Es decir, tendremos todas las variables de entorno de dicho usuario, pero sin utilizar la opción no necesariamente las tendremos:
+Entre las opciones que podemos usar con "su" (man 1 su), existe una para convertirnos en el usuario pero con todo su "enviroment" tal y como si nos hubiésemos logeado en el sistema. Esta opción es "-" o "-l". Es decir, tendremos todas las variables de entorno de dicho usuario, pero si no utilizamos la opción, no necesariamente las tendremos:
 
 	┌─[✗]─[test@parrot]─[~]
 	└──╼ $whoami
@@ -64,7 +64,7 @@ Entre las opciones que podemos usar con "su" (man 1 su), existe una para convert
 
 El comando "exit" sale de la sesión.
 
-Como verá, ahora sí ejecutamos un login "completo" de root, posicionándonos incluso en su $HOME.
+Como verá a continuación, ahora sí ejecutamos un login "completo" de root, posicionándonos incluso en su $HOME.
 
 	┌─[test@parrot]─[~]
 	└──╼ $whoami
@@ -93,7 +93,7 @@ NOTA: Si no indicamos el nombre de usuario, el sistema supondrá que queremos co
 	root
 
 
-NOTA2: Si ejecutamos "su" como usuario root, no se nos solicitará la contraseña. Es al único usuario que no se la solicita y podremos convertirnos en el usuario que queramos.
+NOTA2: Si ejecutamos "su" como usuario root, no se nos solicitará la contraseña. Es al único usuario que no se la solicita, y podremos convertirnos en el usuario que queramos.
 
 
 # El comando "sudo"
@@ -146,9 +146,9 @@ Este fichero expuesto arriba, es la configuración por defecto en ParrotSec.
 
 La línea "%sudo    ALL=(ALL:ALL) ALL" establece que cualquier usuario que pertenezca al grupo sudo podrá ejecutar cualquier comando (se sobreentiende que como root).
 
-No vamos a ver más configuraciones, tiene una guía extensa en la pagina del manual sudoers (man 5 sudoers). También puede acudir a su buscador favorito y buscar ejemplos sudo. Pero tenga en cuenta que, aunque en este ejemplo estamos otorgando la posibilidad a un usuario para que ejecute tareas como root, también podría configurar sudo para que se ejecutasen tareas como otro usuario distinto (por ejemplo un usuario de base de datos) o que el usuario sólo pudiése ejecutar algunas tareas (y no todas) como root. Pero el ejemplo que tenemos es el descrito. Usuarios del grupo sudo pueden ejecutar cualquier tarea como root.
+No vamos a ver más configuraciones, tiene una guía extensa en la página del manual sudoers (man 5 sudoers). También puede acudir a su buscador favorito y buscar ejemplos sudo. Pero tenga en cuenta que, aunque en este ejemplo estamos otorgando la posibilidad a un usuario para que ejecute tareas como root, también podría configurar sudo para que se ejecutasen tareas como otro usuario distinto (por ejemplo un usuario de base de datos) o que el usuario sólo pudiese ejecutar algunas tareas (y no todas) como root. Pero el ejemplo que tenemos es el descrito. Usuarios del grupo sudo pueden ejecutar cualquier tarea como root.
 
-De acuerdo con lo visto, necesitamos que nuestro usuario test pueda ejecutar tareas como root. Tal y como vimos, este usuario debe pertenecer al grupo sudo. Para ver la membresía de un usuario ejecutamos la instrucción "id" seguida del nombre de usuario.
+De acuerdo con lo visto, necesitamos que nuestro usuario test pueda ejecutar tareas como root. Tal y como vimos, este usuario debe pertenecer al grupo sudo. Para ver la membresía de un usuario ejecutamos la instrucción "id", seguida del nombre de usuario.
 
 	┌─[root@parrot]─[~]
 	└──╼ #id test
@@ -205,9 +205,9 @@ Veamos esto:
 	test
 
 
-La primera vez ejecutamos whoami anteponiéndole sudo, es decir lo ejecutamos como root. La segunda vez desde nuestro usuario test.
+La primera vez, ejecutamos whoami anteponiéndole sudo, es decir, lo ejecutamos como root. La segunda vez desde nuestro usuario test.
 
-Como ha podido comprobar, esta segunda vez que he ejecutado sudo, no se ha solictado la contraseña del usuario test. Tal como indica la página del manual de sudoers (" The user may then use sudo without a password for a short period of time (15 minutes unless overridden by the timestamp_timeout option).") tendremos 15 minutos en los que en la sesión activa no se nos solicitará la contraseña.
+Como ha podido comprobar, esta segunda vez que he ejecutado sudo, no se ha solicitado la contraseña del usuario test. Tal como indica la página del manual de sudoers (" The user may then use sudo without a password for a short period of time (15 minutes unless overridden by the timestamp_timeout option).") tendremos 15 minutos en los que en la sesión activa no se nos solicitará la contraseña.
 
 Como podemos ejecutar cualquier programa como cualquier usuario, llegado el caso, también podríamos ejecutar comandos como otro usuario (ejemplo con test2):
 
