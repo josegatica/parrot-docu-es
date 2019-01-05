@@ -146,6 +146,9 @@ Aplique los cambios a neXpose
 sudo systemctl restart nexposeconsole.service
 
 
+# Licencia de neXpose
+https://www.rapid7.com/products/insightvm/download/
+
 #
 Abra un nuevo navegador y explore
 
